@@ -1,166 +1,224 @@
-import yfinance as yf
+import os
+import sqlite3
 import pandas as pd
 import numpy as np
-import json
-from typing import List, Dict, Any
+import logging
+from datetime import datetime, timedelta
+import FinanceDataReader as fdr
+import statsmodels.api as sm
+from sklearn.linear_model import Ridge
+from sklearn.metrics.pairwise import cosine_similarity
+from scipy.stats import rankdata
 
-from model.feature_builder import AdvancedMacroRegimeBuilder
-from model.lightgbm_model import LightGBMMIMOMacroModel
+# ==========================================
+# 0. Environment & Logging
+# ==========================================
+logging.basicConfig(
+    level=logging.INFO, 
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[logging.StreamHandler()]
+)
 
-def download_multi_data(tickers: List[str], start: str = "2012-01-01") -> pd.DataFrame:
-    print(f"데이터 다운로드 중: {tickers}...")
-    df = yf.download(tickers, start=start, progress=False, auto_adjust=False)
-    
-    if isinstance(df.columns, pd.MultiIndex):
-        df.columns = [f"{col[0]}_{col[1]}" for col in df.columns]
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', 1000)
+
+# ==========================================
+# 1. Macro-to-Ontology Vector Target (어댑터 고도화)
+# ==========================================
+class MacroTaxonomyAdapter:
+    def __init__(self):
+        self.base_vector = {f"hybrid_{k}": 0.0 for k in [
+            "growth", "value", "quality", "momentum", "size", "low_vol", "dividend", 
+            "duration", "inflation", "real_rate", "usd", "commodity", "gold", "oil", 
+            "kr_equity", "us_equity"
+        ]}
+
+    def translate(self, macro_asset_name: str) -> dict:
+        t = self.base_vector.copy()
+        macro = macro_asset_name.lower()
         
-    df = df.ffill().bfill()
-    return df
+        # 🌟 [튜닝 3] Region을 추가하여 1차 필터링을 좁히고 엉뚱한 자산군 침범 방지
+        if macro == "us_growth":
+            t.update({"hybrid_us_equity": 1.0, "hybrid_growth": 0.9, "hybrid_momentum": 0.6, "hybrid_usd": 1.0})
+            return {"asset_class": "equity", "region": "US", "target_vector": t}
+        elif macro == "us_value":
+            t.update({"hybrid_us_equity": 1.0, "hybrid_value": 0.9, "hybrid_usd": 1.0})
+            return {"asset_class": "equity", "region": "US", "target_vector": t}
+        elif macro == "us_dividend":
+            t.update({"hybrid_us_equity": 1.0, "hybrid_dividend": 1.0, "hybrid_value": 0.5, "hybrid_usd": 1.0})
+            return {"asset_class": "equity", "region": "US", "target_vector": t}
+        elif macro == "kr_equity":
+            t.update({"hybrid_kr_equity": 1.0})
+            return {"asset_class": "equity", "region": "KR", "target_vector": t}
+        elif macro == "long_bond":
+            t.update({"hybrid_duration": 1.0, "hybrid_real_rate": -0.8})
+            return {"asset_class": "bond", "region": "US", "target_vector": t}
+        else:
+            return None
 
-def apply_institutional_exposure_control(raw_vector: Dict[str, float], full_slice_df: pd.DataFrame, target_vol: float = 0.10, window: int = 60) -> Dict[str, Any]:
-    """
-    [Institutional Exposure Control Engine]
-    Macro Regime Engine이 Volatility Targeting Engine의 '상한선(Ceiling)'으로 작용합니다.
-    낮은 변동성에 속아 매크로 위험 신호를 무시하는 치명적 결함을 방어합니다.
-    """
-    # 🌟 1. Macro Ceiling 설정 (Macro AI가 지시한 필수 방어 현금 비중)
-    macro_cash_target = raw_vector.get("cash_target", 0.05)
-    macro_ceiling = 1.0 - macro_cash_target
+# ==========================================
+# 2. Institutional Quant Optimizer Engine (V16)
+# ==========================================
+class InstitutionalQuantEngine:
+    def __init__(self, db_path: str = "data/registry/master_etf.db", struct_weight: float = 0.4):
+        self.db_path = db_path
+        self.w_struct = struct_weight
+        self.w_stat = 1.0 - struct_weight
+        self.adapter = MacroTaxonomyAdapter()
 
-    if len(full_slice_df) < window:
-        raw_vector["gross_exposure"] = macro_ceiling
-        raw_vector["realized_vol"] = target_vol
-        raw_vector["active_constraint"] = "Macro_Ceiling"
-        return raw_vector
+    def get_tradable_universe(self, account_type: str = "NORMAL") -> pd.DataFrame:
+        conn = sqlite3.connect(self.db_path)
+        query = """
+            SELECT 
+                s.ticker, s.name, s.asset_class, s.region, s.tax_treatment, e.execution_score_log,
+                v.growth as st_growth, v.value as st_value, v.dividend as st_div, v.duration as st_dur,
+                v.kr_equity as st_kor, v.us_equity as st_us, v.usd as st_usd, v.gold as st_gold,
+                v.quality, v.momentum, v.size, v.low_vol, v.inflation, v.real_rate, v.commodity, v.oil,
+                stat.beta_growth as dyn_growth, stat.beta_value as dyn_value, stat.beta_div as dyn_div, 
+                stat.beta_dur as dyn_dur, stat.beta_kor as dyn_kor, stat.beta_mkt as dyn_us, 
+                stat.beta_usd as dyn_usd, stat.beta_gold as dyn_gold, stat.r_squared
+            FROM etf_structural s
+            JOIN etf_exposure_vector v ON s.ticker = v.ticker
+            JOIN etf_statistical_vector stat ON s.ticker = stat.ticker
+            JOIN etf_execution_profile e ON s.ticker = e.ticker
+            WHERE e.execution_score_log > 0
+        """
+        if account_type == "PENSION": query += " AND s.pension_eligible = 1"
+        df = pd.read_sql(query, conn)
+        conn.close()
+        if df.empty: return df
 
-    spy_ret = full_slice_df["Close_SPY"].pct_change().fillna(0)
-    schd_ret = full_slice_df["Close_SCHD"].pct_change().fillna(0) if "Close_SCHD" in full_slice_df.columns else spy_ret * 0.7
-    vnq_ret = full_slice_df["Close_VNQ"].pct_change().fillna(0) if "Close_VNQ" in full_slice_df.columns else spy_ret * 0.8
-    hyg_ret = full_slice_df["Close_HYG"].pct_change().fillna(0) if "Close_HYG" in full_slice_df.columns else spy_ret * 0.3
-    lqd_ret = full_slice_df["Close_LQD"].pct_change().fillna(0) if "Close_LQD" in full_slice_df.columns else spy_ret * 0.0
-    gld_ret = full_slice_df["Close_GLD"].pct_change().fillna(0) if "Close_GLD" in full_slice_df.columns else spy_ret * 0.0
+        # 🌟 [튜닝 1] 단위계 통일: Beta 값을 np.tanh()로 -1 ~ 1 사이로 압축 (정규화)
+        # alpha=1.5를 곱해 반응성을 약간 키운 상태로 tanh 통과
+        stat_cols = ['dyn_growth', 'dyn_value', 'dyn_div', 'dyn_dur', 'dyn_kor', 'dyn_us', 'dyn_usd', 'dyn_gold']
+        for col in stat_cols:
+            df[col] = np.tanh(df[col] * 1.5)
 
-    income_ret = (0.45 * schd_ret) + (0.35 * vnq_ret) + (0.20 * hyg_ret)
+        has_stat = df['r_squared'] > 0
+        w_st = np.where(has_stat, self.w_struct, 1.0)
+        w_dy = np.where(has_stat, self.w_stat, 0.0)
 
-    ret = pd.DataFrame({
-        "equity": spy_ret,
-        "income": income_ret,
-        "bond": lqd_ret,
-        "commodity": gld_ret
-    }).tail(window)
-    
-    cov_matrix = ret.cov()
-    
-    # 리스크 자산들의 초기 비중 추출 (합산 = macro_ceiling)
-    weights = np.array([
-        raw_vector.get("equity", 0.0),
-        raw_vector.get("income", 0.0),
-        raw_vector.get("bond", 0.0),
-        raw_vector.get("commodity", 0.0)
-    ])
-    
-    port_var = weights.T @ cov_matrix @ weights
-    realized_vol = np.sqrt(port_var) * np.sqrt(252) if port_var > 0 else 0.01
-
-    # 🌟 2. Volatility Scaling (레버리지 1.0 초과 금지)
-    vol_scale = min(1.0, target_vol / realized_vol)
-
-    # 🌟 3. Final Exposure 결정 로직 : min(Macro Ceiling, Vol Scale)
-    gross_exposure = min(macro_ceiling, vol_scale)
-    
-    # 현재 리스크 자산 비중 합계는 macro_ceiling임. 이를 gross_exposure 스케일로 축소/유지
-    scale_factor = gross_exposure / macro_ceiling if macro_ceiling > 0 else 0.0
-
-    final_vector = raw_vector.copy()
-    for k in ["equity", "income", "bond", "commodity"]:
-        if k in final_vector:
-            final_vector[k] *= scale_factor
-
-    # 🌟 4. Preserve Cash Regime (스케일링 후 남은 공간은 모두 절대 현금으로 보존)
-    final_vector["cash_target"] = 1.0 - gross_exposure
-    final_vector["gross_exposure"] = gross_exposure
-    final_vector["realized_vol"] = realized_vol
-    
-    # 디버깅용: 어떤 제약이 포트폴리오를 억누르고 있는지 확인
-    if macro_ceiling <= vol_scale:
-        final_vector["active_constraint"] = f"Macro Engine (Cap: {macro_ceiling:.1%})"
-    else:
-        final_vector["active_constraint"] = f"Vol Engine (Cap: {vol_scale:.1%})"
-
-    if port_var > 0:
-        mrc = cov_matrix @ weights
-        rrc = (weights * mrc) / port_var
-        final_vector["rc_equity"] = round(rrc.iloc[0], 3)
-        final_vector["rc_income"] = round(rrc.iloc[1], 3)
-        final_vector["rc_bond"] = round(rrc.iloc[2], 3)
-        final_vector["rc_cmdty"] = round(rrc.iloc[3], 3)
-    else:
-        final_vector["rc_equity"] = final_vector["rc_income"] = final_vector["rc_bond"] = final_vector["rc_cmdty"] = 0.0
-
-    return final_vector
-
-def main() -> None:
-    print("=== Institutional Risk-Managed Macro Allocation Engine ===\n")
-    
-    tickers = ["SPY", "RSP", "^TNX", "^IRX", "DX-Y.NYB", "HYG", "LQD", "GLD", "USO", "^VIX", "^VIX3M", "EWY", "KRW=X", "SCHD", "VNQ"]
-    df = download_multi_data(tickers, start="2012-01-01")
-    
-    builder_macro = AdvancedMacroRegimeBuilder(target_window=20)
-    policy_model = LightGBMMIMOMacroModel(name="Macro_Brain", feature_builder=builder_macro)
-    
-    policy_model.analyze_factor_correlation(df)
-    
-    print("🚀 [Walk-Forward 시뮬레이션 시작]")
-    print("="*50)
-    
-    initial_train_size, step_size = 2500, 20            
-    total_len = len(df)
-    results = []
-
-    for i in range(total_len - (step_size * 3), total_len, step_size):
-        train_df = df.iloc[:i]
-        end_idx = min(i + step_size, total_len)
-        test_df = df.iloc[i:end_idx]
+        # 안전하게 정규화된 데이터로 하이브리드 벡터 병합
+        df['hybrid_growth'] = (df['st_growth'] * w_st) + (df['dyn_growth'] * w_dy)
+        df['hybrid_value'] = (df['st_value'] * w_st) + (df['dyn_value'] * w_dy)
+        df['hybrid_dividend'] = (df['st_div'] * w_st) + (df['dyn_div'] * w_dy)
+        df['hybrid_duration'] = (df['st_dur'] * w_st) + (df['dyn_dur'] * w_dy)
+        df['hybrid_kr_equity'] = (df['st_kor'] * w_st) + (df['dyn_kor'] * w_dy)
+        df['hybrid_us_equity'] = (df['st_us'] * w_st) + (df['dyn_us'] * w_dy)
+        df['hybrid_usd'] = (df['st_usd'] * w_st) + (df['dyn_usd'] * w_dy)
+        df['hybrid_gold'] = (df['st_gold'] * w_st) + (df['dyn_gold'] * w_dy)
         
-        policy_model.fit(train_df)
+        # 회귀분석 프록시가 없는 차원은 원본 구조 벡터 그대로 유지
+        df['hybrid_size'] = df['size']
+        df['hybrid_quality'] = df['quality']
+        df['hybrid_momentum'] = df['momentum']
+        df['hybrid_low_vol'] = df['low_vol']
+        df['hybrid_inflation'] = df['inflation']
+        df['hybrid_real_rate'] = df['real_rate']
+        df['hybrid_commodity'] = df['commodity']
+        df['hybrid_oil'] = df['oil']
         
-        for j in range(len(test_df)):
-            current_date = test_df.index[j]
-            full_slice_df = df.iloc[:i+j+1]
+        # 유동성 백분위수 (0~1.0)
+        df['liq_percentile'] = rankdata(df['execution_score_log']) / len(df)
+        return df
+
+    def _calculate_exposure_distance(self, target_vector: dict, candidate_row: pd.Series) -> float:
+        keys = list(target_vector.keys())
+        t_arr = np.array([target_vector[k] for k in keys]).reshape(1, -1)
+        c_arr = np.array([candidate_row[k] for k in keys]).reshape(1, -1)
+        
+        mag_t, mag_c = np.linalg.norm(t_arr), np.linalg.norm(c_arr)
+        if mag_t == 0 or mag_c == 0: return 0.0
             
-            # 1. Macro Brain (생각)
-            policy_model.predict(full_slice_df)
-            raw_vector = policy_model.get_raw_macro_vector()
+        cos_sim = cosine_similarity(t_arr, c_arr)[0][0]
+        mag_score = min(mag_c / mag_t, 1.0)
+        return (cos_sim * 0.7) + (mag_score * 0.3)
+
+    def run_account_allocation(self, account_type: str, macro_weights: dict) -> pd.DataFrame:
+        logging.info(f"🎯 [{account_type}] V16 Calibrated Optimizer 할당 시작...")
+        
+        universe = self.get_tradable_universe(account_type=account_type)
+        if universe.empty: return pd.DataFrame()
             
-            # 2. Exposure Control (통제)
-            final_vector = apply_institutional_exposure_control(raw_vector, full_slice_df, target_vol=0.10)
+        allocations, selected_vectors = [], []
+
+        for macro_asset, weight in macro_weights.items():
+            translated = self.adapter.translate(macro_asset)
+            if not translated: continue
             
-            if j == len(test_df) - 1:
-                print(f"\n[{current_date.strftime('%Y-%m-%d')}] 모델 매크로 팩터 추론 상태:")
-                policy_model.print_diagnostics()
+            target_v = translated['target_vector']
+            
+            # 🌟 [튜닝 3 적용] Region + Asset Class 로 더욱 정교한 1차 필터링
+            candidates = universe[
+                (universe['asset_class'] == translated['asset_class']) & 
+                (universe['region'] == translated['region'])
+            ].copy()
+            
+            if candidates.empty: continue
+            
+            scores = []
+            for _, row in candidates.iterrows():
+                # 1. 융합된 Hybrid 벡터 거리
+                sim_score = self._calculate_exposure_distance(target_vector=target_v, candidate_row=row)
                 
-                print("\n📊 [Hierarchical Exposure Control Status]")
-                print(f"  └ Active Bottleneck: {final_vector['active_constraint']}")
-                print(f"  └ Realized Vol: {final_vector['realized_vol']:.1%} ➡️ Target Vol: 10.0%")
-                print(f"  └ Gross Exposure: {final_vector['gross_exposure']:.1%} (Cash Buffer: {final_vector['cash_target']:.1%})")
+                # 2. 유동성 및 세금
+                liq_score = row['liq_percentile']
+                tax_score = 1.0 if "tax_free" in row['tax_treatment'] else 0.8
                 
-                print("\n⚖️ [Portfolio Risk Budgeting]")
-                print(f"  └ Equity | Weight: {final_vector['equity']:.1%} -> RC: {final_vector['rc_equity']:.1%}")
-                print(f"  └ Income | Weight: {final_vector['income']:.1%} -> RC: {final_vector['rc_income']:.1%}")
-                print(f"  └ Bond   | Weight: {final_vector['bond']:.1%} -> RC: {final_vector['rc_bond']:.1%}")
-
-            results.append({
-                "date": current_date.strftime('%Y-%m-%d'),
-                "constraint": final_vector["active_constraint"],
-                "gross_exposure": round(final_vector['gross_exposure'], 3),
-                "weights": {k: round(final_vector[k], 4) for k in ["equity", "income", "bond", "commodity", "cash_target"] if k in final_vector}
+                # 3. 🌟 [튜닝 2] Threshold 기반 현실적인 Overlap Penalty (85% 이상만 강한 타격)
+                overlap_penalty = 0.0
+                if selected_vectors:
+                    c_arr = np.array([row[k] for k in target_v.keys()]).reshape(1, -1)
+                    centroid = np.mean(np.array(selected_vectors), axis=0).reshape(1, -1)
+                    overlap = cosine_similarity(c_arr, centroid)[0][0]
+                    # 85% 이상 겹치면 초과분만큼 50%의 가중치로 깎아버림
+                    overlap_penalty = max(0, overlap - 0.85) * 0.5 
+                
+                scores.append((sim_score * 0.5) + (liq_score * 0.3) + (tax_score * 0.2) - overlap_penalty)
+                
+            candidates['score'] = scores
+            candidates = candidates.sort_values(by='score', ascending=False)
+            best_etf = candidates.iloc[0]
+            
+            if best_etf['score'] <= 0: continue
+            selected_vectors.append(np.array([best_etf[k] for k in target_v.keys()]).flatten())
+            
+            allocations.append({
+                "Target": macro_asset.upper(), "Weight": f"{int(weight*100)}%",
+                "Ticker": best_etf['ticker'], "Name": best_etf['name'],
+                "Score": round(best_etf['score'], 3),
+                "Hyb_Value": round(best_etf['hybrid_value'], 2),
+                "Hyb_Growth": round(best_etf['hybrid_growth'], 2),
+                "Hyb_Div": round(best_etf['hybrid_dividend'], 2)
             })
+            
+        return pd.DataFrame(allocations)
 
-    print("\n========================================================")
-    print("🎯 [최근 5일 최종 익스포저 통제 결과 (JSON)]")
-    print("========================================================")
-    for res in results[-5:]:
-        print(json.dumps(res, indent=2))
+# ==========================================
+# 3. 실전 시스템 통합 가동
+# ==========================================
+class AdvancedMacroEngine:
+    def get_optimal_weights(self) -> dict:
+        # 가치주, 배당주, 성장주가 서로를 침범하지 않고 독립적으로 잘 뽑히는지 검증
+        return {
+            "us_value": 0.40,   
+            "us_dividend": 0.30, 
+            "us_growth": 0.30
+        }
 
 if __name__ == "__main__":
-    main()
+    print("\n" + "="*120)
+    print(" 🧠 [ETF Operating System] V16. The Calibrated Optimizer (Tanh + Region Filter)")
+    print("="*120)
+    
+    macro_engine = AdvancedMacroEngine()
+    live_weights = macro_engine.get_optimal_weights()
+    logging.info(f"📊 [Macro Engine] 수신된 매크로 타겟 비중: {live_weights}")
+    
+    engine = InstitutionalQuantEngine(struct_weight=0.4) 
+    pf = engine.run_account_allocation(account_type="NORMAL", macro_weights=live_weights)
+    
+    print("\n✅ 최종 라우팅 리포트 (스케일 정규화 및 Threshold 패널티 적용)")
+    print("-" * 120)
+    if not pf.empty: print(pf.to_string(index=False))
+    print("\n" + "="*120 + "\n")
