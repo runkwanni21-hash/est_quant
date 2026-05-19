@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import logging
 from datetime import datetime, timedelta
-import FinanceDataReader as fdr
+import yfinance as yf  # 🌟 FDR 대체
 import statsmodels.api as sm
 from sklearn.linear_model import Ridge
 from sklearn.metrics.pairwise import cosine_similarity
@@ -37,7 +37,7 @@ class MacroTaxonomyAdapter:
         t = self.base_vector.copy()
         macro = macro_asset_name.lower()
         
-        # 🌟 [튜닝 3] Region을 추가하여 1차 필터링을 좁히고 엉뚱한 자산군 침범 방지
+        # Region 추가로 1차 필터링 좁힘
         if macro == "us_growth":
             t.update({"hybrid_us_equity": 1.0, "hybrid_growth": 0.9, "hybrid_momentum": 0.6, "hybrid_usd": 1.0})
             return {"asset_class": "equity", "region": "US", "target_vector": t}
@@ -88,8 +88,7 @@ class InstitutionalQuantEngine:
         conn.close()
         if df.empty: return df
 
-        # 🌟 [튜닝 1] 단위계 통일: Beta 값을 np.tanh()로 -1 ~ 1 사이로 압축 (정규화)
-        # alpha=1.5를 곱해 반응성을 약간 키운 상태로 tanh 통과
+        # 단위계 통일: Beta 값을 np.tanh()로 압축 정규화 (-1.0 ~ 1.0)
         stat_cols = ['dyn_growth', 'dyn_value', 'dyn_div', 'dyn_dur', 'dyn_kor', 'dyn_us', 'dyn_usd', 'dyn_gold']
         for col in stat_cols:
             df[col] = np.tanh(df[col] * 1.5)
@@ -98,7 +97,7 @@ class InstitutionalQuantEngine:
         w_st = np.where(has_stat, self.w_struct, 1.0)
         w_dy = np.where(has_stat, self.w_stat, 0.0)
 
-        # 안전하게 정규화된 데이터로 하이브리드 벡터 병합
+        # 하이브리드 벡터 병합
         df['hybrid_growth'] = (df['st_growth'] * w_st) + (df['dyn_growth'] * w_dy)
         df['hybrid_value'] = (df['st_value'] * w_st) + (df['dyn_value'] * w_dy)
         df['hybrid_dividend'] = (df['st_div'] * w_st) + (df['dyn_div'] * w_dy)
@@ -108,7 +107,7 @@ class InstitutionalQuantEngine:
         df['hybrid_usd'] = (df['st_usd'] * w_st) + (df['dyn_usd'] * w_dy)
         df['hybrid_gold'] = (df['st_gold'] * w_st) + (df['dyn_gold'] * w_dy)
         
-        # 회귀분석 프록시가 없는 차원은 원본 구조 벡터 그대로 유지
+        # 회귀 프록시 없는 차원 보존
         df['hybrid_size'] = df['size']
         df['hybrid_quality'] = df['quality']
         df['hybrid_momentum'] = df['momentum']
@@ -121,6 +120,74 @@ class InstitutionalQuantEngine:
         # 유동성 백분위수 (0~1.0)
         df['liq_percentile'] = rankdata(df['execution_score_log']) / len(df)
         return df
+
+    def _load_benchmarks(self) -> pd.DataFrame:
+        logging.info("🌐 [yfinance] 9-Factor Benchmark Matrix 주간 데이터 로드 중...")
+        # 🌟 yfinance용 벤치마크 심볼 (원달러 환율 KRW=X 반영)
+        self.benchmarks = {
+            "MKT": "SPY", "GROWTH": "QQQ", "VALUE": "VTV", "DIV": "SCHD", 
+            "SIZE": "IWM", "DUR": "TLT", "GOLD": "GLD", "KOR": "EWY", "USD": "KRW=X"
+        }
+        end_date = datetime.today()
+        start_date = end_date - timedelta(days=365)
+        
+        start_str = start_date.strftime("%Y-%m-%d")
+        end_str = end_date.strftime("%Y-%m-%d")
+        
+        df_list = []
+        for name, ticker in self.benchmarks.items():
+            try:
+                # 🌟 yf.Ticker().history() 방식으로 안정적인 단일 종목 데이터 추출
+                hist = yf.Ticker(ticker).history(start=start_str, end=end_str)
+                if not hist.empty and 'Close' in hist.columns:
+                    df = hist[['Close']].rename(columns={'Close': name})
+                    df_weekly = df.resample('W-FRI').last()
+                    df_list.append(df_weekly.pct_change(fill_method=None).dropna()) 
+            except Exception as e:
+                logging.error(f"벤치마크 {name}({ticker}) 로드 실패: {e}")
+                
+        if not df_list: raise ValueError("벤치마크 데이터를 하나도 불러오지 못했습니다.")
+        return pd.concat(df_list, axis=1).dropna()
+
+    def calculate_ridge_betas(self, ticker: str) -> dict:
+        end_date = datetime.today()
+        start_date = end_date - timedelta(days=365)
+        start_str = start_date.strftime("%Y-%m-%d")
+        end_str = end_date.strftime("%Y-%m-%d")
+        
+        default_betas = {k: 0.0 for k in self.benchmarks.keys()}
+        default_betas["R2"] = 0.0
+        
+        try:
+            # 🌟 한국 ETF 조회를 위해 yfinance 표준인 .KS 접미사 사용
+            symbol = f"{ticker}.KS"
+            hist = yf.Ticker(symbol).history(start=start_str, end=end_str)
+            
+            # 실패 시 접미사 없이 재시도 (미국 ETF 등의 경우 대비)
+            if hist.empty: 
+                hist = yf.Ticker(ticker).history(start=start_str, end=end_str)
+                
+            if hist.empty or 'Close' not in hist.columns: 
+                return default_betas
+            
+            etf_weekly = hist[['Close']].resample('W-FRI').last()
+            etf_returns = etf_weekly.pct_change(fill_method=None).dropna().rename(columns={'Close': 'ETF'})
+            
+            merged = pd.concat([etf_returns, self.benchmark_returns], axis=1).dropna()
+            if len(merged) < 20: return default_betas 
+                
+            y = merged['ETF']
+            X = merged[list(self.benchmarks.keys())]
+            
+            ridge = Ridge(alpha=0.5, fit_intercept=True)
+            ridge.fit(X, y)
+            
+            result = {factor: round(coef, 3) for factor, coef in zip(X.columns, ridge.coef_)}
+            result["R2"] = round(ridge.score(X, y), 3) 
+            return result
+            
+        except Exception:
+            return default_betas
 
     def _calculate_exposure_distance(self, target_vector: dict, candidate_row: pd.Series) -> float:
         keys = list(target_vector.keys())
@@ -135,7 +202,7 @@ class InstitutionalQuantEngine:
         return (cos_sim * 0.7) + (mag_score * 0.3)
 
     def run_account_allocation(self, account_type: str, macro_weights: dict) -> pd.DataFrame:
-        logging.info(f"🎯 [{account_type}] V16 Calibrated Optimizer 할당 시작...")
+        logging.info(f"🎯 [{account_type}] V16 Calibrated Optimizer 할당 시작 (yfinance Data Feed)")
         
         universe = self.get_tradable_universe(account_type=account_type)
         if universe.empty: return pd.DataFrame()
@@ -148,7 +215,6 @@ class InstitutionalQuantEngine:
             
             target_v = translated['target_vector']
             
-            # 🌟 [튜닝 3 적용] Region + Asset Class 로 더욱 정교한 1차 필터링
             candidates = universe[
                 (universe['asset_class'] == translated['asset_class']) & 
                 (universe['region'] == translated['region'])
@@ -165,13 +231,12 @@ class InstitutionalQuantEngine:
                 liq_score = row['liq_percentile']
                 tax_score = 1.0 if "tax_free" in row['tax_treatment'] else 0.8
                 
-                # 3. 🌟 [튜닝 2] Threshold 기반 현실적인 Overlap Penalty (85% 이상만 강한 타격)
+                # 3. Threshold 기반 현실적인 Overlap Penalty (85% 이상만 강한 타격)
                 overlap_penalty = 0.0
                 if selected_vectors:
                     c_arr = np.array([row[k] for k in target_v.keys()]).reshape(1, -1)
                     centroid = np.mean(np.array(selected_vectors), axis=0).reshape(1, -1)
                     overlap = cosine_similarity(c_arr, centroid)[0][0]
-                    # 85% 이상 겹치면 초과분만큼 50%의 가중치로 깎아버림
                     overlap_penalty = max(0, overlap - 0.85) * 0.5 
                 
                 scores.append((sim_score * 0.5) + (liq_score * 0.3) + (tax_score * 0.2) - overlap_penalty)
@@ -199,7 +264,6 @@ class InstitutionalQuantEngine:
 # ==========================================
 class AdvancedMacroEngine:
     def get_optimal_weights(self) -> dict:
-        # 가치주, 배당주, 성장주가 서로를 침범하지 않고 독립적으로 잘 뽑히는지 검증
         return {
             "us_value": 0.40,   
             "us_dividend": 0.30, 
@@ -208,7 +272,7 @@ class AdvancedMacroEngine:
 
 if __name__ == "__main__":
     print("\n" + "="*120)
-    print(" 🧠 [ETF Operating System] V16. The Calibrated Optimizer (Tanh + Region Filter)")
+    print(" 🧠 [ETF Operating System] V16. The Calibrated Optimizer (yfinance Data Feed)")
     print("="*120)
     
     macro_engine = AdvancedMacroEngine()
@@ -218,7 +282,7 @@ if __name__ == "__main__":
     engine = InstitutionalQuantEngine(struct_weight=0.4) 
     pf = engine.run_account_allocation(account_type="NORMAL", macro_weights=live_weights)
     
-    print("\n✅ 최종 라우팅 리포트 (스케일 정규화 및 Threshold 패널티 적용)")
+    print("\n✅ 최종 라우팅 리포트 (yfinance 기반 스케일 정규화 및 Threshold 패널티 적용)")
     print("-" * 120)
     if not pf.empty: print(pf.to_string(index=False))
     print("\n" + "="*120 + "\n")
