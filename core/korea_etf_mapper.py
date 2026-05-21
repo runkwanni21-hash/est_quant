@@ -18,6 +18,7 @@ class KoreaETFMapper:
         # 시스템 콜드 스타트(Cold Start) 시 기본 주입될 하드코딩 팩터 뼈대 (향후 Factor Engine에서 대체)
         initial_db = {
             
+            
         }
         self.repository = repository or MemoryETFRepository(initial_data=initial_db)
 

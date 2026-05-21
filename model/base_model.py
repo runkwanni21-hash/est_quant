@@ -72,6 +72,8 @@ class QuantitativeModel(ABC):
             os.makedirs(folder_path)
             
         file_path = os.path.join(folder_path, f"{self.name}.pkg")
+        
+        # [수정] 아래의 dict 덮어쓰기 로직을 삭제하고 객체 전체(self)만 깔끔하게 직렬화합니다.
         joblib.dump(self, file_path)
         print(f"💾 [{self.name}] 모델이 성공적으로 추출되었습니다: {file_path}")
 

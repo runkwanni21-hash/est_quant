@@ -61,3 +61,46 @@ class AdvancedMacroRegimeBuilder(BaseFeatureBuilder):
         out["macro_stress"] = get_continuous_target(future_vix, z_scaler=1.5)
 
         return out
+    
+class LatentStressFeatureBuilder(BaseFeatureBuilder):
+    """
+    PCA 모델을 위한 시장 구조 및 균열(Fragility) 전용 피처 빌더.
+    비지도 학습을 위한 클래스이므로 별도의 타겟(정답지)을 생성하지 않습니다.
+    """
+    
+    def __init__(self) -> None:
+        # 데이터 슬라이싱 시 필요한 최소 윈도우 마진
+        self.max_window: int = 20 
+        
+    def build_features(self, df: pd.DataFrame) -> pd.DataFrame:
+        out: pd.DataFrame = df.copy()
+        
+        # 1. 횡단면 데이터 (Cross-sectional Internals)
+        if "Close_RSP" in out.columns and "Close_SPY" in out.columns:
+            out["breadth_mom"] = (out["Close_RSP"] / out["Close_SPY"]).pct_change(20).ffill().fillna(0.0)
+            
+        if "Close_^VIX" in out.columns and "Close_^VIX3M" in out.columns:
+            out["vix_term"] = (out["Close_^VIX"] / out["Close_^VIX3M"]).ffill().fillna(1.0)
+            
+        if "Close_LQD" in out.columns and "Close_SPY" in out.columns:
+            spy_ret = out["Close_SPY"].pct_change(fill_method=None)
+            lqd_ret = out["Close_LQD"].pct_change(fill_method=None)
+            out["stock_bond_corr"] = spy_ret.rolling(20).corr(lqd_ret).ffill().fillna(0.0)
+            
+        if "Close_LQD" in out.columns and "Close_HYG" in out.columns:
+            out["credit_spread"] = (out["Close_LQD"] / out["Close_HYG"]).pct_change(20).ffill().fillna(0.0)
+
+        # 2. 당일 충격 이벤트 (Shock Triggers)
+        if "Open_SPY" in out.columns and "Close_SPY" in out.columns:
+            out["gap_shock"] = (out["Open_SPY"] / out["Close_SPY"].shift(1)) - 1.0
+            
+        if "Close_^VIX" in out.columns:
+            out["vix_jump"] = out["Close_^VIX"].pct_change(fill_method=None).fillna(0.0)
+
+        # 결측치/무한대 정리 (PCA 알고리즘 에러 방지)
+        out.replace([np.inf, -np.inf], 0.0, inplace=True)
+        return out
+
+    def build_labels(self, df: pd.DataFrame) -> pd.DataFrame:
+        """비지도 학습(PCA)이므로 정답지(Label)를 수정하지 않고 그대로 반환합니다."""
+        return df
