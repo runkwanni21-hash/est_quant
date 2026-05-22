@@ -128,20 +128,21 @@ def fetch_earnings_surprise(symbol: str) -> EarningsSurprise:
     return es
 
 
-def format_earnings_surprise(es: EarningsSurprise) -> str:
+def format_earnings_surprise(es: EarningsSurprise, market: str = "US") -> str:
     """EarningsSurprise → Telegram 출력 문자열."""
     if not es.quarters and not es.note:
         return ""
 
+    is_kr = market.upper() == "KR"
     lines: list[str] = ["📊 분기 EPS 서프라이즈 (최근 4분기):"]
 
     for q in es.quarters[:4]:
         beat_str = "✅" if q.beat is True else ("❌" if q.beat is False else "•")
         parts = [f"  {beat_str} {q.quarter}"]
         if q.eps_actual is not None:
-            parts.append(f"실적 ${q.eps_actual:.2f}")
+            parts.append(f"실적 {q.eps_actual:,.0f}원" if is_kr else f"실적 ${q.eps_actual:.2f}")
         if q.eps_estimate is not None:
-            parts.append(f"예상 ${q.eps_estimate:.2f}")
+            parts.append(f"예상 {q.eps_estimate:,.0f}원" if is_kr else f"예상 ${q.eps_estimate:.2f}")
         if q.surprise_pct is not None:
             sign = "+" if q.surprise_pct >= 0 else ""
             parts.append(f"{sign}{q.surprise_pct:.1f}%")

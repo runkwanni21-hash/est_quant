@@ -996,7 +996,7 @@ def build_stock_snapshot(
                 format_earnings_surprise,
             )
             es = fetch_earnings_surprise(symbol)
-            snap.earnings_surprise_text = format_earnings_surprise(es)
+            snap.earnings_surprise_text = format_earnings_surprise(es, market=snap.market)
             snap._esurp = es  # type: ignore[attr-defined]
         except Exception as exc:
             log.debug("[stock_snapshot] earnings_surprise failed for %s: %s", symbol, exc)
