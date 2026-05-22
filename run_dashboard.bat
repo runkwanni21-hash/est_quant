@@ -1,5 +1,16 @@
 @echo off
 chcp 65001 >NUL 2>&1
+
+if not exist "%~dp0.setup_done" (
+    call "%~dp0setup.bat"
+    if errorlevel 1 (
+        echo.
+        echo  [오류] setup 실패. 위 메시지를 확인하세요.
+        pause
+        exit /b 1
+    )
+)
+
 title Tele Quant Dashboard
 
 echo.
