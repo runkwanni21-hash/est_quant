@@ -1,0 +1,355 @@
+# Clinical Trial Search Aliases — KR biotech / pharma
+# company_names: ClinicalTrials.gov sponsor/lead sponsor 검색어
+# pipeline_terms: 약물명/타겟/적응증 검색어 (각 term을 별도 query로 시도)
+
+"128940.KS":
+  company_names:
+    - Hanmi Pharmaceutical
+    - Hanmi Pharm
+  pipeline_terms:
+    - efpeglenatide
+    - HM15211
+    - HM12525
+    - LAPS
+    - GLP-1
+    - obesity
+    - NASH
+
+"087010.KQ":
+  company_names:
+    - Peptron
+  pipeline_terms:
+    - PT403
+    - PT302
+    - GLP-1
+    - obesity
+
+"196170.KQ":
+  company_names:
+    - Alteogen
+  pipeline_terms:
+    - ALT-B4
+    - ALT-L9
+    - subcutaneous
+    - Eylea biosimilar
+
+"141080.KQ":
+  company_names:
+    - LigaChem Biosciences
+    - LegoChem Biosciences
+  pipeline_terms:
+    - ADC
+    - LCB84
+    - LCB14
+    - antibody drug conjugate
+
+"000100.KS":
+  company_names:
+    - Yuhan
+    - Yuhan Corporation
+  pipeline_terms:
+    - lazertinib
+    - Leclaza
+    - Lazcluze
+    - Rybrevant
+    - amivantamab
+
+"326030.KS":
+  company_names:
+    - OliX Pharmaceuticals
+  pipeline_terms:
+    - RNAi
+    - OLX10010
+    - hypertrophic scar
+
+"145020.KQ":
+  company_names:
+    - Hugel
+  pipeline_terms:
+    - botulinum toxin
+    - letibotulinumtoxinA
+
+"214450.KQ":
+  company_names:
+    - HLB
+    - HLB Life Science
+  pipeline_terms:
+    - rivoceranib
+    - apatinib
+    - hepatocellular carcinoma
+    - gastric cancer
+
+"068270.KS":
+  company_names:
+    - Celltrion
+  pipeline_terms:
+    - CT-P13
+    - infliximab biosimilar
+    - CT-P17
+    - adalimumab biosimilar
+
+"207940.KS":
+  company_names:
+    - Samsung Biologics
+    - Samsung BioLogics
+  pipeline_terms:
+    - CDMO
+    - biologic
+
+"302440.KS":
+  company_names:
+    - SK Biopharmaceuticals
+    - SK Bioscience
+  pipeline_terms:
+    - cenobamate
+    - Xcopri
+    - epilepsy
+
+MRNA:
+  company_names:
+    - Moderna
+  pipeline_terms:
+    - mRNA
+    - mRNA-1273
+    - cancer vaccine
+    - personalized cancer vaccine
+    - RSV vaccine
+
+REGN:
+  company_names:
+    - Regeneron
+  pipeline_terms:
+    - dupilumab
+    - Dupixent
+    - EYLEA
+    - aflibercept
+
+VRTX:
+  company_names:
+    - Vertex Pharmaceuticals
+  pipeline_terms:
+    - trikafta
+    - cystic fibrosis
+    - suzetrigine
+    - pain
+
+GILD:
+  company_names:
+    - Gilead Sciences
+  pipeline_terms:
+    - lenacapavir
+    - HIV
+    - hepatocellular carcinoma
+
+# ── 추가 KR 바이오 ───────────────────────────────────────────────────────────
+
+"011070.KS":
+  company_names:
+    - LG Chem
+    - LG화학
+  pipeline_terms:
+    - orfoglipron
+    - GLP-1
+    - obesity
+    - NASH
+
+"086900.KQ":
+  company_names:
+    - Medytox
+  pipeline_terms:
+    - MT10109L
+    - botulinum toxin
+    - neurotoxin
+
+"000020.KS":
+  company_names:
+    - Dong-A ST
+    - Dong-A Socio
+  pipeline_terms:
+    - DA-1229
+    - evogliptin
+    - diabetes
+
+"040170.KQ":
+  company_names:
+    - STC Life Sciences
+    - STC생명과학
+  pipeline_terms:
+    - PCRV
+    - cancer
+
+"180640.KS":
+  company_names:
+    - HanAll Biopharma
+    - 한올바이오파마
+  pipeline_terms:
+    - batoclimab
+    - HL161
+    - FcRn
+    - myasthenia gravis
+
+"357780.KQ":
+  company_names:
+    - Sievert Therapeutics
+    - 시오스
+  pipeline_terms:
+    - SCV-07
+
+"060230.KQ":
+  company_names:
+    - IQVIA Korea
+    - OliX
+
+"031440.KS":
+  company_names:
+    - APGEN
+    - 아이큐어
+  pipeline_terms:
+    - transdermal patch
+
+"237690.KQ":
+  company_names:
+    - STCube Pharmaceuticals
+    - STC큐브
+  pipeline_terms:
+    - B7-H4
+    - ADC
+
+"950200.KQ":
+  company_names:
+    - Hugel
+    - 휴젤
+
+"016800.KS":
+  company_names:
+    - Ildong Pharmaceutical
+    - 일동제약
+  pipeline_terms:
+    - GLP-1
+    - obesity
+
+"237880.KS":
+  company_names:
+    - Ildong Holdings
+
+# ── 추가 US 바이오파마 ───────────────────────────────────────────────────────
+
+BNTX:
+  company_names:
+    - BioNTech
+  pipeline_terms:
+    - mRNA cancer vaccine
+    - BNT323
+    - BNT111
+    - melanoma
+    - ADC
+
+LLY:
+  company_names:
+    - Eli Lilly
+    - Lilly
+  pipeline_terms:
+    - tirzepatide
+    - Mounjaro
+    - Zepbound
+    - donanemab
+    - Alzheimer
+    - GLP-1
+    - obesity
+    - diabetes
+
+NVO:
+  company_names:
+    - Novo Nordisk
+  pipeline_terms:
+    - semaglutide
+    - Ozempic
+    - Wegovy
+    - GLP-1
+    - obesity
+    - CagriSema
+    - amycretin
+
+VKTX:
+  company_names:
+    - Viking Therapeutics
+  pipeline_terms:
+    - VK2735
+    - GLP-1 GIP
+    - obesity
+    - NASH
+
+AZN:
+  company_names:
+    - AstraZeneca
+  pipeline_terms:
+    - osimertinib
+    - Tagrisso
+    - datopotamab deruxtecan
+    - Enhertu
+    - ADC
+
+BMY:
+  company_names:
+    - Bristol-Myers Squibb
+    - BMS
+  pipeline_terms:
+    - nivolumab
+    - Opdivo
+    - ipilimumab
+    - Yervoy
+    - milvexian
+    - KarXT
+
+ABBV:
+  company_names:
+    - AbbVie
+  pipeline_terms:
+    - upadacitinib
+    - Rinvoq
+    - lemborexant
+    - navitoclax
+    - emraclidine
+
+MRNA:
+  company_names:
+    - Moderna
+  pipeline_terms:
+    - mRNA
+    - mRNA-1273
+    - cancer vaccine
+    - personalized cancer vaccine
+    - RSV vaccine
+    - mRNA-4157
+
+REGN:
+  company_names:
+    - Regeneron
+  pipeline_terms:
+    - dupilumab
+    - Dupixent
+    - EYLEA
+    - aflibercept
+    - odronextamab
+    - linvoseltamab
+
+"011000.KS":
+  company_names:
+    - Shin Poong Pharmaceutical
+    - 신풍제약
+  pipeline_terms:
+    - pyramax
+    - malaria
+
+"002390.KS":
+  company_names:
+    - Dongsung Biopharmaceuticals
+    - 동성제약
+
+"047080.KQ":
+  company_names:
+    - ESTera
+    - 에스디바이오센서
+  pipeline_terms:
+    - diagnostics
+    - rapid test

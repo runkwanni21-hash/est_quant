@@ -1,0 +1,872 @@
+sector_relation_seeds:
+  sector_id: telecom_network_smartphone_equipment
+  sector_name: 통신 / 네트워크 / 스마트폰 / 통신장비
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  price_note: US non-null source_3m_move_pct values are verified from StockAnalysis 2026-03-06~2026-05-15 proxy, not exact
+    2026-02-17~2026-05-17; Korean small/mid-cap price values are null where not independently verified.
+  edges:
+  - source_symbol: LITE
+    source_name: Lumentum
+    source_market: US
+    source_reason: AI optical networking, Nvidia photonics investment, Nasdaq-100 inclusion/news
+    source_3m_move_pct: 73.8
+    target_symbol: COHR
+    target_name: Coherent
+    target_market: NYSE
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 광트랜시버/포토닉스 직접 피어. Nvidia가 양사에 동일한 투자·구매 약속을 제시해 read-through가 명확.
+    evidence:
+    - title: Reuters, Nvidia to invest $2B each in Lumentum and Coherent
+      url: https://www.reuters.com/technology/nvidia-invest-2-billion-photonic-product-maker-lumentum-2026-03-02/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: LITE
+    source_name: Lumentum
+    source_market: US
+    source_reason: AI optical networking, Nvidia photonics investment, Nasdaq-100 inclusion/news
+    source_3m_move_pct: 73.8
+    target_symbol: CIEN
+    target_name: Ciena
+    target_market: NYSE
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: AI 데이터센터 광연결 수요가 광전송 시스템 업체의 백로그 기대를 키울 수 있음.
+    evidence:
+    - title: Barron's, Lumentum AI optical networking rally/Nasdaq-100 inclusion
+      url: https://www.barrons.com/articles/lumentum-stock-ai-optical-networking-rally-5e4e597d
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: LITE
+    source_name: Lumentum
+    source_market: US
+    source_reason: AI optical networking, Nvidia photonics investment, Nasdaq-100 inclusion/news
+    source_3m_move_pct: 73.8
+    target_symbol: ANET
+    target_name: Arista Networks
+    target_market: NYSE
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AI 스위치 수요는 긍정이나, 광부품 부족/가격 상승은 스위치 OEM의 마진·납기 부담으로 후행 가능.
+    evidence:
+    - title: Barron's, Arista earnings selloff on optics/supply shortages
+      url: https://www.barrons.com/articles/arista-networks-earnings-stock-price-04ad6ebc
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: LITE
+    source_name: Lumentum
+    source_market: US
+    source_reason: AI optical networking, Nvidia photonics investment, Nasdaq-100 inclusion/news
+    source_3m_move_pct: 73.8
+    target_symbol: CSCO
+    target_name: Cisco
+    target_market: NASDAQ
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Cisco도 AI optics 투자 수혜가 있으나, 광부품 가격 급등 구간에서는 BOM·조달 부담도 동시에 관찰.
+    evidence:
+    - title: Reuters, Cisco shares hit record on strong forecast and AI push
+      url: https://www.reuters.com/business/media-telecom/cisco-jumps-strong-revenue-forecast-ai-push-with-job-cuts-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: COHR
+    source_name: Coherent
+    source_market: US
+    source_reason: AI photonics/laser demand, Nvidia investment, optical-transceiver peer rally
+    source_3m_move_pct: 62.2
+    target_symbol: LITE
+    target_name: Lumentum
+    target_market: NASDAQ
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 양사는 AI 포토닉스 투자와 광모듈 수요 기대를 공유하는 핵심 피어.
+    evidence:
+    - title: Reuters, Nvidia to invest $2B each in Lumentum and Coherent
+      url: https://www.reuters.com/technology/nvidia-invest-2-billion-photonic-product-maker-lumentum-2026-03-02/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: COHR
+    source_name: Coherent
+    source_market: US
+    source_reason: AI photonics/laser demand, Nvidia investment, optical-transceiver peer rally
+    source_3m_move_pct: 62.2
+    target_symbol: GLW
+    target_name: Corning
+    target_market: NYSE
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 광소자 강세는 데이터센터 내 광섬유·커넥티비티 증설 기대와 같은 방향으로 해석될 수 있음.
+    evidence:
+    - title: Reuters, Meta-Corning up to $6B fiber-optic cables deal
+      url: https://www.reuters.com/business/meta-signs-deal-pay-corning-up-6-billion-fiber-optic-cables-cnbc-reports-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: COHR
+    source_name: Coherent
+    source_market: US
+    source_reason: AI photonics/laser demand, Nvidia investment, optical-transceiver peer rally
+    source_3m_move_pct: 62.2
+    target_symbol: ANET
+    target_name: Arista Networks
+    target_market: NYSE
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 광부품 공급 타이트가 지속되면 고속 스위치 출하·마진에 비용 압박 리스크.
+    evidence:
+    - title: Barron's, Arista earnings selloff on optics/supply shortages
+      url: https://www.barrons.com/articles/arista-networks-earnings-stock-price-04ad6ebc
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: COHR
+    source_name: Coherent
+    source_market: US
+    source_reason: AI photonics/laser demand, Nvidia investment, optical-transceiver peer rally
+    source_3m_move_pct: 62.2
+    target_symbol: CIEN
+    target_name: Ciena
+    target_market: NYSE
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Ciena는 광전송 수요 수혜와 동시에 부품 조달 비용 부담을 받을 수 있어 양면성 존재.
+    evidence:
+    - title: Barron's, Lumentum AI optical networking rally/Nasdaq-100 inclusion
+      url: https://www.barrons.com/articles/lumentum-stock-ai-optical-networking-rally-5e4e597d
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GLW
+    source_name: Corning
+    source_market: US
+    source_reason: Meta $6B fiber deal, Nvidia/AI optical capacity read-through, fiber shortage
+    source_3m_move_pct: 55.6
+    target_symbol: CIEN
+    target_name: Ciena
+    target_market: NYSE
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: Meta/AI 데이터센터용 광섬유·커넥티비티 증설은 광전송 장비 수요 기대를 자극.
+    evidence:
+    - title: Reuters, Meta-Corning up to $6B fiber-optic cables deal
+      url: https://www.reuters.com/business/meta-signs-deal-pay-corning-up-6-billion-fiber-optic-cables-cnbc-reports-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GLW
+    source_name: Corning
+    source_market: US
+    source_reason: Meta $6B fiber deal, Nvidia/AI optical capacity read-through, fiber shortage
+    source_3m_move_pct: 55.6
+    target_symbol: LITE
+    target_name: Lumentum
+    target_market: NASDAQ
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 광섬유 부족·대형 고객 계약은 광모듈/레이저 업체까지 AI optical basket 매수로 확산 가능.
+    evidence:
+    - title: Barron's, Corning-Nvidia optical manufacturing capacity partnership
+      url: https://www.barrons.com/articles/corning-stock-nvidia-partnership-ai-optical-fiber
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GLW
+    source_name: Corning
+    source_market: US
+    source_reason: Meta $6B fiber deal, Nvidia/AI optical capacity read-through, fiber shortage
+    source_3m_move_pct: 55.6
+    target_symbol: VZ
+    target_name: Verizon
+    target_market: NYSE
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 광섬유 가격·리드타임 상승은 통신사 네트워크 투자비 부담으로 연결될 수 있음.
+    evidence:
+    - title: Reuters, Meta-Corning up to $6B fiber-optic cables deal
+      url: https://www.reuters.com/business/meta-signs-deal-pay-corning-up-6-billion-fiber-optic-cables-cnbc-reports-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GLW
+    source_name: Corning
+    source_market: US
+    source_reason: Meta $6B fiber deal, Nvidia/AI optical capacity read-through, fiber shortage
+    source_3m_move_pct: 55.6
+    target_symbol: T
+    target_name: AT&T
+    target_market: NYSE
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 통신망 증설 고객 입장에서는 fiber capex 상승이 비용 압박 리스크.
+    evidence:
+    - title: Reuters, Meta-Corning up to $6B fiber-optic cables deal
+      url: https://www.reuters.com/business/meta-signs-deal-pay-corning-up-6-billion-fiber-optic-cables-cnbc-reports-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CIEN
+    source_name: Ciena
+    source_market: US
+    source_reason: optical networking/AI data-center transport read-through
+    source_3m_move_pct: 88.5
+    target_symbol: LITE
+    target_name: Lumentum
+    target_market: NASDAQ
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 광전송 장비 수요 확대는 광모듈·레이저 공급망 수요로 후행 확산 가능.
+    evidence:
+    - title: Barron's, Lumentum AI optical networking rally/Nasdaq-100 inclusion
+      url: https://www.barrons.com/articles/lumentum-stock-ai-optical-networking-rally-5e4e597d
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CIEN
+    source_name: Ciena
+    source_market: US
+    source_reason: optical networking/AI data-center transport read-through
+    source_3m_move_pct: 88.5
+    target_symbol: GLW
+    target_name: Corning
+    target_market: NYSE
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 광전송 백본/데이터센터 연결 확대는 fiber·connectivity 수요와 같은 방향.
+    evidence:
+    - title: Reuters, Meta-Corning up to $6B fiber-optic cables deal
+      url: https://www.reuters.com/business/meta-signs-deal-pay-corning-up-6-billion-fiber-optic-cables-cnbc-reports-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CIEN
+    source_name: Ciena
+    source_market: US
+    source_reason: optical networking/AI data-center transport read-through
+    source_3m_move_pct: 88.5
+    target_symbol: NOK
+    target_name: Nokia
+    target_market: NYSE
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 광전송 경쟁 구도에서 Ciena 점유율 기대가 커지면 경쟁사에는 상대 모멘텀 부담.
+    evidence:
+    - title: Barron's, Lumentum AI optical networking rally/Nasdaq-100 inclusion
+      url: https://www.barrons.com/articles/lumentum-stock-ai-optical-networking-rally-5e4e597d
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CIEN
+    source_name: Ciena
+    source_market: US
+    source_reason: optical networking/AI data-center transport read-through
+    source_3m_move_pct: 88.5
+    target_symbol: CSCO
+    target_name: Cisco
+    target_market: NASDAQ
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Cisco도 optical 제품을 보유하므로 Ciena 단독 강세는 일부 경쟁 압박으로 해석 가능.
+    evidence:
+    - title: Reuters, Cisco shares hit record on strong forecast and AI push
+      url: https://www.reuters.com/business/media-telecom/cisco-jumps-strong-revenue-forecast-ai-push-with-job-cuts-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CSCO
+    source_name: Cisco
+    source_market: US
+    source_reason: AI infrastructure orders/guidance raise, AI switching/optics investment
+    source_3m_move_pct: 50.3
+    target_symbol: LITE
+    target_name: Lumentum
+    target_market: NASDAQ
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: Cisco가 AI 인프라 주문·optics 투자를 확대하면 광부품 공급망 수요로 후행 관찰.
+    evidence:
+    - title: Reuters, Cisco shares hit record on strong forecast and AI push
+      url: https://www.reuters.com/business/media-telecom/cisco-jumps-strong-revenue-forecast-ai-push-with-job-cuts-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CSCO
+    source_name: Cisco
+    source_market: US
+    source_reason: AI infrastructure orders/guidance raise, AI switching/optics investment
+    source_3m_move_pct: 50.3
+    target_symbol: ANET
+    target_name: Arista Networks
+    target_market: NYSE
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AI switching capex가 업종 전체 수요로 인식될 때 Arista가 동반 피어 모멘텀.
+    evidence:
+    - title: Reuters, Cisco shares hit record on strong forecast and AI push
+      url: https://www.reuters.com/business/media-telecom/cisco-jumps-strong-revenue-forecast-ai-push-with-job-cuts-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CSCO
+    source_name: Cisco
+    source_market: US
+    source_reason: AI infrastructure orders/guidance raise, AI switching/optics investment
+    source_3m_move_pct: 50.3
+    target_symbol: HPE
+    target_name: Hewlett Packard Enterprise
+    target_market: NYSE
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: Cisco가 hyperscaler AI 네트워킹 주문을 선점한다는 해석은 경쟁 네트워크 벤더에 부담.
+    evidence:
+    - title: Reuters, Cisco shares hit record on strong forecast and AI push
+      url: https://www.reuters.com/business/media-telecom/cisco-jumps-strong-revenue-forecast-ai-push-with-job-cuts-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CSCO
+    source_name: Cisco
+    source_market: US
+    source_reason: AI infrastructure orders/guidance raise, AI switching/optics investment
+    source_3m_move_pct: 50.3
+    target_symbol: JNPR
+    target_name: Juniper Networks
+    target_market: NYSE
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 엔터프라이즈/DC 네트워킹 점유율 기대가 Cisco로 쏠릴 경우 경쟁사 상대 모멘텀 약화 가능.
+    evidence:
+    - title: Reuters, Cisco shares hit record on strong forecast and AI push
+      url: https://www.reuters.com/business/media-telecom/cisco-jumps-strong-revenue-forecast-ai-push-with-job-cuts-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: AAPL
+    source_name: Apple
+    source_market: US
+    source_reason: iPhone 17/MacBook Neo demand beat, China demand, memory-cost warning
+    source_3m_move_pct: 16.6
+    target_symbol: 011070.KS
+    target_name: LG Innotek
+    target_market: KOSPI
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: iPhone demand 강세는 iPhone 카메라 모듈 매출 의존도가 큰 한국 부품주 후행 관찰 포인트.
+    evidence:
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    - title: 'LG Innotek company profile: iPhone camera module revenue'
+      url: https://en.wikipedia.org/wiki/LG_Innotek
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: AAPL
+    source_name: Apple
+    source_market: US
+    source_reason: iPhone 17/MacBook Neo demand beat, China demand, memory-cost warning
+    source_3m_move_pct: 16.6
+    target_symbol: 034220.KS
+    target_name: LG Display
+    target_market: KOSPI
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: OLED iPhone 비중 확대·프리미엄 모델 강세는 OLED 패널 공급망 수혜 가능성.
+    evidence:
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    - title: Reuters, LG Display $745M OLED infrastructure investment
+      url: https://www.reuters.com/world/asia-pacific/lg-display-invest-745-mln-oled-display-infrastructure-2026-04-22/
+    - title: Reuters Apple OLED shift
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: AAPL
+    source_name: Apple
+    source_market: US
+    source_reason: iPhone 17/MacBook Neo demand beat, China demand, memory-cost warning
+    source_3m_move_pct: 16.6
+    target_symbol: 005930.KS
+    target_name: Samsung Electronics
+    target_market: KOSPI
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: iPhone 17/China 수요 강세는 Galaxy 프리미엄 스마트폰 사이클에는 수요 전환 리스크.
+    evidence:
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: AAPL
+    source_name: Apple
+    source_market: US
+    source_reason: iPhone 17/MacBook Neo demand beat, China demand, memory-cost warning
+    source_3m_move_pct: 16.6
+    target_symbol: QCOM
+    target_name: Qualcomm
+    target_market: NASDAQ
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Apple 강세가 premium smartphone mix를 자체 칩 생태계로 이동시키면 Android/Snapdragon 기대에는 부담 가능.
+    evidence:
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    - title: Business Insider, Qualcomm stock jumps on hyperscaler custom chip deal
+      url: https://www.businessinsider.com/qualcomm-earnings-qcom-stock-chip-deal-hyperscaler-ai-datacenter-2026-4
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: QCOM
+    source_name: Qualcomm
+    source_market: US
+    source_reason: custom silicon hyperscaler deal + China smartphone-chip bottoming
+    source_3m_move_pct: 48.5
+    target_symbol: 005930.KS
+    target_name: Samsung Electronics
+    target_market: KOSPI
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Snapdragon/Android premium cycle과 Galaxy 플래그십 수요는 한국 스마트폰 밸류체인에 후행 관찰.
+    evidence:
+    - title: Business Insider, Qualcomm stock jumps on hyperscaler custom chip deal
+      url: https://www.businessinsider.com/qualcomm-earnings-qcom-stock-chip-deal-hyperscaler-ai-datacenter-2026-4
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: QCOM
+    source_name: Qualcomm
+    source_market: US
+    source_reason: custom silicon hyperscaler deal + China smartphone-chip bottoming
+    source_3m_move_pct: 48.5
+    target_symbol: 009150.KS
+    target_name: Samsung Electro-Mechanics
+    target_market: KOSPI
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 프리미엄 스마트폰 회복은 MLCC·카메라·기판 수요 기대로 확산될 수 있으나 직접 가격 검증 부족.
+    evidence:
+    - title: Business Insider, Qualcomm stock jumps on hyperscaler custom chip deal
+      url: https://www.businessinsider.com/qualcomm-earnings-qcom-stock-chip-deal-hyperscaler-ai-datacenter-2026-4
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: QCOM
+    source_name: Qualcomm
+    source_market: US
+    source_reason: custom silicon hyperscaler deal + China smartphone-chip bottoming
+    source_3m_move_pct: 48.5
+    target_symbol: AAPL
+    target_name: Apple
+    target_market: NASDAQ
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: Qualcomm의 AI/custom silicon narrative가 강해지면 Apple AI 경쟁력 우려와 상대 모멘텀 부담 가능.
+    evidence:
+    - title: Business Insider, Qualcomm stock jumps on hyperscaler custom chip deal
+      url: https://www.businessinsider.com/qualcomm-earnings-qcom-stock-chip-deal-hyperscaler-ai-datacenter-2026-4
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: QCOM
+    source_name: Qualcomm
+    source_market: US
+    source_reason: custom silicon hyperscaler deal + China smartphone-chip bottoming
+    source_3m_move_pct: 48.5
+    target_symbol: SWKS
+    target_name: Skyworks Solutions
+    target_market: NASDAQ
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Qualcomm RFFE/모뎀 통합 경쟁력이 부각되면 독립 RF 부품사의 경쟁 심화 리스크.
+    evidence:
+    - title: Business Insider, Qualcomm stock jumps on hyperscaler custom chip deal
+      url: https://www.businessinsider.com/qualcomm-earnings-qcom-stock-chip-deal-hyperscaler-ai-datacenter-2026-4
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 005930.KS
+    source_name: Samsung Electronics
+    source_market: KR
+    source_reason: AI memory/commodity DRAM price surge, HBM4 Nvidia shipping, Galaxy/mobile cost pressure, strike volatility
+    source_3m_move_pct: null
+    target_symbol: 009150.KS
+    target_name: Samsung Electro-Mechanics
+    target_market: KOSPI
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Galaxy·AI hardware cycle이 살아나면 MLCC·기판·카메라/네트워크 모듈 수요 기대가 후행.
+    evidence:
+    - title: Reuters, Samsung Q1 profit/AI memory demand
+      url: https://www.reuters.com/sustainability/sustainable-finance-reporting/samsung-flags-eight-fold-jump-q1-profit-ai-chip-demand-drives-up-prices-2026-04-06/
+    - title: Reuters Samsung strike risk
+      url: ''
+    - title: Samsung Electro-Mechanics profile
+      url: https://en.wikipedia.org/wiki/Samsung_Electro-Mechanics
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 005930.KS
+    source_name: Samsung Electronics
+    source_market: KR
+    source_reason: AI memory/commodity DRAM price surge, HBM4 Nvidia shipping, Galaxy/mobile cost pressure, strike volatility
+    source_3m_move_pct: null
+    target_symbol: 218410.KQ
+    target_name: RFHIC
+    target_market: KOSDAQ
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Samsung 네트워크/RAN 기대가 붙을 때 GaN RF 부품주로 테마성 후행 가능. 직접 수주 근거는 부족.
+    evidence:
+    - title: Reuters, Samsung Q1 profit/AI memory demand
+      url: https://www.reuters.com/sustainability/sustainable-finance-reporting/samsung-flags-eight-fold-jump-q1-profit-ai-chip-demand-drives-up-prices-2026-04-06/
+    - title: Reuters Samsung strike risk
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 005930.KS
+    source_name: Samsung Electronics
+    source_market: KR
+    source_reason: AI memory/commodity DRAM price surge, HBM4 Nvidia shipping, Galaxy/mobile cost pressure, strike volatility
+    source_3m_move_pct: null
+    target_symbol: 000660.KS
+    target_name: SK Hynix
+    target_market: KOSPI
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Samsung strike/공급 차질 우려가 커질 때 메모리 가격·대체 공급 기대가 SK Hynix로 이동 가능.
+    evidence:
+    - title: Reuters, Samsung strike plan/정부 중재
+      url: https://www.reuters.com/business/world-at-work/samsung-elecs-union-says-samsung-proposed-unconditional-talks-strike-plan-holds-2026-05-15/
+    - title: Reuters SK Hynix AI memory rally
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 005930.KS
+    source_name: Samsung Electronics
+    source_market: KR
+    source_reason: AI memory/commodity DRAM price surge, HBM4 Nvidia shipping, Galaxy/mobile cost pressure, strike volatility
+    source_3m_move_pct: null
+    target_symbol: MU
+    target_name: Micron
+    target_market: NASDAQ
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Samsung 공급 리스크가 글로벌 메모리 peer의 가격·점유율 기대를 자극할 수 있음.
+    evidence:
+    - title: Reuters/Barron's, Samsung strike and memory supply-chain risk
+      url: https://www.reuters.com/business/world-at-work/samsung-elecs-union-says-samsung-proposed-unconditional-talks-strike-plan-holds-2026-05-15/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 011070.KS
+    source_name: LG Innotek
+    source_market: KR
+    source_reason: Apple/iPhone camera module supply-chain read-through
+    source_3m_move_pct: null
+    target_symbol: AAPL
+    target_name: Apple
+    target_market: NASDAQ
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: LG이노텍 강세는 iPhone 카메라 수요/출하 기대 확인 신호로 Apple cycle을 재확인하는 후행 지표.
+    evidence:
+    - title: 'LG Innotek company profile: iPhone camera module revenue'
+      url: https://en.wikipedia.org/wiki/LG_Innotek
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 011070.KS
+    source_name: LG Innotek
+    source_market: KR
+    source_reason: Apple/iPhone camera module supply-chain read-through
+    source_3m_move_pct: null
+    target_symbol: 034220.KS
+    target_name: LG Display
+    target_market: KOSPI
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 동일 Apple supply-chain basket 내 OLED 패널주로 피어 모멘텀 확산 가능.
+    evidence:
+    - title: 'LG Innotek company profile: iPhone camera module revenue'
+      url: https://en.wikipedia.org/wiki/LG_Innotek
+    - title: Reuters, LG Display $745M OLED infrastructure investment
+      url: https://www.reuters.com/world/asia-pacific/lg-display-invest-745-mln-oled-display-infrastructure-2026-04-22/
+    - title: Reuters Apple OLED shift
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 011070.KS
+    source_name: LG Innotek
+    source_market: KR
+    source_reason: Apple/iPhone camera module supply-chain read-through
+    source_3m_move_pct: null
+    target_symbol: 005930.KS
+    target_name: Samsung Electronics
+    target_market: KOSPI
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Apple 부품주 강세가 iPhone 점유율 기대를 반영하면 Galaxy 진영에는 수요 전환 리스크.
+    evidence:
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 011070.KS
+    source_name: LG Innotek
+    source_market: KR
+    source_reason: Apple/iPhone camera module supply-chain read-through
+    source_3m_move_pct: null
+    target_symbol: QCOM
+    target_name: Qualcomm
+    target_market: NASDAQ
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: iPhone 부품주 주도는 Android/Snapdragon 핸드셋 기대와 상대 모멘텀 충돌 가능.
+    evidence:
+    - title: Business Insider, Qualcomm stock jumps on hyperscaler custom chip deal
+      url: https://www.businessinsider.com/qualcomm-earnings-qcom-stock-chip-deal-hyperscaler-ai-datacenter-2026-4
+    - title: Reuters, Apple shares rise as iPhone 17/MacBook Neo drive forecast
+      url: https://www.reuters.com/business/apple-sales-beat-expectations-powered-by-mac-iphone-hits-supply-constraints-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 050890.KQ
+    source_name: SOLiD
+    source_market: KR
+    source_reason: Korea 5G/private-network/indoor DAS·repeater capex beta
+    source_3m_move_pct: null
+    target_symbol: 032500.KQ
+    target_name: KMW
+    target_market: KOSDAQ
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 통신장비 capex basket으로 동일 후행 매수 관찰. 직접 수주 근거는 부족.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 050890.KQ
+    source_name: SOLiD
+    source_market: KR
+    source_reason: Korea 5G/private-network/indoor DAS·repeater capex beta
+    source_3m_move_pct: null
+    target_symbol: 218410.KQ
+    target_name: RFHIC
+    target_market: KOSDAQ
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 5G/사설망 투자 기대가 RU/RF 부품주로 확산될 수 있음.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 050890.KQ
+    source_name: SOLiD
+    source_market: KR
+    source_reason: Korea 5G/private-network/indoor DAS·repeater capex beta
+    source_3m_move_pct: null
+    target_symbol: 030200.KS
+    target_name: KT
+    target_market: KOSPI
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 장비주 강세가 실제 capex 확대를 의미하면 통신사에는 투자비 부담 관찰 포인트.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 050890.KQ
+    source_name: SOLiD
+    source_market: KR
+    source_reason: Korea 5G/private-network/indoor DAS·repeater capex beta
+    source_3m_move_pct: null
+    target_symbol: 032640.KS
+    target_name: LG Uplus
+    target_market: KOSPI
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 5G/네트워크 품질 투자 압력이 커질수록 통신사 비용 압박 리스크.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 218410.KQ
+    source_name: RFHIC
+    source_market: KR
+    source_reason: 5G RF/GaN power-amplifier capex beta
+    source_3m_move_pct: null
+    target_symbol: 032500.KQ
+    target_name: KMW
+    target_market: KOSDAQ
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 기지국/RAN capex 민감주 간 테마성 후행 관찰.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 218410.KQ
+    source_name: RFHIC
+    source_market: KR
+    source_reason: 5G RF/GaN power-amplifier capex beta
+    source_3m_move_pct: null
+    target_symbol: 050890.KQ
+    target_name: SOLiD
+    target_market: KOSDAQ
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: RF 부품 강세가 5G 장비·중계기 업종 전반으로 확산될 수 있음.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 218410.KQ
+    source_name: RFHIC
+    source_market: KR
+    source_reason: 5G RF/GaN power-amplifier capex beta
+    source_3m_move_pct: null
+    target_symbol: 017670.KS
+    target_name: SK Telecom
+    target_market: KOSPI
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 기지국 부품 수요 기대는 통신사 capex·감가상각 부담으로 해석될 수 있음.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 218410.KQ
+    source_name: RFHIC
+    source_market: KR
+    source_reason: 5G RF/GaN power-amplifier capex beta
+    source_3m_move_pct: null
+    target_symbol: 030200.KS
+    target_name: KT
+    target_market: KOSPI
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 무선망 증설 기대가 커지면 KT에도 투자비 부담 리스크.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 032500.KQ
+    source_name: KMW
+    source_market: KR
+    source_reason: 5G antenna/RU telecom capex beta
+    source_3m_move_pct: null
+    target_symbol: 218410.KQ
+    target_name: RFHIC
+    target_market: KOSDAQ
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: RAN/안테나 capex 기대가 GaN RF 부품주로 후행 확산 가능.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 032500.KQ
+    source_name: KMW
+    source_market: KR
+    source_reason: 5G antenna/RU telecom capex beta
+    source_3m_move_pct: null
+    target_symbol: 050890.KQ
+    target_name: SOLiD
+    target_market: KOSDAQ
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 무선망 투자 기대가 중계기·DAS 장비주로 확산될 수 있음.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 032500.KQ
+    source_name: KMW
+    source_market: KR
+    source_reason: 5G antenna/RU telecom capex beta
+    source_3m_move_pct: null
+    target_symbol: 017670.KS
+    target_name: SK Telecom
+    target_market: KOSPI
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 통신장비주 강세가 capex 재개 신호라면 고객사인 통신사는 비용 압박 리스크.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 032500.KQ
+    source_name: KMW
+    source_market: KR
+    source_reason: 5G antenna/RU telecom capex beta
+    source_3m_move_pct: null
+    target_symbol: 032640.KS
+    target_name: LG Uplus
+    target_market: KOSPI
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 5G 품질/커버리지 투자 압력이 LGU+ capex 부담으로 이어질 수 있음.
+    evidence:
+    - title: 'Tom''s Hardware/MSIT: Korea carriers pushed toward AI/network buildout'
+      url: https://www.tomshardware.com/tech-industry/south-koreas-three-major-carriers-introduce-400-kbps-data-for-all
+    - title: Ericsson-LG/DASAN profiles
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트

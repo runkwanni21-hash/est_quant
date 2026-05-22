@@ -1,0 +1,1111 @@
+sector_relation_seeds:
+  sector_id: industrials_machinery_automation_robotics
+  sector_name: 산업재 / 기계 / 자동화 / 로봇 / 공장설비
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  edges:
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 beat, record backlog, AI data-center power generation + construction equipment demand
+    source_3m_move_pct: 16.2
+    target_symbol: URI
+    target_name: United Rentals
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: CAT 강세가 비주거·인프라·데이터센터 공사 장비 수요를 확인하면 렌털 장비 가동률/요율 기대가 동반될 수 있음.
+    evidence:
+    - title: 'Reuters: Caterpillar Q1 profit rises on construction and power equipment demand'
+      url: https://www.reuters.com/business/caterpillars-first-quarter-profit-rises-robust-construction-power-equipment-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 beat, record backlog, AI data-center power generation + construction equipment demand
+    source_3m_move_pct: 16.2
+    target_symbol: 267270.KS
+    target_name: HD Hyundai Construction Equipment
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 글로벌 건설장비 수요 확인 시 한국 건설기계 피어에 후행 반응 관찰 가능.
+    evidence:
+    - title: 'Reuters: Caterpillar Q1 profit rises on construction and power equipment demand'
+      url: https://www.reuters.com/business/caterpillars-first-quarter-profit-rises-robust-construction-power-equipment-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 beat, record backlog, AI data-center power generation + construction equipment demand
+    source_3m_move_pct: 16.2
+    target_symbol: DE
+    target_name: Deere
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: CAT의 건설·전력 CAPEX 모멘텀이 농기계 약세와 대비될 때 장비 섹터 내 상대 수요 전환 리스크.
+    evidence:
+    - title: 'Reuters: Caterpillar Q1 profit rises on construction and power equipment demand'
+      url: https://www.reuters.com/business/caterpillars-first-quarter-profit-rises-robust-construction-power-equipment-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 beat, record backlog, AI data-center power generation + construction equipment demand
+    source_3m_move_pct: 16.2
+    target_symbol: CNH
+    target_name: CNH Industrial
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 건설·전력 중심의 CAT 랠리가 농업장비 피어 대비 상대 강도 차이를 만들 수 있음.
+    evidence:
+    - title: 'Reuters: Caterpillar Q1 profit rises on construction and power equipment demand'
+      url: https://www.reuters.com/business/caterpillars-first-quarter-profit-rises-robust-construction-power-equipment-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 beat, record backlog, AI data-center power generation + construction equipment demand
+    source_3m_move_pct: 16.2
+    target_symbol: DE
+    target_name: Deere
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 대형 산업장비 피어로 장비 사이클 뉴스에 동시 반응하되, 세부 수요처 차이로 강도 차이 관찰.
+    evidence:
+    - title: 'Reuters: Caterpillar Q1 profit rises on construction and power equipment demand'
+      url: https://www.reuters.com/business/caterpillars-first-quarter-profit-rises-robust-construction-power-equipment-2026-04-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: 전력설비/가스터빈/전력망 수주 급증, AI 데이터센터 전력 CAPEX 수혜
+    source_3m_move_pct: 33.1
+    target_symbol: ETN
+    target_name: Eaton
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 데이터센터 전력 인프라 CAPEX가 변압·전력관리 장비 수요로 번질 수 있음.
+    evidence:
+    - title: 'Reuters: GE Vernova lifts annual revenue forecast on data-center demand'
+      url: https://www.reuters.com/business/energy/ge-vernova-lifts-annual-revenue-forecast-data-center-demand-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: 전력설비/가스터빈/전력망 수주 급증, AI 데이터센터 전력 CAPEX 수혜
+    source_3m_move_pct: 33.1
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: AI 데이터센터 전력 수요가 가스터빈·발전·엔진 장비로 확산되는 공통 축.
+    evidence:
+    - title: 'Reuters: GE Vernova lifts annual revenue forecast on data-center demand'
+      url: https://www.reuters.com/business/energy/ge-vernova-lifts-annual-revenue-forecast-data-center-demand-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: 전력설비/가스터빈/전력망 수주 급증, AI 데이터센터 전력 CAPEX 수혜
+    source_3m_move_pct: 33.1
+    target_symbol: ROK
+    target_name: Rockwell Automation
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: AI 전력망 CAPEX로 자금이 집중될 경우 전통 공장자동화 CAPEX 종목은 상대 모멘텀 부담 가능.
+    evidence:
+    - title: 'Reuters: GE Vernova lifts annual revenue forecast on data-center demand'
+      url: https://www.reuters.com/business/energy/ge-vernova-lifts-annual-revenue-forecast-data-center-demand-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: 전력설비/가스터빈/전력망 수주 급증, AI 데이터센터 전력 CAPEX 수혜
+    source_3m_move_pct: 33.1
+    target_symbol: HON
+    target_name: Honeywell
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 전력 인프라 강세가 범용 산업 자동화·건물자동화 대비 자금 쏠림을 만들 수 있음.
+    evidence:
+    - title: 'Reuters: GE Vernova lifts annual revenue forecast on data-center demand'
+      url: https://www.reuters.com/business/energy/ge-vernova-lifts-annual-revenue-forecast-data-center-demand-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: 전력설비/가스터빈/전력망 수주 급증, AI 데이터센터 전력 CAPEX 수혜
+    source_3m_move_pct: 33.1
+    target_symbol: ETN
+    target_name: Eaton
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 전력 인프라·데이터센터 장비 피어로 동시 모멘텀 관찰.
+    evidence:
+    - title: 'Reuters: GE Vernova lifts annual revenue forecast on data-center demand'
+      url: https://www.reuters.com/business/energy/ge-vernova-lifts-annual-revenue-forecast-data-center-demand-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: ROK
+    source_name: Rockwell Automation
+    source_market: US
+    source_reason: FY 가이던스 상향, warehouse automation·data center·semiconductor·energy 수요 개선
+    source_3m_move_pct: 12.5
+    target_symbol: EMR
+    target_name: Emerson Electric
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 공장자동화/제어장비 피어로 Rockwell의 주문 개선은 EMR 수요 기대에 읽힐 수 있음.
+    evidence:
+    - title: 'WSJ: Rockwell Automation raises outlook on higher sales'
+      url: https://www.wsj.com/business/earnings/rockwell-automation-raises-outlook-on-higher-sales-c986e145
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: ROK
+    source_name: Rockwell Automation
+    source_market: US
+    source_reason: FY 가이던스 상향, warehouse automation·data center·semiconductor·energy 수요 개선
+    source_3m_move_pct: 12.5
+    target_symbol: HON
+    target_name: Honeywell
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 창고·데이터센터·반도체 자동화 회복은 자동화/빌딩제어 노출 기업의 후행 반응 포인트.
+    evidence:
+    - title: 'WSJ: Rockwell Automation raises outlook on higher sales'
+      url: https://www.wsj.com/business/earnings/rockwell-automation-raises-outlook-on-higher-sales-c986e145
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: ROK
+    source_name: Rockwell Automation
+    source_market: US
+    source_reason: FY 가이던스 상향, warehouse automation·data center·semiconductor·energy 수요 개선
+    source_3m_move_pct: 12.5
+    target_symbol: IR
+    target_name: Ingersoll Rand
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 소프트웨어/제어 자동화 강세가 범용 압축기·펌프 CAPEX 회복 지연 종목 대비 상대 부담을 만들 수 있음.
+    evidence:
+    - title: 'WSJ: Rockwell Automation raises outlook on higher sales'
+      url: https://www.wsj.com/business/earnings/rockwell-automation-raises-outlook-on-higher-sales-c986e145
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: ROK
+    source_name: Rockwell Automation
+    source_market: US
+    source_reason: FY 가이던스 상향, warehouse automation·data center·semiconductor·energy 수요 개선
+    source_3m_move_pct: 12.5
+    target_symbol: PH
+    target_name: Parker Hannifin
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 자동화 주문 회복이 좁게 확인될 경우 유압·모션 부품 피어는 후행 검증 전까지 상대 약세 관찰.
+    evidence:
+    - title: 'WSJ: Rockwell Automation raises outlook on higher sales'
+      url: https://www.wsj.com/business/earnings/rockwell-automation-raises-outlook-on-higher-sales-c986e145
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: ROK
+    source_name: Rockwell Automation
+    source_market: US
+    source_reason: FY 가이던스 상향, warehouse automation·data center·semiconductor·energy 수요 개선
+    source_3m_move_pct: 12.5
+    target_symbol: EMR
+    target_name: Emerson Electric
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 산업 자동화/프로세스 자동화 경쟁 피어.
+    evidence:
+    - title: 'WSJ: Rockwell Automation raises outlook on higher sales'
+      url: https://www.wsj.com/business/earnings/rockwell-automation-raises-outlook-on-higher-sales-c986e145
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: TER
+    source_name: Teradyne
+    source_market: US
+    source_reason: AI 반도체 테스트 수요와 Universal Robots/MiR 로봇 자동화 노출
+    source_3m_move_pct: 16.7
+    target_symbol: KEYS
+    target_name: Keysight Technologies
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: AI/반도체 테스트 장비 투자 확대가 전자계측 피어로 번질 수 있음.
+    evidence:
+    - title: 'Barron''s: Teradyne stock spikes after billion-dollar quarter'
+      url: https://www.barrons.com/articles/teradyne-earnings-stock-price-47c15718
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: TER
+    source_name: Teradyne
+    source_market: US
+    source_reason: AI 반도체 테스트 수요와 Universal Robots/MiR 로봇 자동화 노출
+    source_3m_move_pct: 16.7
+    target_symbol: COHU
+    target_name: Cohu
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 반도체 테스트/핸들러 수요 개선의 후행 관찰 후보.
+    evidence:
+    - title: 'Barron''s: Teradyne stock spikes after billion-dollar quarter'
+      url: https://www.barrons.com/articles/teradyne-earnings-stock-price-47c15718
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: TER
+    source_name: Teradyne
+    source_market: US
+    source_reason: AI 반도체 테스트 수요와 Universal Robots/MiR 로봇 자동화 노출
+    source_3m_move_pct: 16.7
+    target_symbol: 454910.KS
+    target_name: Doosan Robotics
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: LOW
+    rationale: TER의 Universal Robots가 협동로봇 경쟁력으로 재평가되면 한국 협동로봇 OEM의 상대 모멘텀 부담 가능.
+    evidence:
+    - title: 'Barron''s: Teradyne stock spikes after billion-dollar quarter'
+      url: https://www.barrons.com/articles/teradyne-earnings-stock-price-47c15718
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: TER
+    source_name: Teradyne
+    source_market: US
+    source_reason: AI 반도체 테스트 수요와 Universal Robots/MiR 로봇 자동화 노출
+    source_3m_move_pct: 16.7
+    target_symbol: 277810.KQ
+    target_name: Rainbow Robotics
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: LOW
+    rationale: 글로벌 협동로봇/산업로봇 경쟁 구도에서 해외 대형사 재평가 시 테마 내 상대 강도 분산 가능.
+    evidence:
+    - title: 'Barron''s: Teradyne stock spikes after billion-dollar quarter'
+      url: https://www.barrons.com/articles/teradyne-earnings-stock-price-47c15718
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: TER
+    source_name: Teradyne
+    source_market: US
+    source_reason: AI 반도체 테스트 수요와 Universal Robots/MiR 로봇 자동화 노출
+    source_3m_move_pct: 16.7
+    target_symbol: KEYS
+    target_name: Keysight Technologies
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 테스트·계측 장비 투자 사이클 피어.
+    evidence:
+    - title: 'Barron''s: Teradyne stock spikes after billion-dollar quarter'
+      url: https://www.barrons.com/articles/teradyne-earnings-stock-price-47c15718
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 beat·가이던스 상향, 비주거 건설/인프라/광산/데이터센터 렌털 수요
+    source_3m_move_pct: 9.2
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 렌털사 수요·가이던스 개선은 장비 제조사의 판매/백로그 기대를 확인하는 선행 신호가 될 수 있음.
+    evidence:
+    - title: 'Barron''s: United Rentals stock surges after Q1 beat and raised guide'
+      url: https://www.barrons.com/articles/united-rentals-stock-leads-the-s-p-500-today-47e9f1ba
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 beat·가이던스 상향, 비주거 건설/인프라/광산/데이터센터 렌털 수요
+    source_3m_move_pct: 9.2
+    target_symbol: HRI
+    target_name: Herc Holdings
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 장비 렌털 피어로 요율·가동률 기대가 직접 연결.
+    evidence:
+    - title: 'Barron''s: United Rentals stock surges after Q1 beat and raised guide'
+      url: https://www.barrons.com/articles/united-rentals-stock-leads-the-s-p-500-today-47e9f1ba
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 beat·가이던스 상향, 비주거 건설/인프라/광산/데이터센터 렌털 수요
+    source_3m_move_pct: 9.2
+    target_symbol: 000720.KS
+    target_name: Hyundai Engineering & Construction
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 렌털/장비 비용과 금리 부담이 커지면 공사 원가 민감 건설사는 비용 압박 리스크.
+    evidence:
+    - title: 'Barron''s: United Rentals stock surges after Q1 beat and raised guide'
+      url: https://www.barrons.com/articles/united-rentals-stock-leads-the-s-p-500-today-47e9f1ba
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 beat·가이던스 상향, 비주거 건설/인프라/광산/데이터센터 렌털 수요
+    source_3m_move_pct: 9.2
+    target_symbol: 006360.KS
+    target_name: GS Engineering & Construction
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 장비 렌털 단가 상승은 건설사 마진에 비용 압박으로 해석될 수 있음.
+    evidence:
+    - title: 'Barron''s: United Rentals stock surges after Q1 beat and raised guide'
+      url: https://www.barrons.com/articles/united-rentals-stock-leads-the-s-p-500-today-47e9f1ba
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 beat·가이던스 상향, 비주거 건설/인프라/광산/데이터센터 렌털 수요
+    source_3m_move_pct: 9.2
+    target_symbol: HRI
+    target_name: Herc Holdings
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 동일 렌털 업종 경쟁사/피어.
+    evidence:
+    - title: 'Barron''s: United Rentals stock surges after Q1 beat and raised guide'
+      url: https://www.barrons.com/articles/united-rentals-stock-leads-the-s-p-500-today-47e9f1ba
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: DE
+    source_name: Deere
+    source_market: US
+    source_reason: Q1 beat 후 고점 형성, 이후 농기계 약세·관세/농가소득 부담으로 되돌림
+    source_3m_move_pct: -16.7
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: DE 약세가 농기계 국지 약세로 읽히면 건설·전력 장비 노출 CAT로 상대 선호가 이동할 수 있음.
+    evidence:
+    - title: 'Reuters: Deere lifts profit forecast as construction sales rebound; ag/tariff overhang remains'
+      url: https://www.reuters.com/business/deere-lifts-full-year-profit-forecast-construction-sales-rebound-2026-02-19/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: DE
+    source_name: Deere
+    source_market: US
+    source_reason: Q1 beat 후 고점 형성, 이후 농기계 약세·관세/농가소득 부담으로 되돌림
+    source_3m_move_pct: -16.7
+    target_symbol: URI
+    target_name: United Rentals
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 농업 CAPEX 둔화와 별개로 비주거/인프라 렌털 수요가 견조하면 상대 수혜 가능성.
+    evidence:
+    - title: 'Reuters: Deere lifts profit forecast as construction sales rebound; ag/tariff overhang remains'
+      url: https://www.reuters.com/business/deere-lifts-full-year-profit-forecast-construction-sales-rebound-2026-02-19/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: DE
+    source_name: Deere
+    source_market: US
+    source_reason: Q1 beat 후 고점 형성, 이후 농기계 약세·관세/농가소득 부담으로 되돌림
+    source_3m_move_pct: -16.7
+    target_symbol: CNH
+    target_name: CNH Industrial
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 농기계/건설장비 피어로 농가소득·관세 부담이 동반 반영될 수 있음.
+    evidence:
+    - title: 'Reuters: Deere lifts profit forecast as construction sales rebound; ag/tariff overhang remains'
+      url: https://www.reuters.com/business/deere-lifts-full-year-profit-forecast-construction-sales-rebound-2026-02-19/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: DE
+    source_name: Deere
+    source_market: US
+    source_reason: Q1 beat 후 고점 형성, 이후 농기계 약세·관세/농가소득 부담으로 되돌림
+    source_3m_move_pct: -16.7
+    target_symbol: AGCO
+    target_name: AGCO
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 농기계 순수 피어로 Deere 약세의 후행 가격 검증 후보.
+    evidence:
+    - title: 'Reuters: Deere lifts profit forecast as construction sales rebound; ag/tariff overhang remains'
+      url: https://www.reuters.com/business/deere-lifts-full-year-profit-forecast-construction-sales-rebound-2026-02-19/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: DE
+    source_name: Deere
+    source_market: US
+    source_reason: Q1 beat 후 고점 형성, 이후 농기계 약세·관세/농가소득 부담으로 되돌림
+    source_3m_move_pct: -16.7
+    target_symbol: TTC
+    target_name: Toro
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 소형 농업·잔디 장비 피어로 소비/농가 CAPEX 둔화 신호에 민감.
+    evidence:
+    - title: 'Reuters: Deere lifts profit forecast as construction sales rebound; ag/tariff overhang remains'
+      url: https://www.reuters.com/business/deere-lifts-full-year-profit-forecast-construction-sales-rebound-2026-02-19/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: IR
+    source_name: Ingersoll Rand
+    source_market: US
+    source_reason: 2월 고점 대비 큰 폭 하락, 범용 산업 CAPEX·금리 민감도 부담
+    source_3m_move_pct: -30.3
+    target_symbol: GEV
+    target_name: GE Vernova
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 범용 산업 CAPEX 약세가 확인될 때 AI 전력 CAPEX 수혜주로 상대 모멘텀 이동 가능.
+    evidence:
+    - title: 'MarketWatch: Ingersoll Rand price drawdown vs February high'
+      url: https://www.marketwatch.com/data-news/ingersoll-rand-inc-stock-outperforms-competitors-despite-losses-on-the-day-2a61ff87-58d888a893c3
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: IR
+    source_name: Ingersoll Rand
+    source_market: US
+    source_reason: 2월 고점 대비 큰 폭 하락, 범용 산업 CAPEX·금리 민감도 부담
+    source_3m_move_pct: -30.3
+    target_symbol: ETN
+    target_name: Eaton
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 일반 산업 사이클보다 데이터센터 전력/열관리 장비로 수요가 집중될 경우 상대 수혜 가능성.
+    evidence:
+    - title: 'MarketWatch: Ingersoll Rand price drawdown vs February high'
+      url: https://www.marketwatch.com/data-news/ingersoll-rand-inc-stock-outperforms-competitors-despite-losses-on-the-day-2a61ff87-58d888a893c3
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: IR
+    source_name: Ingersoll Rand
+    source_market: US
+    source_reason: 2월 고점 대비 큰 폭 하락, 범용 산업 CAPEX·금리 민감도 부담
+    source_3m_move_pct: -30.3
+    target_symbol: PH
+    target_name: Parker Hannifin
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 범용 산업·모션 부품 피어로 CAPEX 지연/금리 부담에 동반 반응 가능.
+    evidence:
+    - title: 'MarketWatch: Ingersoll Rand price drawdown vs February high'
+      url: https://www.marketwatch.com/data-news/ingersoll-rand-inc-stock-outperforms-competitors-despite-losses-on-the-day-2a61ff87-58d888a893c3
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: IR
+    source_name: Ingersoll Rand
+    source_market: US
+    source_reason: 2월 고점 대비 큰 폭 하락, 범용 산업 CAPEX·금리 민감도 부담
+    source_3m_move_pct: -30.3
+    target_symbol: DOV
+    target_name: Dover
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 다각화 산업기계 피어로 주문 사이클 둔화 신호의 후행 관찰 후보.
+    evidence:
+    - title: 'MarketWatch: Ingersoll Rand price drawdown vs February high'
+      url: https://www.marketwatch.com/data-news/ingersoll-rand-inc-stock-outperforms-competitors-despite-losses-on-the-day-2a61ff87-58d888a893c3
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: IR
+    source_name: Ingersoll Rand
+    source_market: US
+    source_reason: 2월 고점 대비 큰 폭 하락, 범용 산업 CAPEX·금리 민감도 부담
+    source_3m_move_pct: -30.3
+    target_symbol: PH
+    target_name: Parker Hannifin
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 산업부품/모션 장비 피어.
+    evidence:
+    - title: 'MarketWatch: Ingersoll Rand price drawdown vs February high'
+      url: https://www.marketwatch.com/data-news/ingersoll-rand-inc-stock-outperforms-competitors-despite-losses-on-the-day-2a61ff87-58d888a893c3
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 277810.KQ
+    source_name: Rainbow Robotics
+    source_market: KR
+    source_reason: Samsung Future Robotics Office/최대주주화, K-Humanoid Alliance, 휴머노이드·협동로봇 테마
+    source_3m_move_pct: null
+    target_symbol: 058610.KQ
+    target_name: SPG
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 레인보우 강세가 로봇 감속기·모터 부품 후행주 바스켓으로 확산될 수 있음.
+    evidence:
+    - title: 'Reuters: Samsung Electronics becomes largest shareholder of Rainbow Robotics'
+      url: https://www.reuters.com/technology/samsung-electronics-becomes-largest-shareholder-south-koreas-rainbow-robotics-2024-12-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 277810.KQ
+    source_name: Rainbow Robotics
+    source_market: KR
+    source_reason: Samsung Future Robotics Office/최대주주화, K-Humanoid Alliance, 휴머노이드·협동로봇 테마
+    source_3m_move_pct: null
+    target_symbol: 389500.KQ
+    target_name: SBB Tech
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: K-Humanoid 참여 부품사로 휴머노이드 부품 국산화 기대가 후행 반응 포인트.
+    evidence:
+    - title: 'Reuters: Samsung Electronics becomes largest shareholder of Rainbow Robotics'
+      url: https://www.reuters.com/technology/samsung-electronics-becomes-largest-shareholder-south-koreas-rainbow-robotics-2024-12-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 277810.KQ
+    source_name: Rainbow Robotics
+    source_market: KR
+    source_reason: Samsung Future Robotics Office/최대주주화, K-Humanoid Alliance, 휴머노이드·협동로봇 테마
+    source_3m_move_pct: null
+    target_symbol: 454910.KS
+    target_name: Doosan Robotics
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 삼성 계열 로봇 기대가 집중될 때 협동로봇 OEM 간 자금 쏠림/상대 모멘텀 부담 가능.
+    evidence:
+    - title: 'Reuters: Samsung Electronics becomes largest shareholder of Rainbow Robotics'
+      url: https://www.reuters.com/technology/samsung-electronics-becomes-largest-shareholder-south-koreas-rainbow-robotics-2024-12-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 277810.KQ
+    source_name: Rainbow Robotics
+    source_market: KR
+    source_reason: Samsung Future Robotics Office/최대주주화, K-Humanoid Alliance, 휴머노이드·협동로봇 테마
+    source_3m_move_pct: null
+    target_symbol: 348340.KQ
+    target_name: Neuromeka
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 협동로봇 경쟁 피어로 대장주 쏠림 시 상대 수요 전환 리스크.
+    evidence:
+    - title: 'Reuters: Samsung Electronics becomes largest shareholder of Rainbow Robotics'
+      url: https://www.reuters.com/technology/samsung-electronics-becomes-largest-shareholder-south-koreas-rainbow-robotics-2024-12-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 277810.KQ
+    source_name: Rainbow Robotics
+    source_market: KR
+    source_reason: Samsung Future Robotics Office/최대주주화, K-Humanoid Alliance, 휴머노이드·협동로봇 테마
+    source_3m_move_pct: null
+    target_symbol: 108490.KQ
+    target_name: Robotis
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 로봇 액추에이터/플랫폼 피어로 레인보우 강세 이후 후행 반응 관찰.
+    evidence:
+    - title: 'Reuters: Samsung Electronics becomes largest shareholder of Rainbow Robotics'
+      url: https://www.reuters.com/technology/samsung-electronics-becomes-largest-shareholder-south-koreas-rainbow-robotics-2024-12-30/
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 454910.KS
+    source_name: Doosan Robotics
+    source_market: KR
+    source_reason: 협동로봇 OEM, AI/소프트웨어 R&D 허브와 미국 자동화 인수 이력, K-Humanoid 참여
+    source_3m_move_pct: null
+    target_symbol: 058610.KQ
+    target_name: SPG
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 협동로봇 수요가 로봇 감속기·모터 부품 후행주로 확산될 수 있음.
+    evidence:
+    - title: Doosan Robotics company profile / K-Humanoid participation context
+      url: https://en.wikipedia.org/wiki/Doosan_Robotics
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 454910.KS
+    source_name: Doosan Robotics
+    source_market: KR
+    source_reason: 협동로봇 OEM, AI/소프트웨어 R&D 허브와 미국 자동화 인수 이력, K-Humanoid 참여
+    source_3m_move_pct: null
+    target_symbol: 108490.KQ
+    target_name: Robotis
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 로봇 액추에이터/플랫폼 부품주로 협동로봇 테마 확산 시 후행 반응 관찰.
+    evidence:
+    - title: Doosan Robotics company profile / K-Humanoid participation context
+      url: https://en.wikipedia.org/wiki/Doosan_Robotics
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 454910.KS
+    source_name: Doosan Robotics
+    source_market: KR
+    source_reason: 협동로봇 OEM, AI/소프트웨어 R&D 허브와 미국 자동화 인수 이력, K-Humanoid 참여
+    source_3m_move_pct: null
+    target_symbol: 277810.KQ
+    target_name: Rainbow Robotics
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 두산로보틱스 중심의 협동로봇 모멘텀이 강하면 삼성계 레인보우와 단기 자금 경쟁 가능.
+    evidence:
+    - title: Doosan Robotics company profile / K-Humanoid participation context
+      url: https://en.wikipedia.org/wiki/Doosan_Robotics
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 454910.KS
+    source_name: Doosan Robotics
+    source_market: KR
+    source_reason: 협동로봇 OEM, AI/소프트웨어 R&D 허브와 미국 자동화 인수 이력, K-Humanoid 참여
+    source_3m_move_pct: null
+    target_symbol: 348340.KQ
+    target_name: Neuromeka
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 협동로봇 OEM 피어 간 대장주 쏠림에 따른 상대 부담 후보.
+    evidence:
+    - title: Doosan Robotics company profile / K-Humanoid participation context
+      url: https://en.wikipedia.org/wiki/Doosan_Robotics
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 454910.KS
+    source_name: Doosan Robotics
+    source_market: KR
+    source_reason: 협동로봇 OEM, AI/소프트웨어 R&D 허브와 미국 자동화 인수 이력, K-Humanoid 참여
+    source_3m_move_pct: null
+    target_symbol: TER
+    target_name: Teradyne
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: Universal Robots 보유 글로벌 협동로봇/자동화 피어로 테마 동조 가능.
+    evidence:
+    - title: Doosan Robotics company profile / K-Humanoid participation context
+      url: https://en.wikipedia.org/wiki/Doosan_Robotics
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 108490.KQ
+    source_name: Robotis
+    source_market: KR
+    source_reason: 로봇 액추에이터·플랫폼 부품, K-Humanoid 참여 후행 부품주 관찰
+    source_3m_move_pct: null
+    target_symbol: 389500.KQ
+    target_name: SBB Tech
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 휴머노이드 부품 국산화 바스켓 내 동조 가능성.
+    evidence:
+    - title: K-Humanoid Alliance participant context incl. Robotis/SBB Tech
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 108490.KQ
+    source_name: Robotis
+    source_market: KR
+    source_reason: 로봇 액추에이터·플랫폼 부품, K-Humanoid 참여 후행 부품주 관찰
+    source_3m_move_pct: null
+    target_symbol: 058610.KQ
+    target_name: SPG
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 로봇 감속기·액추에이터 부품 바스켓으로 후행 관찰.
+    evidence:
+    - title: K-Humanoid Alliance participant context incl. Robotis/SBB Tech
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 108490.KQ
+    source_name: Robotis
+    source_market: KR
+    source_reason: 로봇 액추에이터·플랫폼 부품, K-Humanoid 참여 후행 부품주 관찰
+    source_3m_move_pct: null
+    target_symbol: 454910.KS
+    target_name: Doosan Robotics
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 부품주가 가격결정력 기대만으로 급등하면 OEM은 부품 원가 부담 리스크로 해석될 수 있음.
+    evidence:
+    - title: K-Humanoid Alliance participant context incl. Robotis/SBB Tech
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 108490.KQ
+    source_name: Robotis
+    source_market: KR
+    source_reason: 로봇 액추에이터·플랫폼 부품, K-Humanoid 참여 후행 부품주 관찰
+    source_3m_move_pct: null
+    target_symbol: 277810.KQ
+    target_name: Rainbow Robotics
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 액추에이터/부품 가격 기대가 로봇 OEM 마진 부담으로 번질 경우 상대 약세 관찰.
+    evidence:
+    - title: K-Humanoid Alliance participant context incl. Robotis/SBB Tech
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 108490.KQ
+    source_name: Robotis
+    source_market: KR
+    source_reason: 로봇 액추에이터·플랫폼 부품, K-Humanoid 참여 후행 부품주 관찰
+    source_3m_move_pct: null
+    target_symbol: 058610.KQ
+    target_name: SPG
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 국내 로봇 부품 바스켓 피어.
+    evidence:
+    - title: K-Humanoid Alliance participant context incl. Robotis/SBB Tech
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 058610.KQ
+    source_name: SPG
+    source_market: KR
+    source_reason: 로봇 감속기·모터 부품 후행주 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 389500.KQ
+    target_name: SBB Tech
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 감속기/정밀구동 부품 바스켓 내 동조 후보.
+    evidence:
+    - title: K-Humanoid/robot-parts basket context; SPG-specific 3m OHLC not verified
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 058610.KQ
+    source_name: SPG
+    source_market: KR
+    source_reason: 로봇 감속기·모터 부품 후행주 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 108490.KQ
+    target_name: Robotis
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 로봇 구동부품 후행 바스켓으로 동조 가능성.
+    evidence:
+    - title: K-Humanoid/robot-parts basket context; SPG-specific 3m OHLC not verified
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 058610.KQ
+    source_name: SPG
+    source_market: KR
+    source_reason: 로봇 감속기·모터 부품 후행주 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 454910.KS
+    target_name: Doosan Robotics
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 감속기/구동부품이 비용 상승 논리로 급등하면 협동로봇 OEM 마진 부담 후보.
+    evidence:
+    - title: K-Humanoid/robot-parts basket context; SPG-specific 3m OHLC not verified
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 058610.KQ
+    source_name: SPG
+    source_market: KR
+    source_reason: 로봇 감속기·모터 부품 후행주 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 277810.KQ
+    target_name: Rainbow Robotics
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 부품 가격 기대가 OEM 비용 압박으로 해석될 경우 상대 부담.
+    evidence:
+    - title: K-Humanoid/robot-parts basket context; SPG-specific 3m OHLC not verified
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 058610.KQ
+    source_name: SPG
+    source_market: KR
+    source_reason: 로봇 감속기·모터 부품 후행주 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 389500.KQ
+    target_name: SBB Tech
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 정밀 감속기·로봇 부품 피어.
+    evidence:
+    - title: K-Humanoid/robot-parts basket context; SPG-specific 3m OHLC not verified
+      url: https://en.wikipedia.org/wiki/K-Humanoid_Alliance
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 267270.KS
+    source_name: HD Hyundai Construction Equipment
+    source_market: KR
+    source_reason: 글로벌 건설장비/인프라·데이터센터 공사 사이클의 한국 피어 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 042670.KS
+    target_name: HD Hyundai Infracore
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 동일 HD Hyundai XiteSolution 산하 건설기계/엔진 피어로 글로벌 장비 수요에 동반 반응 가능.
+    evidence:
+    - title: HD Hyundai heavy-equipment group profile; CAT/URI read-through context
+      url: https://en.wikipedia.org/wiki/HD_Hyundai
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 267270.KS
+    source_name: HD Hyundai Construction Equipment
+    source_market: KR
+    source_reason: 글로벌 건설장비/인프라·데이터센터 공사 사이클의 한국 피어 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 241560.KS
+    target_name: Doosan Bobcat
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 소형 건설장비·렌털 수요 회복 기대가 한국 장비 피어로 확산될 수 있음.
+    evidence:
+    - title: HD Hyundai heavy-equipment group profile; CAT/URI read-through context
+      url: https://en.wikipedia.org/wiki/HD_Hyundai
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 267270.KS
+    source_name: HD Hyundai Construction Equipment
+    source_market: KR
+    source_reason: 글로벌 건설장비/인프라·데이터센터 공사 사이클의 한국 피어 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 000720.KS
+    target_name: Hyundai Engineering & Construction
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 장비 가격/렌털 단가 상승은 건설사 원가 부담으로 관찰 가능.
+    evidence:
+    - title: HD Hyundai heavy-equipment group profile; CAT/URI read-through context
+      url: https://en.wikipedia.org/wiki/HD_Hyundai
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 267270.KS
+    source_name: HD Hyundai Construction Equipment
+    source_market: KR
+    source_reason: 글로벌 건설장비/인프라·데이터센터 공사 사이클의 한국 피어 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: 006360.KS
+    target_name: GS Engineering & Construction
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 장비·금리·공사비 부담이 건설사 마진에 비용 압박 리스크.
+    evidence:
+    - title: HD Hyundai heavy-equipment group profile; CAT/URI read-through context
+      url: https://en.wikipedia.org/wiki/HD_Hyundai
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 267270.KS
+    source_name: HD Hyundai Construction Equipment
+    source_market: KR
+    source_reason: 글로벌 건설장비/인프라·데이터센터 공사 사이클의 한국 피어 관찰 후보
+    source_3m_move_pct: null
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 글로벌 건설기계 피어로 CAT 실적/수주 확인 후 후행 반응 관찰.
+    evidence:
+    - title: HD Hyundai heavy-equipment group profile; CAT/URI read-through context
+      url: https://en.wikipedia.org/wiki/HD_Hyundai
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 042670.KS
+    source_name: HD Hyundai Infracore
+    source_market: KR
+    source_reason: Develon 건설장비/엔진, 글로벌 건설장비·인프라 수요 read-through
+    source_3m_move_pct: null
+    target_symbol: 267270.KS
+    target_name: HD Hyundai Construction Equipment
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: HD Hyundai 장비 계열 피어로 수주·수요 뉴스 동조 가능.
+    evidence:
+    - title: HD Hyundai Infracore heavy-equipment/engine profile
+      url: https://en.wikipedia.org/wiki/HD_Hyundai_Infracore
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 042670.KS
+    source_name: HD Hyundai Infracore
+    source_market: KR
+    source_reason: Develon 건설장비/엔진, 글로벌 건설장비·인프라 수요 read-through
+    source_3m_move_pct: null
+    target_symbol: 241560.KS
+    target_name: Doosan Bobcat
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 건설장비/소형장비 수요 회복 시 Bobcat으로 후행 반응 관찰.
+    evidence:
+    - title: HD Hyundai Infracore heavy-equipment/engine profile
+      url: https://en.wikipedia.org/wiki/HD_Hyundai_Infracore
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 042670.KS
+    source_name: HD Hyundai Infracore
+    source_market: KR
+    source_reason: Develon 건설장비/엔진, 글로벌 건설장비·인프라 수요 read-through
+    source_3m_move_pct: null
+    target_symbol: 000720.KS
+    target_name: Hyundai Engineering & Construction
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 엔진·장비 가격 상승이 건설 원가 부담으로 전가될 수 있음.
+    evidence:
+    - title: HD Hyundai Infracore heavy-equipment/engine profile
+      url: https://en.wikipedia.org/wiki/HD_Hyundai_Infracore
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 042670.KS
+    source_name: HD Hyundai Infracore
+    source_market: KR
+    source_reason: Develon 건설장비/엔진, 글로벌 건설장비·인프라 수요 read-through
+    source_3m_move_pct: null
+    target_symbol: 006360.KS
+    target_name: GS Engineering & Construction
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 건설장비 가격/렌털비가 높아지면 건설사 비용 압박 리스크.
+    evidence:
+    - title: HD Hyundai Infracore heavy-equipment/engine profile
+      url: https://en.wikipedia.org/wiki/HD_Hyundai_Infracore
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰
+  - source_symbol: 042670.KS
+    source_name: HD Hyundai Infracore
+    source_market: KR
+    source_reason: Develon 건설장비/엔진, 글로벌 건설장비·인프라 수요 read-through
+    source_3m_move_pct: null
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 글로벌 건설장비 피어로 CAT·URI read-through 관찰.
+    evidence:
+    - title: HD Hyundai Infracore heavy-equipment/engine profile
+      url: https://en.wikipedia.org/wiki/HD_Hyundai_Infracore
+    trading_note: 1일~1개월 스윙 관점에서 source 급변 후 target의 거래대금·상대강도·뉴스 후행 반응 관찰

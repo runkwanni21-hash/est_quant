@@ -1,0 +1,785 @@
+sector_relation_seeds:
+  sector_id: biotech_pharma_clinical_medtech
+  sector_name: 바이오 / 제약 / 임상 / 의료기기
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 미국 source_3m_move_pct는 확인 가능한 2026-02-17~2026-05-15 종가/스니펫 기준 계산.
+  - 한국 source_3m_move_pct는 일부 2026-02-17 종가 확인 제한으로 null 처리하고 source_reason에 proxy를 명시.
+  - 모든 edge는 매수/매도 추천이 아니라 1일~1개월 스윙 관점의 후행 반응 관찰 후보.
+  edges:
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1/Zepbound·Mounjaro Q1 beat, oral GLP-1 Foundayo readthrough
+    source_3m_move_pct: -3.0
+    target_symbol: 087010.KQ
+    target_name: 펩트론
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LLY GLP-1 수요 강세는 장기지속형 peptide/GLP-1 플랫폼 관심으로 후행 반응 관찰 후보.
+    evidence:
+    - title: Patients don't regain much weight switching from injections to Lilly's weight-loss pill, study finds
+      url: https://www.reuters.com/legal/litigation/patients-dont-regain-much-weight-switching-injections-lillys-weight-loss-pill-2026-05-12/
+    - title: '''비만'' 테마 올라탄 펩트론, 플랫폼 프리미엄 입증할까'
+      url: https://www.topdaily.kr/articles/109966
+    trading_note: 1일~1개월 스윙 관점에서 GLP-1 대장주 이벤트 후 펩트론의 후행 수급·거래대금 반응 관찰.
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1/Zepbound·Mounjaro Q1 beat, oral GLP-1 Foundayo readthrough
+    source_3m_move_pct: -3.0
+    target_symbol: 128940.KS
+    target_name: 한미약품
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 글로벌 비만치료제 성장과 국내 비만 파이프라인 기대의 후행 반응 관찰 후보.
+    evidence:
+    - title: Patients don't regain much weight switching from injections to Lilly's weight-loss pill, study finds
+      url: https://www.reuters.com/legal/litigation/patients-dont-regain-much-weight-switching-injections-lillys-weight-loss-pill-2026-05-12/
+    - title: 2026년 비만 분야 관전포인트
+      url: https://www.eugenefn.com/common/files/amail/20260107_B3510_hskwon_313.pdf
+    trading_note: LLY/NVO 비만치료제 뉴스 이후 국내 비만 파이프라인 peer의 3d~10d 후행 반응 관찰.
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1/Zepbound·Mounjaro Q1 beat, oral GLP-1 Foundayo readthrough
+    source_3m_move_pct: -3.0
+    target_symbol: NVO
+    target_name: Novo Nordisk
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: oral GLP-1/주사제 경쟁 격화로 NVO에는 수요 전환·가격 압박 리스크 관찰.
+    evidence:
+    - title: Novo and Lilly gain on signs weight-loss pills could expand market
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-lilly-gain-signs-weight-loss-pills-could-expand-market-2026-05-07/
+    - title: Novo Nordisk's weight-loss pill boom faces price war test
+      url: https://www.reuters.com/legal/litigation/novo-nordisks-weight-loss-pill-boom-faces-price-war-test-2026-05-05/
+    trading_note: LLY 급등 당일 NVO 상대수익률과 ADR 장중 방향성 비교 관찰.
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1/Zepbound·Mounjaro Q1 beat, oral GLP-1 Foundayo readthrough
+    source_3m_move_pct: -3.0
+    target_symbol: DXCM
+    target_name: Dexcom
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: GLP-1 강세가 당뇨 관리기기 수요 일부를 대체할 수 있다는 관찰 후보이나 직접 가격 검증은 약함.
+    evidence:
+    - title: Novo and Lilly gain on signs weight-loss pills could expand market
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-lilly-gain-signs-weight-loss-pills-could-expand-market-2026-05-07/
+    trading_note: GLP-1 대장주 급등 후 CGM/diabetes device peer의 5d~10d 상대 약세 여부 관찰.
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: CagriSema setback 이후 급락, 이후 oral Wegovy/고용량 Wegovy로 일부 회복
+    source_3m_move_pct: -9.4
+    target_symbol: LLY
+    target_name: Eli Lilly
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: NVO 임상/경쟁력 실망은 LLY의 상대적 점유율 기대를 키우는 후행 반응 관찰 후보.
+    evidence:
+    - title: Novo Nordisk's $475-billion rise and fall as Wegovy-era gains wiped out
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-slump-wipes-out-last-wegovy-era-gains-after-trial-setback-2026-02-23/
+    trading_note: NVO 급락 당일 LLY/NVO pair 상대강도와 다음 세션 지속성 관찰.
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: CagriSema setback 이후 급락, 이후 oral Wegovy/고용량 Wegovy로 일부 회복
+    source_3m_move_pct: -9.4
+    target_symbol: DXCM
+    target_name: Dexcom
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: GLP-1 기대 약화 시 당뇨 관리기기 대체 우려가 완화되는 관찰 후보.
+    evidence:
+    - title: Novo Nordisk's $475-billion rise and fall as Wegovy-era gains wiped out
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-slump-wipes-out-last-wegovy-era-gains-after-trial-setback-2026-02-23/
+    trading_note: NVO 임상 실망 뉴스 이후 CGM peer의 낙폭 축소 또는 반등 여부 관찰.
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: CagriSema setback 이후 급락, 이후 oral Wegovy/고용량 Wegovy로 일부 회복
+    source_3m_move_pct: -9.4
+    target_symbol: 087010.KQ
+    target_name: 펩트론
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: GLP-1 대장주 약세는 국내 비만 테마/플랫폼주 투자심리 압박으로 후행 반응 가능.
+    evidence:
+    - title: Novo Nordisk's $475-billion rise and fall as Wegovy-era gains wiped out
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-slump-wipes-out-last-wegovy-era-gains-after-trial-setback-2026-02-23/
+    - title: '''비만'' 테마 올라탄 펩트론, 플랫폼 프리미엄 입증할까'
+      url: https://www.topdaily.kr/articles/109966
+    trading_note: NVO 급락 다음 한국장 GLP-1 테마주의 갭하락·저점 회복 여부 관찰.
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: CagriSema setback 이후 급락, 이후 oral Wegovy/고용량 Wegovy로 일부 회복
+    source_3m_move_pct: -9.4
+    target_symbol: VKTX
+    target_name: Viking Therapeutics
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: obesity biotech peer sentiment가 동반 압박될 수 있는 관찰 후보.
+    evidence:
+    - title: Novo Nordisk's $475-billion rise and fall as Wegovy-era gains wiped out
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-slump-wipes-out-last-wegovy-era-gains-after-trial-setback-2026-02-23/
+    trading_note: NVO 이벤트 후 obesity biotech peer basket의 동조 하락 여부 관찰.
+  - source_symbol: MRNA
+    source_name: Moderna
+    source_market: US
+    source_reason: positive Phase 3 mRNA-1010 flu data + hantavirus vaccine hype
+    source_3m_move_pct: 11.6
+    target_symbol: BNTX
+    target_name: BioNTech
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: mRNA 플랫폼 성공/관심은 mRNA peer로 후행 반응 가능.
+    evidence:
+    - title: Moderna stock jumps 10% amid hantavirus outbreak concerns and positive Phase 3 mRNA-1010 seasonal flu vaccine
+        study
+      url: ''
+    trading_note: MRNA 급등 당일 BNTX의 동조 여부와 장마감 후 뉴스 확산 확인.
+  - source_symbol: MRNA
+    source_name: Moderna
+    source_market: US
+    source_reason: positive Phase 3 mRNA-1010 flu data + hantavirus vaccine hype
+    source_3m_move_pct: 11.6
+    target_symbol: NVAX
+    target_name: Novavax
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: LOW
+    rationale: 호흡기 백신 관심 확대에 따른 peer sympathy 후보이나 플랫폼 차이로 confidence 낮음.
+    evidence:
+    - title: Moderna stock jumps after positive flu vaccine study and hantavirus attention
+      url: ''
+    trading_note: MRNA 뉴스 다음 세션 respiratory vaccine peer의 거래대금 증가 여부 관찰.
+  - source_symbol: MRNA
+    source_name: Moderna
+    source_market: US
+    source_reason: positive Phase 3 mRNA-1010 flu data + hantavirus vaccine hype
+    source_3m_move_pct: 11.6
+    target_symbol: GSK
+    target_name: GSK
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: flu vaccine incumbent에 mRNA flu 성공이 경쟁 부담으로 해석될 수 있음.
+    evidence:
+    - title: Moderna positive Phase 3 mRNA-1010 flu vaccine study
+      url: ''
+    trading_note: MRNA flu data 이후 GSK/SNY 등 flu incumbent의 상대 약세 여부 관찰.
+  - source_symbol: MRNA
+    source_name: Moderna
+    source_market: US
+    source_reason: positive Phase 3 mRNA-1010 flu data + hantavirus vaccine hype
+    source_3m_move_pct: 11.6
+    target_symbol: SNY
+    target_name: Sanofi
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: flu vaccine incumbent인 Sanofi에 mRNA flu readthrough는 경쟁 부담 후보.
+    evidence:
+    - title: Moderna positive Phase 3 mRNA-1010 flu vaccine study
+      url: ''
+    trading_note: mRNA flu data 이후 Sanofi의 vaccine franchise 관련 코멘트와 상대 약세 관찰.
+  - source_symbol: ISRG
+    source_name: Intuitive Surgical
+    source_market: US
+    source_reason: robotic surgery high-multiple medtech de-rating, 52w low 근접
+    source_3m_move_pct: -12.5
+    target_symbol: MDT
+    target_name: Medtronic
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: ISRG 약세는 대체 surgical robot/medtech 플랫폼으로 상대 관심 이동 가능.
+    evidence:
+    - title: Intuitive Surgical stock price history and YTD return
+      url: https://www.financecharts.com/stocks/ISRG/summary/price
+    trading_note: ISRG 급락 후 MDT가 낙폭을 덜 받거나 상대강도 개선되는지 관찰.
+  - source_symbol: ISRG
+    source_name: Intuitive Surgical
+    source_market: US
+    source_reason: robotic surgery high-multiple medtech de-rating, 52w low 근접
+    source_3m_move_pct: -12.5
+    target_symbol: JNJ
+    target_name: Johnson & Johnson
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: JNJ surgical robotics optionality에 대한 후행 관심 가능성은 있으나 직접 가격 검증 약함.
+    evidence:
+    - title: Intuitive Surgical stock price history and competitor table
+      url: https://www.financecharts.com/stocks/ISRG/summary/market-cap
+    trading_note: ISRG 밸류에이션 조정 이후 JNJ medtech segment 관련 뉴스/상대강도 관찰.
+  - source_symbol: ISRG
+    source_name: Intuitive Surgical
+    source_market: US
+    source_reason: robotic surgery high-multiple medtech de-rating, 52w low 근접
+    source_3m_move_pct: -12.5
+    target_symbol: SYK
+    target_name: Stryker
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: medtech valuation risk-off가 peer로 동반 확산될 수 있는 관찰 후보.
+    evidence:
+    - title: ISRG competitors market cap and 30-day/YTD changes
+      url: https://www.financecharts.com/stocks/ISRG/summary/market-cap
+    trading_note: ISRG 약세 이후 SYK/BSX/MDT medtech basket의 다음 세션 동조 여부 관찰.
+  - source_symbol: ISRG
+    source_name: Intuitive Surgical
+    source_market: US
+    source_reason: robotic surgery high-multiple medtech de-rating, 52w low 근접
+    source_3m_move_pct: -12.5
+    target_symbol: BSX
+    target_name: Boston Scientific
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: high-multiple medtech risk-off 동조화 관찰 후보.
+    evidence:
+    - title: ISRG competitors market cap and 30-day/YTD changes
+      url: https://www.financecharts.com/stocks/ISRG/summary/market-cap
+    trading_note: ISRG 약세 이후 BSX가 동반 risk-off를 보이는지 관찰.
+  - source_symbol: REGN
+    source_name: Regeneron
+    source_market: US
+    source_reason: Q1 beat에도 EYLEA 경쟁·biosimilar/Vabysmo 압박
+    source_3m_move_pct: -11.9
+    target_symbol: 196170.KQ
+    target_name: 알테오젠
+    target_market: KR
+    relation_type: BIO_CLINICAL_READTHROUGH
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: EYLEA originator 압박은 ALT-L9/Eylea biosimilar 승인주의 수혜 가능성 관찰.
+    evidence:
+    - title: Regeneron beats quarterly estimates on Dupixent demand; Eylea faces cheaper versions and Vabysmo
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/regeneron-beats-quarterly-results-estimates-strong-dupixent-demand-2026-04-29/
+    - title: 알테오젠, 아일리아 바이오시밀러 ‘아이젠피’ 국내 품목허가 취득
+      url: https://pharm.edaily.co.kr/news/read?newsId=03814646645449248
+    trading_note: REGN 약세 또는 EYLEA 관련 부정적 코멘트 이후 알테오젠의 3d 후행 반응 관찰.
+  - source_symbol: REGN
+    source_name: Regeneron
+    source_market: US
+    source_reason: Q1 beat에도 EYLEA 경쟁·biosimilar/Vabysmo 압박
+    source_3m_move_pct: -11.9
+    target_symbol: 068270.KS
+    target_name: 셀트리온
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: anti-VEGF/biosimilar 가격 압박은 대형 biosimilar sentiment로 후행 반응 가능.
+    evidence:
+    - title: Regeneron Eylea faces cheaper versions and Vabysmo
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/regeneron-beats-quarterly-results-estimates-strong-dupixent-demand-2026-04-29/
+    trading_note: REGN/EYLEA 압박 기사 이후 국내 biosimilar 대형주 상대강도 관찰.
+  - source_symbol: REGN
+    source_name: Regeneron
+    source_market: US
+    source_reason: Q1 beat에도 EYLEA 경쟁·biosimilar/Vabysmo 압박
+    source_3m_move_pct: -11.9
+    target_symbol: NVS
+    target_name: Novartis
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: ophthalmology drug pricing/competition 우려가 peer franchise로 번질 수 있음.
+    evidence:
+    - title: Regeneron Eylea competition pressure
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/regeneron-beats-quarterly-results-estimates-strong-dupixent-demand-2026-04-29/
+    trading_note: REGN 약세가 ophthalmology drug peer로 확산되는지 관찰.
+  - source_symbol: REGN
+    source_name: Regeneron
+    source_market: US
+    source_reason: Q1 beat에도 EYLEA 경쟁·biosimilar/Vabysmo 압박
+    source_3m_move_pct: -11.9
+    target_symbol: ALC
+    target_name: Alcon
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 안과 섹터 sentiment 동반 약화 가능성은 있으나 직접 경쟁성은 약함.
+    evidence:
+    - title: Regeneron Eylea competition pressure
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/regeneron-beats-quarterly-results-estimates-strong-dupixent-demand-2026-04-29/
+    trading_note: REGN/EYLEA 이슈 후 eye-care/ophthalmology basket 동향 관찰.
+  - source_symbol: 000100.KS
+    source_name: 유한양행
+    source_market: KR
+    source_reason: 렉라자/Lazcluze+Rybrevant 글로벌 매출·EU milestone, 주가는 고점 대비 약세
+    source_3m_move_pct: null
+    target_symbol: 039200.KQ
+    target_name: 오스코텍
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 렉라자 관련 공동개발/royalty exposure로 유한양행 이벤트 후행 반응 관찰 후보.
+    evidence:
+    - title: 유한양행 렉라자 유럽 상업화 milestone 3000만달러
+      url: ''
+    - title: J&J Rybrevant/Lazcluze Q1 sales growth
+      url: ''
+    trading_note: 유한양행 렉라자 milestone/royalty 뉴스 발생 시 오스코텍 same_day 동조 여부 관찰.
+  - source_symbol: 000100.KS
+    source_name: 유한양행
+    source_market: KR
+    source_reason: 렉라자/Lazcluze+Rybrevant 글로벌 매출·EU milestone, 주가는 고점 대비 약세
+    source_3m_move_pct: null
+    target_symbol: JNJ
+    target_name: Johnson & Johnson
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: J&J는 Rybrevant/Lazcluze 상업화 파트너이나 대형주라 주가 영향은 제한적 관찰.
+    evidence:
+    - title: J&J Q1 Rybrevant + Lazcluze revenue increased
+      url: ''
+    trading_note: 유한양행 milestone은 JNJ에는 소규모 readthrough이므로 price보다 segment commentary 관찰.
+  - source_symbol: 000100.KS
+    source_name: 유한양행
+    source_market: KR
+    source_reason: 렉라자/Lazcluze+Rybrevant 글로벌 매출·EU milestone, 주가는 고점 대비 약세
+    source_3m_move_pct: null
+    target_symbol: AZN
+    target_name: AstraZeneca
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: EGFR NSCLC에서 Tagrisso 계열 경쟁 부담 관찰 후보.
+    evidence:
+    - title: J&J/Yuhan Lazcluze and Rybrevant sales growth
+      url: ''
+    trading_note: 유한양행/JNJ EGFR NSCLC 데이터·매출 업데이트 후 AZN oncology relative strength 관찰.
+  - source_symbol: 000100.KS
+    source_name: 유한양행
+    source_market: KR
+    source_reason: 렉라자/Lazcluze+Rybrevant 글로벌 매출·EU milestone, 주가는 고점 대비 약세
+    source_3m_move_pct: null
+    target_symbol: 028300.KQ
+    target_name: HLB
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 상업화 성과가 확인된 항암제 쪽으로 수급이 이동할 경우 임상/FDA 대기주에 수요 전환 리스크.
+    evidence:
+    - title: Yuhan Leclaza milestone
+      url: ''
+    - title: HLB FDA expectation articles
+      url: https://biz.chosun.com/science-chosun/bio/2026/03/04/CPME6Z6IFRG2XPAP5Y4JZ65PDQ/
+    trading_note: 유한양행 강세일에 임상/FDA 대기 바이오주의 수급 이탈 여부 관찰.
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: ALT-L9 Eylea biosimilar 국내 품목허가 + SC 플랫폼 가치
+    source_3m_move_pct: null
+    target_symbol: 000250.KQ
+    target_name: 삼천당제약
+    target_market: KR
+    relation_type: BIO_CLINICAL_READTHROUGH
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Eylea biosimilar 승인 readthrough가 동종 biosimilar peer로 후행 반응 가능.
+    evidence:
+    - title: 알테오젠, 아일리아 바이오시밀러 ‘아이젠피’ 국내 품목허가 취득
+      url: https://pharm.edaily.co.kr/news/read?newsId=03814646645449248
+    trading_note: 알테오젠 ALT-L9 이벤트 후 Eylea biosimilar peer의 same_day 거래대금 관찰.
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: ALT-L9 Eylea biosimilar 국내 품목허가 + SC 플랫폼 가치
+    source_3m_move_pct: null
+    target_symbol: 068270.KS
+    target_name: 셀트리온
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: biosimilar 승인/상업화 sentiment가 대형 biosimilar peer로 확산 가능.
+    evidence:
+    - title: 알테오젠 ALT-L9 국내 품목허가
+      url: https://pharm.edaily.co.kr/news/read?newsId=03814646645449248
+    trading_note: 알테오젠 승인 뉴스 이후 셀트리온의 3d 후행 반응과 외국인 수급 관찰.
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: ALT-L9 Eylea biosimilar 국내 품목허가 + SC 플랫폼 가치
+    source_3m_move_pct: null
+    target_symbol: REGN
+    target_name: Regeneron
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: Eylea originator에는 biosimilar 경쟁·가격 압박 리스크.
+    evidence:
+    - title: 알테오젠 ALT-L9 국내 품목허가
+      url: https://pharm.edaily.co.kr/news/read?newsId=03814646645449248
+    - title: Regeneron Eylea faces cheaper versions and Vabysmo
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/regeneron-beats-quarterly-results-estimates-strong-dupixent-demand-2026-04-29/
+    trading_note: 알테오젠/anti-VEGF biosimilar 뉴스 후 REGN의 EYLEA 관련 코멘트와 상대 약세 관찰.
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: ALT-L9 Eylea biosimilar 국내 품목허가 + SC 플랫폼 가치
+    source_3m_move_pct: null
+    target_symbol: NVS
+    target_name: Novartis
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: anti-VEGF 시장 가격 경쟁 확대의 부담 후보이나 직접성은 낮음.
+    evidence:
+    - title: 알테오젠 ALT-L9 국내 품목허가
+      url: https://pharm.edaily.co.kr/news/read?newsId=03814646645449248
+    trading_note: anti-VEGF 경쟁 뉴스 후 NVS ophthalmology exposure 반응 관찰.
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 1Q 매출 +26%, 영업익 +35%, 1~4공장 풀가동·CMO/CDO 누적 수주
+    source_3m_move_pct: null
+    target_symbol: 237690.KQ
+    target_name: 에스티팜
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: CDMO/위탁생산 실적 강세는 국내 CDMO·API peer로 후행 반응 관찰.
+    evidence:
+    - title: 삼성바이오로직스, 1분기 매출 1조2571억원·영업이익 5808억원
+      url: https://samsungbiologics.com/kr/media/company-news/samsung-biologics-reports-first-quarter-2026-financial-results
+    trading_note: 삼성바이오 실적/수주 뉴스 이후 국내 CDMO/API peer의 3d 후행 반응 관찰.
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 1Q 매출 +26%, 영업익 +35%, 1~4공장 풀가동·CMO/CDO 누적 수주
+    source_3m_move_pct: null
+    target_symbol: TMO
+    target_name: Thermo Fisher Scientific
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 대형 CDMO 가동률·수주 확대는 bioprocess tool/reagent 수요 관찰 후보.
+    evidence:
+    - title: Samsung Biologics Q1 2026 results and backlog
+      url: https://zdnet.co.kr/view/?no=20260424150514
+    trading_note: CDMO 수주 증가 뉴스가 bioprocess supplier basket으로 확산되는지 관찰.
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 1Q 매출 +26%, 영업익 +35%, 1~4공장 풀가동·CMO/CDO 누적 수주
+    source_3m_move_pct: null
+    target_symbol: 028300.KQ
+    target_name: HLB
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: CDMO capacity 가격/slot 경쟁이 적자·임상기업에는 비용 압박 리스크가 될 수 있음.
+    evidence:
+    - title: Samsung Biologics Q1 2026 results
+      url: https://samsungbiologics.com/kr/media/company-news/samsung-biologics-reports-first-quarter-2026-financial-results
+    - title: HLB cash flow data
+      url: https://www.tradingview.com/symbols/KRX-028300/financials-cash-flow/
+    trading_note: 삼성바이오 수주 강세와 동시에 적자 임상주의 자금조달/비용 부담 뉴스 관찰.
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 1Q 매출 +26%, 영업익 +35%, 1~4공장 풀가동·CMO/CDO 누적 수주
+    source_3m_move_pct: null
+    target_symbol: 298380.KQ
+    target_name: 에이비엘바이오
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 임상·위탁개발 비용 부담이 큰 R&D 기업에는 비용 압박 리스크 관찰.
+    evidence:
+    - title: Samsung Biologics Q1 2026 results and CDMO backlog
+      url: https://zdnet.co.kr/view/?no=20260424150514
+    trading_note: CDMO 강세와 바이오 R&D주 자금조달 리스크가 동시에 부각되는지 관찰.
+  - source_symbol: 087010.KQ
+    source_name: 펩트론
+    source_market: KR
+    source_reason: GLP-1 장기지속형 PT403/플랫폼 기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: 347850.KQ
+    target_name: 디앤디파마텍
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 국내 GLP-1/비만 파이프라인 peer로 후행 반응 관찰 후보.
+    evidence:
+    - title: '''비만'' 테마 올라탄 펩트론, 플랫폼 프리미엄 입증할까'
+      url: https://www.topdaily.kr/articles/109966
+    - title: 비만치료제(위고비) 관련주 & 테마주 17종목
+      url: https://alphasquare.co.kr/home/theme-factor?theme-id=496
+    trading_note: 펩트론 급등 당일 디앤디파마텍 거래대금·갭상승 지속성 관찰.
+  - source_symbol: 087010.KQ
+    source_name: 펩트론
+    source_market: KR
+    source_reason: GLP-1 장기지속형 PT403/플랫폼 기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: 189300.KQ
+    target_name: 인벤티지랩
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 장기지속형 주사제 플랫폼 peer로 테마상 수혜 가능성은 있으나 직접 근거 약함.
+    evidence:
+    - title: '''비만'' 테마 올라탄 펩트론, 플랫폼 프리미엄 입증할까'
+      url: https://www.topdaily.kr/articles/109966
+    trading_note: 펩트론 GLP-1 플랫폼 뉴스 이후 장기지속형 제형 peer의 다음 세션 후행 반응 관찰.
+  - source_symbol: 087010.KQ
+    source_name: 펩트론
+    source_market: KR
+    source_reason: GLP-1 장기지속형 PT403/플랫폼 기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: NVO
+    target_name: Novo Nordisk
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 차세대 장기지속형 플랫폼 기대가 incumbent valuation에는 미세한 경쟁 부담 후보.
+    evidence:
+    - title: '''비만'' 테마 올라탄 펩트론, 플랫폼 프리미엄 입증할까'
+      url: https://www.topdaily.kr/articles/109966
+    - title: Novo and Lilly gain on signs weight-loss pills could expand market
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-lilly-gain-signs-weight-loss-pills-could-expand-market-2026-05-07/
+    trading_note: 펩트론 단독 뉴스가 NVO에 직접 영향은 낮으므로 GLP-1 basket sentiment 확인용으로만 관찰.
+  - source_symbol: 087010.KQ
+    source_name: 펩트론
+    source_market: KR
+    source_reason: GLP-1 장기지속형 PT403/플랫폼 기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: LLY
+    target_name: Eli Lilly
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 펩트론 규모상 LLY 직접 영향은 낮고, 플랫폼 optionality 관찰 후보 수준.
+    evidence:
+    - title: '''비만'' 테마 올라탄 펩트론, 플랫폼 프리미엄 입증할까'
+      url: https://www.topdaily.kr/articles/109966
+    trading_note: 펩트론 급등은 LLY보다 국내 GLP-1 peer 관찰에 우선 활용.
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC LCB14/LCB84/LCB71 임상 진전·ASCO/IND·기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: 298380.KQ
+    target_name: 에이비엘바이오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: ADC/bispecific high-beta R&D peer로 후행 반응 관찰 후보.
+    evidence:
+    - title: 리가켐바이오, 핵심 ADC 3종 임상 진전…기술이전 기대
+      url: https://www.medicopharma.co.kr/news/articleView.html?idxno=67608
+    trading_note: 리가켐바이오 ADC 뉴스 당일 ABL Bio 등 R&D peer의 거래대금 동조 관찰.
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC LCB14/LCB84/LCB71 임상 진전·ASCO/IND·기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: 207940.KS
+    target_name: 삼성바이오로직스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: ADC/biologics 파이프라인 진전은 CDMO 수요 기대에 약한 후행 반응 후보.
+    evidence:
+    - title: 리가켐바이오 ADC 임상 진전
+      url: https://www.medicopharma.co.kr/news/articleView.html?idxno=67608
+    - title: Samsung Biologics Q1 2026 results
+      url: https://samsungbiologics.com/kr/media/company-news/samsung-biologics-reports-first-quarter-2026-financial-results
+    trading_note: ADC pipeline 뉴스는 CDMO 대형주에 직접성 낮아 5d 이상 느린 후행 관찰.
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC LCB14/LCB84/LCB71 임상 진전·ASCO/IND·기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: GILD
+    target_name: Gilead Sciences
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: TROP2/ADC 경쟁 구도에서 Trodelvy 등 incumbent ADC franchise 부담 후보.
+    evidence:
+    - title: 리가켐바이오 LCB84 TROP2 ADC 임상 진전
+      url: https://www.medicopharma.co.kr/news/articleView.html?idxno=67608
+    trading_note: LCB84/TROP2 ADC 데이터가 구체화될 때 GILD ADC franchise commentary와 상대강도 관찰.
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC LCB14/LCB84/LCB71 임상 진전·ASCO/IND·기술이전 기대
+    source_3m_move_pct: null
+    target_symbol: AZN
+    target_name: AstraZeneca
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 글로벌 ADC incumbent에는 차세대 ADC 경쟁 부담 후보이나 직접성은 낮음.
+    evidence:
+    - title: 리가켐바이오 ADC 임상 진전
+      url: https://www.medicopharma.co.kr/news/articleView.html?idxno=67608
+    trading_note: ADC 신약 데이터는 AZN 대형주에는 낮은 민감도이므로 sector basket 확인용.
+  - source_symbol: 028300.KQ
+    source_name: HLB
+    source_market: KR
+    source_reason: rivoceranib FDA 기대와 임상/자금 리스크 병존, 최근 1M 급락
+    source_3m_move_pct: null
+    target_symbol: 067630.KQ
+    target_name: HLB생명과학
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: HLB 그룹주/동일 모멘텀 민감도가 높아 동반 약세 후행 반응 관찰.
+    evidence:
+    - title: HLB TradingView performance
+      url: https://www.tradingview.com/symbols/KRX-028300/
+    trading_note: HLB 급락 당일 HLB그룹주의 same_day 동조 하락 및 반등 강도 관찰.
+  - source_symbol: 028300.KQ
+    source_name: HLB
+    source_market: KR
+    source_reason: rivoceranib FDA 기대와 임상/자금 리스크 병존, 최근 1M 급락
+    source_3m_move_pct: null
+    target_symbol: 047920.KQ
+    target_name: HLB제약
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: HLB 그룹주 수급 연동성이 높아 후행 반응 관찰.
+    evidence:
+    - title: HLB TradingView performance
+      url: https://www.tradingview.com/symbols/KRX-028300/
+    - title: HLB제약, 1200억 주주배정 유증 결정
+      url: ''
+    trading_note: HLB 급락과 HLB제약 자금조달 이슈 동시 발생 시 group risk 관찰.
+  - source_symbol: 028300.KQ
+    source_name: HLB
+    source_market: KR
+    source_reason: rivoceranib FDA 기대와 임상/자금 리스크 병존, 최근 1M 급락
+    source_3m_move_pct: null
+    target_symbol: MRK
+    target_name: Merck
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: HLB 간암 신약 기대 약화 시 incumbent oncology franchise의 대체 리스크 완화 후보.
+    evidence:
+    - title: HLB FDA expectation / BlackRock stake article
+      url: https://biz.chosun.com/science-chosun/bio/2026/03/04/CPME6Z6IFRG2XPAP5Y4JZ65PDQ/
+    trading_note: HLB 악재가 MRK 대형주에 직접 반영될 가능성은 낮아 oncology basket 확인용.
+  - source_symbol: 028300.KQ
+    source_name: HLB
+    source_market: KR
+    source_reason: rivoceranib FDA 기대와 임상/자금 리스크 병존, 최근 1M 급락
+    source_3m_move_pct: null
+    target_symbol: BMY
+    target_name: Bristol Myers Squibb
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: HCC/oncology 경쟁 약물 관점의 대체 리스크 완화 후보이나 HLB 규모상 영향 낮음.
+    evidence:
+    - title: HLB FDA expectation / BlackRock stake article
+      url: https://biz.chosun.com/science-chosun/bio/2026/03/04/CPME6Z6IFRG2XPAP5Y4JZ65PDQ/
+    trading_note: HLB 임상/FDA 이벤트는 BMY에 직접성 낮으므로 HCC/oncology peer basket으로만 관찰.

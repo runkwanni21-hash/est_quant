@@ -1,0 +1,393 @@
+version: 1
+
+groups:
+  core_kr:
+    label: "국내 핵심 대형주"
+    description: "KOSPI 대표 대형주 — 지수 영향력 최상위"
+    symbols:
+      - "005930.KS"   # 삼성전자
+      - "000660.KS"   # SK하이닉스
+      - "035420.KS"   # NAVER
+      - "005380.KS"   # 현대차
+      - "000270.KS"   # 기아
+      - "005490.KS"   # POSCO홀딩스
+      - "373220.KS"   # LG에너지솔루션
+      - "051910.KS"   # LG화학
+      - "006400.KS"   # 삼성SDI
+      - "207940.KS"   # 삼성바이오로직스
+      - "003550.KS"   # LG
+      - "066570.KS"   # LG전자
+      - "017670.KS"   # SK텔레콤
+      - "030200.KS"   # KT
+      - "009150.KS"   # 삼성전기
+      - "005935.KS"   # 삼성전자우
+      - "035720.KS"   # 카카오
+
+  kr_semiconductor:
+    label: "국내 반도체/HBM"
+    description: "반도체·HBM·장비·소재 — AI 수혜 핵심"
+    symbols:
+      - "000660.KS"   # SK하이닉스 (HBM1위)
+      - "042700.KQ"   # 한미반도체 (TC본더)
+      - "240810.KS"   # 원익IPS
+      - "036830.KQ"   # 솔브레인홀딩스
+      - "357780.KQ"   # 솔브레인
+      - "000990.KS"   # DB하이텍
+      - "058470.KQ"   # 리노공업
+      - "403870.KQ"   # HPSP (고압어닐링)
+      - "131970.KQ"   # 테크윙
+
+  kr_growth:
+    label: "국내 성장/테마"
+    description: "방산·조선·로봇·원전·바이오 핵심"
+    symbols:
+      - "012450.KS"   # 한화에어로스페이스 (방산)
+      - "064350.KS"   # 현대로템 (방산·수소)
+      - "329180.KS"   # HD현대중공업 (조선)
+      - "042660.KS"   # 한화오션 (조선)
+      - "034020.KS"   # 두산에너빌리티 (원전)
+      - "196170.KQ"   # 알테오젠 (바이오)
+      - "068270.KS"   # 셀트리온 (바이오시밀러)
+      - "454910.KS"   # 두산로보틱스 (로봇)
+      - "247540.KQ"   # 에코프로비엠 (2차전지)
+      - "086520.KQ"   # 에코프로
+      - "090430.KS"   # 아모레퍼시픽
+      - "011200.KS"   # HMM (해운)
+      - "010130.KS"   # 고려아연
+
+  kr_defense:
+    label: "국내 방산/우주"
+    description: "K-방산 수출주 + 우주항공"
+    symbols:
+      - "012450.KS"   # 한화에어로스페이스
+      - "064350.KS"   # 현대로템
+      - "272210.KS"   # 한화시스템
+      - "079550.KS"   # LIG넥스원
+      - "034020.KS"   # 두산에너빌리티 (원전 포함)
+      - "047810.KS"   # 한국항공우주(KAI)
+
+  kr_finance:
+    label: "국내 금융"
+    description: "은행·보험·증권 — 금리 민감 섹터"
+    symbols:
+      - "105560.KS"   # KB금융
+      - "055550.KS"   # 신한지주
+      - "086790.KS"   # 하나금융지주
+      - "316140.KS"   # 우리금융지주
+      - "138930.KS"   # BNK금융지주
+      - "000810.KS"   # 삼성화재
+      - "003600.KS"   # SK
+      - "071050.KS"   # 한국금융지주
+      - "005830.KS"   # DB손해보험
+      - "032830.KS"   # 삼성생명
+
+  kr_bio:
+    label: "국내 바이오/헬스케어"
+    description: "임상·바이오시밀러·의료기기"
+    symbols:
+      - "068270.KS"   # 셀트리온
+      - "196170.KQ"   # 알테오젠
+      - "207940.KS"   # 삼성바이오로직스
+      - "128940.KS"   # 한미약품
+      - "000100.KS"   # 유한양행
+      - "326030.KS"   # SK바이오팜
+      - "086900.KQ"   # 메디톡스
+      - "145720.KQ"   # 덴티움
+      - "214150.KQ"   # 클래시스
+
+  kr_energy_material:
+    label: "국내 에너지/소재"
+    description: "2차전지·정유·화학"
+    symbols:
+      - "373220.KS"   # LG에너지솔루션
+      - "006400.KS"   # 삼성SDI
+      - "051910.KS"   # LG화학
+      - "247540.KQ"   # 에코프로비엠
+      - "086520.KQ"   # 에코프로
+      - "006260.KS"   # LS
+      - "010950.KS"   # S-Oil
+      - "096770.KS"   # SK이노베이션
+      - "011790.KS"   # SKC
+      - "003490.KS"   # 대한항공
+
+  us_ai_bigtech:
+    label: "미국 AI/빅테크"
+    description: "AI 인프라·클라우드·플랫폼 핵심"
+    symbols:
+      - "NVDA"        # NVIDIA (GPU/AI 인프라)
+      - "MSFT"        # Microsoft (Azure·Copilot)
+      - "AAPL"        # Apple (소비자 생태계)
+      - "GOOGL"       # Alphabet (검색·GCP)
+      - "AMZN"        # Amazon (AWS·이커머스)
+      - "META"        # Meta (소셜·AI)
+      - "AVGO"        # Broadcom (AI ASIC)
+      - "AMD"         # AMD (GPU 2위)
+      - "QCOM"        # Qualcomm (모바일 칩)
+      - "PLTR"        # Palantir (AI 소프트웨어)
+      - "ASML"        # ASML (EUV 독점)
+      - "TSM"         # TSMC (파운드리 1위)
+      - "MU"          # Micron (DRAM/HBM)
+      - "ARM"         # Arm (CPU IP)
+      - "ORCL"        # Oracle (클라우드DB)
+      - "CRM"         # Salesforce (엔터프라이즈SaaS)
+      - "NOW"         # ServiceNow (기업 워크플로우AI)
+      - "SNOW"        # Snowflake (데이터클라우드)
+      - "ANET"        # Arista Networks (AI 네트워킹)
+      - "DELL"        # Dell (AI 서버)
+      - "SMCI"        # Super Micro Computer
+      - "MRVL"        # Marvell (AI 네트워킹칩)
+      - "CDNS"        # Cadence (EDA)
+      - "SNPS"        # Synopsys (EDA)
+
+  us_semiconductor:
+    label: "미국 반도체 장비/소재"
+    description: "칩 제조 가치사슬"
+    symbols:
+      - "LRCX"        # Lam Research (식각장비)
+      - "AMAT"        # Applied Materials (증착장비)
+      - "KLAC"        # KLA (계측장비)
+      - "TER"         # Teradyne (테스트장비)
+      - "ENTG"        # Entegris (소재)
+      - "MPWR"        # Monolithic Power
+      - "ON"          # ON Semiconductor (전력반도체)
+      - "INTC"        # Intel (x86·파운드리전환)
+      - "TXN"         # Texas Instruments (아날로그)
+      - "ADI"         # Analog Devices
+
+  us_healthcare:
+    label: "미국 헬스케어"
+    description: "제약·바이오·보험·기기"
+    symbols:
+      - "LLY"         # Eli Lilly (GLP-1 비만약)
+      - "MRK"         # Merck (항암제)
+      - "UNH"         # UnitedHealth (보험)
+      - "PFE"         # Pfizer (mRNA)
+      - "AMGN"        # Amgen (바이오의약)
+      - "GILD"        # Gilead (항바이러스)
+      - "REGN"        # Regeneron (안과·항암)
+      - "ABBV"        # AbbVie (면역항암)
+      - "BMY"         # Bristol-Myers Squibb
+      - "ISRG"        # Intuitive Surgical (로봇수술)
+      - "DXCM"        # Dexcom (CGM)
+
+  us_consumer:
+    label: "미국 소비/유통"
+    description: "방어주·소비재·유통·레저"
+    symbols:
+      - "NFLX"        # Netflix (스트리밍)
+      - "DIS"         # Disney (미디어)
+      - "RCL"         # Royal Caribbean (크루즈)
+      - "COST"        # Costco (멤버십유통)
+      - "WMT"         # Walmart (대형마트)
+      - "MCD"         # McDonald's
+      - "SBUX"        # Starbucks
+      - "NKE"         # Nike
+      - "BKNG"        # Booking Holdings (여행)
+      - "UBER"        # Uber (모빌리티)
+      - "DASH"        # DoorDash (배달)
+      - "ABNB"        # Airbnb
+      - "KO"          # Coca-Cola (방어주)
+      - "PEP"         # PepsiCo (방어주)
+
+  us_finance:
+    label: "미국 금융"
+    description: "대형은행·투자은행·핀테크·보험"
+    symbols:
+      - "JPM"         # JPMorgan Chase
+      - "BAC"         # Bank of America
+      - "GS"          # Goldman Sachs
+      - "MS"          # Morgan Stanley
+      - "V"           # Visa
+      - "MA"          # Mastercard
+      - "BRK-B"       # Berkshire Hathaway B
+      - "BX"          # Blackstone
+      - "C"           # Citigroup
+      - "WFC"         # Wells Fargo
+      - "AXP"         # American Express
+      - "SQ"          # Block (Square 핀테크)
+
+  us_energy_industrial:
+    label: "미국 에너지/산업"
+    description: "오일메이저·전력·방산·물류"
+    symbols:
+      - "XOM"         # ExxonMobil
+      - "CVX"         # Chevron
+      - "NEE"         # NextEra Energy (재생에너지)
+      - "LMT"         # Lockheed Martin (방산)
+      - "RTX"         # RTX (방산)
+      - "NOC"         # Northrop Grumman (방산)
+      - "GE"          # GE Aerospace
+      - "CAT"         # Caterpillar
+      - "DE"          # Deere & Company
+      - "FDX"         # FedEx
+      - "UPS"         # UPS
+
+  us_ev_energy_transition:
+    label: "미국 EV/에너지전환"
+    description: "전기차·배터리·청정에너지"
+    symbols:
+      - "TSLA"        # Tesla (EV·로봇택시·에너지)
+      - "RIVN"        # Rivian
+      - "ENPH"        # Enphase Energy (태양광인버터)
+      - "FSLR"        # First Solar
+      - "PLUG"        # Plug Power (수소)
+
+  macro_etf:
+    label: "매크로/ETF 관찰"
+    description: "시장 방향성·섹터 모니터링용"
+    symbols:
+      - "SPY"         # S&P500 ETF
+      - "QQQ"         # Nasdaq-100 ETF
+      - "SOXX"        # 반도체 ETF
+      - "IWM"         # Russell 2000 (소형주)
+      - "TLT"         # 장기국채 ETF (금리 역방향)
+      - "GLD"         # 금 ETF
+      - "SLV"         # 은 ETF
+      - "USO"         # 원유 ETF
+      - "UUP"         # 달러인덱스 ETF
+      - "XLK"         # 기술주 섹터 ETF
+      - "XLF"         # 금융 섹터 ETF
+      - "XLE"         # 에너지 섹터 ETF
+      - "XLV"         # 헬스케어 섹터 ETF
+      - "XLI"         # 산업재 섹터 ETF
+      - "VNQ"         # 리츠 ETF
+      - "HYG"         # 하이일드 채권 ETF
+      - "BTC-USD"     # 비트코인 (위험선호 지표)
+      - "ETH-USD"     # 이더리움 (위험선호 지표)
+
+  kr_etf:
+    label: "국내 ETF/지수"
+    description: "코스피·섹터 방향성 확인"
+    symbols:
+      - "069500.KS"   # KODEX200
+      - "229200.KS"   # KODEX코스닥150
+      - "114800.KS"   # KODEX인버스
+      - "122630.KS"   # KODEX레버리지
+      - "091160.KS"   # KODEX반도체
+      - "305720.KS"   # KODEX2차전지산업
+
+  avoid:
+    label: "제외/주의"
+    description: "롱 후보에서 제외하거나 관망 우선"
+    symbols: []
+
+risk_profile:
+  style: "개인 리서치 보조형"
+  beginner_safe_mode: true
+
+  prefer_markets:
+    - "KR"
+    - "US"
+
+  prefer_sectors:
+    - "AI"
+    - "반도체"
+    - "HBM"
+    - "바이오"
+    - "조선"
+    - "방산"
+    - "원전"
+    - "로봇"
+    - "자동차"
+    - "금융"
+
+  avoid_themes:
+    - "리딩방"
+    - "광고"
+    - "무근거 급등주"
+    - "코인선물"
+    - "작전성 테마"
+
+  max_candidates_per_report: 8
+  show_watchlist_first: true
+
+  long_rules:
+    min_score: 65
+    prefer_rsi_min: 45
+    prefer_rsi_max: 75
+    max_rsi_for_new_long: 80
+    require_positive_evidence: true
+    require_technical_confirmation: true
+    avoid_chasing_if_rsi_over: 85
+
+  short_rules:
+    min_score: 60
+    require_negative_evidence: true
+    allow_overheated_short_watch: true
+    overheated_rsi: 85
+    require_risk_note: true
+
+  position_language:
+    use_confirmed_buy_sell_words: false
+    long_word: "롱 관심"
+    short_word: "숏/매도 경계"
+    watch_word: "관망"
+    entry_word: "관심 진입"
+    stop_word: "손절·무효화"
+    target_word: "목표/매도 관찰"
+
+report_style:
+  tone: "전문 개인투자자 리서치 노트"
+  compact: true
+  show_reason_first: true
+  show_macro_first: true
+  show_watchlist_section: true
+  show_sector_board: true
+  show_event_calendar: true
+  show_delta_from_previous_report: true
+  show_performance_review: true
+  show_source_rank_summary: true
+
+  report_sections:
+    - "한 줄 결론"
+    - "4시간 전 대비 바뀐 점"
+    - "좋은 매크로 / 나쁜 매크로"
+    - "섹터 온도판"
+    - "새로 뜬 호재 / 새로 뜬 악재"
+    - "내 관심종목 변화"
+    - "롱 관심 후보"
+    - "숏/매도 경계 후보"
+    - "관망/추격주의"
+    - "다음 72시간 체크포인트"
+
+schedule_context:
+  "07":
+    label: "아침 브리핑"
+    focus:
+      - "전일 미국장"
+      - "한국장 개장 전 체크"
+      - "환율/금리/유가"
+      - "오늘 볼 섹터"
+  "11":
+    label: "오전장 점검"
+    focus:
+      - "한국장 오전 수급"
+      - "특징주"
+      - "새 리포트"
+  "15":
+    label: "장마감 전 점검"
+    focus:
+      - "한국장 마감 전 수급"
+      - "당일 강한 섹터"
+      - "종가 기준 관심 구간"
+  "19":
+    label: "저녁 점검"
+    focus:
+      - "한국장 마감 정리"
+      - "유럽장/미국장 프리마켓"
+      - "다음날 체크포인트"
+  "23":
+    label: "미국장 개장 체크"
+    focus:
+      - "미국장 개장 전 뉴스"
+      - "빅테크/반도체/ETF"
+      - "프리마켓 급등락"
+  "03":
+    label: "미국장 중반 체크"
+    focus:
+      - "미국장 흐름"
+      - "금리/달러/유가"
+      - "익일 한국장 영향"
+
+disclaimer:
+  text: "공개 정보 기반 개인 리서치 보조용이며 투자 판단 책임은 사용자에게 있음."

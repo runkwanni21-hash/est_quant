@@ -1,0 +1,10 @@
+[Unit]
+Description=Tele Quant 야간 유지보수 타이머 (매일 03:30 KST = UTC 18:30)
+After=network-online.target
+
+[Timer]
+OnCalendar=*-*-* 18:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

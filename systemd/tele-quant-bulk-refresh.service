@@ -1,0 +1,10 @@
+[Unit]
+Description=Tele Quant Bulk Refresh — 상위 500종목 섹터·시총 야간 갱신
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/projects/quant_spillover/tele_quant
+ExecStart=%h/.local/bin/uv run tele-quant bulk-refresh --limit 500
+StandardOutput=journal
+StandardError=journal
