@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-chcp 65001 >/dev/null 2>&1
+chcp 65001 >NUL 2>&1
 
 :: ----------------------------------------------------------------
 :: setup.bat 이 완료되지 않았으면 먼저 실행
@@ -24,7 +24,7 @@ echo   종료: Ctrl+C 또는 이 창 닫기
 echo  ============================================
 echo.
 
-start /B "" cmd /c "timeout /t 8 /nobreak >/dev/null 2>&1 && start http://localhost:8765"
+start /B "" cmd /c "timeout /t 8 /nobreak >NUL 2>&1 && start http://localhost:8765"
 
 wsl -d Ubuntu -- bash -l ~/tq/_launch.sh
 

@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-chcp 65001 >/dev/null 2>&1
+chcp 65001 >NUL 2>&1
 
 echo.
 echo  ================================================
@@ -11,7 +11,7 @@ echo.
 :: ----------------------------------------------------------------
 :: STEP 0  WSL2 확인
 :: ----------------------------------------------------------------
-wsl -d Ubuntu -- echo ok >/dev/null 2>&1
+wsl -d Ubuntu -- echo ok >NUL 2>&1
 if !ERRORLEVEL! NEQ 0 (
     echo  [ERROR] WSL2 Ubuntu 배포판을 찾을 수 없습니다.
     echo.
@@ -96,7 +96,7 @@ echo  [OK] 패키지 설치 완료
 :: ----------------------------------------------------------------
 if not exist "%~dp0.env.local" (
     if exist "%~dp0env.template" (
-        copy /Y "%~dp0env.template" "%~dp0.env.local" >/dev/null
+        copy /Y "%~dp0env.template" "%~dp0.env.local" >NUL
         echo  [OK] .env.local 생성됨 (env.template 복사)
     ) else (
         echo  [WARN] env.template 파일이 없어 .env.local을 생성하지 못했습니다.
@@ -119,7 +119,7 @@ echo.
 echo  다음 단계:
 echo    1. .env.local 파일에서 API 키를 입력하세요.
 echo       (아래에서 메모장으로 자동으로 열립니다)
-echo    2. run_dashboard.bat 을 실행하세요.
+echo    2. 실행.bat 을 실행하세요.
 echo.
 
 if exist "%~dp0.env.local" (
@@ -127,6 +127,6 @@ if exist "%~dp0.env.local" (
     start notepad "%~dp0.env.local"
 )
 
-echo  [READY] run_dashboard.bat 을 더블클릭하면 대시보드가 시작됩니다.
+echo  [READY] 실행.bat 을 더블클릭하면 대시보드가 시작됩니다.
 echo.
 pause
