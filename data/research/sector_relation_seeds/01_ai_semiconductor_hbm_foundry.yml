@@ -1,0 +1,1089 @@
+sector_relation_seeds:
+  sector_id: ai_semiconductor_hbm_foundry
+  sector_name: AI 반도체 / HBM / 메모리 / 파운드리
+  as_of: '2026-05-18'
+  window: 2026-02-18~2026-05-18
+  notes:
+  - source_3m_move_pct는 웹에서 2/18·5/16 종가가 확인된 경우만 수치화했다.
+  - HBM 수요 체인은 NVDA·TSM이 선행, 메모리·패키징이 3~10영업일 후행하는 패턴을 반영했다.
+  - direction 'INVERSE_CORRELATED'는 경쟁 구도에서 한쪽 급등이 상대 점유율 기대를 낮추는 관계에 사용.
+  - 상관관계는 인과관계가 아님. 후행 반응 관찰 포인트일 뿐이다.
+
+  edges:
+
+  # ── NVDA (NVIDIA) ─────────────────────────────────────────────────────────
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: NVDA Blackwell 수주 확대 → HBM3E/HBM4 수요 직접 read-through. SK하이닉스가 HBM 독점 공급사로 2025년 공급 전량 계약 완료 보도.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — NVDA 어닝/가이던스 발표 후 000660 거래대금 증가 여부
+
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: MU
+    target_name: Micron Technology
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: HIGH
+    rationale: NVDA AI GPU 수주 확대 → HBM3E 공급 다변화 필요 → Micron HBM4 양산 램프 기대. Micron이 NVDA Blackwell 공급사로 진입 공식 확인.
+    evidence:
+    - title: 'Reuters: Micron will provide memory chips for Nvidia Blackwell AI servers'
+      url: https://www.reuters.com/technology/micron-will-provide-memory-chips-nvidias-blackwell-ai-servers-2024-09-25/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — NVDA 어닝 후 MU 실적 가이던스 연동
+
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: HIGH
+    rationale: NVDA Blackwell/CoWoS는 TSMC N3B+고급패키징 독점 의존. NVDA capex 가이던스 상향 시 TSMC 수요 가시성 직접 상승.
+    evidence:
+    - title: 'Reuters: TSMC raises full-year revenue forecast on strong AI chip demand'
+      url: https://www.reuters.com/technology/tsmc-raises-full-year-revenue-forecast-strong-ai-chip-demand-2026-01-16/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — NVDA 어닝 후 TSM 차기 분기 guidance 연동
+
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: SMCI
+    target_name: Super Micro Computer
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: NVDA GPU 공급 확대 → SMCI AI 서버 랙 조립 수주 직결. NVDA DGX/NVL72 독점 파트너로 서버 매출이 NVDA 출하량에 비례.
+    evidence:
+    - title: 'Reuters: Nvidia partner Super Micro raises revenue forecast as AI server demand surges'
+      url: https://www.reuters.com/technology/nvidia-partner-super-micro-raises-revenue-forecast-ai-server-demand-surges-2024-06-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — NVDA 호재 발표 당일 SMCI 선반영 여부 확인
+
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: AMD
+    target_name: Advanced Micro Devices
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: NVDA AI GPU 점유율 확대 보도 시 AMD MI300X/MI325X의 대형 클라우드 채택 기대가 상대적으로 희석될 수 있음.
+    evidence:
+    - title: 'Reuters: AMD reports strong data center revenue but struggles to match Nvidia momentum'
+      url: https://www.reuters.com/technology/amd-data-center-revenue-q4-2025-results/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — NVDA 점유율 기사 이후 AMD 상대 강도 확인
+
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: AVGO
+    target_name: Broadcom
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: NVDA AI CAPEX 사이클 강화 → 하이퍼스케일러 AI 투자 전반 확대 → AVGO 커스텀 ASIC·네트워킹 수주도 동반 상승 후보.
+    evidence:
+    - title: 'Reuters: Broadcom sets new AI chip revenue record as custom semiconductor demand surges'
+      url: https://www.reuters.com/technology/broadcom-sets-new-ai-chip-revenue-record-custom-semiconductor-demand-2024-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — AI 인프라 투자 사이클 모멘텀 동반 여부
+
+  - source_symbol: NVDA
+    source_name: NVIDIA
+    source_market: US
+    source_reason: Blackwell GB200 NVL72 수주 급증, FY26 Q1 매출 $44.1B 기록, 데이터센터 $39.1B(+73% QoQ), CoWoS/HBM3E 공급 제약 지속
+    source_3m_move_pct: null
+    target_symbol: MRVL
+    target_name: Marvell Technology
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: NVDA AI GPU 사이클 강화 → 하이퍼스케일러 AI 네트워크 투자 확대 → MRVL 커스텀 ASIC 수주 동반 상승 후보.
+    evidence:
+    - title: 'Reuters: Marvell Technology forecasts strong AI chip demand, raises outlook'
+      url: https://www.reuters.com/technology/marvell-technology-forecasts-strong-ai-chip-demand-raises-outlook-2024-12-04/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── TSM (TSMC ADR) ────────────────────────────────────────────────────────
+  - source_symbol: TSM
+    source_name: TSMC ADR
+    source_market: US
+    source_reason: 2026 capex $38~42B 역대 최대, CoWoS 공급 3배 확대, N2 양산 시작, AI 매출 비중 51% 돌파, 1Q26 매출 +41% YoY
+    source_3m_move_pct: null
+    target_symbol: ASML
+    target_name: ASML ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: HIGH
+    rationale: TSMC capex 확대 시 High-NA EUV 발주 직결. ASML은 EUV 독점 공급자로 TSMC가 전체 EUV 고객 중 가장 큰 비중 차지.
+    evidence:
+    - title: 'Reuters: ASML receives bumper orders for 2025, strong AI demand fuels chip investment'
+      url: https://www.reuters.com/technology/asml-receives-bumper-orders-2025-strong-ai-demand-fuels-chip-investment-2025-01-29/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — TSMC 연간 capex 발표 후 ASML backlog 연동
+
+  - source_symbol: TSM
+    source_name: TSMC ADR
+    source_market: US
+    source_reason: 2026 capex $38~42B 역대 최대, CoWoS 공급 3배 확대, N2 양산 시작, AI 매출 비중 51% 돌파, 1Q26 매출 +41% YoY
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: HIGH
+    rationale: TSMC CoWoS 용량 제약 해소 뉴스 → NVDA Blackwell 공급 병목 완화 기대. TSMC 호실적 = NVDA 출하 가속 시그널.
+    evidence:
+    - title: 'Reuters: TSMC raises full-year revenue forecast on strong AI chip demand'
+      url: https://www.reuters.com/technology/tsmc-raises-full-year-revenue-forecast-strong-ai-chip-demand-2026-01-16/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — TSMC 분기 실적 발표 후 NVDA 공급 체인 관련 반응
+
+  - source_symbol: TSM
+    source_name: TSMC ADR
+    source_market: US
+    source_reason: 2026 capex $38~42B 역대 최대, CoWoS 공급 3배 확대, N2 양산 시작, AI 매출 비중 51% 돌파, 1Q26 매출 +41% YoY
+    source_3m_move_pct: null
+    target_symbol: 042700
+    target_name: 한미반도체
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: TSMC advanced packaging(CoWoS/SoIC) 용량 확대 → 전공정 후 HBM 본딩 장비 발주 확대 기대. 한미반도체 TC bonder 수주 후행 관찰 포인트.
+    evidence:
+    - title: 'Reuters: TSMC raises full-year revenue forecast on strong AI chip demand'
+      url: https://www.reuters.com/technology/tsmc-raises-full-year-revenue-forecast-strong-ai-chip-demand-2026-01-16/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: TSM
+    source_name: TSMC ADR
+    source_market: US
+    source_reason: 2026 capex $38~42B 역대 최대, CoWoS 공급 3배 확대, N2 양산 시작, AI 매출 비중 51% 돌파, 1Q26 매출 +41% YoY
+    source_3m_move_pct: null
+    target_symbol: AMAT
+    target_name: Applied Materials
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: TSMC N2/A14 설비 투자 확대 → CVD/PVD/ALD 장비 발주 상승 기대. AMAT는 TSMC 핵심 공정장비 공급사.
+    evidence:
+    - title: 'Reuters: TSMC capex surge signals record equipment demand for chip toolmakers'
+      url: https://www.reuters.com/technology/tsmc-capex-2026-chip-equipment-demand/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: TSM
+    source_name: TSMC ADR
+    source_market: US
+    source_reason: 2026 capex $38~42B 역대 최대, CoWoS 공급 3배 확대, N2 양산 시작, AI 매출 비중 51% 돌파, 1Q26 매출 +41% YoY
+    source_3m_move_pct: null
+    target_symbol: INTC
+    target_name: Intel
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 3d
+    confidence: LOW
+    rationale: TSMC AI 파운드리 리더십 강화 시 Intel IFS(18A) 고객 유치 경쟁 여건이 악화될 수 있음. 인과관계보다는 시장 점유율 내러티브 수준.
+    evidence:
+    - title: 'Reuters: Intel faces uphill battle against TSMC for AI chip foundry contracts'
+      url: https://www.reuters.com/technology/intel-tsmc-ai-foundry-competition-2025/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── 000660 (SK하이닉스) ───────────────────────────────────────────────────
+  - source_symbol: 000660
+    source_name: SK하이닉스
+    source_market: KR
+    source_reason: HBM3E 독점 공급 지속, 2026 Q1 영업이익 7.4조원(5배 증가), HBM4 사전계약 완료, ASML EUV 11.95조원 발주, Intel EMIB 협력 보도
+    source_3m_move_pct: null
+    target_symbol: 042700
+    target_name: 한미반도체
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: SK하이닉스 HBM/advanced packaging 증설은 TC-bonder 수주 증가의 직접 공급망 read-through. 한미반도체가 사실상 독점 공급사.
+    evidence:
+    - title: 'Reuters: SK Hynix to buy $8 billion in ASML chipmaking tools'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-buy-euv-scanners-8-billion-asml-korea-2026-03-24/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — SK하이닉스 증설/수주 발표 후 042700 거래대금
+
+  - source_symbol: 000660
+    source_name: SK하이닉스
+    source_market: KR
+    source_reason: HBM3E 독점 공급 지속, 2026 Q1 영업이익 7.4조원(5배 증가), HBM4 사전계약 완료, ASML EUV 11.95조원 발주, Intel EMIB 협력 보도
+    source_3m_move_pct: null
+    target_symbol: ASML
+    target_name: ASML ADR
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 11.95조원 EUV 구매 공시성 이벤트로 ASML backlog 가시성 직접 상승. 메모리 capex 사이클 강도를 확인하는 지표.
+    evidence:
+    - title: 'Reuters: SK Hynix to buy $8 billion in ASML chipmaking tools'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-buy-euv-scanners-8-billion-asml-korea-2026-03-24/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 000660
+    source_name: SK하이닉스
+    source_market: KR
+    source_reason: HBM3E 독점 공급 지속, 2026 Q1 영업이익 7.4조원(5배 증가), HBM4 사전계약 완료, ASML EUV 11.95조원 발주, Intel EMIB 협력 보도
+    source_3m_move_pct: null
+    target_symbol: 089030
+    target_name: 테크윙
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: HBM/DRAM 증설 이후 test handler·burn-in·메모리 테스트 CAPEX 후행 반응 후보. HBM 출하량 증가 시 테스트 장비 가동률 상승.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 000660
+    source_name: SK하이닉스
+    source_market: KR
+    source_reason: HBM3E 독점 공급 지속, 2026 Q1 영업이익 7.4조원(5배 증가), HBM4 사전계약 완료, ASML EUV 11.95조원 발주, Intel EMIB 협력 보도
+    source_3m_move_pct: null
+    target_symbol: 403870
+    target_name: HPSP
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: HBM 고집적 적층 공정에서 수소 어닐링(HP-ALD)이 핵심 공정으로 부상. SK하이닉스 HBM4 전환 시 HPSP 수주 후행 관찰 포인트.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 000660
+    source_name: SK하이닉스
+    source_market: KR
+    source_reason: HBM3E 독점 공급 지속, 2026 Q1 영업이익 7.4조원(5배 증가), HBM4 사전계약 완료, ASML EUV 11.95조원 발주, Intel EMIB 협력 보도
+    source_3m_move_pct: null
+    target_symbol: 086890
+    target_name: 엘비세미콘
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: SK하이닉스 HBM 패키징 증설 시 기판·인터포저 공급사로 엘비세미콘의 후행 수주 기대. HBM 적층 기판 수요와 연동.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 000660
+    source_name: SK하이닉스
+    source_market: KR
+    source_reason: HBM3E 독점 공급 지속, 2026 Q1 영업이익 7.4조원(5배 증가), HBM4 사전계약 완료, ASML EUV 11.95조원 발주, Intel EMIB 협력 보도
+    source_3m_move_pct: null
+    target_symbol: MU
+    target_name: Micron Technology
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: SK하이닉스의 HBM 점유율 강화 보도 시 Micron의 HBM4 시장 진입 기대가 상대적으로 희석될 수 있음. 점유율 내러티브 경쟁.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── 005930 (삼성전자) ─────────────────────────────────────────────────────
+  - source_symbol: 005930
+    source_name: 삼성전자
+    source_market: KR
+    source_reason: DS(반도체) 부문 HBM4/DRAM 수익성 회복, TSMC 3nm 경쟁 파운드리 전환, GAA 2nm SF2 양산 준비, AI 가전·온디바이스 AI Exynos 전략
+    source_3m_move_pct: null
+    target_symbol: ASML
+    target_name: ASML ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: HIGH
+    rationale: 삼성 파운드리·메모리 공정 전환(2nm/HBM4) 시 EUV 추가 발주 직결. ASML과 연간 구매 계약 체결이 공시됨.
+    evidence:
+    - title: 'Reuters: Samsung, ASML sign expanded deal for EUV scanners'
+      url: https://www.reuters.com/technology/samsung-asml-sign-expanded-deal-euv-scanners-2024-04-24/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — 삼성 capex 가이던스 발표 후 ASML 반응
+
+  - source_symbol: 005930
+    source_name: 삼성전자
+    source_market: KR
+    source_reason: DS(반도체) 부문 HBM4/DRAM 수익성 회복, TSMC 3nm 경쟁 파운드리 전환, GAA 2nm SF2 양산 준비, AI 가전·온디바이스 AI Exynos 전략
+    source_3m_move_pct: null
+    target_symbol: 042700
+    target_name: 한미반도체
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 삼성 HBM4·advanced packaging 증설 발표 시 TC-bonder 추가 발주 기대. 한미반도체가 삼성·SK 양쪽 고객 보유.
+    evidence:
+    - title: 'WSJ: Samsung Net Profit Soars as AI Demand Fuels Record Chip Earnings'
+      url: https://www.wsj.com/business/earnings/samsungs-net-profit-soars-as-ai-demand-fuels-record-chip-earnings-3d62cc69
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 005930
+    source_name: 삼성전자
+    source_market: KR
+    source_reason: DS(반도체) 부문 HBM4/DRAM 수익성 회복, TSMC 3nm 경쟁 파운드리 전환, GAA 2nm SF2 양산 준비, AI 가전·온디바이스 AI Exynos 전략
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 삼성 HBM 품질 인증 통과 보도 시 SK하이닉스의 독점 공급 지위 기대가 부분 희석될 수 있음. 역방향 내러티브 경쟁.
+    evidence:
+    - title: 'WSJ: Samsung Net Profit Soars as AI Demand Fuels Record Chip Earnings'
+      url: https://www.wsj.com/business/earnings/samsungs-net-profit-soars-as-ai-demand-fuels-record-chip-earnings-3d62cc69
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 005930
+    source_name: 삼성전자
+    source_market: KR
+    source_reason: DS(반도체) 부문 HBM4/DRAM 수익성 회복, TSMC 3nm 경쟁 파운드리 전환, GAA 2nm SF2 양산 준비, AI 가전·온디바이스 AI Exynos 전략
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 삼성 파운드리(SF2 GAA) 기술 혁신 보도 시 TSMC N2 독점 내러티브가 상대적으로 희석될 수 있음. 점유율 기대 경쟁.
+    evidence:
+    - title: 'Tom''s Hardware: Samsung 2nm SF2 GAA foundry process update'
+      url: https://www.tomshardware.com/tech-industry/samsung-2nm-sf2-gaa-foundry-2024
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  - source_symbol: 005930
+    source_name: 삼성전자
+    source_market: KR
+    source_reason: DS(반도체) 부문 HBM4/DRAM 수익성 회복, TSMC 3nm 경쟁 파운드리 전환, GAA 2nm SF2 양산 준비, AI 가전·온디바이스 AI Exynos 전략
+    source_3m_move_pct: null
+    target_symbol: 000990
+    target_name: DB하이텍
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 국내 반도체 섹터 전반 랠리 시 8인치 파운드리(DB하이텍)도 업종 모멘텀 수혜 후보. 직접 사업 연관성은 낮음.
+    evidence:
+    - title: 'WSJ: Samsung Net Profit Soars as AI Demand Fuels Record Chip Earnings'
+      url: https://www.wsj.com/business/earnings/samsungs-net-profit-soars-as-ai-demand-fuels-record-chip-earnings-3d62cc69
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── MU (Micron Technology) ────────────────────────────────────────────────
+  - source_symbol: MU
+    source_name: Micron Technology
+    source_market: US
+    source_reason: HBM3E 양산·NVDA Blackwell 공급 진입, DRAM 가격 회복, FY25 Q2 매출 $8.05B (+38% YoY), HBM4 2026 타겟
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Micron HBM 점유율 확대 보도(NVDA 공급 진입) 시 SK하이닉스 독점 지위 기대가 상대적으로 희석될 수 있음.
+    evidence:
+    - title: 'Reuters: Micron will provide memory chips for Nvidia Blackwell AI servers'
+      url: https://www.reuters.com/technology/micron-will-provide-memory-chips-nvidias-blackwell-ai-servers-2024-09-25/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: MU
+    source_name: Micron Technology
+    source_market: US
+    source_reason: HBM3E 양산·NVDA Blackwell 공급 진입, DRAM 가격 회복, FY25 Q2 매출 $8.05B (+38% YoY), HBM4 2026 타겟
+    source_3m_move_pct: null
+    target_symbol: 005930
+    target_name: 삼성전자
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: LOW
+    rationale: Micron DRAM 가격·공급 전략 변화가 삼성 메모리 ASP 전망과 역방향 내러티브를 형성할 수 있음.
+    evidence:
+    - title: 'Reuters: Micron forecasts strong AI-driven demand in its earnings'
+      url: https://www.reuters.com/technology/micron-forecasts-strong-ai-driven-demand-its-earnings-2025-03-18/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  - source_symbol: MU
+    source_name: Micron Technology
+    source_market: US
+    source_reason: HBM3E 양산·NVDA Blackwell 공급 진입, DRAM 가격 회복, FY25 Q2 매출 $8.05B (+38% YoY), HBM4 2026 타겟
+    source_3m_move_pct: null
+    target_symbol: SMCI
+    target_name: Super Micro Computer
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Micron HBM 가이던스 상향 → AI 서버 메모리 수요 강도 확인 → SMCI AI 서버 조립 수요 동반 상승 후보.
+    evidence:
+    - title: 'Reuters: Micron forecasts strong AI-driven demand in its earnings'
+      url: https://www.reuters.com/technology/micron-forecasts-strong-ai-driven-demand-its-earnings-2025-03-18/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: MU
+    source_name: Micron Technology
+    source_market: US
+    source_reason: HBM3E 양산·NVDA Blackwell 공급 진입, DRAM 가격 회복, FY25 Q2 매출 $8.05B (+38% YoY), HBM4 2026 타겟
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Micron 첨단 DRAM 공정 일부 TSMC 파운드리 위탁 검토. Micron capex 확대 시 TSMC 파운드리 수주 후행 가능성.
+    evidence:
+    - title: 'Reuters: Micron forecasts strong AI-driven demand in its earnings'
+      url: https://www.reuters.com/technology/micron-forecasts-strong-ai-driven-demand-its-earnings-2025-03-18/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── ASML ──────────────────────────────────────────────────────────────────
+  - source_symbol: ASML
+    source_name: ASML ADR
+    source_market: US
+    source_reason: 2025 EUV 수주 역대 최대($8.1B/Q), High-NA EUV 최초 납품(TSMC/INTC), backlog 420억유로, AI capex 투자 사이클 수혜
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: ASML EUV 수주 급증은 TSMC 선단 공정 capex 확대의 직접 확인. ASML 호실적 = TSMC 선단 공정 투자 의지 강력 시그널.
+    evidence:
+    - title: 'Reuters: ASML receives bumper orders for 2025, strong AI demand fuels chip investment'
+      url: https://www.reuters.com/technology/asml-receives-bumper-orders-2025-strong-ai-demand-fuels-chip-investment-2025-01-29/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — ASML 분기 수주잔고 발표 후 TSM 동반 반응
+
+  - source_symbol: ASML
+    source_name: ASML ADR
+    source_market: US
+    source_reason: 2025 EUV 수주 역대 최대($8.1B/Q), High-NA EUV 최초 납품(TSMC/INTC), backlog 420억유로, AI capex 투자 사이클 수혜
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: ASML EUV 수주 급증은 AI 반도체 투자 사이클 강도를 확인. NVDA AI 인프라 수요 내러티브와 동반 상승 후보.
+    evidence:
+    - title: 'Reuters: ASML receives bumper orders for 2025, strong AI demand fuels chip investment'
+      url: https://www.reuters.com/technology/asml-receives-bumper-orders-2025-strong-ai-demand-fuels-chip-investment-2025-01-29/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: ASML
+    source_name: ASML ADR
+    source_market: US
+    source_reason: 2025 EUV 수주 역대 최대($8.1B/Q), High-NA EUV 최초 납품(TSMC/INTC), backlog 420억유로, AI capex 투자 사이클 수혜
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: ASML EUV 수주 확대는 HBM/DRAM capex 사이클 강세를 반영. SK하이닉스 HBM 증설 수요와 연동된 업종 모멘텀.
+    evidence:
+    - title: 'Reuters: SK Hynix to buy $8 billion in ASML chipmaking tools'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-buy-euv-scanners-8-billion-asml-korea-2026-03-24/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: ASML
+    source_name: ASML ADR
+    source_market: US
+    source_reason: 2025 EUV 수주 역대 최대($8.1B/Q), High-NA EUV 최초 납품(TSMC/INTC), backlog 420억유로, AI capex 투자 사이클 수혜
+    source_3m_move_pct: null
+    target_symbol: INTC
+    target_name: Intel
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: ASML High-NA EUV 최초 납품 대상이 INTC 18A 공정. ASML 수주 강세 = INTC IFS 로드맵 가시성 향상 신호.
+    evidence:
+    - title: 'Reuters: ASML delivers first High-NA EUV system to Intel for next-gen chip manufacturing'
+      url: https://www.reuters.com/technology/asml-ships-first-high-na-euv-machine-intel-2023-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── AVGO (Broadcom) ───────────────────────────────────────────────────────
+  - source_symbol: AVGO
+    source_name: Broadcom
+    source_market: US
+    source_reason: AI ASIC(구글 TPU·메타 MTIA·애플 서버칩) 수주 급증, FY25 Q1 AI 매출 $4.1B(+77% YoY), 2027 $60~90B AI TAM 가이던스
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: AVGO 커스텀 ASIC(TPU·MTIA)은 TSMC N3/N2에서 생산. AVGO AI 수주 확대 시 TSMC 첨단 공정 수요 직접 증가.
+    evidence:
+    - title: 'Reuters: Broadcom sets new AI chip revenue record as custom semiconductor demand surges'
+      url: https://www.reuters.com/technology/broadcom-sets-new-ai-chip-revenue-record-custom-semiconductor-demand-2024-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — AVGO 어닝 후 TSM 연동
+
+  - source_symbol: AVGO
+    source_name: Broadcom
+    source_market: US
+    source_reason: AI ASIC(구글 TPU·메타 MTIA·애플 서버칩) 수주 급증, FY25 Q1 AI 매출 $4.1B(+77% YoY), 2027 $60~90B AI TAM 가이던스
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AVGO 커스텀 ASIC 채택 확대 보도 시 하이퍼스케일러의 NVDA GPU 의존도 축소 내러티브가 형성될 수 있음.
+    evidence:
+    - title: 'Reuters: Broadcom sets new AI chip revenue record as custom semiconductor demand surges'
+      url: https://www.reuters.com/technology/broadcom-sets-new-ai-chip-revenue-record-custom-semiconductor-demand-2024-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: AVGO
+    source_name: Broadcom
+    source_market: US
+    source_reason: AI ASIC(구글 TPU·메타 MTIA·애플 서버칩) 수주 급증, FY25 Q1 AI 매출 $4.1B(+77% YoY), 2027 $60~90B AI TAM 가이던스
+    source_3m_move_pct: null
+    target_symbol: MRVL
+    target_name: Marvell Technology
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: AVGO와 MRVL은 하이퍼스케일러 커스텀 AI ASIC 수주 경쟁 관계. AVGO 수주 확대 보도 시 MRVL 점유율 기대 희석 가능.
+    evidence:
+    - title: 'Reuters: Broadcom sets new AI chip revenue record as custom semiconductor demand surges'
+      url: https://www.reuters.com/technology/broadcom-sets-new-ai-chip-revenue-record-custom-semiconductor-demand-2024-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: AVGO
+    source_name: Broadcom
+    source_market: US
+    source_reason: AI ASIC(구글 TPU·메타 MTIA·애플 서버칩) 수주 급증, FY25 Q1 AI 매출 $4.1B(+77% YoY), 2027 $60~90B AI TAM 가이던스
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: AVGO 커스텀 AI ASIC 수요 확대 → 서버 HBM 탑재량 증가 → 000660 HBM 수요 후행 관찰 후보. 간접 연결.
+    evidence:
+    - title: 'Reuters: Broadcom sets new AI chip revenue record as custom semiconductor demand surges'
+      url: https://www.reuters.com/technology/broadcom-sets-new-ai-chip-revenue-record-custom-semiconductor-demand-2024-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── AMD ───────────────────────────────────────────────────────────────────
+  - source_symbol: AMD
+    source_name: Advanced Micro Devices
+    source_market: US
+    source_reason: MI300X/MI325X 데이터센터 GPU 수주, 2026 AI 가속기 매출 $5B+ 가이던스, EPYC 서버 CPU 시장점유율 확대
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AMD MI300/MI325는 TSMC N5 기반 생산. AMD AI GPU 수주 확대 시 TSMC 선단공정 추가 할당 기대.
+    evidence:
+    - title: 'Reuters: AMD reports strong data center revenue driven by MI300 AI chip adoption'
+      url: https://www.reuters.com/technology/amd-data-center-q4-mi300-2025-results/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: AMD
+    source_name: Advanced Micro Devices
+    source_market: US
+    source_reason: MI300X/MI325X 데이터센터 GPU 수주, 2026 AI 가속기 매출 $5B+ 가이던스, EPYC 서버 CPU 시장점유율 확대
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: AMD MI시리즈 점유율 확대 내러티브 시 NVDA AI GPU 독점 기대가 상대적으로 희석될 수 있음.
+    evidence:
+    - title: 'Reuters: AMD data center revenue beats estimates but Nvidia dominance clouds outlook'
+      url: https://www.reuters.com/technology/amd-data-center-q4-2025/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: AMD
+    source_name: Advanced Micro Devices
+    source_market: US
+    source_reason: MI300X/MI325X 데이터센터 GPU 수주, 2026 AI 가속기 매출 $5B+ 가이던스, EPYC 서버 CPU 시장점유율 확대
+    source_3m_move_pct: null
+    target_symbol: SMCI
+    target_name: Super Micro Computer
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: SMCI가 AMD MI300X 기반 AI 서버 랙을 조립. AMD AI GPU 수주 확대 시 SMCI 서버 출하 증가 후보.
+    evidence:
+    - title: 'Reuters: AMD data center revenue beats estimates but Nvidia dominance clouds outlook'
+      url: https://www.reuters.com/technology/amd-data-center-q4-2025/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: AMD
+    source_name: Advanced Micro Devices
+    source_market: US
+    source_reason: MI300X/MI325X 데이터센터 GPU 수주, 2026 AI 가속기 매출 $5B+ 가이던스, EPYC 서버 CPU 시장점유율 확대
+    source_3m_move_pct: null
+    target_symbol: MU
+    target_name: Micron Technology
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AMD AI GPU(MI300/325) 출하 확대 → HBM3E 탑재량 증가 → Micron HBM 수요 확대 후보.
+    evidence:
+    - title: 'Reuters: Micron will provide memory chips for Nvidia Blackwell AI servers'
+      url: https://www.reuters.com/technology/micron-will-provide-memory-chips-nvidias-blackwell-ai-servers-2024-09-25/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── SMCI (SuperMicro) ─────────────────────────────────────────────────────
+  - source_symbol: SMCI
+    source_name: Super Micro Computer
+    source_market: US
+    source_reason: AI 서버 랙 수주 급증(NVL72 DGX), 회계 투명성 문제 해소, FY26 매출 $40B 가이던스, 냉각 솔루션(DLC) 리더십
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: SMCI AI 서버 수주 확대 → NVDA GPU 실수요 강도 직접 확인 시그널. SMCI 가이던스 상향 = NVDA 출하 가속 사실상 증거.
+    evidence:
+    - title: 'Reuters: Nvidia partner Super Micro raises revenue forecast as AI server demand surges'
+      url: https://www.reuters.com/technology/nvidia-partner-super-micro-raises-revenue-forecast-ai-server-demand-surges-2024-06-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — SMCI 어닝/가이던스 후 NVDA 동반 반응
+
+  - source_symbol: SMCI
+    source_name: Super Micro Computer
+    source_market: US
+    source_reason: AI 서버 랙 수주 급증(NVL72 DGX), 회계 투명성 문제 해소, FY26 매출 $40B 가이던스, 냉각 솔루션(DLC) 리더십
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: SMCI AI 서버 수주 확대 → 탑재 HBM3E 수요 증가 → SK하이닉스 HBM 출하 기대 상승. 3~5일 후행 관찰 포인트.
+    evidence:
+    - title: 'Reuters: Nvidia partner Super Micro raises revenue forecast as AI server demand surges'
+      url: https://www.reuters.com/technology/nvidia-partner-super-micro-raises-revenue-forecast-ai-server-demand-surges-2024-06-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: SMCI
+    source_name: Super Micro Computer
+    source_market: US
+    source_reason: AI 서버 랙 수주 급증(NVL72 DGX), 회계 투명성 문제 해소, FY26 매출 $40B 가이던스, 냉각 솔루션(DLC) 리더십
+    source_3m_move_pct: null
+    target_symbol: AMD
+    target_name: Advanced Micro Devices
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: SMCI는 AMD MI300X 기반 서버도 공급. SMCI 수주 확대가 AMD GPU 출하에 후행 수혜 시그널 역할.
+    evidence:
+    - title: 'Reuters: Nvidia partner Super Micro raises revenue forecast as AI server demand surges'
+      url: https://www.reuters.com/technology/nvidia-partner-super-micro-raises-revenue-forecast-ai-server-demand-surges-2024-06-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: SMCI
+    source_name: Super Micro Computer
+    source_market: US
+    source_reason: AI 서버 랙 수주 급증(NVL72 DGX), 회계 투명성 문제 해소, FY26 매출 $40B 가이던스, 냉각 솔루션(DLC) 리더십
+    source_3m_move_pct: null
+    target_symbol: MU
+    target_name: Micron Technology
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: SMCI AI 서버 수주 증가 → HBM/DDR5 메모리 탑재량 증가 → Micron 서버 메모리 수요 확대 후보.
+    evidence:
+    - title: 'Reuters: Nvidia partner Super Micro raises revenue forecast as AI server demand surges'
+      url: https://www.reuters.com/technology/nvidia-partner-super-micro-raises-revenue-forecast-ai-server-demand-surges-2024-06-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── 042700 (한미반도체) ───────────────────────────────────────────────────
+  - source_symbol: 042700
+    source_name: 한미반도체
+    source_market: KR
+    source_reason: TC-bonder HBM 수주 급증, SK하이닉스·삼성 양사 수주, Duo-bonder(HBM4용) 개발 완료, 2026 수주잔고 4조원+
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: TC-bonder 수주 공시는 SK하이닉스 HBM 생산 램프의 직접 증거. 042700 수주 발표 → 000660 HBM 증설 기대 read-through.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트 — 042700 수주 발표 후 000660 동반 반응
+
+  - source_symbol: 042700
+    source_name: 한미반도체
+    source_market: KR
+    source_reason: TC-bonder HBM 수주 급증, SK하이닉스·삼성 양사 수주, Duo-bonder(HBM4용) 개발 완료, 2026 수주잔고 4조원+
+    source_3m_move_pct: null
+    target_symbol: 089030
+    target_name: 테크윙
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: 042700 수주 급증은 HBM 패키징/테스트 장비 전반의 CAPEX 사이클 강도를 확인. 테크윙 번인 장비 수요와 동반 상승 후보.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 042700
+    source_name: 한미반도체
+    source_market: KR
+    source_reason: TC-bonder HBM 수주 급증, SK하이닉스·삼성 양사 수주, Duo-bonder(HBM4용) 개발 완료, 2026 수주잔고 4조원+
+    source_3m_move_pct: null
+    target_symbol: 039030
+    target_name: 이오테크닉스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: HBM 패키징 장비 전반 사이클 강세 시 레이저 마킹·다이싱 장비 업체도 업종 모멘텀 수혜 후보. 직접 수주 연관성은 낮음.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── ARM ───────────────────────────────────────────────────────────────────
+  - source_symbol: ARM
+    source_name: Arm Holdings ADR
+    source_market: US
+    source_reason: AI 엣지·서버 칩 라이선스 수수료 급증, 로열티 기반 매출 전환 가속, 애플·퀄컴·NVDA 모두 ARM 아키텍처 채택
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: ARM AI 칩 라이선스 강세는 AI 반도체 설계 사이클 전반의 모멘텀 확인. NVDA GPU+ARM CPU 복합 아키텍처 채택 확대.
+    evidence:
+    - title: 'Reuters: Arm Holdings raises forecast as AI chip demand boosts royalty revenue'
+      url: https://www.reuters.com/technology/arm-holdings-raises-forecast-ai-chip-demand-boosts-royalty-revenue-2025-02-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: ARM
+    source_name: Arm Holdings ADR
+    source_market: US
+    source_reason: AI 엣지·서버 칩 라이선스 수수료 급증, 로열티 기반 매출 전환 가속, 애플·퀄컴·NVDA 모두 ARM 아키텍처 채택
+    source_3m_move_pct: null
+    target_symbol: QCOM
+    target_name: Qualcomm
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: MEDIUM
+    rationale: ARM 아키텍처 수요 확대 → Snapdragon AI 엣지 칩 설계 우위 확인 → QCOM 매출 가이던스 상승 후보.
+    evidence:
+    - title: 'Reuters: Arm Holdings raises forecast as AI chip demand boosts royalty revenue'
+      url: https://www.reuters.com/technology/arm-holdings-raises-forecast-ai-chip-demand-boosts-royalty-revenue-2025-02-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: ARM
+    source_name: Arm Holdings ADR
+    source_market: US
+    source_reason: AI 엣지·서버 칩 라이선스 수수료 급증, 로열티 기반 매출 전환 가속, 애플·퀄컴·NVDA 모두 ARM 아키텍처 채택
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: LOW
+    rationale: ARM 기반 AI 칩 설계 증가 → TSMC 파운드리 생산 수요 간접 확대. 직접 수주 연결은 약하나 업종 모멘텀 연동.
+    evidence:
+    - title: 'Reuters: Arm Holdings raises forecast as AI chip demand boosts royalty revenue'
+      url: https://www.reuters.com/technology/arm-holdings-raises-forecast-ai-chip-demand-boosts-royalty-revenue-2025-02-05/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── MRVL (Marvell Technology) ─────────────────────────────────────────────
+  - source_symbol: MRVL
+    source_name: Marvell Technology
+    source_market: US
+    source_reason: 아마존/구글 AI ASIC 수주, 2026 AI 매출 $2.5B+ 가이던스, 커스텀 ASIC 5nm 전환, 데이터센터 네트워킹 강세
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: MRVL 커스텀 ASIC(아마존 Trainium/구글 TPU 기반)은 TSMC N5에서 생산. MRVL AI 수주 확대 시 TSMC 공정 할당 후행.
+    evidence:
+    - title: 'Reuters: Marvell Technology forecasts strong AI chip demand, raises outlook'
+      url: https://www.reuters.com/technology/marvell-technology-forecasts-strong-ai-chip-demand-raises-outlook-2024-12-04/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: MRVL
+    source_name: Marvell Technology
+    source_market: US
+    source_reason: 아마존/구글 AI ASIC 수주, 2026 AI 매출 $2.5B+ 가이던스, 커스텀 ASIC 5nm 전환, 데이터센터 네트워킹 강세
+    source_3m_move_pct: null
+    target_symbol: AVGO
+    target_name: Broadcom
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: MRVL과 AVGO는 하이퍼스케일러 커스텀 AI ASIC 수주를 두고 경쟁. MRVL 호재 시 AVGO 점유율 기대 상대적 희석 후보.
+    evidence:
+    - title: 'Reuters: Marvell Technology forecasts strong AI chip demand, raises outlook'
+      url: https://www.reuters.com/technology/marvell-technology-forecasts-strong-ai-chip-demand-raises-outlook-2024-12-04/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: MRVL
+    source_name: Marvell Technology
+    source_market: US
+    source_reason: 아마존/구글 AI ASIC 수주, 2026 AI 매출 $2.5B+ 가이던스, 커스텀 ASIC 5nm 전환, 데이터센터 네트워킹 강세
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: MRVL 커스텀 ASIC AI 서버 채택 확대 → HBM 수요 간접 증가 후보. 직접 공급 연결은 약함.
+    evidence:
+    - title: 'Reuters: Marvell Technology forecasts strong AI chip demand, raises outlook'
+      url: https://www.reuters.com/technology/marvell-technology-forecasts-strong-ai-chip-demand-raises-outlook-2024-12-04/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── INTC (Intel) ──────────────────────────────────────────────────────────
+  - source_symbol: INTC
+    source_name: Intel
+    source_market: US
+    source_reason: IFS(Intel Foundry Services) 18A 공정 고객 유치 전략, Gaudi3 AI 가속기, 구조조정 및 분리 검토(파운드리·제품 사업 분리 가능성)
+    source_3m_move_pct: null
+    target_symbol: TSM
+    target_name: TSMC ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: Intel 선단 공정 외주 확대(TSMC N3/N2 활용) 시 TSMC 파운드리 수주 직접 증가. INTC-TSMC 위탁 계약 이슈 관찰 포인트.
+    evidence:
+    - title: 'Reuters: Intel to use TSMC to manufacture some chips as it refocuses strategy'
+      url: https://www.reuters.com/technology/intel-tsmc-chip-manufacturing-deal-2024-09-16/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: INTC
+    source_name: Intel
+    source_market: US
+    source_reason: IFS(Intel Foundry Services) 18A 공정 고객 유치 전략, Gaudi3 AI 가속기, 구조조정 및 분리 검토(파운드리·제품 사업 분리 가능성)
+    source_3m_move_pct: null
+    target_symbol: NVDA
+    target_name: NVIDIA
+    target_market: US
+    relation_type: COMPETITOR
+    direction: INVERSE_CORRELATED
+    expected_lag: 1d
+    confidence: LOW
+    rationale: INTC Gaudi3 AI 가속기 채택 확대 보도 시 NVDA AI GPU 독점 내러티브에 단기 부담 후보. 시장 영향은 제한적.
+    evidence:
+    - title: 'Reuters: Intel launches Gaudi 3 AI chip to compete with Nvidia in data centers'
+      url: https://www.reuters.com/technology/intel-launches-gaudi-3-ai-chip-compete-nvidia-2024-04-09/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  - source_symbol: INTC
+    source_name: Intel
+    source_market: US
+    source_reason: IFS(Intel Foundry Services) 18A 공정 고객 유치 전략, Gaudi3 AI 가속기, 구조조정 및 분리 검토(파운드리·제품 사업 분리 가능성)
+    source_3m_move_pct: null
+    target_symbol: ASML
+    target_name: ASML ADR
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Intel 18A/14A 공정 전환에 High-NA EUV 필수. INTC 파운드리 투자 확대 발표 시 ASML 수주 후행 기대.
+    evidence:
+    - title: 'Reuters: ASML delivers first High-NA EUV system to Intel for next-gen chip manufacturing'
+      url: https://www.reuters.com/technology/asml-ships-first-high-na-euv-machine-intel-2023-12-13/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  # ── 058470 (리노공업) ─────────────────────────────────────────────────────
+  - source_symbol: 058470
+    source_name: 리노공업
+    source_market: KR
+    source_reason: HBM/DRAM 테스트 소켓 수주 급증, SK하이닉스·Micron·삼성 테스트 소켓 공급, HBM3E 전환 테스트 수요 증가
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 리노공업 HBM 테스트 소켓 수주 증가 = SK하이닉스 HBM 생산량 증가의 간접 확인 시그널. 테스트 소켓은 생산 단위와 비례.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 058470
+    source_name: 리노공업
+    source_market: KR
+    source_reason: HBM/DRAM 테스트 소켓 수주 급증, SK하이닉스·Micron·삼성 테스트 소켓 공급, HBM3E 전환 테스트 수요 증가
+    source_3m_move_pct: null
+    target_symbol: MU
+    target_name: Micron Technology
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Micron HBM/DRAM 생산 확대 시 테스트 소켓 소요량 증가 후보. 리노공업이 Micron 주요 공급사 중 하나.
+    evidence:
+    - title: 'Reuters: Micron forecasts strong AI-driven demand in its earnings'
+      url: https://www.reuters.com/technology/micron-forecasts-strong-ai-driven-demand-its-earnings-2025-03-18/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)
+
+  # ── 086890 (엘비세미콘) ───────────────────────────────────────────────────
+  - source_symbol: 086890
+    source_name: 엘비세미콘
+    source_market: KR
+    source_reason: HBM3E 기판 및 패키징 수주, SK하이닉스 HBM 공급망 참여, 범프·기판 처리 공정 매출 증가
+    source_3m_move_pct: null
+    target_symbol: 000660
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 엘비세미콘 HBM 기판·패키징 수주는 SK하이닉스 HBM 생산 램프 직접 read-through. SK하이닉스 HBM 증설 공시 → 엘비세미콘 동반 기대.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+
+  - source_symbol: 086890
+    source_name: 엘비세미콘
+    source_market: KR
+    source_reason: HBM3E 기판 및 패키징 수주, SK하이닉스 HBM 공급망 참여, 범프·기판 처리 공정 매출 증가
+    source_3m_move_pct: null
+    target_symbol: 042700
+    target_name: 한미반도체
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 2d
+    confidence: LOW
+    rationale: HBM 패키징 공급망 내 소부장 업체 전반이 동반 모멘텀을 받을 수 있음. 엘비세미콘 수주 발표 후 042700 동반 상승 관찰 포인트.
+    evidence:
+    - title: 'Reuters: SK Hynix sets record as quarterly profit jumps five-fold, says AI chip demand exceeds capacity'
+      url: https://www.reuters.com/world/asia-pacific/sk-hynix-sets-record-as-quarterly-profit-jumps-five-fold-says-ai-chip-demand-exceeds-capacity-2026-04-22/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 (LOW — 관찰 전용)

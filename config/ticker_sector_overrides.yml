@@ -1,0 +1,118 @@
+# ticker_sector_overrides.yml
+# 복합대기업·섹터 오감지 종목의 수동 sector_id 고정값.
+# yfinance GICS보다 우선 적용됨.
+# sector_id 목록: sector_playbooks.yml 참조.
+
+overrides:
+  # ── 한국 반도체 ──────────────────────────────────────────────
+  "005930.KS": "ai_semiconductor_hbm_foundry"   # 삼성전자 (메모리+파운드리 주력)
+  "000660.KS": "ai_semiconductor_hbm_foundry"   # SK하이닉스 (HBM 세계 1위)
+  "042700.KQ": "ai_semiconductor_hbm_foundry"   # 한미반도체
+  "009150.KS": "ai_semiconductor_hbm_foundry"   # 삼성전기
+
+  # ── 한국 반도체 장비/소재 ────────────────────────────────────
+  "096770.KS": "semicap_equipment_materials_osat"  # SK이노베이션 (소재)
+  "036930.KQ": "semicap_equipment_materials_osat"  # 주성엔지니어링
+  "240810.KQ": "semicap_equipment_materials_osat"  # 원익IPS
+  "357780.KQ": "semicap_equipment_materials_osat"  # 솔브레인홀딩스
+  "036540.KS": "semicap_equipment_materials_osat"  # SK머티리얼즈
+  "058970.KQ": "semicap_equipment_materials_osat"  # 엠케이전자
+
+  # ── 한국 배터리 ──────────────────────────────────────────────
+  "051910.KS": "battery_materials_lithium_recycling"  # LG화학 (배터리+화학)
+  "006400.KS": "battery_materials_lithium_recycling"  # 삼성SDI
+  "373220.KS": "battery_materials_lithium_recycling"  # LG에너지솔루션
+  "247540.KQ": "battery_materials_lithium_recycling"  # 에코프로비엠
+  "086520.KQ": "battery_materials_lithium_recycling"  # 에코프로
+  "003670.KS": "battery_materials_lithium_recycling"  # 포스코퓨처엠
+
+  # ── 한국 조선/방산 ───────────────────────────────────────────
+  "010140.KS": "shipbuilding_shipping_lng_equipment"  # 삼성중공업
+  "009540.KS": "shipbuilding_shipping_lng_equipment"  # HD한국조선해양
+  "042660.KS": "shipbuilding_shipping_lng_equipment"  # 한화오션
+  "329180.KS": "shipbuilding_shipping_lng_equipment"  # HD현대중공업
+  "012450.KS": "defense_space_aerospace_drone"        # 한화에어로스페이스
+  "047810.KS": "defense_space_aerospace_drone"        # 한국항공우주
+
+  # ── 한국 바이오/제약 ─────────────────────────────────────────
+  "068270.KS": "cdmo_bioproduction_adc"   # 셀트리온
+  "207940.KS": "biotech_pharma_clinical_medtech"  # 삼성바이오로직스
+  "128940.KS": "biotech_pharma_clinical_medtech"  # 한미약품
+  "000100.KS": "biotech_pharma_clinical_medtech"  # 유한양행
+
+  # ── 한국 자동차 ──────────────────────────────────────────────
+  "005380.KS": "auto_ev_autonomous_robotaxi"  # 현대차
+  "000270.KS": "auto_ev_autonomous_robotaxi"  # 기아
+
+  # ── 한국 금융 ────────────────────────────────────────────────
+  "105560.KS": "financials_banks_insurance_brokers"  # KB금융
+  "055550.KS": "financials_banks_insurance_brokers"  # 신한지주
+  "086790.KS": "financials_banks_insurance_brokers"  # 하나금융지주
+  "316140.KS": "financials_banks_insurance_brokers"  # 우리금융지주
+
+  # ── 미국 반도체 ──────────────────────────────────────────────
+  "NVDA":  "ai_semiconductor_hbm_foundry"
+  "AMD":   "ai_semiconductor_hbm_foundry"
+  "INTC":  "ai_semiconductor_hbm_foundry"
+  "QCOM":  "ai_semiconductor_hbm_foundry"
+  "MU":    "ai_semiconductor_hbm_foundry"
+  "TSM":   "ai_semiconductor_hbm_foundry"
+  "ASML":  "semicap_equipment_materials_osat"
+  "AMAT":  "semicap_equipment_materials_osat"
+  "LRCX":  "semicap_equipment_materials_osat"
+  "KLAC":  "semicap_equipment_materials_osat"
+  "SMCI":  "ai_semiconductor_hbm_foundry"
+  "MRVL":  "ai_semiconductor_hbm_foundry"
+  "AVGO":  "ai_semiconductor_hbm_foundry"
+  "ARM":   "ai_semiconductor_hbm_foundry"
+
+  # ── 미국 AI/소프트웨어 ───────────────────────────────────────
+  "MSFT":  "ai_software_cloud_cybersecurity"
+  "GOOGL": "ai_software_cloud_cybersecurity"
+  "GOOG":  "ai_software_cloud_cybersecurity"
+  "META":  "media_content_gaming_entertainment_ads"
+  "AMZN":  "ai_software_cloud_cybersecurity"
+  "ORCL":  "ai_software_cloud_cybersecurity"
+  "CRM":   "ai_software_cloud_cybersecurity"
+  "NOW":   "ai_software_cloud_cybersecurity"
+  "SNOW":  "ai_software_cloud_cybersecurity"
+  "PLTR":  "ai_software_cloud_cybersecurity"
+  "PANW":  "ai_software_cloud_cybersecurity"
+  "CRWD":  "ai_software_cloud_cybersecurity"
+  "S":     "ai_software_cloud_cybersecurity"
+
+  # ── 미국 빅테크 (복합) ───────────────────────────────────────
+  "AAPL":  "telecom_network_smartphone_equipment"  # 소비자 전자 + 서비스
+  "TSLA":  "auto_ev_autonomous_robotaxi"
+
+  # ── 미국 바이오/제약 ─────────────────────────────────────────
+  "LLY":   "biotech_pharma_clinical_medtech"
+  "NVO":   "biotech_pharma_clinical_medtech"
+  "ABBV":  "biotech_pharma_clinical_medtech"
+  "MRK":   "biotech_pharma_clinical_medtech"
+  "PFE":   "biotech_pharma_clinical_medtech"
+  "AMGN":  "biotech_pharma_clinical_medtech"
+  "GILD":  "biotech_pharma_clinical_medtech"
+  "REGN":  "biotech_pharma_clinical_medtech"
+  "VRTX":  "biotech_pharma_clinical_medtech"
+  "MRNA":  "biotech_pharma_clinical_medtech"
+  "BNTX":  "biotech_pharma_clinical_medtech"
+
+  # ── 미국 에너지 ──────────────────────────────────────────────
+  "XOM":   "energy_oil_lng_renewables"
+  "CVX":   "energy_oil_lng_renewables"
+  "COP":   "energy_oil_lng_renewables"
+  "NEE":   "ai_power_grid_copper_nuclear"
+  "VST":   "ai_power_grid_copper_nuclear"
+  "CEG":   "ai_power_grid_copper_nuclear"
+
+  # ── 미국 금융 ────────────────────────────────────────────────
+  "JPM":   "financials_banks_insurance_brokers"
+  "BAC":   "financials_banks_insurance_brokers"
+  "GS":    "financials_banks_insurance_brokers"
+  "MS":    "financials_banks_insurance_brokers"
+  "BRK-B": "financials_banks_insurance_brokers"
+  "V":     "payments_crypto_exchange_brokerage"
+  "MA":    "payments_crypto_exchange_brokerage"
+  "PYPL":  "payments_crypto_exchange_brokerage"
+  "COIN":  "payments_crypto_exchange_brokerage"

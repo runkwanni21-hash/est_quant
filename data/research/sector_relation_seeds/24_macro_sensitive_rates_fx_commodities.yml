@@ -1,0 +1,824 @@
+sector_relation_seeds:
+  sector_id: macro_sensitive_rates_fx_commodities
+  sector_name: 매크로 민감주 / 금리·환율·원자재 수혜·피해 바스켓
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  data_note: source_3m_move_pct가 null인 경우는 공개 기사/공시 기반으로 정확한 3개월 종가를 검증하지 못해 억지 수치를 넣지 않은 값. confidence는 주가 방향 확률이 아니라 관계
+    근거 강도.
+  edges:
+  - source_symbol: 096770.KS
+    source_name: SK Innovation
+    source_market: KR
+    source_reason: WTI/Hormuz 리스크, 정제마진, Q1 영업익 2.2조원 흑자전환
+    source_3m_move_pct: null
+    target_symbol: 010950.KS
+    target_name: S-Oil
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 정유 peer로 유가·정제마진·공급차질에 동행 후행 반응 관찰 후보.
+    evidence:
+    - title: SK Innovation warns refining recovery to take time, beats Q1 profit estimates
+      url: https://www.reuters.com/world/asia-pacific/sk-innovation-warns-refining-recovery-take-time-beats-q1-profit-estimates-2026-05-13/
+    trading_note: 1일~1개월 스윙 관점에서 WTI, crack spread, 항공·화학주 후행 반응 관찰
+  - source_symbol: 096770.KS
+    source_name: SK Innovation
+    source_market: KR
+    source_reason: WTI/Hormuz 리스크, 정제마진, Q1 영업익 2.2조원 흑자전환
+    source_3m_move_pct: null
+    target_symbol: 078930.KS
+    target_name: GS
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: GS칼텍스 노출이 있는 지주사로 정유 업황 수혜 가능성 관찰.
+    evidence:
+    - title: Oil prices climb more than 3% on fears of new US-Iran combat
+      url: https://www.reuters.com/world/middle-east/oil-rises-fears-ship-attacks-seizures-persist-2026-05-15/
+    trading_note: 정유주 동행 강도와 지주사 할인·수급 후행 반응 관찰
+  - source_symbol: 096770.KS
+    source_name: SK Innovation
+    source_market: KR
+    source_reason: WTI/Hormuz 리스크, 정제마진, Q1 영업익 2.2조원 흑자전환
+    source_3m_move_pct: null
+    target_symbol: 003490.KS
+    target_name: Korean Air
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 항공유 가격 급등 시 항공사 비용 압박 리스크가 커지는 구조.
+    evidence:
+    - title: Korean Air to shift to emergency mode in April amid rising oil prices from Iran war
+      url: https://www.reuters.com/world/asia-pacific/korean-air-shift-emergency-mode-april-amid-rising-oil-prices-iran-war-2026-03-31/
+    trading_note: 정유주 급등 당일 항공주 약세·반등 실패 여부 관찰
+  - source_symbol: 096770.KS
+    source_name: SK Innovation
+    source_market: KR
+    source_reason: WTI/Hormuz 리스크, 정제마진, Q1 영업익 2.2조원 흑자전환
+    source_3m_move_pct: null
+    target_symbol: 011170.KS
+    target_name: Lotte Chemical
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: 납사·에너지 비용 상승과 석화 공급과잉 구조조정 이슈가 겹치는 비용 압박 리스크.
+    evidence:
+    - title: South Korea approves first petrochemical restructuring deal as supply glut weighs
+      url: https://www.reuters.com/world/asia-pacific/south-korea-approves-first-petrochemical-restructuring-deal-supply-glut-weighs-2026-02-24/
+    trading_note: 정유주 강세 후 화학주 스프레드 악화·후행 약세 관찰
+  - source_symbol: 010120.KS
+    source_name: LS Electric
+    source_market: KR
+    source_reason: 미국 전력 변압기 부족, 525kV 변압기 계약, 구리·AI 전력망 capex
+    source_3m_move_pct: null
+    target_symbol: 006260.KS
+    target_name: LS Corp
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: LS그룹 전력기기·전선 노출로 전력망 capex 수혜 가능성 관찰.
+    evidence:
+    - title: US power transformer buyers scramble for imports, factory slots
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 변압기 수주 뉴스 후 그룹주·전선주 후행 반응 관찰
+  - source_symbol: 010120.KS
+    source_name: LS Electric
+    source_market: KR
+    source_reason: 미국 전력 변압기 부족, 525kV 변압기 계약, 구리·AI 전력망 capex
+    source_3m_move_pct: null
+    target_symbol: 267260.KS
+    target_name: HD Hyundai Electric
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 대형 변압기 peer로 수주잔고·가격 후행 반응 관찰 후보.
+    evidence:
+    - title: US power transformer buyers scramble for imports, factory slots
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: LS Electric 강세 이후 변압기 peer의 거래대금 확산 관찰
+  - source_symbol: 010120.KS
+    source_name: LS Electric
+    source_market: KR
+    source_reason: 미국 전력 변압기 부족, 525kV 변압기 계약, 구리·AI 전력망 capex
+    source_3m_move_pct: null
+    target_symbol: 015760.KS
+    target_name: KEPCO
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 전력망 장비 구매자 입장에서는 변압기·전선 가격 상승이 capex 부담으로 연결될 수 있음.
+    evidence:
+    - title: US power transformer buyers scramble for imports, factory slots
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 전력기기주 급등 후 유틸리티 비용 부담·상대약세 관찰
+  - source_symbol: 010120.KS
+    source_name: LS Electric
+    source_market: KR
+    source_reason: 미국 전력 변압기 부족, 525kV 변압기 계약, 구리·AI 전력망 capex
+    source_3m_move_pct: null
+    target_symbol: NEE
+    target_name: NextEra Energy
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 유틸리티·재생에너지 capex에서 변압기·구리 조달 비용 압박 리스크.
+    evidence:
+    - title: Copper Prices Rise to New Record Highs
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 전력기기 공급자 강세와 미국 유틸리티 상대약세 동시 관찰
+  - source_symbol: 010130.KS
+    source_name: Korea Zinc
+    source_market: KR
+    source_reason: 비철·귀금속·critical minerals, 미국 데이터센터 폐기물 희토류 회수 논의, 테네시 제련소
+    source_3m_move_pct: null
+    target_symbol: MP
+    target_name: MP Materials
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 비중국 critical minerals 공급망 수혜 가능성 관찰 후보.
+    evidence:
+    - title: Korea Zinc in talks with US tech firms to extract rare earths from data centre waste
+      url: https://www.reuters.com/world/asia-pacific/korea-zinc-talks-with-us-tech-firms-extract-rare-earths-data-centre-waste-2026-03-12/
+    trading_note: Korea Zinc 강세 후 미국 critical minerals peer 후행 반응 관찰
+  - source_symbol: 010130.KS
+    source_name: Korea Zinc
+    source_market: KR
+    source_reason: 비철·귀금속·critical minerals, 미국 데이터센터 폐기물 희토류 회수 논의, 테네시 제련소
+    source_3m_move_pct: null
+    target_symbol: 103140.KS
+    target_name: Poongsan
+    target_market: KR
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 비철금속·구리 가격 상승 구간에서 같은 원자재 민감 바스켓 후행 반응 관찰.
+    evidence:
+    - title: Copper Prices Rise to New Record Highs
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 비철·구리 바스켓 내 순환매 관찰
+  - source_symbol: 010130.KS
+    source_name: Korea Zinc
+    source_market: KR
+    source_reason: 비철·귀금속·critical minerals, 미국 데이터센터 폐기물 희토류 회수 논의, 테네시 제련소
+    source_3m_move_pct: null
+    target_symbol: 000670.KS
+    target_name: YoungPoong
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 지분·경영권 분쟁 구도에서 Korea Zinc 호재가 YoungPoong 부담 후보로 관찰된 사례.
+    evidence:
+    - title: South Korean court rejects bid to block Korea Zinc share sale funding US smelter
+      url: https://www.reuters.com/world/asia-pacific/south-korean-court-rejects-injunction-request-block-korea-zincs-share-sale-2025-12-24/
+    trading_note: 경영권 분쟁 뉴스 동시 발생 시 양방향 페어 반응 관찰
+  - source_symbol: 010130.KS
+    source_name: Korea Zinc
+    source_market: KR
+    source_reason: 비철·귀금속·critical minerals, 미국 데이터센터 폐기물 희토류 회수 논의, 테네시 제련소
+    source_3m_move_pct: null
+    target_symbol: 051910.KS
+    target_name: LG Chem
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 금속·critical mineral 가격 강세가 일부 배터리·화학 소재 원가 부담으로 전이될 가능성.
+    evidence:
+    - title: Korea Zinc in talks with US tech firms to extract rare earths from data centre waste
+      url: https://www.reuters.com/world/asia-pacific/korea-zinc-talks-with-us-tech-firms-extract-rare-earths-data-centre-waste-2026-03-12/
+    trading_note: 비철금속 강세와 배터리 소재주 마진 우려의 후행 반응 관찰
+  - source_symbol: 103140.KS
+    source_name: Poongsan
+    source_market: KR
+    source_reason: 구리 신고가, 탄약·방산 사업 가치 재평가 뉴스
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: Hanwha Aerospace
+    target_market: KR
+    relation_type: DEFENSE_GEOPOLITICS
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 탄약·방산 밸류체인 재평가와 지정학 리스크 동행 관찰 후보.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan's ammunition business for about $1.1 billion, newspaper says
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    trading_note: 방산·탄약 headline 후 peer 거래대금 확산 관찰
+  - source_symbol: 103140.KS
+    source_name: Poongsan
+    source_market: KR
+    source_reason: 구리 신고가, 탄약·방산 사업 가치 재평가 뉴스
+    source_3m_move_pct: null
+    target_symbol: 010130.KS
+    target_name: Korea Zinc
+    target_market: KR
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 구리·비철금속 가격 상승 구간에서 비철 peer 바스켓 수혜 가능성.
+    evidence:
+    - title: Copper Prices Rise to New Record Highs
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 구리·비철 바스켓 내 순환매 후행 반응 관찰
+  - source_symbol: 103140.KS
+    source_name: Poongsan
+    source_market: KR
+    source_reason: 구리 신고가, 탄약·방산 사업 가치 재평가 뉴스
+    source_3m_move_pct: null
+    target_symbol: 005380.KS
+    target_name: Hyundai Motor
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 구리·금속·원자재 비용 상승 시 완성차 원가 부담 후보.
+    evidence:
+    - title: Hyundai Motor posts Q1 profit drop, warns growing business headwind
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-reports-31-drop-q1-operating-profit-meets-forecasts-2026-04-23/
+    trading_note: 구리주 강세 후 완성차 마진 우려·상대약세 관찰
+  - source_symbol: 103140.KS
+    source_name: Poongsan
+    source_market: KR
+    source_reason: 구리 신고가, 탄약·방산 사업 가치 재평가 뉴스
+    source_3m_move_pct: null
+    target_symbol: 000270.KS
+    target_name: Kia
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 완성차 peer로 금속 원가 상승 후행 부담 관찰 후보.
+    evidence:
+    - title: Copper Prices Rise to New Record Highs
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 구리 가격 급등 후 완성차 peer 상대약세 관찰
+  - source_symbol: 003490.KS
+    source_name: Korean Air
+    source_market: KR
+    source_reason: 항공유 급등으로 4월 비상경영 전환 보도, 유가·환율 비용 민감
+    source_3m_move_pct: null
+    target_symbol: 089590.KS
+    target_name: Jeju Air
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 항공유·환율 비용 민감도가 높은 항공 peer 후행 반응 관찰.
+    evidence:
+    - title: Korean Air to shift to emergency mode in April amid rising oil prices from Iran war
+      url: https://www.reuters.com/world/asia-pacific/korean-air-shift-emergency-mode-april-amid-rising-oil-prices-iran-war-2026-03-31/
+    trading_note: 대형 항공주 급락 시 LCC 후행 반응 관찰
+  - source_symbol: 003490.KS
+    source_name: Korean Air
+    source_market: KR
+    source_reason: 항공유 급등으로 4월 비상경영 전환 보도, 유가·환율 비용 민감
+    source_3m_move_pct: null
+    target_symbol: 091810.KS
+    target_name: T’way Air
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: LCC 비용 구조상 유가·환율 부담 후행 반응 후보이나 가격 검증은 부족.
+    evidence:
+    - title: Korean Air to shift to emergency mode in April amid rising oil prices from Iran war
+      url: https://www.reuters.com/world/asia-pacific/korean-air-shift-emergency-mode-april-amid-rising-oil-prices-iran-war-2026-03-31/
+    trading_note: 항공주 동반 약세 강도와 거래대금 확산 관찰
+  - source_symbol: 003490.KS
+    source_name: Korean Air
+    source_market: KR
+    source_reason: 항공유 급등으로 4월 비상경영 전환 보도, 유가·환율 비용 민감
+    source_3m_move_pct: null
+    target_symbol: 096770.KS
+    target_name: SK Innovation
+    target_market: KR
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항공주 약세 원인이 유가·정제마진이면 정유주에는 수혜 가능성.
+    evidence:
+    - title: SK Innovation warns refining recovery to take time, beats Q1 profit estimates
+      url: https://www.reuters.com/world/asia-pacific/sk-innovation-warns-refining-recovery-take-time-beats-q1-profit-estimates-2026-05-13/
+    trading_note: 항공주 급락 후 정유주 상대강도 확인
+  - source_symbol: 003490.KS
+    source_name: Korean Air
+    source_market: KR
+    source_reason: 항공유 급등으로 4월 비상경영 전환 보도, 유가·환율 비용 민감
+    source_3m_move_pct: null
+    target_symbol: 010950.KS
+    target_name: S-Oil
+    target_market: KR
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항공유·정제마진 상승 구간에서 항공주 부담과 정유주 수혜 가능성이 엇갈림.
+    evidence:
+    - title: SK Innovation posts quarterly profit surge, projects strong crack spreads
+      url: https://www.reuters.com/business/energy/sk-innovation-reports-q4-operating-profit-235-million-2026-01-27/
+    trading_note: 항공주 약세 당일 S-Oil 상대강도 관찰
+  - source_symbol: 005380.KS
+    source_name: Hyundai Motor
+    source_market: KR
+    source_reason: 원/달러·유가·금속가격 cross-pressure, Q1 이익 감소와 하이브리드 수요
+    source_3m_move_pct: null
+    target_symbol: 000270.KS
+    target_name: Kia
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 완성차 peer로 원자재·환율·중동 물류 리스크 동행 관찰 후보.
+    evidence:
+    - title: Hyundai Motor posts Q1 profit drop, warns growing business headwind
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-reports-31-drop-q1-operating-profit-meets-forecasts-2026-04-23/
+    trading_note: 현대차 급락 시 기아·부품사 후행 약세 관찰
+  - source_symbol: 005380.KS
+    source_name: Hyundai Motor
+    source_market: KR
+    source_reason: 원/달러·유가·금속가격 cross-pressure, Q1 이익 감소와 하이브리드 수요
+    source_3m_move_pct: null
+    target_symbol: 012330.KS
+    target_name: Hyundai Mobis
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 완성차 생산·판매 둔화 우려가 부품사 후행 반응으로 이어질 수 있음.
+    evidence:
+    - title: Hyundai Motor posts Q1 profit drop, warns growing business headwind
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-reports-31-drop-q1-operating-profit-meets-forecasts-2026-04-23/
+    trading_note: 완성차 약세 후 부품사 상대강도 관찰
+  - source_symbol: 005380.KS
+    source_name: Hyundai Motor
+    source_market: KR
+    source_reason: 원/달러·유가·금속가격 cross-pressure, Q1 이익 감소와 하이브리드 수요
+    source_3m_move_pct: null
+    target_symbol: 003490.KS
+    target_name: Korean Air
+    target_market: KR
+    relation_type: FX_SENSITIVE
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 현대차 약세 원인이 유가·환율·중동 물류면 항공도 비용 압박 리스크 관찰.
+    evidence:
+    - title: Korean Air to shift to emergency mode in April amid rising oil prices from Iran war
+      url: https://www.reuters.com/world/asia-pacific/korean-air-shift-emergency-mode-april-amid-rising-oil-prices-iran-war-2026-03-31/
+    trading_note: 원/달러·유가 동반 급등 시 항공주 후행 약세 관찰
+  - source_symbol: 005380.KS
+    source_name: Hyundai Motor
+    source_market: KR
+    source_reason: 원/달러·유가·금속가격 cross-pressure, Q1 이익 감소와 하이브리드 수요
+    source_3m_move_pct: null
+    target_symbol: 096770.KS
+    target_name: SK Innovation
+    target_market: KR
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 완성차 비용 압박이 유가·에너지 shock에서 왔다면 정유주는 반대편 관찰 후보.
+    evidence:
+    - title: SK Innovation warns refining recovery to take time, beats Q1 profit estimates
+      url: https://www.reuters.com/world/asia-pacific/sk-innovation-warns-refining-recovery-take-time-beats-q1-profit-estimates-2026-05-13/
+    trading_note: 완성차 약세와 정유주 강세의 페어 트레이드형 후행 반응 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정유주, WTI·제품가격 급등, 2026-02-17 $197.34 → 2026-05-15 $250.74
+    source_3m_move_pct: 27.1
+    target_symbol: MPC
+    target_name: Marathon Petroleum
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 미국 정유 peer로 정제마진·제품 부족 이슈 동행 관찰 후보.
+    evidence:
+    - title: Valero Energy Corp. stock underperforms Friday when compared to competitors despite daily gains
+      url: https://www.marketwatch.com/data-news/valero-energy-corp-stock-underperforms-friday-when-compared-to-competitors-despite-daily-gains-574626aa-4446cdde1ddc
+    trading_note: 정유 peer 동행, crack spread, gasoline/jet fuel 가격 후행 반응 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정유주, WTI·제품가격 급등, 2026-02-17 $197.34 → 2026-05-15 $250.74
+    source_3m_move_pct: 27.1
+    target_symbol: PSX
+    target_name: Phillips 66
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 같은 정유 peer로 crack spread 수혜 가능성.
+    evidence:
+    - title: Iran, Ukraine wars deliver worst hit in years to oil refining output
+      url: https://www.reuters.com/business/energy/iran-ukraine-wars-deliver-worst-hit-years-oil-refining-output-2026-05-13/
+    trading_note: VLO 강세 후 PSX 거래대금·상대강도 확인
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정유주, WTI·제품가격 급등, 2026-02-17 $197.34 → 2026-05-15 $250.74
+    source_3m_move_pct: 27.1
+    target_symbol: DAL
+    target_name: Delta Air Lines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 항공유 상승 시 항공사 비용 압박 리스크가 커지는 구조.
+    evidence:
+    - title: Iran, Ukraine wars deliver worst hit in years to oil refining output
+      url: https://www.reuters.com/business/energy/iran-ukraine-wars-deliver-worst-hit-years-oil-refining-output-2026-05-13/
+    trading_note: 정유주 급등 당일 항공주 비용 부담 반응 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정유주, WTI·제품가격 급등, 2026-02-17 $197.34 → 2026-05-15 $250.74
+    source_3m_move_pct: 27.1
+    target_symbol: UAL
+    target_name: United Airlines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 항공유·WTI 상승 구간의 비용 압박 후보.
+    evidence:
+    - title: Oil prices climb more than 3% on fears of new US-Iran combat
+      url: https://www.reuters.com/world/middle-east/oil-rises-fears-ship-attacks-seizures-persist-2026-05-15/
+    trading_note: 정유 강세와 항공 약세의 동시성·익일 반응 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정유주, 2026-02-17 $200.54 → 2026-05-15 $255.03, 제품가격·SPR 대여 이슈
+    source_3m_move_pct: 27.2
+    target_symbol: VLO
+    target_name: Valero Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 정유 peer로 공급차질·제품가격 상승에 동행 관찰.
+    evidence:
+    - title: Marathon Petroleum Corp. stock underperforms Friday when compared to competitors despite daily gains
+      url: https://www.marketwatch.com/data-news/marathon-petroleum-corp-stock-underperforms-friday-when-compared-to-competitors-despite-daily-gains-c0d8940f-89ea378f2d2e
+    trading_note: MPC/VLO 상대강도와 crack spread 동행 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정유주, 2026-02-17 $200.54 → 2026-05-15 $255.03, 제품가격·SPR 대여 이슈
+    source_3m_move_pct: 27.2
+    target_symbol: XOM
+    target_name: Exxon Mobil
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 에너지 대형주로 유가·제품가격 상승의 수혜 가능성 관찰.
+    evidence:
+    - title: The Energy-Stock Rally Can Last. They’re Actually Cheap.
+      url: https://www.barrons.com/articles/energy-stocks-to-buy-oil-prices-exxon-chevron-1cfe1f46
+    trading_note: 정유주 강세 후 integrated major로 수급 확산 여부 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정유주, 2026-02-17 $200.54 → 2026-05-15 $255.03, 제품가격·SPR 대여 이슈
+    source_3m_move_pct: 27.2
+    target_symbol: AAL
+    target_name: American Airlines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 항공유 상승이 항공사 마진 압박으로 전이될 수 있음.
+    evidence:
+    - title: Iran, Ukraine wars deliver worst hit in years to oil refining output
+      url: https://www.reuters.com/business/energy/iran-ukraine-wars-deliver-worst-hit-years-oil-refining-output-2026-05-13/
+    trading_note: 정유주 강세와 항공주 약세의 상대강도 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정유주, 2026-02-17 $200.54 → 2026-05-15 $255.03, 제품가격·SPR 대여 이슈
+    source_3m_move_pct: 27.2
+    target_symbol: DOW
+    target_name: Dow Inc.
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 에너지·석유화학 원료비 상승 시 화학주 비용 압박 리스크.
+    evidence:
+    - title: Oil prices climb more than 3% on fears of new US-Iran combat
+      url: https://www.reuters.com/world/middle-east/oil-rises-fears-ship-attacks-seizures-persist-2026-05-15/
+    trading_note: 정유 강세 후 화학주 스프레드 우려와 후행 약세 관찰
+  - source_symbol: OXY
+    source_name: Occidental Petroleum
+    source_market: US
+    source_reason: E&P, 2026-02-17 $45.94 → 2026-05-15 $59.62, WTI 급등·에너지 랠리
+    source_3m_move_pct: 29.8
+    target_symbol: DVN
+    target_name: Devon Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 미국 E&P peer로 WTI 상승 동행 관찰 후보.
+    evidence:
+    - title: Occidental Petroleum Corp. stock outperforms competitors on strong trading day
+      url: https://www.marketwatch.com/data-news/occidental-petroleum-corp-stock-outperforms-competitors-on-strong-trading-day-3c749b1c-390a8732bc9e
+    trading_note: E&P peer 동행과 WTI 민감도 순환매 관찰
+  - source_symbol: OXY
+    source_name: Occidental Petroleum
+    source_market: US
+    source_reason: E&P, 2026-02-17 $45.94 → 2026-05-15 $59.62, WTI 급등·에너지 랠리
+    source_3m_move_pct: 29.8
+    target_symbol: EOG
+    target_name: EOG Resources
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 셰일 E&P peer로 유가·현금흐름 기대 동행.
+    evidence:
+    - title: Devon Energy Corp. stock underperforms Tuesday when compared to competitors
+      url: https://www.marketwatch.com/data-news/devon-energy-corp-stock-underperforms-tuesday-when-compared-to-competitors-63e249d1-de574f1f5ef1
+    trading_note: OXY 급등 후 EOG·DVN의 익일 후행 반응 관찰
+  - source_symbol: OXY
+    source_name: Occidental Petroleum
+    source_market: US
+    source_reason: E&P, 2026-02-17 $45.94 → 2026-05-15 $59.62, WTI 급등·에너지 랠리
+    source_3m_move_pct: 29.8
+    target_symbol: DAL
+    target_name: Delta Air Lines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: WTI·항공유 급등 시 항공사 비용 압박 리스크.
+    evidence:
+    - title: Oil prices climb more than 3% on fears of new US-Iran combat
+      url: https://www.reuters.com/world/middle-east/oil-rises-fears-ship-attacks-seizures-persist-2026-05-15/
+    trading_note: E&P 급등 당일 항공주 비용 압박 반응 관찰
+  - source_symbol: OXY
+    source_name: Occidental Petroleum
+    source_market: US
+    source_reason: E&P, 2026-02-17 $45.94 → 2026-05-15 $59.62, WTI 급등·에너지 랠리
+    source_3m_move_pct: 29.8
+    target_symbol: LYB
+    target_name: LyondellBasell
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 원유·에너지 가격 상승이 화학 원료비·마진 부담으로 전이될 수 있음.
+    evidence:
+    - title: Iran, Ukraine wars deliver worst hit in years to oil refining output
+      url: https://www.reuters.com/business/energy/iran-ukraine-wars-deliver-worst-hit-years-oil-refining-output-2026-05-13/
+    trading_note: 유가 급등 후 화학 peer의 원가 부담 반응 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 miner, 2026-02-18 $62.55 → 2026-05-15 $63.01, 4월 고점 $70.97, Grasberg·공급 리스크
+    source_3m_move_pct: 0.7
+    target_symbol: SCCO
+    target_name: Southern Copper
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 구리 가격 상승 구간의 대형 copper miner peer 수혜 가능성.
+    evidence:
+    - title: Freeport-McMoRan Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/freeport-mcmoran-inc-stock-outperforms-competitors-despite-losses-on-the-day-e6964d05-b79defe5cdee
+    trading_note: FCX 강세 후 SCCO·TECK 동행 강도 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 miner, 2026-02-18 $62.55 → 2026-05-15 $63.01, 4월 고점 $70.97, Grasberg·공급 리스크
+    source_3m_move_pct: 0.7
+    target_symbol: TECK
+    target_name: Teck Resources
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 구리·비철 exposure peer로 공급차질 뉴스 후행 반응 관찰.
+    evidence:
+    - title: Freeport Says Grasberg Recovery Not Delayed Until 2028
+      url: https://www.reuters.com/world/asia-pacific/freeport-says-grasberg-recovery-not-delayed-until-2028-stands-by-2027-forecast-2026-05-11/
+    trading_note: 구리 공급 리스크 headline 이후 peer 확산 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 miner, 2026-02-18 $62.55 → 2026-05-15 $63.01, 4월 고점 $70.97, Grasberg·공급 리스크
+    source_3m_move_pct: 0.7
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: EV·전장 부품에 구리 사용량이 커 원가 부담 리스크 후보이나 개별 가격 검증은 약함.
+    evidence:
+    - title: Copper Prices Rise to New Record Highs
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 구리 miner 강세 후 EV·전장 비용 부담 반응은 LOW confidence로만 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 miner, 2026-02-18 $62.55 → 2026-05-15 $63.01, 4월 고점 $70.97, Grasberg·공급 리스크
+    source_3m_move_pct: 0.7
+    target_symbol: NEE
+    target_name: NextEra Energy
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 전력망·재생에너지 capex에서 구리·변압기 비용 부담 관찰 후보.
+    evidence:
+    - title: US power transformer buyers scramble for imports, factory slots
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 구리·전력기기 강세와 유틸리티 capex 부담 반응 관찰
+  - source_symbol: B
+    source_name: Barrick Mining
+    source_market: US
+    source_reason: 금 가격 고공권, Q1 이익 추정치 상회, 30억 달러 buyback
+    source_3m_move_pct: null
+    target_symbol: NEM
+    target_name: Newmont
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 대형 금광 peer로 금 가격·실적 read-through 관찰 후보.
+    evidence:
+    - title: Barrick beats Q1 profit estimates on record gold prices, unveils $3 bln buyback
+      url: https://www.reuters.com/business/barrick-mining-beats-first-quarter-profit-estimates-2026-05-11/
+    trading_note: 금광 대형주 동행과 금 가격·실적 모멘텀 관찰
+  - source_symbol: B
+    source_name: Barrick Mining
+    source_market: US
+    source_reason: 금 가격 고공권, Q1 이익 추정치 상회, 30억 달러 buyback
+    source_3m_move_pct: null
+    target_symbol: AEM
+    target_name: Agnico Eagle Mines
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 금광 peer로 금 가격 상승·안전자산 수요 후행 관찰.
+    evidence:
+    - title: Agnico Eagle to invest $10.2 billion in Ontario mines by 2030
+      url: https://www.reuters.com/business/agnico-eagle-invest-102-billion-ontario-mines-by-2030-2026-02-19/
+    trading_note: Barrick 강세 후 AEM·NEM의 후행 반응 관찰
+  - source_symbol: B
+    source_name: Barrick Mining
+    source_market: US
+    source_reason: 금 가격 고공권, Q1 이익 추정치 상회, 30억 달러 buyback
+    source_3m_move_pct: null
+    target_symbol: SIG
+    target_name: Signet Jewelers
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 금 가격 상승 시 보석 소매업체 원재료·소비 수요 부담 후보.
+    evidence:
+    - title: Gold extends decline as inflation concerns weigh on rate cut bets
+      url: https://www.reuters.com/markets/commodities/gold-edges-up-dollar-eases-ahead-us-cpi-data-2026-05-13/
+    trading_note: 금 가격 급등 후 보석 소매주의 마진 우려는 LOW confidence로 관찰
+  - source_symbol: B
+    source_name: Barrick Mining
+    source_market: US
+    source_reason: 금 가격 고공권, Q1 이익 추정치 상회, 30억 달러 buyback
+    source_3m_move_pct: null
+    target_symbol: COIN
+    target_name: Coinbase
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 금 급등이 안전자산 선호·위험자산 회피 신호일 때 crypto proxy 수요 전환 리스크 후보.
+    evidence:
+    - title: Dollar climbs for fifth straight day as Treasury yields surge
+      url: https://www.reuters.com/world/asia-pacific/dollar-poised-largest-weekly-rise-two-months-fed-hike-bets-increase-2026-05-15/
+    trading_note: 금·달러·금리 동반 강세 시 crypto proxy 위험회피 반응 관찰
+  - source_symbol: BK
+    source_name: Bank of New York Mellon
+    source_market: US
+    source_reason: 미 10Y/30Y 금리 급등, 대형 은행 자본환원·금리 민감 바스켓
+    source_3m_move_pct: null
+    target_symbol: JPM
+    target_name: JPMorgan Chase
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 대형은행 peer로 금리·자본환원 기대 동행 관찰 후보.
+    evidence:
+    - title: Bond yield spike is risk to unprepared equities market, investors warn
+      url: https://www.reuters.com/business/bond-yield-spike-is-risk-unprepared-equities-market-investors-warn-2026-05-17/
+    trading_note: 미 10Y 상승일 은행주와 REIT의 상대강도 관찰
+  - source_symbol: BK
+    source_name: Bank of New York Mellon
+    source_market: US
+    source_reason: 미 10Y/30Y 금리 급등, 대형 은행 자본환원·금리 민감 바스켓
+    source_3m_move_pct: null
+    target_symbol: BAC
+    target_name: Bank of America
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 순이자마진 기대·은행 peer momentum 관찰 후보.
+    evidence:
+    - title: Big banks’ buyback boost
+      url: https://www.barrons.com/livecoverage/stock-market-today-051126/card/citigroup-bank-of-america-goldman-sachs-boost-buybacks-KCgrJgPZlp6iMDEGufGD
+    trading_note: 금리 상승 + 은행주 자본환원 뉴스 동시성 관찰
+  - source_symbol: BK
+    source_name: Bank of New York Mellon
+    source_market: US
+    source_reason: 미 10Y/30Y 금리 급등, 대형 은행 자본환원·금리 민감 바스켓
+    source_3m_move_pct: null
+    target_symbol: PLD
+    target_name: Prologis
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 고금리 시 배당·부동산 가치 할인 부담으로 REIT 비용 압박 리스크.
+    evidence:
+    - title: Asian shares extend losses on Wall Street's tech slide as bonds shudder at stubborn inflation
+      url: https://apnews.com/article/stock-market-today-wall-street-earnings-47c2d7b25bb046b9792bf7bf7c28c4e4
+    trading_note: 은행주 강세와 REIT 약세가 동시에 나타나는지 관찰
+  - source_symbol: BK
+    source_name: Bank of New York Mellon
+    source_market: US
+    source_reason: 미 10Y/30Y 금리 급등, 대형 은행 자본환원·금리 민감 바스켓
+    source_3m_move_pct: null
+    target_symbol: AMT
+    target_name: American Tower
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: tower REIT도 금리 상승 시 할인율·차입비용 부담 후보.
+    evidence:
+    - title: Bond yield spike is risk to unprepared equities market, investors warn
+      url: https://www.reuters.com/business/bond-yield-spike-is-risk-unprepared-equities-market-investors-warn-2026-05-17/
+    trading_note: 10Y yield 급등일 tower REIT·배당주 상대약세 관찰

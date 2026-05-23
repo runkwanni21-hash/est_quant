@@ -1,0 +1,12 @@
+[Unit]
+Description=Tele Quant 일요일 23:00 KST 주간 성과 리뷰 타이머
+After=network-online.target
+
+[Timer]
+# Sun 23:00 KST = UTC 14:00
+OnCalendar=Sun *-*-* 14:00:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

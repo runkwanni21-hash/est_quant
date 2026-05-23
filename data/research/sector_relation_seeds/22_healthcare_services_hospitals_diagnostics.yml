@@ -1,0 +1,758 @@
+sector_relation_seeds:
+  sector_id: healthcare_services_hospitals_diagnostics
+  sector_name: 헬스케어 서비스 / 병원 / 보험관리 / 진단
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 2026-05-17은 일요일이므로 미국 가격은 2026-05-15 직전 거래일 종가 기준으로 계산.
+  - KR 종목은 일부 3개월 종가 데이터가 공개 소스에서 직접 검증되지 않아 source_3m_move_pct를 null로 두고 confidence를 낮춤.
+  - 모든 edge는 매수/매도 추천이 아니라 1일~1개월 스윙 관점의 후행 반응 관찰 후보.
+  edges:
+  - source_symbol: UNH
+    source_name: UnitedHealth Group
+    source_market: US
+    source_reason: Medicare Advantage 최종 지급률 개선과 의료비 추세 안정 기대
+    source_3m_move_pct: 36.2
+    target_symbol: HUM
+    target_name: Humana
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: MA 민감 보험주 peer로 UNH 급등 시 HUM도 정책/MLR 완화 프레임으로 후행 반응 관찰 후보.
+    evidence:
+    - title: Reuters - US to raise Medicare Advantage payments to insurers by 2.48% in 2027
+      url: https://www.reuters.com/legal/litigation/us-finalizes-248-medicare-advantage-payment-hike-above-near-flat-january-2026-04-06/
+    trading_note: source 이벤트 당일/익일 HUM 상대강도와 보험주 동반 거래대금 확인.
+  - source_symbol: UNH
+    source_name: UnitedHealth Group
+    source_market: US
+    source_reason: Medicare Advantage 최종 지급률 개선과 의료비 추세 안정 기대
+    source_3m_move_pct: 36.2
+    target_symbol: CVS
+    target_name: CVS Health
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Aetna 보유 보험사로 MA 지급률과 비용률 완화 기대가 동시에 반영될 수 있음.
+    evidence:
+    - title: Barron's - CVS Q1 beat and Aetna MBR improvement
+      url: https://www.barrons.com/articles/cvs-health-earnings-stock-price-e60f0899
+    trading_note: CVS가 보험주보다 늦게 반응하면 Aetna MBR·MA rate 키워드 재확인.
+  - source_symbol: UNH
+    source_name: UnitedHealth Group
+    source_market: US
+    source_reason: Medicare Advantage 최종 지급률 개선과 의료비 추세 안정 기대
+    source_3m_move_pct: 36.2
+    target_symbol: HCA
+    target_name: HCA Healthcare
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 보험주 강세가 의료비율 안정/이용량 통제 신호라면 병원 환자량·가격 기대에는 부담 후보.
+    evidence:
+    - title: Reuters - HCA weak flu season, ER visits and ACA subsidy risk
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/hca-healthcare-beats-quarterly-profit-estimates-medical-care-services-demand-2026-04-24/
+    trading_note: HCA가 약세로 후행하면 병원주 전반의 volume commentary 확인.
+  - source_symbol: UNH
+    source_name: UnitedHealth Group
+    source_market: US
+    source_reason: Medicare Advantage 최종 지급률 개선과 의료비 추세 안정 기대
+    source_3m_move_pct: 36.2
+    target_symbol: DGX
+    target_name: Quest Diagnostics
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 보험 비용률 완화가 검사 이용량 둔화로 해석될 때 진단검사주는 후행 압박 관찰 후보.
+    evidence:
+    - title: IBD - Quest Diagnostics Q1 beat, requisition volume growth
+      url: https://www.investors.com/news/quest-diagnostics-stock-quest-diagnostics-earnings-q1-2026/
+    trading_note: UNH 강세 이후 DGX/LH 거래대금 감소와 상대약세 여부 확인.
+  - source_symbol: HUM
+    source_name: Humana
+    source_market: US
+    source_reason: MA pure-play 성격의 정책 반전 및 의료비 안정 기대
+    source_3m_move_pct: 61.0
+    target_symbol: UNH
+    target_name: UnitedHealth Group
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: HUM 급등은 MA 정책 민감 보험주 전반의 리스크 프리미엄 완화 신호.
+    evidence:
+    - title: Reuters - MA final rate improved from January proposal
+      url: https://www.reuters.com/legal/litigation/us-finalizes-248-medicare-advantage-payment-hike-above-near-flat-january-2026-04-06/
+    trading_note: HUM 선행 강세 시 UNH·CVS·ELV 동반 반응 확인.
+  - source_symbol: HUM
+    source_name: Humana
+    source_market: US
+    source_reason: MA pure-play 성격의 정책 반전 및 의료비 안정 기대
+    source_3m_move_pct: 61.0
+    target_symbol: ELV
+    target_name: Elevance Health
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: MA·상업보험 비용률 완화 프레임이 대형 보험주로 확산될 수 있음.
+    evidence:
+    - title: Reuters - Easing medical costs positive for health insurers
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: HUM 급등 다음 세션 ELV가 뒤따르는지 확인.
+  - source_symbol: HUM
+    source_name: Humana
+    source_market: US
+    source_reason: MA pure-play 성격의 정책 반전 및 의료비 안정 기대
+    source_3m_move_pct: 61.0
+    target_symbol: HCA
+    target_name: HCA Healthcare
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 고령층 의료 이용량 둔화·비용관리 기대는 병원 매출 기대에 부담 후보.
+    evidence:
+    - title: Reuters - HCA weak volumes and margin risks
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/hca-healthcare-beats-quarterly-profit-estimates-medical-care-services-demand-2026-04-24/
+    trading_note: HUM 급등 후 HCA·UHS·THC 병원 peer 약세 여부 확인.
+  - source_symbol: HUM
+    source_name: Humana
+    source_market: US
+    source_reason: MA pure-play 성격의 정책 반전 및 의료비 안정 기대
+    source_3m_move_pct: 61.0
+    target_symbol: UHS
+    target_name: Universal Health Services
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: UHS도 낮은 admissions와 ACA 보조금 리스크가 있어 병원 피어 부담 후보.
+    evidence:
+    - title: Reuters - UHS misses quarterly profit estimates on lower admissions
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/universal-health-services-misses-quarterly-profit-estimates-lower-medical-care-2026-02-25/
+    trading_note: UHS 병원 volume commentary와 HUM 강세의 역상관 반응 확인.
+  - source_symbol: CVS
+    source_name: CVS Health
+    source_market: US
+    source_reason: Aetna MBR 개선, Q1 beat, 2026 가이던스 상향
+    source_3m_move_pct: 22.6
+    target_symbol: UNH
+    target_name: UnitedHealth Group
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: CVS의 MBR 개선은 관리의료 비용률 안정 신호로 UNH에 피어 모멘텀 가능.
+    evidence:
+    - title: Barron's - CVS Health earnings, Aetna MBR improved to 84.6%
+      url: https://www.barrons.com/articles/cvs-health-earnings-stock-price-e60f0899
+    trading_note: CVS 실적일 이후 UNH·HUM이 비용률 안정 테마로 반응하는지 확인.
+  - source_symbol: CVS
+    source_name: CVS Health
+    source_market: US
+    source_reason: Aetna MBR 개선, Q1 beat, 2026 가이던스 상향
+    source_3m_move_pct: 22.6
+    target_symbol: CI
+    target_name: Cigna
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 보험/PBM 복합 모델 개선은 Cigna/Evernorth 모델에도 비용관리 read-through 가능.
+    evidence:
+    - title: Reuters - Cigna Q4 beat; Evernorth revenue growth and MLR context
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/cigna-forecasts-muted-2026-profit-growth-2026-02-05/
+    trading_note: CI가 CVS 대비 지연 반응할 때 Evernorth/PBM margin commentary 확인.
+  - source_symbol: CVS
+    source_name: CVS Health
+    source_market: US
+    source_reason: Aetna MBR 개선, Q1 beat, 2026 가이던스 상향
+    source_3m_move_pct: 22.6
+    target_symbol: HCA
+    target_name: HCA Healthcare
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: MBR 개선이 이용량 둔화·비용통제 신호일 때 병원 매출 기대에는 부담 후보.
+    evidence:
+    - title: Reuters - HCA volume pressure
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/hca-healthcare-beats-quarterly-profit-estimates-medical-care-services-demand-2026-04-24/
+    trading_note: CVS 급등 후 병원주 상대약세와 보험주 강세 동시 관찰.
+  - source_symbol: CVS
+    source_name: CVS Health
+    source_market: US
+    source_reason: Aetna MBR 개선, Q1 beat, 2026 가이던스 상향
+    source_3m_move_pct: 22.6
+    target_symbol: LH
+    target_name: Labcorp
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 보험 비용률 안정이 검사량 둔화로 해석될 경우 랩 진단 수요에는 단기 부담 후보이나 직접성은 낮음.
+    evidence:
+    - title: Reuters - Labcorp raises full-year forecasts on steady diagnostics demand
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/labcorp-raises-full-year-forecasts-steady-diagnostics-demand-2026-04-30/
+    trading_note: LH가 CVS 이후 3~5거래일 내 약세인지, 독립 실적 이슈인지 분리 확인.
+  - source_symbol: HCA
+    source_name: HCA Healthcare
+    source_market: US
+    source_reason: 병원 볼륨 둔화, 약한 독감 시즌, ACA 보조금 만료 리스크
+    source_3m_move_pct: -20.9
+    target_symbol: UNH
+    target_name: UnitedHealth Group
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 병원 이용량 둔화는 보험사의 의료비율 완화로 해석될 수 있어 보험주 후행 반응 관찰.
+    evidence:
+    - title: Reuters - HCA Healthcare beats profit estimates but shares fall on lower volumes
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/hca-healthcare-beats-quarterly-profit-estimates-medical-care-services-demand-2026-04-24/
+    trading_note: HCA 급락일 또는 다음 세션 UNH/HUM이 방어적 강세인지 확인.
+  - source_symbol: HCA
+    source_name: HCA Healthcare
+    source_market: US
+    source_reason: 병원 볼륨 둔화, 약한 독감 시즌, ACA 보조금 만료 리스크
+    source_3m_move_pct: -20.9
+    target_symbol: HUM
+    target_name: Humana
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 고령층·입원 이용량 둔화 프레임은 MA 보험주 비용률 완화 후보로 연결.
+    evidence:
+    - title: Reuters - Easing medical costs positive for insurers
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: HCA 약세와 HUM 강세의 역방향 반응이 같은 뉴스 플로우인지 확인.
+  - source_symbol: HCA
+    source_name: HCA Healthcare
+    source_market: US
+    source_reason: 병원 볼륨 둔화, 약한 독감 시즌, ACA 보조금 만료 리스크
+    source_3m_move_pct: -20.9
+    target_symbol: UHS
+    target_name: Universal Health Services
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 병원 peer로 낮은 admissions와 보험 커버리지 리스크를 공유.
+    evidence:
+    - title: Reuters - Universal Health Services misses estimates on lower medical care demand
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/universal-health-services-misses-quarterly-profit-estimates-lower-medical-care-2026-02-25/
+    trading_note: HCA 급락 시 UHS 동반 하락 여부와 병원 volume 키워드 확인.
+  - source_symbol: HCA
+    source_name: HCA Healthcare
+    source_market: US
+    source_reason: 병원 볼륨 둔화, 약한 독감 시즌, ACA 보조금 만료 리스크
+    source_3m_move_pct: -20.9
+    target_symbol: THC
+    target_name: Tenet Healthcare
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 병원 peer 모멘텀으로 HCA 볼륨/마진 우려가 병원주 전반에 확산될 수 있음.
+    evidence:
+    - title: MarketWatch - HCA and Tenet price context
+      url: https://www.marketwatch.com/data-news/hca-healthcare-inc-stock-outperforms-competitors-despite-losses-on-the-day-0ef07882-eee3bcca86af
+    trading_note: THC의 하락이 HCA read-through인지 자체 실적 이슈인지 분리.
+  - source_symbol: DGX
+    source_name: Quest Diagnostics
+    source_market: US
+    source_reason: Q1 beat, organic sales +9%, requisition volume +11%, 가이던스 상향
+    source_3m_move_pct: -10.0
+    target_symbol: LH
+    target_name: Labcorp
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: DGX 검사량 증가와 가이던스 상향은 Labcorp 진단 수요에도 직접적인 peer read-through.
+    evidence:
+    - title: IBD - Quest Diagnostics Q1 beat; Reuters - Labcorp raises forecasts
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/labcorp-raises-full-year-forecasts-steady-diagnostics-demand-2026-04-30/
+    trading_note: DGX 실적일 LH의 premarket/regular session 상대강도 확인.
+  - source_symbol: DGX
+    source_name: Quest Diagnostics
+    source_market: US
+    source_reason: Q1 beat, organic sales +9%, requisition volume +11%, 가이던스 상향
+    source_3m_move_pct: -10.0
+    target_symbol: TMO
+    target_name: Thermo Fisher Scientific
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 검사량 증가가 지속되면 장비·시약·랩 인프라 수요로 후행 연결 가능.
+    evidence:
+    - title: Reuters - Thermo Fisher quarterly results and demand context
+      url: https://www.reuters.com/legal/litigation/thermo-fisher-posts-quarterly-results-beat-lab-products-biopharma-services-grow-2026-04-23/
+    trading_note: DGX/LH 진단 수요 강세 후 TMO/DHR 진단부문 commentary 확인.
+  - source_symbol: DGX
+    source_name: Quest Diagnostics
+    source_market: US
+    source_reason: Q1 beat, organic sales +9%, requisition volume +11%, 가이던스 상향
+    source_3m_move_pct: -10.0
+    target_symbol: UNH
+    target_name: UnitedHealth Group
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 검사 이용량 증가는 보험사 의료비율 상승 우려로 해석될 수 있음.
+    evidence:
+    - title: IBD - Quest Diagnostics requisition volume growth
+      url: https://www.investors.com/news/quest-diagnostics-stock-quest-diagnostics-earnings-q1-2026/
+    trading_note: DGX 강세 이후 보험주 MLR 우려 뉴스가 붙는지 확인.
+  - source_symbol: DGX
+    source_name: Quest Diagnostics
+    source_market: US
+    source_reason: Q1 beat, organic sales +9%, requisition volume +11%, 가이던스 상향
+    source_3m_move_pct: -10.0
+    target_symbol: HUM
+    target_name: Humana
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 진단검사 수요 확대는 MA 보험사 비용 압박 리스크로 후행 관찰.
+    evidence:
+    - title: Reuters - Easing medical costs positive, but utilization timing uncertain
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: HUM 약세가 DGX 강세와 같은 utilization 테마인지 확인.
+  - source_symbol: TMO
+    source_name: Thermo Fisher Scientific
+    source_market: US
+    source_reason: Q1 beat에도 학계/정부 수요 약화, 미국/중국 수요 우려
+    source_3m_move_pct: -14.6
+    target_symbol: DHR
+    target_name: Danaher
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 생명과학 도구/진단장비 peer로 연구비·중국 수요 둔화 read-through.
+    evidence:
+    - title: Reuters - Thermo Fisher shares down on weak academic/government demand
+      url: https://www.reuters.com/legal/litigation/thermo-fisher-posts-quarterly-results-beat-lab-products-biopharma-services-grow-2026-04-23/
+    trading_note: TMO 급락 시 DHR/WAT 동반 약세와 China/funding 키워드 확인.
+  - source_symbol: TMO
+    source_name: Thermo Fisher Scientific
+    source_market: US
+    source_reason: Q1 beat에도 학계/정부 수요 약화, 미국/중국 수요 우려
+    source_3m_move_pct: -14.6
+    target_symbol: WAT
+    target_name: Waters
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 분석장비 peer로 장비 CAPEX 심리 둔화 시 후행 압박 후보.
+    evidence:
+    - title: MarketWatch - Waters, Thermo Fisher, Danaher price context
+      url: https://www.marketwatch.com/data-news/waters-corp-stock-outperforms-competitors-despite-losses-on-the-day-2caac2b6-1e0fb1ce3cbc
+    trading_note: WAT가 TMO보다 늦게 반응하면 장비주 basket 약세 여부 확인.
+  - source_symbol: TMO
+    source_name: Thermo Fisher Scientific
+    source_market: US
+    source_reason: Q1 beat에도 학계/정부 수요 약화, 미국/중국 수요 우려
+    source_3m_move_pct: -14.6
+    target_symbol: DGX
+    target_name: Quest Diagnostics
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장비업체 가격/수요 약세가 랩 운영사의 장비 조달비 완화로 연결될 수 있으나 직접성 낮음.
+    evidence:
+    - title: Reuters - Thermo Fisher demand weakness
+      url: https://www.reuters.com/legal/litigation/thermo-fisher-posts-quarterly-results-beat-lab-products-biopharma-services-grow-2026-04-23/
+    trading_note: TMO 약세 이후 DGX/LH margin commentary에 장비비 절감 언급이 있는지 확인.
+  - source_symbol: TMO
+    source_name: Thermo Fisher Scientific
+    source_market: US
+    source_reason: Q1 beat에도 학계/정부 수요 약화, 미국/중국 수요 우려
+    source_3m_move_pct: -14.6
+    target_symbol: LH
+    target_name: Labcorp
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장비·시약 비용 완화 관점의 수혜 가능성이나 실제 계약가 확인 필요.
+    evidence:
+    - title: Reuters - Labcorp raises forecasts on steady diagnostic demand
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/labcorp-raises-full-year-forecasts-steady-diagnostics-demand-2026-04-30/
+    trading_note: LH가 독립 진단 수요로 상승하는지, 장비비 완화 narrative가 붙는지 분리.
+  - source_symbol: '328130'
+    source_name: Lunit
+    source_market: KR
+    source_reason: 의료AI 진단 peer source; Google snapshot상 1D -49.82%, 기업 이벤트 확인 필요
+    source_3m_move_pct: null
+    target_symbol: '338220'
+    target_name: VUNO
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 루닛이 AI진단 수요/해외계약/수가 이슈로 강할 때 의료AI peer에 후행 반응 가능.
+    evidence:
+    - title: Google Finance - Lunit and VUNO related medical AI stocks
+      url: https://www.google.com/finance/quote/328130:KOSDAQ
+    trading_note: 루닛 급등 시 VUNO·DeepNoid 거래대금 증가 여부 확인.
+  - source_symbol: '328130'
+    source_name: Lunit
+    source_market: KR
+    source_reason: 의료AI 진단 peer source; Google snapshot상 1D -49.82%, 기업 이벤트 확인 필요
+    source_3m_move_pct: null
+    target_symbol: '315640'
+    target_name: DeepNoid
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 같은 의료AI 진단군으로 수가·병원 도입·해외 확장 뉴스에 동조 가능.
+    evidence:
+    - title: Google Finance - DeepNoid related stocks
+      url: https://www.google.com/finance/quote/315640:KOSDAQ
+    trading_note: DeepNoid가 루닛 대비 지연 상승하는지 AI진단 basket으로 관찰.
+  - source_symbol: '328130'
+    source_name: Lunit
+    source_market: KR
+    source_reason: 의료AI 진단 peer source; Google snapshot상 1D -49.82%, 기업 이벤트 확인 필요
+    source_3m_move_pct: null
+    target_symbol: UNH
+    target_name: UnitedHealth Group
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: AI진단 확산이 검사·조기진단 이용량 증가로 이어질 경우 보험 비용 압박 리스크 후보.
+    evidence:
+    - title: Reuters - medical cost ratio context for insurers
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: AI진단 뉴스가 미국 보험주 MLR 우려로 번지는지 확인.
+  - source_symbol: '328130'
+    source_name: Lunit
+    source_market: KR
+    source_reason: 의료AI 진단 peer source; Google snapshot상 1D -49.82%, 기업 이벤트 확인 필요
+    source_3m_move_pct: null
+    target_symbol: HUM
+    target_name: Humana
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 고령층 진단 이용량 증가 테마가 MA 비용률 우려로 번질 수 있으나 근거 약함.
+    evidence:
+    - title: Reuters - Medicare Advantage insurer cost trend
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: HUM 반응은 낮은 confidence로만 관찰.
+  - source_symbol: '338220'
+    source_name: VUNO
+    source_market: KR
+    source_reason: 의료AI/의료기기 source; 52주 저점 부근 de-rating 관찰
+    source_3m_move_pct: null
+    target_symbol: '328130'
+    target_name: Lunit
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: VUNO 강세는 의료AI 진단 peer 루닛에 테마·수급 후행 반응 가능.
+    evidence:
+    - title: Google Finance - VUNO related stocks
+      url: https://www.google.com/finance/quote/338220:KOSDAQ
+    trading_note: VUNO 급등 시 루닛·JLK·DeepNoid 동반 수급 확인.
+  - source_symbol: '338220'
+    source_name: VUNO
+    source_market: KR
+    source_reason: 의료AI/의료기기 source; 52주 저점 부근 de-rating 관찰
+    source_3m_move_pct: null
+    target_symbol: '322510'
+    target_name: JLK
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 병원 AI진단 도입·수가 기대가 뇌졸중 AI진단 peer로 확산될 수 있음.
+    evidence:
+    - title: Google Finance - JLK related stocks
+      url: https://www.google.com/finance/quote/322510:KOSDAQ
+    trading_note: JLK의 지연 반응은 의료AI basket 거래대금으로 확인.
+  - source_symbol: '338220'
+    source_name: VUNO
+    source_market: KR
+    source_reason: 의료AI/의료기기 source; 52주 저점 부근 de-rating 관찰
+    source_3m_move_pct: null
+    target_symbol: DGX
+    target_name: Quest Diagnostics
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: AI판독/자동화가 중앙검사·외주진단 일부를 대체한다는 해석이 붙을 때 수요 전환 리스크 후보.
+    evidence:
+    - title: IBD - Quest Diagnostics Q1 diagnostics volume context
+      url: https://www.investors.com/news/quest-diagnostics-stock-quest-diagnostics-earnings-q1-2026/
+    trading_note: 직접 경쟁은 약하므로 테마성 read-through로만 관찰.
+  - source_symbol: '338220'
+    source_name: VUNO
+    source_market: KR
+    source_reason: 의료AI/의료기기 source; 52주 저점 부근 de-rating 관찰
+    source_3m_move_pct: null
+    target_symbol: LH
+    target_name: Labcorp
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: AI 기반 병원 내 진단이 확대되면 외부 랩 검사 의존 감소 테마가 생길 수 있으나 근거 약함.
+    evidence:
+    - title: Reuters - Labcorp diagnostic demand context
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/labcorp-raises-full-year-forecasts-steady-diagnostics-demand-2026-04-30/
+    trading_note: LH는 실적 독립성이 높아 LOW confidence 유지.
+  - source_symbol: 096530
+    source_name: Seegene
+    source_market: KR
+    source_reason: 분자진단/호흡기·감염성 질환 assay 노출
+    source_3m_move_pct: null
+    target_symbol: '137310'
+    target_name: SD Biosensor
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 감염성 질환·호흡기 진단 수요가 커지면 국내 진단키트 peer로 후행 반응 가능.
+    evidence:
+    - title: Google Finance - Seegene molecular diagnostics profile
+      url: https://www.google.com/finance/quote/096530:KOSDAQ
+    trading_note: Seegene 강세 시 SD Biosensor·Sugentech·Humasis 거래대금 확인.
+  - source_symbol: 096530
+    source_name: Seegene
+    source_market: KR
+    source_reason: 분자진단/호흡기·감염성 질환 assay 노출
+    source_3m_move_pct: null
+    target_symbol: 084650
+    target_name: Labgenomics
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 분자진단/검사 서비스 수요 확대 시 랩·진단 peer 수급 확산 가능.
+    evidence:
+    - title: Google Finance - Labgenomics biotechnology/diagnostics profile
+      url: https://www.google.com/finance/quote/084650:KOSDAQ
+    trading_note: Labgenomics가 Seegene 대비 지연 반응하는지 확인.
+  - source_symbol: 096530
+    source_name: Seegene
+    source_market: KR
+    source_reason: 분자진단/호흡기·감염성 질환 assay 노출
+    source_3m_move_pct: null
+    target_symbol: UNH
+    target_name: UnitedHealth Group
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 검사 수요 확대는 보험사 입장에서 비용 압박 리스크로 해석될 수 있음.
+    evidence:
+    - title: Reuters - health insurer medical cost trend context
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: 미국 보험주 연결은 낮은 confidence로만 관찰.
+  - source_symbol: 096530
+    source_name: Seegene
+    source_market: KR
+    source_reason: 분자진단/호흡기·감염성 질환 assay 노출
+    source_3m_move_pct: null
+    target_symbol: HUM
+    target_name: Humana
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 고령층 호흡기 진단 이용량 증가가 MA 비용률 부담으로 읽힐 수 있음.
+    evidence:
+    - title: Reuters - insurer medical cost ratio read-through
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/easing-medical-costs-positive-health-insurers-real-test-lies-ahead-analysts-say-2026-05-13/
+    trading_note: HUM 하락이 진단 수요 이슈가 아닌 정책 이슈일 가능성도 함께 체크.
+  - source_symbol: '137310'
+    source_name: SD Biosensor
+    source_market: KR
+    source_reason: 진단키트/IVD source; 자사주 소각 뉴스와 실적 부진 혼재
+    source_3m_move_pct: null
+    target_symbol: '205470'
+    target_name: Humasis
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 신속진단·체외진단 peer로 수요 또는 주주환원 이슈 확산 가능.
+    evidence:
+    - title: Google Finance - SD Biosensor and Humasis snapshots
+      url: https://www.google.com/finance/quote/137310:KRX
+    trading_note: SD Biosensor 강세 시 Humasis 거래량/상대강도 확인.
+  - source_symbol: '137310'
+    source_name: SD Biosensor
+    source_market: KR
+    source_reason: 진단키트/IVD source; 자사주 소각 뉴스와 실적 부진 혼재
+    source_3m_move_pct: null
+    target_symbol: '253840'
+    target_name: Sugentech
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 진단키트 peer 수급 확산 후보.
+    evidence:
+    - title: Google Finance - Sugentech related diagnostics stocks
+      url: https://www.google.com/finance/quote/253840:KOSDAQ
+    trading_note: Sugentech가 SD Biosensor 대비 늦게 반응하는지 확인.
+  - source_symbol: '137310'
+    source_name: SD Biosensor
+    source_market: KR
+    source_reason: 진단키트/IVD source; 자사주 소각 뉴스와 실적 부진 혼재
+    source_3m_move_pct: null
+    target_symbol: 096530
+    target_name: Seegene
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 신속진단 수요가 PCR/분자진단으로부터 일부 전환된다는 테마가 붙을 때 부담 후보.
+    evidence:
+    - title: Google Finance - Seegene molecular diagnostics profile
+      url: https://www.google.com/finance/quote/096530:KOSDAQ
+    trading_note: PCR vs rapid-test 수요 전환 뉴스가 실제로 있는지 확인.
+  - source_symbol: '137310'
+    source_name: SD Biosensor
+    source_market: KR
+    source_reason: 진단키트/IVD source; 자사주 소각 뉴스와 실적 부진 혼재
+    source_3m_move_pct: null
+    target_symbol: 084650
+    target_name: Labgenomics
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 키트형 검사 수요가 랩 기반 검사 수요를 일부 대체한다는 해석은 가능하나 근거 약함.
+    evidence:
+    - title: Google Finance - Labgenomics profile
+      url: https://www.google.com/finance/quote/084650:KOSDAQ
+    trading_note: 대체재 해석은 LOW confidence로만 사용.
+  - source_symbol: '253840'
+    source_name: Sugentech
+    source_market: KR
+    source_reason: 신속진단/의료기기 source; 거래량 동반 1D +3.36% snapshot
+    source_3m_move_pct: null
+    target_symbol: '205470'
+    target_name: Humasis
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 신속진단 peer로 거래대금이 붙을 때 동조 관찰 후보.
+    evidence:
+    - title: Google Finance - Sugentech and Humasis snapshots
+      url: https://www.google.com/finance/quote/253840:KOSDAQ
+    trading_note: Sugentech 급등 시 Humasis의 익일 갭/거래량 확인.
+  - source_symbol: '253840'
+    source_name: Sugentech
+    source_market: KR
+    source_reason: 신속진단/의료기기 source; 거래량 동반 1D +3.36% snapshot
+    source_3m_move_pct: null
+    target_symbol: '137310'
+    target_name: SD Biosensor
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 진단키트 테마 확산 시 대형 IVD peer로 후행 반응 가능.
+    evidence:
+    - title: Google Finance - SD Biosensor diagnostics profile
+      url: https://www.google.com/finance/quote/137310:KRX
+    trading_note: SD Biosensor는 대형 peer라 반응 속도와 거래대금 모두 확인.
+  - source_symbol: '253840'
+    source_name: Sugentech
+    source_market: KR
+    source_reason: 신속진단/의료기기 source; 거래량 동반 1D +3.36% snapshot
+    source_3m_move_pct: null
+    target_symbol: 096530
+    target_name: Seegene
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 신속검사 수요가 PCR 중심 진단 기대를 일부 희석할 수 있다는 수요 전환 리스크.
+    evidence:
+    - title: Google Finance - Seegene molecular diagnostics profile
+      url: https://www.google.com/finance/quote/096530:KOSDAQ
+    trading_note: 경쟁/대체 프레임은 뉴스 확인 전까지 LOW confidence.
+  - source_symbol: '253840'
+    source_name: Sugentech
+    source_market: KR
+    source_reason: 신속진단/의료기기 source; 거래량 동반 1D +3.36% snapshot
+    source_3m_move_pct: null
+    target_symbol: 084650
+    target_name: Labgenomics
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 랩 기반 진단 대비 키트형 수요 전환 테마가 붙을 수 있으나 직접 검증 부족.
+    evidence:
+    - title: Google Finance - Labgenomics diagnostics profile
+      url: https://www.google.com/finance/quote/084650:KOSDAQ
+    trading_note: Labgenomics 자체 실적/수주와 분리해서 후행 반응 확인.

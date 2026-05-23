@@ -1,0 +1,843 @@
+sector_relation_seeds:
+  sector_id: shipbuilding_shipping_lng_equipment
+  sector_name: 조선 / 해운 / LNG선 / 조선기자재
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - source_3m_move_pct는 공개 히스토리에서 2026-02-17 종가가 직접 확인되지 않은 경우 2026-03-05 또는 표시된 최근 저점/고점 기준 proxy를 사용.
+  - 확정 상승/확정 하락이 아니라 1일~1개월 스윙 관점의 후행 반응 관찰 seed.
+  - COMMODITY source는 주식 source가 아닌 원가 factor edge로 분리.
+  edges:
+  - source_symbol: '329180'
+    source_name: HD현대중공업
+    source_market: KR
+    source_reason: 수주·엔진·조선 생산성 기대; 2026-03-05 559000원, 2026-05-15 640000원, 2026-05-13 고점 733000원
+    source_3m_move_pct: 14.5
+    target_symbol: 082740
+    target_name: 한화엔진
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대형 조선사 수주·건조 확대는 선박엔진 수요의 후행 반응 관찰 후보.
+    evidence:
+    - title: HD Hyundai Heavy Industries StockAnalysis history/profile
+      url: https://stockanalysis.com/quote/krx/329180/history/
+    - title: Hanwha Engine StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/082740/
+    trading_note: 조선사 급등 다음 1~5거래일 엔진주 거래대금·전고점 돌파 여부 관찰.
+  - source_symbol: '329180'
+    source_name: HD현대중공업
+    source_market: KR
+    source_reason: 수주·엔진·조선 생산성 기대
+    source_3m_move_pct: 14.5
+    target_symbol: 075580
+    target_name: 세진중공업
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: LNG/LPG cargo tank·deck house 등 조선기자재 납품 기대가 후행 반응 후보.
+    evidence:
+    - title: Sejin Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/075580/
+    trading_note: 조선 대형주 강세 후 기자재 소형주 거래대금 확산 여부 관찰.
+  - source_symbol: '329180'
+    source_name: HD현대중공업
+    source_market: KR
+    source_reason: 신조선가·backlog 기대
+    source_3m_move_pct: 14.5
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 신조선가·용선/선박 조달비 상승 국면에서는 선사 CAPEX 부담 관찰 후보.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: 조선주 급등과 HMM 약세/운임지표 둔화가 동행하는지 관찰.
+  - source_symbol: '329180'
+    source_name: HD현대중공업
+    source_market: KR
+    source_reason: 수주 모멘텀 집중
+    source_3m_move_pct: 14.5
+    target_symbol: '010140'
+    target_name: 삼성중공업
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 특정 조선사 수주 집중 시 경쟁 조선사에는 수주 점유율·밸류에이션 로테이션 부담 후보.
+    evidence:
+    - title: Samsung Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/010140/
+    trading_note: 조선 대장주 간 상대강도와 외국인/기관 순매수 차이 관찰.
+  - source_symbol: '010140'
+    source_name: 삼성중공업
+    source_market: KR
+    source_reason: LNG선·FLNG·탱커 포트폴리오와 실적 개선 기대
+    source_3m_move_pct: 7.7
+    target_symbol: 017960
+    target_name: 한국카본
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: LNG선·FLNG 발주 기대가 보냉재/복합소재 계열의 후행 반응 관찰 후보이나 직접 가격 검증은 제한적.
+    evidence:
+    - title: Hankuk Carbon StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/017960/
+    - title: Samsung Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/010140/
+    trading_note: LNG선 수주 뉴스 뒤 보냉재주 거래대금 증가와 5일선 회복 관찰.
+  - source_symbol: '010140'
+    source_name: 삼성중공업
+    source_market: KR
+    source_reason: LNG선·FLNG·탱커 포트폴리오와 실적 개선 기대
+    source_3m_move_pct: 7.7
+    target_symbol: 082740
+    target_name: 한화엔진
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LNG·탱커·컨테이너선 건조 확대는 선박엔진 발주 기대와 연결.
+    evidence:
+    - title: Hanwha Engine StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/082740/
+    trading_note: 삼성중공업 급등 이후 엔진주가 눌림 후 재상승하는지 관찰.
+  - source_symbol: '010140'
+    source_name: 삼성중공업
+    source_market: KR
+    source_reason: LNG선·FLNG·탱커 강세
+    source_3m_move_pct: 7.7
+    target_symbol: '036460'
+    target_name: 한국가스공사
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: LNG선 운임·선가 상승 기대가 LNG 조달/물류비 부담으로 해석될 경우 후행 부담 후보.
+    evidence:
+    - title: Korea Gas StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/036460/
+    trading_note: LNG선 강세와 LNG 가격/환율 상승이 동반되는지 관찰.
+  - source_symbol: '010140'
+    source_name: 삼성중공업
+    source_market: KR
+    source_reason: 신조선가 상승 기대
+    source_3m_move_pct: 7.7
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 신조선가 상승은 선사 입장에서 fleet renewal 비용 압박 리스크.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: 조선주 강세 후 해운주가 운임지표 없이 동반 상승하는지, 아니면 비용 부담으로 차별화되는지 관찰.
+  - source_symbol: '042660'
+    source_name: 한화오션
+    source_market: KR
+    source_reason: 방산선박·LNG·잠수함 수주 기대와 변동성
+    source_3m_move_pct: -3.3
+    target_symbol: 082740
+    target_name: 한화엔진
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 한화오션의 상선·방산선박 수주 기대는 엔진 기자재 수요로 후행 반응 후보.
+    evidence:
+    - title: Hanwha Ocean StockAnalysis profile/history
+      url: https://stockanalysis.com/quote/krx/042660/
+    - title: Hanwha Engine StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/082740/
+    trading_note: 한화오션 급등 시 한화엔진의 3거래일 내 거래대금 확산 관찰.
+  - source_symbol: '042660'
+    source_name: 한화오션
+    source_market: KR
+    source_reason: 방산선박·LNG·잠수함 수주 기대와 변동성
+    source_3m_move_pct: -3.3
+    target_symbol: 075580
+    target_name: 세진중공업
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 조선사 backlog 확대는 cargo tank·deck house 등 기자재 업체의 납품 기대와 연결.
+    evidence:
+    - title: Sejin Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/075580/
+    trading_note: 조선사 수주 뉴스가 대형주에서 기자재주로 확산되는지 관찰.
+  - source_symbol: '042660'
+    source_name: 한화오션
+    source_market: KR
+    source_reason: 북미 방산선박/잠수함 기대
+    source_3m_move_pct: -3.3
+    target_symbol: HII
+    target_name: Huntington Ingalls
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 한화오션의 북미 방산선박/잠수함 기대가 커지면 미국 조선사에는 계약 배분·외주화 경쟁 부담 후보.
+    evidence:
+    - title: Reuters - Hanwha Ocean proposed delivery of four submarines to Canada by 2035
+      url: https://www.reuters.com/world/south-koreas-hanwha-ocean-proposed-delivery-four-submarines-canada-by-2035-2026-02-04/
+    - title: HII StockAnalysis profile
+      url: https://stockanalysis.com/stocks/hii/
+    trading_note: 한화오션 방산선박 뉴스 후 HII/GD 상대강도 약화 여부 관찰.
+  - source_symbol: '042660'
+    source_name: 한화오션
+    source_market: KR
+    source_reason: 신조선가·backlog 기대
+    source_3m_move_pct: -3.3
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 조선사 강세가 신조선가 상승 기대와 동행할 경우 선사 비용 압박 리스크.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: 조선주 강세와 해운 운임 약세가 동시에 나타나는지 관찰.
+  - source_symbol: 082740
+    source_name: 한화엔진
+    source_market: KR
+    source_reason: 선박엔진 수요·실적 성장 기대
+    source_3m_move_pct: 49.8
+    target_symbol: '042660'
+    target_name: 한화오션
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 엔진주 강세는 조선사 수주잔고·건조 스케줄이 탄탄하다는 read-through로 관찰.
+    evidence:
+    - title: Hanwha Engine StockAnalysis history/profile
+      url: https://stockanalysis.com/quote/krx/082740/history/
+    - title: Hanwha Ocean StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/042660/
+    trading_note: 엔진주 신고가 이후 조선사 주가가 눌림 구간에서 재동조화되는지 관찰.
+  - source_symbol: 082740
+    source_name: 한화엔진
+    source_market: KR
+    source_reason: 선박엔진 수요·실적 성장 기대
+    source_3m_move_pct: 49.8
+    target_symbol: '010140'
+    target_name: 삼성중공업
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 선박엔진 bottleneck·단가 개선 기대가 조선사 backlog 가치에 후행 반응 후보.
+    evidence:
+    - title: Samsung Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/010140/
+    trading_note: 엔진주 급등 뒤 조선 대형주 저점 상향 여부 관찰.
+  - source_symbol: 082740
+    source_name: 한화엔진
+    source_market: KR
+    source_reason: 엔진 가격/납기 tightness 기대
+    source_3m_move_pct: 49.8
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 엔진·기자재 단가 상승 기대는 선박 발주자/선사에는 신조 비용 압박 후보.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: 엔진주 강세와 선사 약세가 같이 나타나는지 관찰.
+  - source_symbol: 082740
+    source_name: 한화엔진
+    source_market: KR
+    source_reason: 엔진 가격/납기 tightness 기대
+    source_3m_move_pct: 49.8
+    target_symbol: FLNG
+    target_name: Flex LNG
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: LNG carrier 발주 비용 상승 기대는 LNG carrier 운용사 fleet renewal 부담 후보.
+    evidence:
+    - title: Flex LNG StockAnalysis profile
+      url: https://stockanalysis.com/stocks/flng/
+    trading_note: LNG carrier 운임 강세가 비용 부담을 상쇄하는지 동시 관찰.
+  - source_symbol: 071970
+    source_name: HD현대마린엔진
+    source_market: KR
+    source_reason: 선박엔진·부품·서비스 강세
+    source_3m_move_pct: 0.1
+    target_symbol: '329180'
+    target_name: HD현대중공업
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 엔진 계열 강세는 HD현대 조선 건조량·엔진 capacity 가치의 후행 반응 후보.
+    evidence:
+    - title: HD-Hyundai Marine Engine StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/071970/
+    trading_note: HD현대마린엔진 강세가 HD현대중공업과 KSOE로 확산되는지 관찰.
+  - source_symbol: 071970
+    source_name: HD현대마린엔진
+    source_market: KR
+    source_reason: 선박엔진·부품·서비스 강세
+    source_3m_move_pct: 0.1
+    target_symbol: 009540
+    target_name: HD한국조선해양
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 엔진 수요 강세는 지주/조선 포트폴리오 backlog 가치에 연결 가능.
+    evidence:
+    - title: HD Korea Shipbuilding & Offshore Engineering StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/009540/
+    trading_note: 엔진주 급등 뒤 KSOE가 3거래일 내 고점 회복을 시도하는지 관찰.
+  - source_symbol: 071970
+    source_name: HD현대마린엔진
+    source_market: KR
+    source_reason: 선박엔진 피어 로테이션
+    source_3m_move_pct: 0.1
+    target_symbol: 082740
+    target_name: 한화엔진
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 같은 선박엔진 피어 내 수급·밸류에이션 로테이션 부담 후보.
+    evidence:
+    - title: Hanwha Engine StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/082740/
+    trading_note: 엔진 피어 간 상대강도 스프레드와 차익실현 패턴 관찰.
+  - source_symbol: 071970
+    source_name: HD현대마린엔진
+    source_market: KR
+    source_reason: 엔진 가격/납기 tightness
+    source_3m_move_pct: 0.1
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 엔진 가격/납기 tightness는 선박 발주자 비용 부담 리스크.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: 엔진주 강세와 해운주 약세가 동시 발생하는지 관찰.
+  - source_symbol: 009540
+    source_name: HD한국조선해양
+    source_market: KR
+    source_reason: 조선 지주·LNG/탱커/컨테이너 포트폴리오
+    source_3m_move_pct: 2.2
+    target_symbol: '329180'
+    target_name: HD현대중공업
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: KSOE 강세는 핵심 조선 자회사 가치에 동행·후행 반응 관찰 후보.
+    evidence:
+    - title: KSOE StockAnalysis history/profile
+      url: https://stockanalysis.com/quote/krx/009540/history/
+    trading_note: KSOE 급등 시 HD현대중공업의 장중 후행 추격 여부 관찰.
+  - source_symbol: 009540
+    source_name: HD한국조선해양
+    source_market: KR
+    source_reason: 그룹 조선 수주 기대
+    source_3m_move_pct: 2.2
+    target_symbol: 071970
+    target_name: HD현대마린엔진
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 그룹 조선 수주 기대가 선박엔진 계열 수요로 연결될 가능성.
+    evidence:
+    - title: HD-Hyundai Marine Engine StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/071970/
+    trading_note: KSOE 강세 후 엔진주 재상승 여부 관찰.
+  - source_symbol: 009540
+    source_name: HD한국조선해양
+    source_market: KR
+    source_reason: HD그룹 수주·정책 모멘텀 집중
+    source_3m_move_pct: 2.2
+    target_symbol: '010140'
+    target_name: 삼성중공업
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: HD그룹 수주·정책 모멘텀 집중 시 경쟁 조선사의 단기 수급 부담 후보.
+    evidence:
+    - title: Samsung Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/010140/
+    trading_note: HD그룹 대장주와 삼성중공업 간 상대강도 divergence 관찰.
+  - source_symbol: 009540
+    source_name: HD한국조선해양
+    source_market: KR
+    source_reason: 신조선가 상승 기대
+    source_3m_move_pct: 2.2
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 조선 지주 강세가 신조선가 상승 기대와 동행하면 선사 CAPEX 부담 관찰.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: 조선주-해운주 decoupling 발생 여부 관찰.
+  - source_symbol: HII
+    source_name: Huntington Ingalls
+    source_market: US
+    source_reason: 비용 부담·마진 우려로 하락; 한미 조선 협력 이슈
+    source_3m_move_pct: -24.0
+    target_symbol: '329180'
+    target_name: HD현대중공업
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: HII 비용/납기 부담은 미국 내 조선 capacity 보완 논리를 키워 한미 조선 협력 수혜 가능성.
+    evidence:
+    - title: Reuters - HD Hyundai Heavy, Huntington Ingalls to jointly build U.S. Navy auxiliary ships
+      url: https://www.reuters.com/world/asia-pacific/hd-hyundai-heavy-huntington-ingalls-jointly-build-us-navy-auxiliary-ships-2025-10-26/
+    trading_note: HII 급락 이후 한국 조선 방산·MASGA 테마의 후행 강세 여부 관찰.
+  - source_symbol: HII
+    source_name: Huntington Ingalls
+    source_market: US
+    source_reason: 비용 부담·마진 우려로 하락; 미국 조선 병목
+    source_3m_move_pct: -24.0
+    target_symbol: '042660'
+    target_name: 한화오션
+    target_market: KR
+    relation_type: DEFENSE_GEOPOLITICS
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 미국 조선 병목·북미 방산선박 수요가 부각될 때 한화오션 북미/잠수함 모멘텀 관찰 후보.
+    evidence:
+    - title: Reuters - Hanwha Ocean proposed delivery of four submarines to Canada by 2035
+      url: https://www.reuters.com/world/south-koreas-hanwha-ocean-proposed-delivery-four-submarines-canada-by-2035-2026-02-04/
+    trading_note: HII 약세와 동시에 한화오션/HD현대중공업 상대강도 개선 여부 관찰.
+  - source_symbol: HII
+    source_name: Huntington Ingalls
+    source_market: US
+    source_reason: 미 해군 조선 피어 비용·계약마진 우려
+    source_3m_move_pct: -24.0
+    target_symbol: GD
+    target_name: General Dynamics
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 미 해군 조선 피어의 비용·계약마진 우려가 동종 방산 조선주로 전이될 가능성.
+    evidence:
+    - title: General Dynamics StockAnalysis profile
+      url: https://stockanalysis.com/stocks/gd/
+    trading_note: HII 급락 다음 GD marine systems 관련 뉴스/주가 약세 동조 관찰.
+  - source_symbol: HII
+    source_name: Huntington Ingalls
+    source_market: US
+    source_reason: 미 해군 함정 비용·납기 부담
+    source_3m_move_pct: -24.0
+    target_symbol: BWXT
+    target_name: BWX Technologies
+    target_market: US
+    relation_type: DEFENSE_GEOPOLITICS
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 해군 핵추진·항모·잠수함 공급망 관련 예산/납기 우려가 부품주에 부담 후보.
+    evidence:
+    - title: BWX Technologies StockAnalysis profile
+      url: https://stockanalysis.com/stocks/bwxt/
+    trading_note: HII 비용 이슈가 BWXT 등 해군 핵부품주로 전이되는지 관찰.
+  - source_symbol: GLNG
+    source_name: Golar LNG
+    source_market: US
+    source_reason: FLNG·LNG 인프라·전략적 검토 기대
+    source_3m_move_pct: 23.0
+    target_symbol: FLNG
+    target_name: Flex LNG
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: LNG 해상 인프라·운송 강세는 LNG carrier peer에 후행 반응 후보.
+    evidence:
+    - title: Golar LNG StockAnalysis profile/history
+      url: https://stockanalysis.com/stocks/glng/
+    - title: Flex LNG StockAnalysis profile
+      url: https://stockanalysis.com/stocks/flng/
+    trading_note: GLNG 신고가 후 FLNG가 1~3거래일 내 동행하는지 관찰.
+  - source_symbol: GLNG
+    source_name: Golar LNG
+    source_market: US
+    source_reason: LNG 인프라 가치 상승
+    source_3m_move_pct: 23.0
+    target_symbol: LNG
+    target_name: Cheniere Energy
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LNG 공급·수출 인프라 가치 상승은 LNG exporter/terminal 업체에 수요 spillover 관찰.
+    evidence:
+    - title: Cheniere Energy StockAnalysis profile
+      url: https://stockanalysis.com/stocks/lng/
+    trading_note: GLNG 강세와 LNG/VG 등 LNG exporter 동반 반응 관찰.
+  - source_symbol: GLNG
+    source_name: Golar LNG
+    source_market: US
+    source_reason: LNG 가격·운송 tightness
+    source_3m_move_pct: 23.0
+    target_symbol: '036460'
+    target_name: 한국가스공사
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: LNG 가격·운송 tightness 해석 시 LNG 수입·도매 사업자는 조달비 부담 후보.
+    evidence:
+    - title: Korea Gas StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/036460/
+    trading_note: LNG 관련주 강세와 KOGAS 상대약세 여부 관찰.
+  - source_symbol: GLNG
+    source_name: Golar LNG
+    source_market: US
+    source_reason: LNG 가격·운송 tightness
+    source_3m_move_pct: 23.0
+    target_symbol: DUK
+    target_name: Duke Energy
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 천연가스 발전 노출 유틸리티는 글로벌 LNG 가격 상승 해석 시 연료비 부담 리스크.
+    evidence:
+    - title: Duke Energy StockAnalysis profile
+      url: https://stockanalysis.com/stocks/duk/
+    trading_note: LNG/가스 가격 급등일에 유틸리티 방어주 성격과 연료비 부담 중 어느 쪽이 우세한지 관찰.
+  - source_symbol: FLNG
+    source_name: Flex LNG
+    source_market: US
+    source_reason: LNG carrier 운임·계약 커버리지·Q1 가이던스
+    source_3m_move_pct: 16.0
+    target_symbol: GLNG
+    target_name: Golar LNG
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: LNG carrier/FLNG 해상 인프라 사이 피어 모멘텀 후행 반응.
+    evidence:
+    - title: Flex LNG StockAnalysis profile/history
+      url: https://stockanalysis.com/stocks/flng/history/
+    trading_note: FLNG 강세 다음 GLNG·LNG·VG 동반 반응 관찰.
+  - source_symbol: FLNG
+    source_name: Flex LNG
+    source_market: US
+    source_reason: LNG carrier 운임·계약 커버리지·Q1 가이던스
+    source_3m_move_pct: 16.0
+    target_symbol: '010140'
+    target_name: 삼성중공업
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 10d
+    confidence: MEDIUM
+    rationale: LNG carrier 운임·계약 강세는 LNG선 신조 발주 기대와 한국 조선사 후행 관찰.
+    evidence:
+    - title: Samsung Heavy Industries StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/010140/
+    trading_note: 미국 LNG carrier주 강세 후 한국 LNG선 조선주 수주 뉴스/거래대금 관찰.
+  - source_symbol: FLNG
+    source_name: Flex LNG
+    source_market: US
+    source_reason: LNG 운송 tightness
+    source_3m_move_pct: 16.0
+    target_symbol: '036460'
+    target_name: 한국가스공사
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: LNG 운송 tightness는 LNG 수입자 비용 압박 리스크.
+    evidence:
+    - title: Korea Gas StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/036460/
+    trading_note: FLNG 강세와 KOGAS 약세가 환율/LNG 가격과 함께 나타나는지 관찰.
+  - source_symbol: FLNG
+    source_name: Flex LNG
+    source_market: US
+    source_reason: LNG 운송 tightness
+    source_3m_move_pct: 16.0
+    target_symbol: DUK
+    target_name: Duke Energy
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: LNG/가스 가격 강세 해석 시 전력·가스 유틸리티의 연료비 부담 후보.
+    evidence:
+    - title: Duke Energy StockAnalysis profile
+      url: https://stockanalysis.com/stocks/duk/
+    trading_note: 가스 가격 상승과 DUK/SO 등 유틸리티 상대강도 변화를 관찰.
+  - source_symbol: ZIM
+    source_name: ZIM Integrated Shipping
+    source_market: US
+    source_reason: 컨테이너선 M&A 제안·단기 급등
+    source_3m_move_pct: null
+    target_symbol: DAC
+    target_name: Danaos
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 컨테이너선사 M&A/운임 기대는 컨테이너선 선주·용선주에 후행 반응 후보.
+    evidence:
+    - title: Danaos StockAnalysis profile
+      url: https://stockanalysis.com/stocks/dac/
+    trading_note: ZIM 급등 후 컨테이너 선박리스주 DAC/GSL의 1~3거래일 추격 여부 관찰.
+  - source_symbol: ZIM
+    source_name: ZIM Integrated Shipping
+    source_market: US
+    source_reason: 컨테이너선 M&A 제안·단기 급등
+    source_3m_move_pct: null
+    target_symbol: GSL
+    target_name: Global Ship Lease
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 컨테이너 용선 수요·자산가치 기대가 GSL 같은 선박리스 업체에 연결.
+    evidence:
+    - title: Global Ship Lease StockAnalysis profile
+      url: https://stockanalysis.com/stocks/gsl/
+    trading_note: ZIM 뉴스 이후 GSL 거래대금과 컨테이너 운임지표 동행 관찰.
+  - source_symbol: ZIM
+    source_name: ZIM Integrated Shipping
+    source_market: US
+    source_reason: 컨테이너선 M&A 제안·단기 급등
+    source_3m_move_pct: null
+    target_symbol: '011200'
+    target_name: HMM
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: ZIM 이슈가 경쟁 컨테이너선사의 상대 밸류에이션·물량 전환 리스크로 해석될 수 있음.
+    evidence:
+    - title: HMM StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/011200/
+    trading_note: ZIM 급등 후 HMM의 동반 상승 실패 또는 약세 전환 여부 관찰.
+  - source_symbol: ZIM
+    source_name: ZIM Integrated Shipping
+    source_market: US
+    source_reason: 컨테이너선 M&A 제안·단기 급등
+    source_3m_move_pct: null
+    target_symbol: MATX
+    target_name: Matson
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 해운 M&A·노선 경쟁 심화 기대가 일부 컨테이너/물류 피어에 부담 후보.
+    evidence:
+    - title: Matson StockAnalysis profile
+      url: https://stockanalysis.com/stocks/matx/
+    trading_note: ZIM과 MATX 상대강도, 컨테이너 운임지표를 함께 관찰.
+  - source_symbol: TNK
+    source_name: Teekay Tankers
+    source_market: US
+    source_reason: record spot tanker rates와 Q1 실적 기대
+    source_3m_move_pct: 7.5
+    target_symbol: STNG
+    target_name: Scorpio Tankers
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 탱커 운임 강세는 제품/원유 탱커 peer의 후행 반응 관찰 후보.
+    evidence:
+    - title: Teekay Tankers StockAnalysis profile/history
+      url: https://stockanalysis.com/stocks/tnk/history/
+    - title: Scorpio Tankers StockAnalysis profile
+      url: https://stockanalysis.com/stocks/stng/
+    trading_note: TNK 실적/운임 뉴스 뒤 STNG·FRO 피어의 1거래일 동조 관찰.
+  - source_symbol: TNK
+    source_name: Teekay Tankers
+    source_market: US
+    source_reason: record spot tanker rates와 Q1 실적 기대
+    source_3m_move_pct: 7.5
+    target_symbol: 009540
+    target_name: HD한국조선해양
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 10d
+    confidence: MEDIUM
+    rationale: 탱커 운임·선가 강세가 지속되면 탱커 신조 발주 기대가 한국 조선사에 후행 반응.
+    evidence:
+    - title: HD Korea Shipbuilding & Offshore Engineering StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/009540/
+    trading_note: 탱커 운임 강세가 1~2주 뒤 한국 조선 수주/선가 뉴스로 연결되는지 관찰.
+  - source_symbol: TNK
+    source_name: Teekay Tankers
+    source_market: US
+    source_reason: 탱커 운임 상승
+    source_3m_move_pct: 7.5
+    target_symbol: VLO
+    target_name: Valero Energy
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 탱커 운임 상승은 원유·제품 운송비 부담으로 정유사 비용 압박 후보.
+    evidence:
+    - title: Valero Energy StockAnalysis profile
+      url: https://stockanalysis.com/stocks/vlo/
+    trading_note: 탱커주 강세와 정유주 마진 둔화 우려가 동행하는지 관찰.
+  - source_symbol: TNK
+    source_name: Teekay Tankers
+    source_market: US
+    source_reason: 탱커 운임 상승
+    source_3m_move_pct: 7.5
+    target_symbol: MPC
+    target_name: Marathon Petroleum
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 원유·제품 물류비 상승 국면에서 정유사 마진 부담 관찰 후보.
+    evidence:
+    - title: Marathon Petroleum StockAnalysis profile
+      url: https://stockanalysis.com/stocks/mpc/
+    trading_note: 탱커주 강세와 정유주 상대강도 약화 여부를 3~5거래일 관찰.
+  factor_edges:
+  - source_symbol: STEEL_PLATE
+    source_name: 후판/철강 가격 factor
+    source_market: COMMODITY
+    source_reason: 조선 주요 투입재 가격 상승 가정
+    source_3m_move_pct: null
+    target_symbol: '329180'
+    target_name: HD현대중공업
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 후판 가격 상승은 조선사 원가 부담 리스크. 단, 고가 수주·환율·계약 조건에 따라 상쇄 가능.
+    evidence:
+    - title: 'POSCO Holdings profile: plates and steel products'
+      url: https://stockanalysis.com/quote/krx/005490/
+    - title: HD Hyundai Heavy Industries profile
+      url: https://stockanalysis.com/quote/krx/329180/
+    trading_note: 철강주 강세와 조선주 마진 우려 코멘트가 동시 발생하는지 관찰.
+  - source_symbol: STEEL_PLATE
+    source_name: 후판/철강 가격 factor
+    source_market: COMMODITY
+    source_reason: 조선 주요 투입재 가격 상승 가정
+    source_3m_move_pct: null
+    target_symbol: '010140'
+    target_name: 삼성중공업
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 고정가 계약/기존 backlog 구간에서는 후판 가격 상승이 마진 부담 후보.
+    evidence:
+    - title: Samsung Heavy Industries profile
+      url: https://stockanalysis.com/quote/krx/010140/
+    trading_note: 후판 가격 뉴스 이후 조선사별 수주단가/마진 코멘트 차별화 관찰.
+  - source_symbol: STEEL_PLATE
+    source_name: 후판/철강 가격 factor
+    source_market: COMMODITY
+    source_reason: 철강·plate 가격 상승 기대
+    source_3m_move_pct: null
+    target_symbol: 005490
+    target_name: POSCO Holdings
+    target_market: KR
+    relation_type: INPUT_COST_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 철강·plate 가격 상승 기대는 철강 공급자 수혜 가능성으로 관찰. 조선 수요만으로 설명하면 confidence는 LOW.
+    evidence:
+    - title: POSCO Holdings StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/005490/
+    trading_note: 조선주보다 철강주가 먼저 반응하는지, 혹은 조선 마진 우려가 먼저 반영되는지 관찰.
+  - source_symbol: STEEL_PLATE
+    source_name: 후판/철강 가격 factor
+    source_market: COMMODITY
+    source_reason: 철강·heavy plate 가격 상승 기대
+    source_3m_move_pct: null
+    target_symbol: '004020'
+    target_name: 현대제철
+    target_market: KR
+    relation_type: INPUT_COST_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: heavy plate·철강 수요/가격 기대가 철강주 후행 반응 후보.
+    evidence:
+    - title: Hyundai Steel StockAnalysis profile
+      url: https://stockanalysis.com/quote/krx/004020/
+    trading_note: 후판 가격 상승 뉴스와 현대제철 거래대금 증가 여부 관찰.

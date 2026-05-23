@@ -1,0 +1,12 @@
+[Unit]
+Description=Tele Quant 월요일 07:00 KST 브리핑 타이머
+After=network-online.target
+
+[Timer]
+# 월요일 07:00 KST = UTC 22:00 (일요일)
+OnCalendar=Sun *-*-* 22:00:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

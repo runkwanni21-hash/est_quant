@@ -1,0 +1,9 @@
+[Unit]
+Description=Tele Quant Bulk Refresh — 매일 06:00 KST 야간 자동 갱신
+
+[Timer]
+OnCalendar=*-*-* 06:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

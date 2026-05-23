@@ -1,0 +1,9 @@
+[Unit]
+Description=Tele Quant Universe — 매주 일요일 02:00 KST 종목 universe 갱신
+
+[Timer]
+OnCalendar=Sun *-*-* 02:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

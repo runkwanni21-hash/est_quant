@@ -1,0 +1,992 @@
+sector_relation_seeds:
+  sector_id: ai_power_grid_copper_nuclear
+  sector_name: 데이터센터 / AI 전력 / 변압기 / 전선 / 구리 / 원전
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 리서치 seed이며 매수/매도 추천 아님
+  - confidence는 관계 근거의 강도이며 가격 예측 확률이 아님
+  - source_3m_move_pct가 null인 한국 종목은 정확한 2026-02-17 종가 미확인으로 2026-05-15 quote 및 52주 range 기반 급등권 선별
+  - 1일~1개월 스윙 관점에서 후행 반응 관찰 후보로 사용
+  evidence_refs:
+    E_TRANSFORMER:
+      title: Reuters - US power transformer buyers scramble for imports, factory slots
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    E_PWR:
+      title: Barron's - Quanta Services AI/grid demand, record backlog
+      url: https://www.barrons.com/articles/quanta-services-ai-spending-raise-outlook-e81cd5ec
+    E_GEV:
+      title: WSJ - GE Vernova lifts outlook on accelerating power demand
+      url: https://www.wsj.com/business/earnings/ge-vernova-lifts-outlook-on-accelerating-power-demand-d81d21e8
+    E_ETN:
+      title: Barron's - Eaton Q1, AI data center power-equipment demand
+      url: https://www.barrons.com/articles/eaton-earnings-stock-price-8a1eba75
+    E_CEG:
+      title: Reuters - Constellation Energy, Calpine, Meta/Microsoft power agreements, TMI
+      url: https://www.reuters.com/business/energy/constellation-energy-forecasts-2026-profit-below-estimates-2026-03-31/
+    E_VST:
+      title: IBD - Vistra, Meta 20-year nuclear energy agreement
+      url: https://www.investors.com/news/nuclear-sp-500-vistra-stock-bullish-upgrade/
+    E_NRG:
+      title: MarketWatch - NRG Energy 2026 May close and 52-week high pullback
+      url: https://www.marketwatch.com/data-news/nrg-energy-inc-stock-falls-tuesday-underperforms-market-ba81d03a-ed20a97ef2df
+    E_COPPER:
+      title: WSJ - Copper prices rise to new record highs on data-center demand and supply disruption
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    E_AI_POWER:
+      title: Reuters - US power use to beat record highs in 2026 and 2027 as AI use surges
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    E_KR_DC:
+      title: Reuters - Hyundai Motor Group to invest in AI data centre and robot factory in South Korea
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-group-invest-63-bln-ai-data-centre-robot-factory-south-korea-2026-02-27/
+    E_HDHE:
+      title: Google Finance - HD Hyundai Electric quote
+      url: https://www.google.com/finance/quote/267260:KRX
+    E_LSE:
+      title: Google Finance - LS ELECTRIC quote
+      url: https://www.google.com/finance/quote/010120:KRX
+    E_HYOSUNG:
+      title: Google Finance - Hyosung Heavy Industries quote
+      url: https://www.google.com/finance/quote/298040:KRX
+    E_TAIHAN:
+      title: Google Finance - Taihan Cable quote
+      url: https://www.google.com/finance/quote/001440:KRX
+    E_DOOSAN:
+      title: Google Finance - Doosan Enerbility quote
+      url: https://www.google.com/finance/quote/034020:KRX
+  edges:
+  - source_symbol: PWR
+    source_name: Quanta Services
+    source_market: US
+    source_reason: AI/grid EPC, record backlog, transformer capacity expansion
+    source_3m_move_pct: 49.0
+    target_symbol: EME
+    target_name: EMCOR
+    target_market: US
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 데이터센터·전력 EPC 발주 사이클이 같은 시공/전기공사 피어로 후행 반응 가능성
+    evidence:
+    - title: E_PWR
+      url: https://www.barrons.com/articles/quanta-services-ai-spending-raise-outlook-e81cd5ec
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: PWR
+    source_name: Quanta Services
+    source_market: US
+    source_reason: AI/grid EPC, record backlog, transformer capacity expansion
+    source_3m_move_pct: 49.0
+    target_symbol: MTZ
+    target_name: MasTec
+    target_market: US
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 송전·전력망 공사 수요 read-through 관찰 후보
+    evidence:
+    - title: E_PWR + E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: PWR
+    source_name: Quanta Services
+    source_market: US
+    source_reason: AI/grid EPC, record backlog, transformer capacity expansion
+    source_3m_move_pct: 49.0
+    target_symbol: MSFT
+    target_name: Microsoft
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 전력 인프라 병목·EPC 비용 상승은 hyperscaler CAPEX 부담 리스크
+    evidence:
+    - title: E_AI_POWER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: PWR
+    source_name: Quanta Services
+    source_market: US
+    source_reason: AI/grid EPC, record backlog, transformer capacity expansion
+    source_3m_move_pct: 49.0
+    target_symbol: AMZN
+    target_name: Amazon
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: AWS 데이터센터 증설 과정에서 전력망·변압기 조달 비용 부담 관찰
+    evidence:
+    - title: E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: PWR
+    source_name: Quanta Services
+    source_market: US
+    source_reason: AI/grid EPC, record backlog, transformer capacity expansion
+    source_3m_move_pct: 49.0
+    target_symbol: GEV
+    target_name: GE Vernova
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 전력장비·grid capex 테마 동조화 관찰 후보
+    evidence:
+    - title: E_GEV
+      url: https://www.wsj.com/business/earnings/ge-vernova-lifts-outlook-on-accelerating-power-demand-d81d21e8
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: Q1 orders +71%, backlog $163B, data-center power demand
+    source_3m_move_pct: 33.0
+    target_symbol: ETN
+    target_name: Eaton
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 전력 분배·스위치기어·데이터센터 전력장비 수요가 같은 방향 read-through
+    evidence:
+    - title: E_ETN
+      url: https://www.barrons.com/articles/eaton-earnings-stock-price-8a1eba75
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: Q1 orders +71%, backlog $163B, data-center power demand
+    source_3m_move_pct: 33.0
+    target_symbol: PWR
+    target_name: Quanta Services
+    target_market: US
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: 발전·송배전 장비 backlog가 EPC 발주로 이어지는 후행 관찰 후보
+    evidence:
+    - title: E_PWR
+      url: https://www.barrons.com/articles/quanta-services-ai-spending-raise-outlook-e81cd5ec
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: Q1 orders +71%, backlog $163B, data-center power demand
+    source_3m_move_pct: 33.0
+    target_symbol: DLR
+    target_name: Digital Realty
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 데이터센터 REIT는 전력 인입·장비 비용 상승 시 개발비 부담 리스크
+    evidence:
+    - title: E_AI_POWER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: Q1 orders +71%, backlog $163B, data-center power demand
+    source_3m_move_pct: 33.0
+    target_symbol: EQIX
+    target_name: Equinix
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대형 전력장비 shortage가 데이터센터 임차/증설 비용 부담으로 전가될 수 있음
+    evidence:
+    - title: E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: GEV
+    source_name: GE Vernova
+    source_market: US
+    source_reason: Q1 orders +71%, backlog $163B, data-center power demand
+    source_3m_move_pct: 33.0
+    target_symbol: HUBB
+    target_name: Hubbell
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 배전·전기부품 피어로 grid capex 동조화 관찰 후보
+    evidence:
+    - title: E_GEV
+      url: https://www.wsj.com/business/earnings/ge-vernova-lifts-outlook-on-accelerating-power-demand-d81d21e8
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CEG
+    source_name: Constellation Energy
+    source_market: US
+    source_reason: Clean baseload, Calpine, Meta/Microsoft power agreements, Three Mile Island restart issue
+    source_3m_move_pct: null
+    target_symbol: BWXT
+    target_name: BWX Technologies
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 원전·SMR·핵심 부품 공급망으로 nuclear power demand read-through
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/constellation-energy-forecasts-2026-profit-below-estimates-2026-03-31/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CEG
+    source_name: Constellation Energy
+    source_market: US
+    source_reason: Clean baseload, Calpine, Meta/Microsoft power agreements, Three Mile Island restart issue
+    source_3m_move_pct: null
+    target_symbol: 034020.KS
+    target_name: 두산에너빌리티
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 미국 원전 재가동/SMR 관심은 한국 원전기기 후행 반응 관찰 후보
+    evidence:
+    - title: E_CEG + E_DOOSAN
+      url: https://www.google.com/finance/quote/034020:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CEG
+    source_name: Constellation Energy
+    source_market: US
+    source_reason: Clean baseload, Calpine, Meta/Microsoft power agreements, Three Mile Island restart issue
+    source_3m_move_pct: null
+    target_symbol: MSFT
+    target_name: Microsoft
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 전력 PPA·grid transfer 불확실성은 데이터센터 전력 조달 비용/일정 부담
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/us-may-decide-on-three-mile-island-restart-june-constellation-execs-say-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CEG
+    source_name: Constellation Energy
+    source_market: US
+    source_reason: Clean baseload, Calpine, Meta/Microsoft power agreements, Three Mile Island restart issue
+    source_3m_move_pct: null
+    target_symbol: DLR
+    target_name: Digital Realty
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: clean baseload 프리미엄 상승은 데이터센터 전력비 부담 리스크
+    evidence:
+    - title: E_AI_POWER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: CEG
+    source_name: Constellation Energy
+    source_market: US
+    source_reason: Clean baseload, Calpine, Meta/Microsoft power agreements, Three Mile Island restart issue
+    source_3m_move_pct: null
+    target_symbol: VST
+    target_name: Vistra
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 원전/merchant power 피어의 동조화 관찰 후보
+    evidence:
+    - title: E_VST
+      url: https://www.investors.com/news/nuclear-sp-500-vistra-stock-bullish-upgrade/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: VST
+    source_name: Vistra
+    source_market: US
+    source_reason: Meta nuclear PPA 이후 고점권에서 5월까지 pullback
+    source_3m_move_pct: -20.0
+    target_symbol: SO
+    target_name: Southern Company
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: IPP 변동성 확대 시 regulated utility로 방어적 수요 전환 관찰
+    evidence:
+    - title: E_VST
+      url: https://www.marketwatch.com/data-news/vistra-corp-stock-outperforms-despite-losses-on-the-day-6e267df9-3eb8ccf0d4b5
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: VST
+    source_name: Vistra
+    source_market: US
+    source_reason: Meta nuclear PPA 이후 고점권에서 5월까지 pullback
+    source_3m_move_pct: -20.0
+    target_symbol: DUK
+    target_name: Duke Energy
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: merchant power 고평가 부담 완화 시 규제 유틸리티 상대강도 후보
+    evidence:
+    - title: E_VST
+      url: https://www.marketwatch.com/data-news/vistra-corp-stock-outperforms-despite-losses-on-the-day-6e267df9-3eb8ccf0d4b5
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: VST
+    source_name: Vistra
+    source_market: US
+    source_reason: Meta nuclear PPA 이후 고점권에서 5월까지 pullback
+    source_3m_move_pct: -20.0
+    target_symbol: NRG
+    target_name: NRG Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 독립발전/merchant power 피어로 밸류에이션 압축 동조화 가능성
+    evidence:
+    - title: E_NRG
+      url: https://www.marketwatch.com/data-news/nrg-energy-inc-stock-falls-tuesday-underperforms-market-ba81d03a-ed20a97ef2df
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: VST
+    source_name: Vistra
+    source_market: US
+    source_reason: Meta nuclear PPA 이후 고점권에서 5월까지 pullback
+    source_3m_move_pct: -20.0
+    target_symbol: CEG
+    target_name: Constellation Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 원전/전력 PPA 프리미엄 조정 시 피어 후행 약세 관찰
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/constellation-energy-forecasts-2026-profit-below-estimates-2026-03-31/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: VST
+    source_name: Vistra
+    source_market: US
+    source_reason: Meta nuclear PPA 이후 고점권에서 5월까지 pullback
+    source_3m_move_pct: -20.0
+    target_symbol: TLN
+    target_name: Talen Energy
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 데이터센터 전력 공급 테마 내 merchant/nuclear 피어로 후행 반응 가능성
+    evidence:
+    - title: E_VST
+      url: https://www.investors.com/news/nuclear-sp-500-vistra-stock-bullish-upgrade/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: NRG
+    source_name: NRG Energy
+    source_market: US
+    source_reason: 2월 고점 대비 5월 급락, merchant power valuation compression
+    source_3m_move_pct: -29.0
+    target_symbol: SO
+    target_name: Southern Company
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 독립발전 약세가 규제 유틸리티 방어주 상대강도 관찰로 이어질 수 있음
+    evidence:
+    - title: E_NRG
+      url: https://www.marketwatch.com/data-news/nrg-energy-inc-stock-falls-tuesday-underperforms-market-ba81d03a-ed20a97ef2df
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: NRG
+    source_name: NRG Energy
+    source_market: US
+    source_reason: 2월 고점 대비 5월 급락, merchant power valuation compression
+    source_3m_move_pct: -29.0
+    target_symbol: AEP
+    target_name: American Electric Power
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 전력망 투자 노출이 있는 regulated utility로 수요 전환 관찰
+    evidence:
+    - title: E_AI_POWER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: NRG
+    source_name: NRG Energy
+    source_market: US
+    source_reason: 2월 고점 대비 5월 급락, merchant power valuation compression
+    source_3m_move_pct: -29.0
+    target_symbol: VST
+    target_name: Vistra
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: merchant power 피어 약세 동조화 관찰 후보
+    evidence:
+    - title: E_VST
+      url: https://www.marketwatch.com/data-news/vistra-corp-stock-outperforms-despite-losses-on-the-day-6e267df9-3eb8ccf0d4b5
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: NRG
+    source_name: NRG Energy
+    source_market: US
+    source_reason: 2월 고점 대비 5월 급락, merchant power valuation compression
+    source_3m_move_pct: -29.0
+    target_symbol: CEG
+    target_name: Constellation Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 전력 PPA/IPP 프리미엄 조정 시 nuclear utility 피어에 부담
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/constellation-energy-forecasts-2026-profit-below-estimates-2026-03-31/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: NRG
+    source_name: NRG Energy
+    source_market: US
+    source_reason: 2월 고점 대비 5월 급락, merchant power valuation compression
+    source_3m_move_pct: -29.0
+    target_symbol: TLN
+    target_name: Talen Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 데이터센터 전력 공급 테마 내 valuation compression 관찰
+    evidence:
+    - title: E_NRG
+      url: https://www.marketwatch.com/data-news/nrg-energy-inc-stock-falls-tuesday-underperforms-market-ba81d03a-ed20a97ef2df
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: Copper record high, Grasberg supply issue, AI/grid copper demand
+    source_3m_move_pct: null
+    target_symbol: SCCO
+    target_name: Southern Copper
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 구리 가격 민감도가 높은 광산 피어로 동행 가능성
+    evidence:
+    - title: E_COPPER
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: Copper record high, Grasberg supply issue, AI/grid copper demand
+    source_3m_move_pct: null
+    target_symbol: TECK
+    target_name: Teck Resources
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: copper beta가 높은 diversified miner read-through
+    evidence:
+    - title: E_COPPER
+      url: https://www.reuters.com/world/asia-pacific/freeport-says-grasberg-recovery-not-delayed-until-2028-stands-by-2027-forecast-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: Copper record high, Grasberg supply issue, AI/grid copper demand
+    source_3m_move_pct: null
+    target_symbol: 001440.KS
+    target_name: 대한전선
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 구리 급등은 전선 매출 단가에는 우호적일 수 있으나 고정가 계약·운전자본 부담 리스크
+    evidence:
+    - title: E_COPPER + E_TAIHAN
+      url: https://www.google.com/finance/quote/001440:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: Copper record high, Grasberg supply issue, AI/grid copper demand
+    source_3m_move_pct: null
+    target_symbol: 229640.KS
+    target_name: LS에코에너지
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 구리 원가 급등 시 pass-through 지연·마진 변동성 관찰
+    evidence:
+    - title: E_COPPER
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: Copper record high, Grasberg supply issue, AI/grid copper demand
+    source_3m_move_pct: null
+    target_symbol: RIO
+    target_name: Rio Tinto
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: base metals 피어로 구리 가격 read-through 관찰
+    evidence:
+    - title: E_COPPER
+      url: https://www.reuters.com/world/americas/ceraweek-freeport-mcmoran-confident-copper-demand-despite-iran-conflict-ceo-says-2026-03-23/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 267260.KS
+    source_name: HD현대일렉트릭
+    source_market: KR
+    source_reason: 미국 변압기 shortage·한국산 수입 수요·전력기기 급등권
+    source_3m_move_pct: null
+    target_symbol: 298040.KS
+    target_name: 효성중공업
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: 초고압변압기·전력기기 수주 사이클 동행 가능성
+    evidence:
+    - title: E_TRANSFORMER + E_HDHE
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 267260.KS
+    source_name: HD현대일렉트릭
+    source_market: KR
+    source_reason: 미국 변압기 shortage·한국산 수입 수요·전력기기 급등권
+    source_3m_move_pct: null
+    target_symbol: 103590.KS
+    target_name: 일진전기
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 변압기·전선 복합 노출로 전력망 capex 후행 반응 관찰
+    evidence:
+    - title: E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 267260.KS
+    source_name: HD현대일렉트릭
+    source_market: KR
+    source_reason: 미국 변압기 shortage·한국산 수입 수요·전력기기 급등권
+    source_3m_move_pct: null
+    target_symbol: 015760.KS
+    target_name: 한국전력
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 변압기 가격·망 투자비 상승은 유틸리티 capex 부담 리스크
+    evidence:
+    - title: E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 267260.KS
+    source_name: HD현대일렉트릭
+    source_market: KR
+    source_reason: 미국 변압기 shortage·한국산 수입 수요·전력기기 급등권
+    source_3m_move_pct: null
+    target_symbol: 005930.KS
+    target_name: 삼성전자
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 고전력 소비 제조/AI 인프라 기업은 전력 인프라 비용 부담 관찰
+    evidence:
+    - title: E_AI_POWER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 267260.KS
+    source_name: HD현대일렉트릭
+    source_market: KR
+    source_reason: 미국 변압기 shortage·한국산 수입 수요·전력기기 급등권
+    source_3m_move_pct: null
+    target_symbol: 010120.KS
+    target_name: LS ELECTRIC
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 국내 전력기기 대표 피어 동조화 관찰
+    evidence:
+    - title: E_LSE
+      url: https://www.google.com/finance/quote/010120:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 010120.KS
+    source_name: LS ELECTRIC
+    source_market: KR
+    source_reason: grid automation·전력기기·AI 전력망 후행 수요
+    source_3m_move_pct: null
+    target_symbol: 006260.KS
+    target_name: LS
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 그룹/지주 노출로 자회사 전력기기 모멘텀 반영 가능성
+    evidence:
+    - title: E_LSE
+      url: https://www.google.com/finance/quote/010120:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 010120.KS
+    source_name: LS ELECTRIC
+    source_market: KR
+    source_reason: grid automation·전력기기·AI 전력망 후행 수요
+    source_3m_move_pct: null
+    target_symbol: 229640.KS
+    target_name: LS에코에너지
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 전력망 투자 확대가 케이블·전선 수요로 후행 확산 가능성
+    evidence:
+    - title: E_TRANSFORMER + E_COPPER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 010120.KS
+    source_name: LS ELECTRIC
+    source_market: KR
+    source_reason: grid automation·전력기기·AI 전력망 후행 수요
+    source_3m_move_pct: null
+    target_symbol: 035420.KS
+    target_name: NAVER
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 자체 데이터센터·AI 인프라 전력비/인입 비용 부담 관찰
+    evidence:
+    - title: E_KR_DC + E_AI_POWER
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-group-invest-63-bln-ai-data-centre-robot-factory-south-korea-2026-02-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 010120.KS
+    source_name: LS ELECTRIC
+    source_market: KR
+    source_reason: grid automation·전력기기·AI 전력망 후행 수요
+    source_3m_move_pct: null
+    target_symbol: 000660.KS
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: AI 반도체 생산·데이터 인프라의 전력비/설비 투자 부담 리스크
+    evidence:
+    - title: E_AI_POWER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 010120.KS
+    source_name: LS ELECTRIC
+    source_market: KR
+    source_reason: grid automation·전력기기·AI 전력망 후행 수요
+    source_3m_move_pct: null
+    target_symbol: 267260.KS
+    target_name: HD현대일렉트릭
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 전력기기 대장 피어 간 후행 반응 관찰
+    evidence:
+    - title: E_HDHE
+      url: https://www.google.com/finance/quote/267260:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 298040.KS
+    source_name: 효성중공업
+    source_market: KR
+    source_reason: 초고압변압기·전력기기, 미국 transformer shortage 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 267260.KS
+    target_name: HD현대일렉트릭
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 초고압변압기 피어 동조화
+    evidence:
+    - title: E_TRANSFORMER + E_HDHE
+      url: https://www.google.com/finance/quote/267260:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 298040.KS
+    source_name: 효성중공업
+    source_market: KR
+    source_reason: 초고압변압기·전력기기, 미국 transformer shortage 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 062040.KS
+    target_name: 산일전기
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 중소형 변압기/전력기기 후행 관심 확산 후보
+    evidence:
+    - title: E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 298040.KS
+    source_name: 효성중공업
+    source_market: KR
+    source_reason: 초고압변압기·전력기기, 미국 transformer shortage 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 015760.KS
+    target_name: 한국전력
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 전력장비 가격 상승은 망 투자비·조달비 부담 관찰
+    evidence:
+    - title: E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 298040.KS
+    source_name: 효성중공업
+    source_market: KR
+    source_reason: 초고압변압기·전력기기, 미국 transformer shortage 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: AMZN
+    target_name: Amazon
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: hyperscaler 데이터센터는 전력 인입·전력장비 부족 시 CAPEX 부담
+    evidence:
+    - title: E_AI_POWER + E_TRANSFORMER
+      url: https://www.reuters.com/business/energy/us-power-use-beat-record-highs-2026-2027-ai-use-surges-eia-says-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 298040.KS
+    source_name: 효성중공업
+    source_market: KR
+    source_reason: 초고압변압기·전력기기, 미국 transformer shortage 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 010120.KS
+    target_name: LS ELECTRIC
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 국내 전력기기 경쟁사/피어 동조화
+    evidence:
+    - title: E_LSE
+      url: https://www.google.com/finance/quote/010120:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 001440.KS
+    source_name: 대한전선
+    source_market: KR
+    source_reason: 전선·구리·전력망 capex 급등권
+    source_3m_move_pct: null
+    target_symbol: 229640.KS
+    target_name: LS에코에너지
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 케이블/전선 피어 동조화
+    evidence:
+    - title: E_COPPER + E_TAIHAN
+      url: https://www.google.com/finance/quote/001440:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 001440.KS
+    source_name: 대한전선
+    source_market: KR
+    source_reason: 전선·구리·전력망 capex 급등권
+    source_3m_move_pct: null
+    target_symbol: 103590.KS
+    target_name: 일진전기
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 전선·전력기기 복합 노출로 grid capex 확산 후보
+    evidence:
+    - title: E_TRANSFORMER + E_COPPER
+      url: https://www.reuters.com/business/energy/us-power-transformer-buyers-scramble-imports-factory-slots--reeii-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 001440.KS
+    source_name: 대한전선
+    source_market: KR
+    source_reason: 전선·구리·전력망 capex 급등권
+    source_3m_move_pct: null
+    target_symbol: 015760.KS
+    target_name: 한국전력
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 케이블 가격·구리 가격 상승은 송배전 capex 부담
+    evidence:
+    - title: E_COPPER + E_TRANSFORMER
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-11-2026/card/copper-prices-rise-to-new-record-highs-VjBJlZXFQ5AbfOlDGL2n
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 001440.KS
+    source_name: 대한전선
+    source_market: KR
+    source_reason: 전선·구리·전력망 capex 급등권
+    source_3m_move_pct: null
+    target_symbol: 035420.KS
+    target_name: NAVER
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 데이터센터 전력 인입·케이블링 비용 상승 리스크
+    evidence:
+    - title: E_KR_DC + E_AI_POWER
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-group-invest-63-bln-ai-data-centre-robot-factory-south-korea-2026-02-27/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 001440.KS
+    source_name: 대한전선
+    source_market: KR
+    source_reason: 전선·구리·전력망 capex 급등권
+    source_3m_move_pct: null
+    target_symbol: 006260.KS
+    target_name: LS
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 전선/전력기기 그룹 exposure 동조화 관찰
+    evidence:
+    - title: E_TAIHAN
+      url: https://www.google.com/finance/quote/001440:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 034020.KS
+    source_name: 두산에너빌리티
+    source_market: KR
+    source_reason: 원전·SMR·전력수요 정책 read-through 급등권
+    source_3m_move_pct: null
+    target_symbol: 052690.KS
+    target_name: 한전기술
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 원전 설계·엔지니어링 정책 수혜 가능성 관찰
+    evidence:
+    - title: E_CEG + E_DOOSAN
+      url: https://www.google.com/finance/quote/034020:KRX
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 034020.KS
+    source_name: 두산에너빌리티
+    source_market: KR
+    source_reason: 원전·SMR·전력수요 정책 read-through 급등권
+    source_3m_move_pct: null
+    target_symbol: 032820.KQ
+    target_name: 우리기술
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 원전 제어/부품 테마 후행 반응 가능성이나 근거는 약함
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/us-may-decide-on-three-mile-island-restart-june-constellation-execs-say-2026-05-11/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 034020.KS
+    source_name: 두산에너빌리티
+    source_market: KR
+    source_reason: 원전·SMR·전력수요 정책 read-through 급등권
+    source_3m_move_pct: null
+    target_symbol: 009830.KS
+    target_name: 한화솔루션
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 원전 capex 선호가 커질 때 재생에너지 capex 상대 매력 둔화 관찰
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/constellation-energy-forecasts-2026-profit-below-estimates-2026-03-31/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 034020.KS
+    source_name: 두산에너빌리티
+    source_market: KR
+    source_reason: 원전·SMR·전력수요 정책 read-through 급등권
+    source_3m_move_pct: null
+    target_symbol: FSLR
+    target_name: First Solar
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 원전/clean baseload 선호 확대 시 solar 피어 상대 약세 관찰
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/business/energy/constellation-energy-forecasts-2026-profit-below-estimates-2026-03-31/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트
+  - source_symbol: 034020.KS
+    source_name: 두산에너빌리티
+    source_market: KR
+    source_reason: 원전·SMR·전력수요 정책 read-through 급등권
+    source_3m_move_pct: null
+    target_symbol: BWXT
+    target_name: BWX Technologies
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 원전/SMR 부품·방산 원전 공급망 피어 read-through
+    evidence:
+    - title: E_CEG
+      url: https://www.reuters.com/legal/transactional/ananym-urges-bwx-technologies-commercialize-reactor-design-says-shares-could-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰 포인트

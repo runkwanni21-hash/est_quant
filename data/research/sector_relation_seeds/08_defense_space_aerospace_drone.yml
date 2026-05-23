@@ -1,0 +1,1365 @@
+sector_relation_seeds:
+  sector_id: defense_space_aerospace_drone
+  sector_name: 방산 / 우주 / 항공 / 드론
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  edges:
+  - source_symbol: NOC
+    source_name: Northrop Grumman
+    source_market: US
+    source_reason: Golden Dome·우주기반 미사일방어·이란 전쟁 방산 랠리 이후 3/3 52주 고점 형성, 5/15에는 고점 대비 -30.14%
+    source_3m_move_pct: null
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: DEFENSE_GEOPOLITICS
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Golden Dome·미사일방어 예산 기대가 대형 방산 프라임 바스켓으로 확산될 수 있는 수혜 가능성.
+    evidence:
+    - title: US budget watchdog estimates Golden Dome will cost $1.2 trillion
+      url: https://www.reuters.com/business/aerospace-defense/us-budget-watchdog-estimates-golden-dome-will-cost-12-trillion-well-above-2026-05-12/
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: NOC
+    source_name: Northrop Grumman
+    source_market: US
+    source_reason: Golden Dome·우주기반 미사일방어·이란 전쟁 방산 랠리 이후 3/3 52주 고점 형성, 5/15에는 고점 대비 -30.14%
+    source_3m_move_pct: null
+    target_symbol: LHX
+    target_name: L3Harris Technologies
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 우주기반 감시·통신·센서 예산 기대가 C4ISR/페이로드 업체로 후행 반응할 수 있음.
+    evidence:
+    - title: US budget watchdog estimates Golden Dome will cost $1.2 trillion
+      url: https://www.reuters.com/business/aerospace-defense/us-budget-watchdog-estimates-golden-dome-will-cost-12-trillion-well-above-2026-05-12/
+    - title: L3Harris Technologies Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/l3harris-technologies-inc-stock-outperforms-competitors-despite-losses-on-the-day-ccd151d7-a4a37631e30c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: NOC
+    source_name: Northrop Grumman
+    source_market: US
+    source_reason: Golden Dome·우주기반 미사일방어·이란 전쟁 방산 랠리 이후 3/3 52주 고점 형성, 5/15에는 고점 대비 -30.14%
+    source_3m_move_pct: null
+    target_symbol: HII
+    target_name: Huntington Ingalls Industries
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 우주·미사일 방어 예산이 단기적으로 해군 조선 예산보다 주목받을 때 방산 내 자금 배분 부담 후보.
+    evidence:
+    - title: US budget watchdog estimates Golden Dome will cost $1.2 trillion
+      url: https://www.reuters.com/business/aerospace-defense/us-budget-watchdog-estimates-golden-dome-will-cost-12-trillion-well-above-2026-05-12/
+    - title: Huntington Ingalls Industries Inc. stock underperforms Friday
+      url: https://www.marketwatch.com/data-news/huntington-ingalls-industries-inc-stock-underperforms-friday-when-compared-to-competitors-5aa61ba2-b56d36c7557a
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: NOC
+    source_name: Northrop Grumman
+    source_market: US
+    source_reason: Golden Dome·우주기반 미사일방어·이란 전쟁 방산 랠리 이후 3/3 52주 고점 형성, 5/15에는 고점 대비 -30.14%
+    source_3m_move_pct: null
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 미사일방어/우주 테마가 강할 때 상업항공 인도 이슈가 있는 항공 OEM으로부터 방산 프라임으로 자금 전환 리스크.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    - title: Northrop Grumman Corp. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/northrop-grumman-corp-stock-outperforms-competitors-despite-losses-on-the-day-f9fa7c2f-e601b10ef19e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: NOC
+    source_name: Northrop Grumman
+    source_market: US
+    source_reason: Golden Dome·우주기반 미사일방어·이란 전쟁 방산 랠리 이후 3/3 52주 고점 형성, 5/15에는 고점 대비 -30.14%
+    source_3m_move_pct: null
+    target_symbol: RTX
+    target_name: RTX
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 이란/미사일방어 이벤트에서는 NOC·LMT·RTX가 같은 대형 방산 피어 바스켓으로 동조 관찰.
+    evidence:
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LMT
+    source_name: Lockheed Martin
+    source_market: US
+    source_reason: 이란 전쟁 방산 랠리와 Patriot/THAAD/F-35 수요 기대, 이후 Q1 실적 미스와 프라임 약세
+    source_3m_move_pct: -20.5
+    target_symbol: RTX
+    target_name: RTX
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Patriot/THAAD/통합방공 수요 기대가 LMT 단독이 아니라 RTX 방공·항공방산으로 확산될 수 있음.
+    evidence:
+    - title: Lockheed Martin Q1 2026 earnings miss; high demand in THAAD/Patriot/F-35/Aegis
+      url: https://www.investors.com/news/lockheed-martin-stock-q1-earnings-2026-lmt-defense-stocks/
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LMT
+    source_name: Lockheed Martin
+    source_market: US
+    source_reason: 이란 전쟁 방산 랠리와 Patriot/THAAD/F-35 수요 기대, 이후 Q1 실적 미스와 프라임 약세
+    source_3m_move_pct: -20.5
+    target_symbol: 079550.KS
+    target_name: LIG넥스원
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Patriot/PAC-3 수요가 강할 때 저가 대체재 Cheongung-II와 일부 수출 예산에서 경쟁 구도가 생길 수 있음.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    - title: Lockheed Martin Q1 2026 earnings miss; high demand in THAAD/Patriot/F-35/Aegis
+      url: https://www.investors.com/news/lockheed-martin-stock-q1-earnings-2026-lmt-defense-stocks/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LMT
+    source_name: Lockheed Martin
+    source_market: US
+    source_reason: 이란 전쟁 방산 랠리와 Patriot/THAAD/F-35 수요 기대, 이후 Q1 실적 미스와 프라임 약세
+    source_3m_move_pct: -20.5
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 노르웨이 장사정포 사업에서 Chunmoo가 HIMARS를 제쳤다는 점에서 LMT 강세는 한화의 일부 수출 입찰 경쟁 부담 후보.
+    evidence:
+    - title: Norway selects Hanwha Chunmoo over Lockheed Martin HIMARS
+      url: https://www.reuters.com/business/aerospace-defense/norway-orders-2-billion-artillery-system-south-koreas-hanwha-aerospace-2026-01-29/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LMT
+    source_name: Lockheed Martin
+    source_market: US
+    source_reason: 이란 전쟁 방산 랠리와 Patriot/THAAD/F-35 수요 기대, 이후 Q1 실적 미스와 프라임 약세
+    source_3m_move_pct: -20.5
+    target_symbol: NOC
+    target_name: Northrop Grumman
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 지정학·국방예산 헤드라인에서는 대형 프라임 피어가 같은 날 동조하는 후행 반응 관찰.
+    evidence:
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LMT
+    source_name: Lockheed Martin
+    source_market: US
+    source_reason: 이란 전쟁 방산 랠리와 Patriot/THAAD/F-35 수요 기대, 이후 Q1 실적 미스와 프라임 약세
+    source_3m_move_pct: -20.5
+    target_symbol: LHX
+    target_name: L3Harris Technologies
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: F-35·미사일방어·Aegis 관련 전자전/센서/C4ISR 예산 확대 기대가 LHX로 번질 수 있음.
+    evidence:
+    - title: Lockheed Martin Q1 2026 earnings miss; high demand in THAAD/Patriot/F-35/Aegis
+      url: https://www.investors.com/news/lockheed-martin-stock-q1-earnings-2026-lmt-defense-stocks/
+    - title: L3Harris Technologies Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/l3harris-technologies-inc-stock-outperforms-competitors-despite-losses-on-the-day-ccd151d7-a4a37631e30c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: RTX
+    source_name: RTX
+    source_market: US
+    source_reason: Patriot/미사일방어·엔진/항공방산 수요 기대와 3월 랠리, 이후 프라임 방산주 조정
+    source_3m_move_pct: -15.9
+    target_symbol: HWM
+    target_name: Howmet Aerospace
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 항공엔진·방산 항공 수요 강세는 엔진 부품/패스너 공급망의 백로그 기대를 키울 수 있음.
+    evidence:
+    - title: Howmet Aerospace scores breakout after demand-fueled beat and lifted guidance
+      url: https://www.investors.com/news/howmet-aerospace-stock-break-out-earnings-jet-engines-defense-stocks-hwm/
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: RTX
+    source_name: RTX
+    source_market: US
+    source_reason: Patriot/미사일방어·엔진/항공방산 수요 기대와 3월 랠리, 이후 프라임 방산주 조정
+    source_3m_move_pct: -15.9
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 미사일방어·방공 프라임 피어로 지정학 이벤트와 예산 헤드라인에 동조 가능.
+    evidence:
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: RTX
+    source_name: RTX
+    source_market: US
+    source_reason: Patriot/미사일방어·엔진/항공방산 수요 기대와 3월 랠리, 이후 프라임 방산주 조정
+    source_3m_move_pct: -15.9
+    target_symbol: 079550.KS
+    target_name: LIG넥스원
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Patriot/서방 방공체계 수요가 단기적으로 더 강하면 Cheongung-II 대체재 프레임의 상대 매력에 부담 후보.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: RTX
+    source_name: RTX
+    source_market: US
+    source_reason: Patriot/미사일방어·엔진/항공방산 수요 기대와 3월 랠리, 이후 프라임 방산주 조정
+    source_3m_move_pct: -15.9
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 엔진/항공부품 가격·납기 압박이 부각되는 경우 항공기 OEM의 원가·인도 일정 부담으로 연결될 수 있음.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    - title: Howmet Aerospace scores breakout after demand-fueled beat and lifted guidance
+      url: https://www.investors.com/news/howmet-aerospace-stock-break-out-earnings-jet-engines-defense-stocks-hwm/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: RTX
+    source_name: RTX
+    source_market: US
+    source_reason: Patriot/미사일방어·엔진/항공방산 수요 기대와 3월 랠리, 이후 프라임 방산주 조정
+    source_3m_move_pct: -15.9
+    target_symbol: GD
+    target_name: General Dynamics
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 대형 방산 피어 동조 관찰 후보이나 RTX의 엔진/방공 특성과 GD의 지상/해양 포트폴리오가 달라 confidence는 낮음.
+    evidence:
+    - title: General Dynamics May 15 close with RTX/BA/LMT peer comparison
+      url: https://www.marketwatch.com/data-news/general-dynamics-corp-stock-underperforms-friday-when-compared-to-competitors-79e18780-9537953f350
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LHX
+    source_name: L3Harris Technologies
+    source_market: US
+    source_reason: C4ISR·센서·우주통신 방산예산 기대 후 3/2 52주 고점, 5/15 고점 대비 -20%
+    source_3m_move_pct: null
+    target_symbol: LDOS
+    target_name: Leidos
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: C4ISR·방산 IT·센서 통합 수요가 LHX에서 방산 IT 서비스 업체로 후행 확산될 수 있음.
+    evidence:
+    - title: L3Harris Technologies Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/l3harris-technologies-inc-stock-outperforms-competitors-despite-losses-on-the-day-ccd151d7-a4a37631e30c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LHX
+    source_name: L3Harris Technologies
+    source_market: US
+    source_reason: C4ISR·센서·우주통신 방산예산 기대 후 3/2 52주 고점, 5/15 고점 대비 -20%
+    source_3m_move_pct: null
+    target_symbol: NOC
+    target_name: Northrop Grumman
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 우주/센서/미사일방어 아키텍처 예산 기대가 NOC의 우주·방공 프라임 포지션에 수혜 가능성.
+    evidence:
+    - title: US budget watchdog estimates Golden Dome will cost $1.2 trillion
+      url: https://www.reuters.com/business/aerospace-defense/us-budget-watchdog-estimates-golden-dome-will-cost-12-trillion-well-above-2026-05-12/
+    - title: Northrop Grumman Corp. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/northrop-grumman-corp-stock-outperforms-competitors-despite-losses-on-the-day-f9fa7c2f-e601b10ef19e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LHX
+    source_name: L3Harris Technologies
+    source_market: US
+    source_reason: C4ISR·센서·우주통신 방산예산 기대 후 3/2 52주 고점, 5/15 고점 대비 -20%
+    source_3m_move_pct: null
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 센서·우주전자 예산 테마가 강할 때 상업항공 인도 이슈가 있는 BA는 상대적 자금 소외 부담 후보.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LHX
+    source_name: L3Harris Technologies
+    source_market: US
+    source_reason: C4ISR·센서·우주통신 방산예산 기대 후 3/2 52주 고점, 5/15 고점 대비 -20%
+    source_3m_move_pct: null
+    target_symbol: HII
+    target_name: Huntington Ingalls Industries
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: C4ISR/우주 테마가 방산 예산 내 관심을 선점하면 전통 조선주는 후행 반응이 약할 수 있음.
+    evidence:
+    - title: Huntington Ingalls Industries Inc. stock underperforms Friday
+      url: https://www.marketwatch.com/data-news/huntington-ingalls-industries-inc-stock-underperforms-friday-when-compared-to-competitors-5aa61ba2-b56d36c7557a
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: LHX
+    source_name: L3Harris Technologies
+    source_market: US
+    source_reason: C4ISR·센서·우주통신 방산예산 기대 후 3/2 52주 고점, 5/15 고점 대비 -20%
+    source_3m_move_pct: null
+    target_symbol: RTX
+    target_name: RTX
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 대형 방산전자·프라임 피어로 지정학 및 예산 헤드라인에 같은 방향 반응 관찰.
+    evidence:
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    - title: L3Harris Technologies Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/l3harris-technologies-inc-stock-outperforms-competitors-despite-losses-on-the-day-ccd151d7-a4a37631e30c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: KTOS
+    source_name: Kratos Defense & Security
+    source_market: US
+    source_reason: Valkyrie/tactical drone·미사일 수요와 2027 국방예산 드론/미사일 기대, 4/6 업그레이드 +10.1%; 5월 증자에는 -6.5%
+    source_3m_move_pct: null
+    target_symbol: AVAV
+    target_name: AeroVironment
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 무인기·loyal wingman·전술 드론 예산 기대가 소형/중형 드론 피어로 동조 확산될 수 있음.
+    evidence:
+    - title: Kratos stock jumps on Jefferies upgrade and Valkyrie drone demand
+      url: https://www.barrons.com/articles/kratos-stock-price-jefferies-upgrade-drones-defense-400e22b3
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: KTOS
+    source_name: Kratos Defense & Security
+    source_market: US
+    source_reason: Valkyrie/tactical drone·미사일 수요와 2027 국방예산 드론/미사일 기대, 4/6 업그레이드 +10.1%; 5월 증자에는 -6.5%
+    source_3m_move_pct: null
+    target_symbol: RCAT
+    target_name: Red Cat Holdings
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 미 국방 드론 조달 확대 기대가 소형 무인기 업체로 후행 반응할 수 있음.
+    evidence:
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    - title: Trump $1.5T defense budget lifts Kratos
+      url: https://www.investors.com/news/trump-defense-budget-1-5-trillion-kratos-defense-stock-upgrade/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: KTOS
+    source_name: Kratos Defense & Security
+    source_market: US
+    source_reason: Valkyrie/tactical drone·미사일 수요와 2027 국방예산 드론/미사일 기대, 4/6 업그레이드 +10.1%; 5월 증자에는 -6.5%
+    source_3m_move_pct: null
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 저가 attritable drone 예산이 부각될 경우 고가 전통 플랫폼/미사일 중심 프라임에 상대 자금 부담 후보.
+    evidence:
+    - title: Trump $1.5T defense budget lifts Kratos
+      url: https://www.investors.com/news/trump-defense-budget-1-5-trillion-kratos-defense-stock-upgrade/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: KTOS
+    source_name: Kratos Defense & Security
+    source_market: US
+    source_reason: Valkyrie/tactical drone·미사일 수요와 2027 국방예산 드론/미사일 기대, 4/6 업그레이드 +10.1%; 5월 증자에는 -6.5%
+    source_3m_move_pct: null
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 드론·무인전투기 테마 강세가 상업항공 인도 리스크가 있는 BA의 상대 모멘텀을 약화시킬 수 있음.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    - title: Trump $1.5T defense budget lifts Kratos
+      url: https://www.investors.com/news/trump-defense-budget-1-5-trillion-kratos-defense-stock-upgrade/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: KTOS
+    source_name: Kratos Defense & Security
+    source_market: US
+    source_reason: Valkyrie/tactical drone·미사일 수요와 2027 국방예산 드론/미사일 기대, 4/6 업그레이드 +10.1%; 5월 증자에는 -6.5%
+    source_3m_move_pct: null
+    target_symbol: AVAV
+    target_name: AeroVironment
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 입찰 경쟁은 있으나 투자자 관점에서는 무인기 피어 모멘텀이 먼저 동조하는 경우가 많아 후행 관찰.
+    evidence:
+    - title: Kratos stock jumps on Jefferies upgrade and Valkyrie drone demand
+      url: https://www.barrons.com/articles/kratos-stock-price-jefferies-upgrade-drones-defense-400e22b3
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: AVAV
+    source_name: AeroVironment
+    source_market: US
+    source_reason: Space Force SCAR 계약 재공모 이슈로 드론주 내 승자/패자 재가격; 3/2 -17.4%
+    source_3m_move_pct: null
+    target_symbol: RCAT
+    target_name: Red Cat Holdings
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: SCAR 재공모로 AVAV가 급락할 때 RCAT는 대체 수혜 후보로 강세가 관찰됨.
+    evidence:
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: AVAV
+    source_name: AeroVironment
+    source_market: US
+    source_reason: Space Force SCAR 계약 재공모 이슈로 드론주 내 승자/패자 재가격; 3/2 -17.4%
+    source_3m_move_pct: null
+    target_symbol: KTOS
+    target_name: Kratos Defense & Security
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AVAV 계약 리스크가 드론 예산 축소보다 수주 재배분 이슈로 해석될 때 KTOS 등 경쟁 드론주에 수혜 가능성.
+    evidence:
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: AVAV
+    source_name: AeroVironment
+    source_market: US
+    source_reason: Space Force SCAR 계약 재공모 이슈로 드론주 내 승자/패자 재가격; 3/2 -17.4%
+    source_3m_move_pct: null
+    target_symbol: ONDS
+    target_name: Ondas Holdings
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: AVAV 급락이 개별 계약이 아닌 드론주 밸류에이션/조달 리스크로 해석될 경우 소형 드론 피어 동반 부담 후보.
+    evidence:
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: AVAV
+    source_name: AeroVironment
+    source_market: US
+    source_reason: Space Force SCAR 계약 재공모 이슈로 드론주 내 승자/패자 재가격; 3/2 -17.4%
+    source_3m_move_pct: null
+    target_symbol: LHX
+    target_name: L3Harris Technologies
+    target_market: US
+    relation_type: CUSTOMER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 무인체계 조달 불확실성이 센서/통신 페이로드 공급망까지 번질 경우 후행 부담 후보.
+    evidence:
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: AVAV
+    source_name: AeroVironment
+    source_market: US
+    source_reason: Space Force SCAR 계약 재공모 이슈로 드론주 내 승자/패자 재가격; 3/2 -17.4%
+    source_3m_move_pct: null
+    target_symbol: KTOS
+    target_name: Kratos Defense & Security
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 개별 계약 악재가 아닌 broad drone demand로 AVAV가 반등할 때 KTOS는 같은 무인기 피어로 동조 관찰.
+    evidence:
+    - title: Kratos stock jumps on Jefferies upgrade and Valkyrie drone demand
+      url: https://www.barrons.com/articles/kratos-stock-price-jefferies-upgrade-drones-defense-400e22b3
+    - title: AeroVironment tumbles as Space Force reopens SCAR award; RCAT and KTOS rise
+      url: https://www.barrons.com/articles/aerovironment-stock-price-space-force-award-scar-4fc40b7e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: BA
+    source_name: Boeing
+    source_market: US
+    source_reason: F-47/방산예산 기대와 별개로 4월 인도 47대·중국 주문 규모 실망으로 5월 주간 약 -6%
+    source_3m_move_pct: -9.6
+    target_symbol: HWM
+    target_name: Howmet Aerospace
+    target_market: US
+    relation_type: SUPPLIER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: BA 인도 부진/주가 약세가 항공기 생산 속도 우려로 해석되면 엔진·패스너 공급망도 후행 부담 후보.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    - title: Howmet Aerospace scores breakout after demand-fueled beat and lifted guidance
+      url: https://www.investors.com/news/howmet-aerospace-stock-break-out-earnings-jet-engines-defense-stocks-hwm/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: BA
+    source_name: Boeing
+    source_market: US
+    source_reason: F-47/방산예산 기대와 별개로 4월 인도 47대·중국 주문 규모 실망으로 5월 주간 약 -6%
+    source_3m_move_pct: -9.6
+    target_symbol: GE
+    target_name: GE Aerospace
+    target_market: US
+    relation_type: SUPPLIER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 상업항공 OEM 인도 지연 우려는 엔진/서비스 공급망의 단기 센티먼트 부담으로 연결될 수 있음.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: BA
+    source_name: Boeing
+    source_market: US
+    source_reason: F-47/방산예산 기대와 별개로 4월 인도 47대·중국 주문 규모 실망으로 5월 주간 약 -6%
+    source_3m_move_pct: -9.6
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: BA가 상업항공/인도 문제로 약할 때 방산 순수 프라임으로 자금이 이동하는 상대 수혜 가능성.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    - title: Defense stocks rally on Iran conflict
+      url: https://www.barrons.com/articles/defense-stocks-israel-iran-war-lockheed-northrop-e03a8651
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: BA
+    source_name: Boeing
+    source_market: US
+    source_reason: F-47/방산예산 기대와 별개로 4월 인도 47대·중국 주문 규모 실망으로 5월 주간 약 -6%
+    source_3m_move_pct: -9.6
+    target_symbol: NOC
+    target_name: Northrop Grumman
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: BA 약세가 항공 OEM 실행 리스크로 해석되면 우주·방산 프라임 NOC가 상대 방어주로 관찰될 수 있음.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    - title: Northrop Grumman Corp. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/northrop-grumman-corp-stock-outperforms-competitors-despite-losses-on-the-day-f9fa7c2f-e601b10ef19e
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: BA
+    source_name: Boeing
+    source_market: US
+    source_reason: F-47/방산예산 기대와 별개로 4월 인도 47대·중국 주문 규모 실망으로 5월 주간 약 -6%
+    source_3m_move_pct: -9.6
+    target_symbol: TXT
+    target_name: Textron
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 항공 OEM/방산 항공 피어 심리가 동반 약화될 수 있어 후행 반응 관찰.
+    evidence:
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: HWM
+    source_name: Howmet Aerospace
+    source_market: US
+    source_reason: Q1 실적/가이던스 상향, 엔진부품·패스너·방산/상업항공 백로그 수요로 +6~8.7% 반응
+    source_3m_move_pct: null
+    target_symbol: HEI
+    target_name: HEICO
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 상업항공/방산 부품 수요와 MRO·스페어 부품 가격결정력 기대가 HEICO로 확산될 수 있음.
+    evidence:
+    - title: Howmet Aerospace scores breakout after demand-fueled beat and lifted guidance
+      url: https://www.investors.com/news/howmet-aerospace-stock-break-out-earnings-jet-engines-defense-stocks-hwm/
+    - title: 'Heico stock: buy the dip, Wall Street says'
+      url: https://www.barrons.com/articles/heico-stock-buy-the-dip-wall-street-says-f9ed271c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: HWM
+    source_name: Howmet Aerospace
+    source_market: US
+    source_reason: Q1 실적/가이던스 상향, 엔진부품·패스너·방산/상업항공 백로그 수요로 +6~8.7% 반응
+    source_3m_move_pct: null
+    target_symbol: TDG
+    target_name: TransDigm
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 고마진 항공부품·스페어 수요라는 같은 논리로 후행 반응 관찰 후보.
+    evidence:
+    - title: Howmet stock surges after earnings
+      url: https://www.barrons.com/articles/howmet-earnings-stock-price-c5519a07
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: HWM
+    source_name: Howmet Aerospace
+    source_market: US
+    source_reason: Q1 실적/가이던스 상향, 엔진부품·패스너·방산/상업항공 백로그 수요로 +6~8.7% 반응
+    source_3m_move_pct: null
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 부품업체의 가격/마진 강세는 항공 OEM에는 비용 압박 리스크로 해석될 수 있음.
+    evidence:
+    - title: Howmet Aerospace scores breakout after demand-fueled beat and lifted guidance
+      url: https://www.investors.com/news/howmet-aerospace-stock-break-out-earnings-jet-engines-defense-stocks-hwm/
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: HWM
+    source_name: Howmet Aerospace
+    source_market: US
+    source_reason: Q1 실적/가이던스 상향, 엔진부품·패스너·방산/상업항공 백로그 수요로 +6~8.7% 반응
+    source_3m_move_pct: null
+    target_symbol: RTX
+    target_name: RTX
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 엔진부품/스페어 수요 강세가 공급망 가격 상승으로 읽히면 항공엔진/방산 복합업체의 원가 부담 후보.
+    evidence:
+    - title: Howmet Aerospace scores breakout after demand-fueled beat and lifted guidance
+      url: https://www.investors.com/news/howmet-aerospace-stock-break-out-earnings-jet-engines-defense-stocks-hwm/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: HWM
+    source_name: Howmet Aerospace
+    source_market: US
+    source_reason: Q1 실적/가이던스 상향, 엔진부품·패스너·방산/상업항공 백로그 수요로 +6~8.7% 반응
+    source_3m_move_pct: null
+    target_symbol: GE
+    target_name: GE Aerospace
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 항공엔진/서비스 사이클 강세 피어로 동조 관찰 가능.
+    evidence:
+    - title: Howmet stock surges after earnings
+      url: https://www.barrons.com/articles/howmet-earnings-stock-price-c5519a07
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 012450.KS
+    source_name: 한화에어로스페이스
+    source_market: KR
+    source_reason: 노르웨이 천무 $9.22억 계약·유럽 장사정포 수요, 3/3 한국 방산 랠리 +19%
+    source_3m_move_pct: null
+    target_symbol: 272210.KS
+    target_name: 한화시스템
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 한화 방산그룹 수출·우주/센서 패키지 기대가 방산전자와 레이다/통신 체인으로 확산될 수 있음.
+    evidence:
+    - title: South Korea Hanwha Aerospace signs $922 mln Norway rocket launcher deal
+      url: https://www.reuters.com/business/aerospace-defense/south-koreas-hanwha-aerospace-signs-922-mln-deal-with-norway-supply-rocket-2026-02-02/
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 012450.KS
+    source_name: 한화에어로스페이스
+    source_market: KR
+    source_reason: 노르웨이 천무 $9.22억 계약·유럽 장사정포 수요, 3/3 한국 방산 랠리 +19%
+    source_3m_move_pct: null
+    target_symbol: 077970.KS
+    target_name: STX엔진
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K9/K10 등 지상장비 수출 증가 기대가 엔진·파워팩 공급망으로 후행 반응할 수 있음.
+    evidence:
+    - title: K9 Thunder
+      url: https://en.wikipedia.org/wiki/K9_Thunder
+    - title: South Korea Hanwha Aerospace signs $922 mln Norway rocket launcher deal
+      url: https://www.reuters.com/business/aerospace-defense/south-koreas-hanwha-aerospace-signs-922-mln-deal-with-norway-supply-rocket-2026-02-02/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 012450.KS
+    source_name: 한화에어로스페이스
+    source_market: KR
+    source_reason: 노르웨이 천무 $9.22억 계약·유럽 장사정포 수요, 3/3 한국 방산 랠리 +19%
+    source_3m_move_pct: null
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 노르웨이 장사정포 사업에서 Chunmoo가 HIMARS를 제쳤기 때문에 한화 수주 뉴스는 LMT의 일부 입찰 경쟁 부담 후보.
+    evidence:
+    - title: Norway selects Hanwha Chunmoo over Lockheed Martin HIMARS
+      url: https://www.reuters.com/business/aerospace-defense/norway-orders-2-billion-artillery-system-south-koreas-hanwha-aerospace-2026-01-29/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 012450.KS
+    source_name: 한화에어로스페이스
+    source_market: KR
+    source_reason: 노르웨이 천무 $9.22억 계약·유럽 장사정포 수요, 3/3 한국 방산 랠리 +19%
+    source_3m_move_pct: null
+    target_symbol: GD
+    target_name: General Dynamics
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 유럽 지상화력 예산이 K9/Chunmoo 쪽으로 흘러갈 경우 미국 지상무기 피어에는 수요 전환 리스크가 생길 수 있음.
+    evidence:
+    - title: South Korea Hanwha Aerospace signs $922 mln Norway rocket launcher deal
+      url: https://www.reuters.com/business/aerospace-defense/south-koreas-hanwha-aerospace-signs-922-mln-deal-with-norway-supply-rocket-2026-02-02/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 012450.KS
+    source_name: 한화에어로스페이스
+    source_market: KR
+    source_reason: 노르웨이 천무 $9.22억 계약·유럽 장사정포 수요, 3/3 한국 방산 랠리 +19%
+    source_3m_move_pct: null
+    target_symbol: 079550.KS
+    target_name: LIG넥스원
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 3/3 한국 방산 랠리에서 한화에어로와 LIG넥스원이 함께 급등해 K-방산 피어 모멘텀의 후행 관찰 우선순위가 높음.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 079550.KS
+    source_name: LIG넥스원
+    source_market: KR
+    source_reason: 천궁-II 전투 검증·Patriot 대체재 프레임, 3/3 +30% 및 전쟁 시작 후 +47% 보도
+    source_3m_move_pct: 47.0
+    target_symbol: 272210.KS
+    target_name: 한화시스템
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 천궁-II/방공 수요 기대는 레이다·방산전자·지휘통제 업체로 확산될 수 있음.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 079550.KS
+    source_name: LIG넥스원
+    source_market: KR
+    source_reason: 천궁-II 전투 검증·Patriot 대체재 프레임, 3/3 +30% 및 전쟁 시작 후 +47% 보도
+    source_3m_move_pct: 47.0
+    target_symbol: 010820.KQ
+    target_name: 퍼스텍
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 퍼스텍은 방공미사일 부품 강세 종목으로 보도되어 LIG의 방공 모멘텀 후행 수혜 후보.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 079550.KS
+    source_name: LIG넥스원
+    source_market: KR
+    source_reason: 천궁-II 전투 검증·Patriot 대체재 프레임, 3/3 +30% 및 전쟁 시작 후 +47% 보도
+    source_3m_move_pct: 47.0
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Cheongung-II가 PAC-3 대비 가격/납기 우위 대체재로 부각되면 LMT의 일부 해외 방공 수주에는 경쟁 부담 후보.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    - title: Lockheed Martin Q1 2026 earnings miss; high demand in THAAD/Patriot/F-35/Aegis
+      url: https://www.investors.com/news/lockheed-martin-stock-q1-earnings-2026-lmt-defense-stocks/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 079550.KS
+    source_name: LIG넥스원
+    source_market: KR
+    source_reason: 천궁-II 전투 검증·Patriot 대체재 프레임, 3/3 +30% 및 전쟁 시작 후 +47% 보도
+    source_3m_move_pct: 47.0
+    target_symbol: RTX
+    target_name: RTX
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 서방 방공체계와 K-방공체계 간 수출 예산 경쟁 가능성은 있으나 직접 가격 검증 부족으로 confidence LOW.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 079550.KS
+    source_name: LIG넥스원
+    source_market: KR
+    source_reason: 천궁-II 전투 검증·Patriot 대체재 프레임, 3/3 +30% 및 전쟁 시작 후 +47% 보도
+    source_3m_move_pct: 47.0
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: K-방산 수출·중동/유럽 방공 수요라는 같은 매크로에서 함께 움직인 피어 모멘텀.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 047810.KS
+    source_name: 한국항공우주(KAI)
+    source_market: KR
+    source_reason: KF-21 첫 양산기 인도/첨단 항공기술 투자, 9월 공군 배치 예정 및 인도네시아 협의
+    source_3m_move_pct: null
+    target_symbol: 272210.KS
+    target_name: 한화시스템
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: KF-21 AESA 레이다/항전 체인으로 KAI 양산·수출 기대가 한화시스템에 직접 후행 관찰될 수 있음.
+    evidence:
+    - title: South Korea to invest in cutting-edge aircraft technologies for defence
+      url: https://www.reuters.com/world/asia-pacific/south-korea-invest-cutting-edge-aircraft-technologies-defence-president-says-2026-03-25/
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 047810.KS
+    source_name: 한국항공우주(KAI)
+    source_market: KR
+    source_reason: KF-21 첫 양산기 인도/첨단 항공기술 투자, 9월 공군 배치 예정 및 인도네시아 협의
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: KF-21 엔진/항공부품 국산화·생산 확대 기대가 항공엔진/부품 업체로 확산될 수 있음.
+    evidence:
+    - title: South Korea to invest in cutting-edge aircraft technologies for defence
+      url: https://www.reuters.com/world/asia-pacific/south-korea-invest-cutting-edge-aircraft-technologies-defence-president-says-2026-03-25/
+    - title: KAI KF-21 Boramae
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 047810.KS
+    source_name: 한국항공우주(KAI)
+    source_market: KR
+    source_reason: KF-21 첫 양산기 인도/첨단 항공기술 투자, 9월 공군 배치 예정 및 인도네시아 협의
+    source_3m_move_pct: null
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: KF-21 수출 기대가 커질 경우 F-16/F-35 업그레이드·전투기 예산과 일부 수요 전환 리스크가 생길 수 있음.
+    evidence:
+    - title: South Korea to invest in cutting-edge aircraft technologies for defence
+      url: https://www.reuters.com/world/asia-pacific/south-korea-invest-cutting-edge-aircraft-technologies-defence-president-says-2026-03-25/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 047810.KS
+    source_name: 한국항공우주(KAI)
+    source_market: KR
+    source_reason: KF-21 첫 양산기 인도/첨단 항공기술 투자, 9월 공군 배치 예정 및 인도네시아 협의
+    source_3m_move_pct: null
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 국산 전투기/훈련기 수출 확대 프레임은 일부 군용 항공 플랫폼 경쟁으로 해석될 수 있으나 직접 입찰 근거는 약함.
+    evidence:
+    - title: South Korea to invest in cutting-edge aircraft technologies for defence
+      url: https://www.reuters.com/world/asia-pacific/south-korea-invest-cutting-edge-aircraft-technologies-defence-president-says-2026-03-25/
+    - title: Boeing eases after China order and deliveries fall short
+      url: https://www.investors.com/news/boeing-stock-china-order-deliveries-ba-defense-aerospace-stocks-buy-point-rklb-lunr-rdw-hwm-gd/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 047810.KS
+    source_name: 한국항공우주(KAI)
+    source_market: KR
+    source_reason: KF-21 첫 양산기 인도/첨단 항공기술 투자, 9월 공군 배치 예정 및 인도네시아 협의
+    source_3m_move_pct: null
+    target_symbol: 005870.KS
+    target_name: 휴니드
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 항공전자/군 통신 장비 체인의 테마상 후행 반응 후보이나 이번 3개월 가격·공시 검증은 부족.
+    evidence:
+    - title: South Korea to invest in cutting-edge aircraft technologies for defence
+      url: https://www.reuters.com/world/asia-pacific/south-korea-invest-cutting-edge-aircraft-technologies-defence-president-says-2026-03-25/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 272210.KS
+    source_name: 한화시스템
+    source_market: KR
+    source_reason: KF-21 AESA 레이다·방산전자·우주/센서 체인 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 047810.KS
+    target_name: 한국항공우주(KAI)
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: 한화시스템의 KF-21 AESA/방산전자 강세는 최종 플랫폼 KAI의 양산·수출 기대와 상호 후행 반응 가능성이 높음.
+    evidence:
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    - title: South Korea to invest in cutting-edge aircraft technologies for defence
+      url: https://www.reuters.com/world/asia-pacific/south-korea-invest-cutting-edge-aircraft-technologies-defence-president-says-2026-03-25/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 272210.KS
+    source_name: 한화시스템
+    source_market: KR
+    source_reason: KF-21 AESA 레이다·방산전자·우주/센서 체인 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 한화그룹 방산·우주 패키지 수주 기대가 같은 그룹 방산 핵심주로 확산될 수 있음.
+    evidence:
+    - title: South Korea Hanwha Aerospace signs $922 mln Norway rocket launcher deal
+      url: https://www.reuters.com/business/aerospace-defense/south-koreas-hanwha-aerospace-signs-922-mln-deal-with-norway-supply-rocket-2026-02-02/
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 272210.KS
+    source_name: 한화시스템
+    source_market: KR
+    source_reason: KF-21 AESA 레이다·방산전자·우주/센서 체인 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: LHX
+    target_name: L3Harris Technologies
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 국산 레이다/센서 경쟁력이 부각될수록 글로벌 C4ISR 업체와 일부 수출시장 경쟁 프레임이 생길 수 있음.
+    evidence:
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    - title: L3Harris Technologies Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/l3harris-technologies-inc-stock-outperforms-competitors-despite-losses-on-the-day-ccd151d7-a4a37631e30c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 272210.KS
+    source_name: 한화시스템
+    source_market: KR
+    source_reason: KF-21 AESA 레이다·방산전자·우주/센서 체인 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 079550.KS
+    target_name: LIG넥스원
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 방산전자/레이다 모멘텀이 한화시스템에 집중될 때 미사일 프라임으로의 자금 확산이 지연될 수 있는 상대 부담 후보.
+    evidence:
+    - title: KAI KF-21 Boramae - Hanwha Systems AESA radar
+      url: https://en.wikipedia.org/wiki/KAI_KF-21_Boramae
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 272210.KS
+    source_name: 한화시스템
+    source_market: KR
+    source_reason: KF-21 AESA 레이다·방산전자·우주/센서 체인 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: LHX
+    target_name: L3Harris Technologies
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 레이다·C4ISR·우주전자라는 유사 테마의 글로벌 피어 후행 관찰. 직접 공급망은 아님.
+    evidence:
+    - title: L3Harris Technologies Inc. stock outperforms competitors despite losses on the day
+      url: https://www.marketwatch.com/data-news/l3harris-technologies-inc-stock-outperforms-competitors-despite-losses-on-the-day-ccd151d7-a4a37631e30c
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 064350.KS
+    source_name: 현대로템
+    source_market: KR
+    source_reason: 폴란드 K2 2차 계약(2026 인도 시작)·유럽 지상무기 수요의 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 003570.KS
+    target_name: SNT다이내믹스
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 전차/자주포 파워트레인·변속기 공급망 기대가 지상무기 수주 뉴스에 후행 반응할 수 있음.
+    evidence:
+    - title: SNT Dynamics
+      url: https://en.wikipedia.org/wiki/SNT_Dynamics
+    - title: Poland signs second contract with Hyundai Rotem for 180 K2 tanks
+      url: https://www.reuters.com/business/aerospace-defense/poland-signs-second-contract-with-hyundai-rotem-180-k2-tanks-2025-08-01/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 064350.KS
+    source_name: 현대로템
+    source_market: KR
+    source_reason: 폴란드 K2 2차 계약(2026 인도 시작)·유럽 지상무기 수요의 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 077970.KS
+    target_name: STX엔진
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 지상장비 수출 확대 기대가 엔진/파워팩 체인에 번질 수 있으나 K2 직접 매핑 검증은 제한적.
+    evidence:
+    - title: Poland signs second contract with Hyundai Rotem for 180 K2 tanks
+      url: https://www.reuters.com/business/aerospace-defense/poland-signs-second-contract-with-hyundai-rotem-180-k2-tanks-2025-08-01/
+    - title: K9 Thunder
+      url: https://en.wikipedia.org/wiki/K9_Thunder
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 064350.KS
+    source_name: 현대로템
+    source_market: KR
+    source_reason: 폴란드 K2 2차 계약(2026 인도 시작)·유럽 지상무기 수요의 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: GD
+    target_name: General Dynamics
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: K2 수출 모멘텀이 유럽 전차 예산에서 Abrams/미국 지상무기와 경쟁 구도로 해석될 수 있음.
+    evidence:
+    - title: Poland signs second contract with Hyundai Rotem for 180 K2 tanks
+      url: https://www.reuters.com/business/aerospace-defense/poland-signs-second-contract-with-hyundai-rotem-180-k2-tanks-2025-08-01/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 064350.KS
+    source_name: 현대로템
+    source_market: KR
+    source_reason: 폴란드 K2 2차 계약(2026 인도 시작)·유럽 지상무기 수요의 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 단기적으로 지상무기 예산/수급 관심이 전차 쪽으로 집중될 경우 자주포·로켓 쪽 후행이 늦어질 수 있음.
+    evidence:
+    - title: Poland signs second contract with Hyundai Rotem for 180 K2 tanks
+      url: https://www.reuters.com/business/aerospace-defense/poland-signs-second-contract-with-hyundai-rotem-180-k2-tanks-2025-08-01/
+    - title: South Korea Hanwha Aerospace signs $922 mln Norway rocket launcher deal
+      url: https://www.reuters.com/business/aerospace-defense/south-koreas-hanwha-aerospace-signs-922-mln-deal-with-norway-supply-rocket-2026-02-02/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 064350.KS
+    source_name: 현대로템
+    source_market: KR
+    source_reason: 폴란드 K2 2차 계약(2026 인도 시작)·유럽 지상무기 수요의 후행 관찰
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: K-방산 수출 바스켓에서는 전차·자주포·미사일 종목이 같은 수급으로 동조하는 후행 관찰 후보.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 탄약·탄두 공급망, 한화의 1.5조원 인수 검토 보도 후 철회로 이벤트 변동성
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 탄약·탄두 수요 강세는 K9/Chunmoo 패키지 수출의 유지보수·탄약 매출 기대를 키워 한화에 수혜 가능성.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan ammunition business for about $1.1B
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    - title: South Korea Hanwha Aerospace signs $922 mln Norway rocket launcher deal
+      url: https://www.reuters.com/business/aerospace-defense/south-koreas-hanwha-aerospace-signs-922-mln-deal-with-norway-supply-rocket-2026-02-02/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 탄약·탄두 공급망, 한화의 1.5조원 인수 검토 보도 후 철회로 이벤트 변동성
+    source_3m_move_pct: null
+    target_symbol: 010820.KQ
+    target_name: 퍼스텍
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 탄약/탄두 수요 강세가 미사일 부품 소형주로 테마 확산될 수 있으나 직접 공시 근거는 약함.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan ammunition business for about $1.1B
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 탄약·탄두 공급망, 한화의 1.5조원 인수 검토 보도 후 철회로 이벤트 변동성
+    source_3m_move_pct: null
+    target_symbol: 012450.KS
+    target_name: 한화에어로스페이스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 탄약·탄두 가격/협상력이 풍산에 유리하게 해석되면 통합 방산 플랫폼 업체의 원가 압박 리스크가 부각될 수 있음.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan ammunition business for about $1.1B
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    - title: Hanwha Aerospace drops plan to acquire Poongsan defence unit
+      url: https://www.reuters.com/world/asia-pacific/hanwha-aerospace-drops-plan-acquire-poongsans-defence-unit-2026-04-09/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 탄약·탄두 공급망, 한화의 1.5조원 인수 검토 보도 후 철회로 이벤트 변동성
+    source_3m_move_pct: null
+    target_symbol: 064350.KS
+    target_name: 현대로템
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 탄약·금속 가격 상승이 지상무기 운용비/패키지 원가 부담으로 읽힐 수 있음.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan ammunition business for about $1.1B
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 탄약·탄두 공급망, 한화의 1.5조원 인수 검토 보도 후 철회로 이벤트 변동성
+    source_3m_move_pct: null
+    target_symbol: GD
+    target_name: General Dynamics
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 미국의 탄약/지상무기 노출이 있는 방산 피어로 테마상 동조 관찰 가능하나 직접 가격검증은 부족.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan ammunition business for about $1.1B
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 010820.KQ
+    source_name: 퍼스텍
+    source_market: KR
+    source_reason: 방공미사일 부품·전자전/미사일 소형주 랠리, 3/3 방산 강세 종목으로 언급
+    source_3m_move_pct: null
+    target_symbol: 079550.KS
+    target_name: LIG넥스원
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 방공미사일 부품주 강세는 최종 미사일 프라임 LIG의 수요 기대와 연결되어 동조/후행 관찰.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 010820.KQ
+    source_name: 퍼스텍
+    source_market: KR
+    source_reason: 방공미사일 부품·전자전/미사일 소형주 랠리, 3/3 방산 강세 종목으로 언급
+    source_3m_move_pct: null
+    target_symbol: 272210.KS
+    target_name: 한화시스템
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: LOW
+    rationale: 방공/전자전 소형주 강세가 방산전자 대형주로 확산될 수 있으나 직접 가격검증은 제한적.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 010820.KQ
+    source_name: 퍼스텍
+    source_market: KR
+    source_reason: 방공미사일 부품·전자전/미사일 소형주 랠리, 3/3 방산 강세 종목으로 언급
+    source_3m_move_pct: null
+    target_symbol: LMT
+    target_name: Lockheed Martin
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: K-방공 부품 모멘텀이 Cheongung-II 대체재 프레임과 결합될 때 Patriot/HIMARS 프라임에는 경쟁 부담 후보.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 010820.KQ
+    source_name: 퍼스텍
+    source_market: KR
+    source_reason: 방공미사일 부품·전자전/미사일 소형주 랠리, 3/3 방산 강세 종목으로 언급
+    source_3m_move_pct: null
+    target_symbol: RTX
+    target_name: RTX
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 국산 방공 부품/미사일 체인 강세가 서방 방공 프라임과 일부 수출 예산에서 경쟁 프레임을 만들 수 있음.
+    evidence:
+    - title: Iran war lifts K-defence company offering cheap Patriot rival
+      url: https://www.ft.com/content/658c8411-df02-4b5e-a69d-2029114e4ca1
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'
+  - source_symbol: 010820.KQ
+    source_name: 퍼스텍
+    source_market: KR
+    source_reason: 방공미사일 부품·전자전/미사일 소형주 랠리, 3/3 방산 강세 종목으로 언급
+    source_3m_move_pct: null
+    target_symbol: 065450.KQ
+    target_name: 빅텍
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 3/3 한국 방산 랠리에서 퍼스텍과 빅텍이 전자전/방공 소형주로 함께 강세 언급되어 피어 모멘텀 관찰.
+    evidence:
+    - title: South Korean defense stocks surge on red Seoul market
+      url: https://omniekonomi.se/forsvarsaktier-rusar-pa-illrod-seoulbors/a/j0ln5z
+    trading_note: '1일~1개월 스윙 관점에서 후행 반응 관찰 포인트: source 뉴스/가격 반응 후 target의 거래대금 증가와 전일 고가 돌파 여부를 관찰'

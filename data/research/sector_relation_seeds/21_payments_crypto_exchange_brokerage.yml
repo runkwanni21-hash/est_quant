@@ -1,0 +1,792 @@
+sector_relation_seeds:
+  sector_id: payments_crypto_exchange_brokerage
+  sector_name: 결제 / 카드 / 크립토 / 거래소 / 브로커리지
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - source_3m_move_pct가 null인 항목은 2026-02-17~2026-05-17 정확 OHLCV를 공개 기사만으로 재검산하지 못한 케이스.
+  - 표의 source_3m_move에는 기사 확인 이벤트 수익률, YTD, 업종 수익률을 함께 사용.
+  - LOW confidence는 테마 가능성은 있으나 가격 검증 또는 명확한 공급망 근거가 부족한 관찰 seed.
+  edges:
+  - source_symbol: CRCL
+    source_name: Circle Internet Group
+    source_market: US
+    source_reason: USDC circulation/on-chain volume growth, Q4/Q1 earnings beat, stablecoin/Clarity Act expectation
+    source_3m_move_pct: null
+    target_symbol: COIN
+    target_name: Coinbase
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: USDC 성장과 stablecoin 규제 명확화 기대가 regulated crypto exchange sentiment로 후행 반응할 수 있음.
+    evidence:
+    - title: Circle Breaks Out, Crypto Stocks Surge Ahead Of Clarity Act Hearing
+      url: https://www.investors.com/news/circle-internet-earnings-stablecoin-usdc-crcl-stock-iren-notes-keel-bitfarms-bitcoin-price/
+    - title: Coinbase logs second straight quarterly loss as crypto trading momentum fades
+      url: https://www.reuters.com/business/finance/coinbase-logs-second-straight-quarterly-loss-crypto-trading-momentum-fades-2026-05-07/
+    trading_note: 1일~1개월 스윙 관점에서 CRCL 급등 후 COIN 거래량·crypto beta 후행 반응 관찰
+  - source_symbol: CRCL
+    source_name: Circle Internet Group
+    source_market: US
+    source_reason: USDC circulation/on-chain volume growth, Q4/Q1 earnings beat, stablecoin/Clarity Act expectation
+    source_3m_move_pct: null
+    target_symbol: V
+    target_name: Visa
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Visa의 USDC 결제 파일럿과 stablecoin-linked card 전략은 Circle 성장의 결제망 read-through 관찰 후보.
+    evidence:
+    - title: Visa beats first-quarter estimates as holiday sales boost payment volumes
+      url: https://www.reuters.com/business/finance/visa-quarterly-profit-rises-strong-payment-volumes-2026-01-29/
+    trading_note: CRCL stablecoin 모멘텀 이후 Visa의 crypto settlement, cross-border volume 코멘트 확인
+  - source_symbol: CRCL
+    source_name: Circle Internet Group
+    source_market: US
+    source_reason: USDC circulation/on-chain volume growth, Q4/Q1 earnings beat, stablecoin/Clarity Act expectation
+    source_3m_move_pct: null
+    target_symbol: PYPL
+    target_name: PayPal
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: stablecoin rail 확산은 legacy checkout, remittance, branded checkout take-rate에 수요 전환 리스크.
+    evidence:
+    - title: PayPal’s stock falls after earnings. Here’s what’s spooking Wall Street.
+      url: https://www.marketwatch.com/story/paypals-stock-rallies-after-first-earnings-report-of-the-new-era-heres-what-to-know-4310d291
+    trading_note: CRCL 강세 후 PYPL의 branded checkout, Venmo, crypto/payment services 마진 코멘트 관찰
+  - source_symbol: CRCL
+    source_name: Circle Internet Group
+    source_market: US
+    source_reason: USDC circulation/on-chain volume growth, Q4/Q1 earnings beat, stablecoin/Clarity Act expectation
+    source_3m_move_pct: null
+    target_symbol: MA
+    target_name: Mastercard
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 카드 네트워크는 stablecoin 통합 수혜도 가능하지만, 순수 card fee pool에는 장기 수요 전환 리스크가 존재.
+    evidence:
+    - title: Visa beats first-quarter estimates as holiday sales boost payment volumes
+      url: https://www.reuters.com/business/finance/visa-quarterly-profit-rises-strong-payment-volumes-2026-01-29/
+    trading_note: stablecoin 결제 확산 뉴스 이후 카드 네트워크의 상대 강도와 cross-border fee commentary 관찰
+  - source_symbol: COIN
+    source_name: Coinbase
+    source_market: US
+    source_reason: Clarity Act momentum versus Q1 trading volume and transaction revenue weakness
+    source_3m_move_pct: null
+    target_symbol: HOOD
+    target_name: Robinhood
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: COIN의 crypto regulatory momentum은 HOOD crypto trading revenue sentiment와 동행 가능.
+    evidence:
+    - title: Coinbase shares rally after Senate Banking Committee advances crypto market-structure bill
+      url: https://www.marketwatch.com/livecoverage/stock-market-today-sp500-nasdaq-eye-new-record-dow-up-trump-china-long-bond-5-percent-retail-sales/card/coinbase-shares-rally-after-senate-banking-committee-advances-crypto-market-structure-bill-Z6CB7VJXEY09wqMz41ou
+    - title: Robinhood shares fall as crypto slump dents trading volume growth
+      url: https://www.reuters.com/business/robinhood-shares-fall-crypto-slump-dents-trading-volume-growth-2026-04-29/
+    trading_note: COIN 급등 당일 HOOD, CRCL, GEMI, BLSH 동조 여부와 다음 세션 되돌림 관찰
+  - source_symbol: COIN
+    source_name: Coinbase
+    source_market: US
+    source_reason: Clarity Act momentum versus Q1 trading volume and transaction revenue weakness
+    source_3m_move_pct: null
+    target_symbol: CRCL
+    target_name: Circle Internet Group
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Coinbase regulatory clarity 기대는 USDC/stablecoin infrastructure sentiment로 후행 반응 가능.
+    evidence:
+    - title: Coinbase logs second straight quarterly loss as crypto trading momentum fades
+      url: https://www.reuters.com/business/finance/coinbase-logs-second-straight-quarterly-loss-crypto-trading-momentum-fades-2026-05-07/
+    - title: Circle Breaks Out, Crypto Stocks Surge Ahead Of Clarity Act Hearing
+      url: https://www.investors.com/news/circle-internet-earnings-stablecoin-usdc-crcl-stock-iren-notes-keel-bitfarms-bitcoin-price/
+    trading_note: COIN regulatory momentum 이후 CRCL의 stablecoin 관련 후행 반응 관찰
+  - source_symbol: COIN
+    source_name: Coinbase
+    source_market: US
+    source_reason: Clarity Act momentum versus Q1 trading volume and transaction revenue weakness
+    source_3m_move_pct: null
+    target_symbol: BLSH
+    target_name: Bullish
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Coinbase로 institutional flow가 집중될 경우 소형 crypto exchange의 share/take-rate 압박 관찰.
+    evidence:
+    - title: Bullish Stock Tumbles After Earnings. Why This Analyst Is Still a Believer.
+      url: https://www.barrons.com/articles/bullish-earnings-stock-price-35ae04f2
+    trading_note: COIN 강세 후 BLSH transaction revenue, options share, volume commentary 관찰
+  - source_symbol: COIN
+    source_name: Coinbase
+    source_market: US
+    source_reason: Clarity Act momentum versus Q1 trading volume and transaction revenue weakness
+    source_3m_move_pct: null
+    target_symbol: GEMI
+    target_name: Gemini Space Station
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Gemini는 비용절감·지역 철수·경영진 이탈 이슈가 있어 경쟁 강도 상승 시 부담 후보.
+    evidence:
+    - title: Gemini's Tumble Deepens On Preannouncement, Key Executive Exits
+      url: https://www.investors.com/news/gemini-space-station-gemi-stock-q4-preannouncement-executive-exits-crypto-winklevoss/
+    - title: Crypto exchange Gemini plans to lay off up to 200 staff, exit Europe and Australia
+      url: https://www.reuters.com/business/world-at-work/gemini-space-station-plans-cut-200-jobs-2026-02-05/
+    trading_note: COIN strength가 GEMI/BLSH로 동조되는지, 아니면 경쟁 압박으로 갈리는지 관찰
+  - source_symbol: HOOD
+    source_name: Robinhood
+    source_market: US
+    source_reason: Q1 crypto revenue fell 47%, trading volume growth slowed
+    source_3m_move_pct: null
+    target_symbol: IBKR
+    target_name: Interactive Brokers
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: HOOD의 retail/crypto 거래 피로는 전문·글로벌 브로커 IBKR로 상대 모멘텀 이동 가능성.
+    evidence:
+    - title: Interactive Brokers Stock Falls After Revenue Miss
+      url: https://www.barrons.com/advisor/articles/interactive-brokers-stock-price-earnings-a74f7550
+    - title: Individual-investor ranks are burgeoning, according to Interactive Brokers
+      url: https://www.marketwatch.com/story/individual-investor-ranks-are-burgeoning-according-to-interactive-brokers-heres-what-those-investors-are-buying-3725bd0f
+    trading_note: HOOD 급락 후 IBKR의 상대 강도, DART, margin loan read-through 관찰
+  - source_symbol: HOOD
+    source_name: Robinhood
+    source_market: US
+    source_reason: Q1 crypto revenue fell 47%, trading volume growth slowed
+    source_3m_move_pct: null
+    target_symbol: CBOE
+    target_name: Cboe Global Markets
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: retail risk appetite 약화 구간에서 변동성·헤지 거래소는 상대 방어 관찰 후보.
+    evidence:
+    - title: Cboe Global Markets Inc. stock outperforms competitors on strong trading day
+      url: https://www.marketwatch.com/data-news/cboe-global-markets-inc-stock-outperforms-competitors-on-strong-trading-day-819012c0-4a8e6a0fae40
+    trading_note: HOOD 약세 후 CBOE/CME의 변동성·헤지 수요 동반 강세 여부 관찰
+  - source_symbol: HOOD
+    source_name: Robinhood
+    source_market: US
+    source_reason: Q1 crypto revenue fell 47%, trading volume growth slowed
+    source_3m_move_pct: null
+    target_symbol: COIN
+    target_name: Coinbase
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: HOOD crypto revenue 급감은 broader crypto retail trading volume 둔화 read-through.
+    evidence:
+    - title: Robinhood shares fall as crypto slump dents trading volume growth
+      url: https://www.reuters.com/business/robinhood-shares-fall-crypto-slump-dents-trading-volume-growth-2026-04-29/
+    - title: Coinbase logs second straight quarterly loss as crypto trading momentum fades
+      url: https://www.reuters.com/business/finance/coinbase-logs-second-straight-quarterly-loss-crypto-trading-momentum-fades-2026-05-07/
+    trading_note: HOOD crypto miss 이후 COIN, CRCL, GEMI의 동반 약세 또는 분리 여부 관찰
+  - source_symbol: HOOD
+    source_name: Robinhood
+    source_market: US
+    source_reason: Q1 crypto revenue fell 47%, trading volume growth slowed
+    source_3m_move_pct: null
+    target_symbol: GEMI
+    target_name: Gemini Space Station
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: retail crypto volume 둔화는 소형 crypto broker/exchange에 후행 부담 가능.
+    evidence:
+    - title: Gemini's Tumble Deepens On Preannouncement, Key Executive Exits
+      url: https://www.investors.com/news/gemini-space-station-gemi-stock-q4-preannouncement-executive-exits-crypto-winklevoss/
+    trading_note: HOOD 약세 후 GEMI/BLSH/ETOR의 거래량 민감 후행 반응 관찰
+  - source_symbol: CBOE
+    source_name: Cboe Global Markets
+    source_market: US
+    source_reason: Options/volatility exchange re-rating and strong peer-relative move
+    source_3m_move_pct: 32.0
+    target_symbol: CME
+    target_name: CME Group
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: exchange/derivatives volume theme의 명확한 피어.
+    evidence:
+    - title: Cboe Global Markets Inc. stock outperforms competitors on strong trading day - Feb 13
+      url: https://www.marketwatch.com/data-news/cboe-global-markets-inc-stock-outperforms-competitors-on-strong-trading-day-6dbca170-ff77fecd1781
+    - title: Cboe Global Markets Inc. stock outperforms competitors on strong trading day - May 15
+      url: https://www.marketwatch.com/data-news/cboe-global-markets-inc-stock-outperforms-competitors-on-strong-trading-day-819012c0-4a8e6a0fae40
+    trading_note: CBOE 돌파 후 CME, NDAQ, ICE의 same-day peer momentum 관찰
+  - source_symbol: CBOE
+    source_name: Cboe Global Markets
+    source_market: US
+    source_reason: Options/volatility exchange re-rating and strong peer-relative move
+    source_3m_move_pct: 32.0
+    target_symbol: NDAQ
+    target_name: Nasdaq
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 거래소·시장데이터·상장/거래량 sentiment 동행 관찰.
+    evidence:
+    - title: Cboe Global Markets Inc. stock outperforms competitors on strong trading day - May 15
+      url: https://www.marketwatch.com/data-news/cboe-global-markets-inc-stock-outperforms-competitors-on-strong-trading-day-819012c0-4a8e6a0fae40
+    trading_note: CBOE 강세 후 NDAQ/ICE peer basket 반응 관찰
+  - source_symbol: CBOE
+    source_name: Cboe Global Markets
+    source_market: US
+    source_reason: Options/volatility exchange re-rating and strong peer-relative move
+    source_3m_move_pct: 32.0
+    target_symbol: HOOD
+    target_name: Robinhood
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: CBOE 강세가 risk-off/hedging 수요라면 retail speculative broker에는 상대 부담 가능.
+    evidence:
+    - title: Robinhood shares fall as crypto slump dents trading volume growth
+      url: https://www.reuters.com/business/robinhood-shares-fall-crypto-slump-dents-trading-volume-growth-2026-04-29/
+    trading_note: CBOE 강세가 risk-on 거래량인지 risk-off hedge인지 구분 후 HOOD 후행 반응 관찰
+  - source_symbol: CBOE
+    source_name: Cboe Global Markets
+    source_market: US
+    source_reason: Options/volatility exchange re-rating and strong peer-relative move
+    source_3m_move_pct: 32.0
+    target_symbol: COIN
+    target_name: Coinbase
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 변동성·금리 민감 risk-off 구간은 crypto beta에 부담 후보.
+    evidence:
+    - title: Coinbase logs second straight quarterly loss as crypto trading momentum fades
+      url: https://www.reuters.com/business/finance/coinbase-logs-second-straight-quarterly-loss-crypto-trading-momentum-fades-2026-05-07/
+    trading_note: CBOE 강세와 BTC/COIN 약세가 같이 나오는지 cross-asset risk-off 여부 관찰
+  - source_symbol: IBKR
+    source_name: Interactive Brokers
+    source_market: US
+    source_reason: Customer accounts, DARTs and margin loans increased
+    source_3m_move_pct: null
+    target_symbol: CBOE
+    target_name: Cboe Global Markets
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: IBKR 거래활동 증가는 옵션/주식 거래소 volume read-through.
+    evidence:
+    - title: Interactive Brokers Stock Falls After Revenue Miss
+      url: https://www.barrons.com/advisor/articles/interactive-brokers-stock-price-earnings-a74f7550
+    trading_note: IBKR activity 지표 발표 후 CBOE/NDAQ의 거래량 후행 반응 관찰
+  - source_symbol: IBKR
+    source_name: Interactive Brokers
+    source_market: US
+    source_reason: Customer accounts, DARTs and margin loans increased
+    source_3m_move_pct: null
+    target_symbol: CME
+    target_name: CME Group
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 선물·금리·상품 헤지 거래 활성화가 CME volume read-through.
+    evidence:
+    - title: CME Group profit rises as market volatility drives hedging demand
+      url: https://www.reuters.com/business/cme-group-profit-rises-market-volatility-drives-hedging-demand-2026-04-22/
+    trading_note: IBKR activity와 CME ADV/interest-rate futures volume 동행 관찰
+  - source_symbol: IBKR
+    source_name: Interactive Brokers
+    source_market: US
+    source_reason: Customer accounts, DARTs and margin loans increased
+    source_3m_move_pct: null
+    target_symbol: HOOD
+    target_name: Robinhood
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 전문/고빈도 active trader 유입이 retail broker 점유율 압박으로 해석될 수 있음.
+    evidence:
+    - title: Robinhood shares fall as crypto slump dents trading volume growth
+      url: https://www.reuters.com/business/robinhood-shares-fall-crypto-slump-dents-trading-volume-growth-2026-04-29/
+    trading_note: IBKR 강세 후 HOOD의 active trader retention, Gold, prediction market 모멘텀 관찰
+  - source_symbol: IBKR
+    source_name: Interactive Brokers
+    source_market: US
+    source_reason: Customer accounts, DARTs and margin loans increased
+    source_3m_move_pct: null
+    target_symbol: SCHW
+    target_name: Charles Schwab
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: cash yield, margin, active trading 기능 경쟁에서 가격/수수료 압박 리스크.
+    evidence:
+    - title: Interactive Brokers Stock Falls After Revenue Miss
+      url: https://www.barrons.com/advisor/articles/interactive-brokers-stock-price-earnings-a74f7550
+    trading_note: IBKR 강세 후 SCHW의 cash sweep, margin balance, commission commentary 관찰
+  - source_symbol: XYZ
+    source_name: Block
+    source_market: US
+    source_reason: Cash App gross profit, Square GPV and lending growth; 2026 gross profit outlook raised
+    source_3m_move_pct: null
+    target_symbol: V
+    target_name: Visa
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Square GPV 증가는 card network 결제량 증가 read-through.
+    evidence:
+    - title: Block raises annual gross profit outlook as Cash App stands out
+      url: https://www.reuters.com/business/block-quarterly-profit-jumps-resilient-consumer-spending-2026-05-07/
+    - title: Visa beats first-quarter estimates as holiday sales boost payment volumes
+      url: https://www.reuters.com/business/finance/visa-quarterly-profit-rises-strong-payment-volumes-2026-01-29/
+    trading_note: Block 실적 후 V/MA의 consumer spending, card volume 후행 반응 관찰
+  - source_symbol: XYZ
+    source_name: Block
+    source_market: US
+    source_reason: Cash App gross profit, Square GPV and lending growth; 2026 gross profit outlook raised
+    source_3m_move_pct: null
+    target_symbol: MA
+    target_name: Mastercard
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: merchant acquiring·card rails 동반 수혜 가능성.
+    evidence:
+    - title: Block raises annual gross profit outlook as Cash App stands out
+      url: https://www.reuters.com/business/block-quarterly-profit-jumps-resilient-consumer-spending-2026-05-07/
+    trading_note: Square GPV 강세 후 MA switched volume/cross-border volume 반응 관찰
+  - source_symbol: XYZ
+    source_name: Block
+    source_market: US
+    source_reason: Cash App gross profit, Square GPV and lending growth; 2026 gross profit outlook raised
+    source_3m_move_pct: null
+    target_symbol: PYPL
+    target_name: PayPal
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: Cash App/Square 강세는 PayPal/Venmo·merchant checkout 경쟁 압박 후보.
+    evidence:
+    - title: PayPal’s stock falls after earnings. Here’s what’s spooking Wall Street.
+      url: https://www.marketwatch.com/story/paypals-stock-rallies-after-first-earnings-report-of-the-new-era-heres-what-to-know-4310d291
+    trading_note: Block 강세 다음 세션 PYPL 상대 약세 또는 branded checkout volume 반응 관찰
+  - source_symbol: XYZ
+    source_name: Block
+    source_market: US
+    source_reason: Cash App gross profit, Square GPV and lending growth; 2026 gross profit outlook raised
+    source_3m_move_pct: null
+    target_symbol: AFRM
+    target_name: Affirm
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Cash App Borrow·Afterpay 확장은 BNPL/consumer lending 경쟁 부담 후보.
+    evidence:
+    - title: Block raises annual gross profit outlook as Cash App stands out
+      url: https://www.reuters.com/business/block-quarterly-profit-jumps-resilient-consumer-spending-2026-05-07/
+    trading_note: Block lending growth 이후 AFRM의 BNPL peer reaction 관찰
+  - source_symbol: 039490
+    source_name: 키움증권
+    source_market: KR
+    source_reason: 증시 거래대금 증가, 온라인 브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: 023590
+    target_name: 다우기술
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: 다우기술은 키움증권 모회사/지분 보유 read-through.
+    evidence:
+    - title: Kiwoom Securities profile
+      url: https://en.wikipedia.org/wiki/Kiwoom_Securities
+    - title: Daou Technology profile
+      url: https://en.wikipedia.org/wiki/Daou_Technology_Inc.
+    trading_note: 키움증권 강세 후 다우기술의 지주사 후행 반응 관찰
+  - source_symbol: 039490
+    source_name: 키움증권
+    source_market: KR
+    source_reason: 증시 거래대금 증가, 온라인 브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: 006800
+    target_name: 미래에셋증권
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 증시 거래대금 증가 시 대형 증권 피어 동반 관찰.
+    evidence:
+    - title: Korea's KOSPI breaks 7,000 as AI rally catapults Samsung into $1 trillion club
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-kospi-share-index-tops-7000-first-time-2026-05-06/
+    trading_note: 키움증권 강세 후 미래에셋·삼성·NH투자증권 basket 후행 반응 관찰
+  - source_symbol: 039490
+    source_name: 키움증권
+    source_market: KR
+    source_reason: 증시 거래대금 증가, 온라인 브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: '377300'
+    target_name: 카카오페이
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: retail 자금·앱 사용 시간이 투자/트레이딩으로 이동하면 결제 핀테크 상대 소외 가능.
+    evidence:
+    - title: Kakao Pay profile
+      url: https://en.wikipedia.org/wiki/Kakao_Pay
+    - title: Koreans flock to pay with their faces
+      url: https://www.ft.com/content/f48b4605-1aa9-4549-9197-fc1c2a361b90
+    trading_note: 증권주 강세 구간에서 카카오페이·결제 PG의 상대강도 후행 관찰
+  - source_symbol: 039490
+    source_name: 키움증권
+    source_market: KR
+    source_reason: 증시 거래대금 증가, 온라인 브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 투자앱/금융앱 attention rotation 관찰 후보. 직접 근거는 약함.
+    evidence:
+    - title: Naver's payment arm to acquire South Korean crypto exchange operator in $10 bln deal
+      url: https://www.reuters.com/world/asia-pacific/navers-payment-arm-acquire-south-korean-crypto-exchange-operator-10-bln-deal-2025-11-27/
+    trading_note: 키움증권/증권업 강세와 NAVER fintech narrative의 상대강도 비교
+  - source_symbol: 006800
+    source_name: 미래에셋증권
+    source_market: KR
+    source_reason: 증권업종 동반 강세, IB/WM/브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: 039490
+    target_name: 키움증권
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 대형 증권·리테일 거래대금 피어 모멘텀.
+    evidence:
+    - title: Korea's KOSPI breaks 7,000 as AI rally catapults Samsung into $1 trillion club
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-kospi-share-index-tops-7000-first-time-2026-05-06/
+    trading_note: 미래에셋 강세 후 키움·삼성증권의 증권업 basket 동행 관찰
+  - source_symbol: 006800
+    source_name: 미래에셋증권
+    source_market: KR
+    source_reason: 증권업종 동반 강세, IB/WM/브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: '016360'
+    target_name: 삼성증권
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 증권업종 basket 동행 후보.
+    evidence:
+    - title: Korea's KOSPI breaks 7,000 as AI rally catapults Samsung into $1 trillion club
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-kospi-share-index-tops-7000-first-time-2026-05-06/
+    trading_note: 증권업종 당일 강세 시 대형 증권주 pair momentum 관찰
+  - source_symbol: 006800
+    source_name: 미래에셋증권
+    source_market: KR
+    source_reason: 증권업종 동반 강세, IB/WM/브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: '377300'
+    target_name: 카카오페이
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 증권 WM/브로커리지 강세는 단순 결제 핀테크 대비 수익성 narrative 우위 가능.
+    evidence:
+    - title: Kakao Pay profile
+      url: https://en.wikipedia.org/wiki/Kakao_Pay
+    - title: Koreans flock to pay with their faces
+      url: https://www.ft.com/content/f48b4605-1aa9-4549-9197-fc1c2a361b90
+    trading_note: 증권주 강세 이후 카카오페이의 상대 소외 또는 독립 모멘텀 여부 관찰
+  - source_symbol: 006800
+    source_name: 미래에셋증권
+    source_market: KR
+    source_reason: 증권업종 동반 강세, IB/WM/브로커리지 레버리지
+    source_3m_move_pct: null
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 플랫폼/핀테크 성장주 대비 금융·증권 가치주 rotation 관찰 후보.
+    evidence:
+    - title: Korea's KOSPI breaks 7,000 as AI rally catapults Samsung into $1 trillion club
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-kospi-share-index-tops-7000-first-time-2026-05-06/
+    trading_note: 금융주 강세 구간에서 플랫폼주 상대강도와 외국인 수급 관찰
+  - source_symbol: 086790
+    source_name: 하나금융지주
+    source_market: KR
+    source_reason: Hana Bank to acquire 6.55% stake in Dunamu, operator of Upbit
+    source_3m_move_pct: null
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Dunamu valuation과 Upbit 지배력 확인은 NAVER Financial-Dunamu 딜 재평가 후보.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    - title: Naver's payment arm to acquire South Korean crypto exchange operator in $10 bln deal
+      url: https://www.reuters.com/world/asia-pacific/navers-payment-arm-acquire-south-korean-crypto-exchange-operator-10-bln-deal-2025-11-27/
+    trading_note: Hana-Dunamu 뉴스 후 NAVER의 Dunamu valuation read-through 반응 관찰
+  - source_symbol: 086790
+    source_name: 하나금융지주
+    source_market: KR
+    source_reason: Hana Bank to acquire 6.55% stake in Dunamu, operator of Upbit
+    source_3m_move_pct: null
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Kakao Investment의 Dunamu 지분 매각 현금 유입은 재무 flexibility 관찰 포인트.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: Hana 매입 공시 이후 Kakao의 현금 유입/잔여지분 가치 반영 여부 관찰
+  - source_symbol: 086790
+    source_name: 하나금융지주
+    source_market: KR
+    source_reason: Hana Bank to acquire 6.55% stake in Dunamu, operator of Upbit
+    source_3m_move_pct: null
+    target_symbol: '377300'
+    target_name: 카카오페이
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 은행+거래소+송금 결합은 standalone payment wallet 경쟁 부담 후보.
+    evidence:
+    - title: Hana Bank to Buy $670 Million Stake in Crypto Exchange Operator Dunamu
+      url: https://www.wsj.com/business/hana-bank-to-buy-670-million-stake-in-crypto-exchange-operator-dunamu-08f99cb5
+    - title: Koreans flock to pay with their faces
+      url: https://www.ft.com/content/f48b4605-1aa9-4549-9197-fc1c2a361b90
+    trading_note: Hana-Dunamu 이후 카카오페이/토스/네이버페이 경쟁 구도 후행 관찰
+  - source_symbol: 086790
+    source_name: 하나금융지주
+    source_market: KR
+    source_reason: Hana Bank to acquire 6.55% stake in Dunamu, operator of Upbit
+    source_3m_move_pct: null
+    target_symbol: 039490
+    target_name: 키움증권
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: crypto/bank-integrated retail trading 확산 시 equity brokerage 거래대금 전환 리스크.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: Hana-Dunamu 뉴스 이후 국내 증권주와 crypto proxy 간 상대강도 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: NAVER Financial to acquire Dunamu in all-stock deal; Upbit exposure
+    source_3m_move_pct: null
+    target_symbol: 086790
+    target_name: 하나금융지주
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: NAVER-Dunamu와 Hana-Dunamu가 같은 Upbit 가치사슬로 연결.
+    evidence:
+    - title: Naver's payment arm to acquire South Korean crypto exchange operator in $10 bln deal
+      url: https://www.reuters.com/world/asia-pacific/navers-payment-arm-acquire-south-korean-crypto-exchange-operator-10-bln-deal-2025-11-27/
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: NAVER-Dunamu 이슈 재부각 시 Hana의 디지털자산 exposure 후행 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: NAVER Financial to acquire Dunamu in all-stock deal; Upbit exposure
+    source_3m_move_pct: null
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Kakao 잔여 Dunamu 지분 가치 인식 가능성. 다만 매각으로 optionality는 축소.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: NAVER-Dunamu valuation 뉴스 이후 Kakao 잔여지분 value read-through 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: NAVER Financial to acquire Dunamu in all-stock deal; Upbit exposure
+    source_3m_move_pct: null
+    target_symbol: '377300'
+    target_name: 카카오페이
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: NAVER Pay + Upbit traffic 결합은 KakaoPay 금융앱 경쟁 부담 후보.
+    evidence:
+    - title: Naver's payment arm to acquire South Korean crypto exchange operator in $10 bln deal
+      url: https://www.reuters.com/world/asia-pacific/navers-payment-arm-acquire-south-korean-crypto-exchange-operator-10-bln-deal-2025-11-27/
+    - title: Kakao Pay profile
+      url: https://en.wikipedia.org/wiki/Kakao_Pay
+    trading_note: NAVER-Dunamu 모멘텀 후 카카오페이 상대 약세/독립 반등 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: NAVER Financial to acquire Dunamu in all-stock deal; Upbit exposure
+    source_3m_move_pct: null
+    target_symbol: 039490
+    target_name: 키움증권
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 젊은 투자자 traffic이 crypto/fintech로 이동할 경우 equity brokerage 상대 소외 관찰.
+    evidence:
+    - title: Naver's payment arm to acquire South Korean crypto exchange operator in $10 bln deal
+      url: https://www.reuters.com/world/asia-pacific/navers-payment-arm-acquire-south-korean-crypto-exchange-operator-10-bln-deal-2025-11-27/
+    trading_note: NAVER-Dunamu 강세 구간에서 키움증권의 retail equity volume 반응 관찰
+  - source_symbol: '035720'
+    source_name: 카카오
+    source_market: KR
+    source_reason: Kakao Investment to sell 1 trillion won stake in Dunamu; ownership drops
+    source_3m_move_pct: null
+    target_symbol: 086790
+    target_name: 하나금융지주
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: 매수자 Hana가 Upbit/Dunamu exposure를 직접 확보.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: Kakao 지분 매각 공시 이후 Hana 금융/디지털자산 narrative 반응 관찰
+  - source_symbol: '035720'
+    source_name: 카카오
+    source_market: KR
+    source_reason: Kakao Investment to sell 1 trillion won stake in Dunamu; ownership drops
+    source_3m_move_pct: null
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Dunamu 지분 거래가 NAVER Financial-Dunamu valuation read-through.
+    evidence:
+    - title: Naver's payment arm to acquire South Korean crypto exchange operator in $10 bln deal
+      url: https://www.reuters.com/world/asia-pacific/navers-payment-arm-acquire-south-korean-crypto-exchange-operator-10-bln-deal-2025-11-27/
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: Kakao 지분 매각 후 NAVER-Dunamu valuation 재평가 관찰
+  - source_symbol: '035720'
+    source_name: 카카오
+    source_market: KR
+    source_reason: Kakao Investment to sell 1 trillion won stake in Dunamu; ownership drops
+    source_3m_move_pct: null
+    target_symbol: '377300'
+    target_name: 카카오페이
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Kakao 그룹의 crypto optionality 축소는 KakaoPay fintech narrative 부담 후보.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    - title: Kakao Pay profile
+      url: https://en.wikipedia.org/wiki/Kakao_Pay
+    trading_note: Kakao 지분 매각 이후 KakaoPay의 그룹 fintech optionality 재평가 관찰
+  - source_symbol: '035720'
+    source_name: 카카오
+    source_market: KR
+    source_reason: Kakao Investment to sell 1 trillion won stake in Dunamu; ownership drops
+    source_3m_move_pct: null
+    target_symbol: 041190
+    target_name: 우리기술투자
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Dunamu proxy 재평가 시 보유지분·밸류에이션 비교 부담 가능. 공개 검증이 약해 LOW.
+    evidence:
+    - title: Hana Bank to acquire stake in Dunamu for $700 mln, filing says
+      url: https://www.reuters.com/world/asia-pacific/hana-bank-acquire-stake-dunamu-700-mln-filing-says-2026-05-14/
+    trading_note: Dunamu 관련 proxy들의 지분율·밸류에이션 프리미엄 재산정 여부 관찰
