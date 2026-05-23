@@ -11,6 +11,8 @@
 
 from __future__ import annotations
 
+import contextlib
+import io
 import logging
 from typing import TYPE_CHECKING
 
@@ -38,14 +40,17 @@ def _fetch_krx_flow(symbol: str, days: int = 20) -> dict:
     try:
         from datetime import date, timedelta
 
-        from pykrx import stock  # type: ignore[import-untyped]
+        _sink = io.StringIO()
+        with contextlib.redirect_stdout(_sink):
+            from pykrx import stock  # type: ignore[import-untyped]
 
         end_dt = date.today()
         start_dt = end_dt - timedelta(days=days + 10)
         end_str = end_dt.strftime("%Y%m%d")
         start_str = start_dt.strftime("%Y%m%d")
 
-        df = stock.get_market_trading_value_by_date(start_str, end_str, bare)
+        with contextlib.redirect_stdout(_sink):
+            df = stock.get_market_trading_value_by_date(start_str, end_str, bare)
         if df is None or df.empty:
             return result
 

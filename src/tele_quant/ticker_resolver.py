@@ -111,7 +111,10 @@ def resolve_ticker(symbol: str, market: str = "") -> TickerResolution:
         if not clean_name and market.upper() == "KR":
             bare = symbol.split(".")[0]
             try:
-                from pykrx import stock as _pykrx
+                import contextlib
+                import io as _io
+                with contextlib.redirect_stdout(_io.StringIO()):
+                    from pykrx import stock as _pykrx
                 pykrx_name = _pykrx.get_market_ticker_name(bare)
                 if pykrx_name and pykrx_name != bare:
                     clean_name = pykrx_name

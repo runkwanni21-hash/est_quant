@@ -2,12 +2,33 @@
 
 from __future__ import annotations
 
+import logging
 from typing import Annotated
 
 import typer
 
 from tele_quant.cli._app import app
 from tele_quant.cli._common import console
+
+_YF_NOISE = (
+    "HTTP Error 401",
+    "possibly delisted",
+    "no price data found",
+    "No data found",
+    "1 Failed download",
+    "Failed download",
+)
+
+
+class _SuppressYFNoise(logging.Filter):
+    """yfinance가 자체 로깅하는 예상된 데이터 부재·인증 에러를 억제한다.
+
+    stock_data_provider / macro_pulse 에서 이미 None 반환으로 처리하므로
+    ERROR 레벨로 콘솔에 노출될 필요가 없다.
+    """
+    def filter(self, record: logging.LogRecord) -> bool:
+        msg = record.getMessage()
+        return not any(pat in msg for pat in _YF_NOISE)
 
 
 @app.command("dashboard")
@@ -39,6 +60,8 @@ def dashboard_cmd(
             "  또는: pip install fastapi 'uvicorn[standard]'"
         )
         raise SystemExit(1) from None
+
+    logging.getLogger("yfinance").addFilter(_SuppressYFNoise())
 
     try:
         from tele_quant.dashboard.app import create_app

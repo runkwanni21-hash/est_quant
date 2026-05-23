@@ -302,7 +302,10 @@ def fetch_us_top_movers(days: int = 90, top_n: int = 100) -> TopMoverRun:
 
 def _get_kr_universe_from_pykrx() -> list[tuple[str, str]]:
     """Return list of (yfinance_symbol, exchange) from pykrx. May raise."""
-    from pykrx import stock as pykrx_stock  # type: ignore[import-untyped]
+    import contextlib
+    import io as _io
+    with contextlib.redirect_stdout(_io.StringIO()):
+        from pykrx import stock as pykrx_stock  # type: ignore[import-untyped]
 
     kospi = pykrx_stock.get_market_ticker_list(market="KOSPI")
     kosdaq = pykrx_stock.get_market_ticker_list(market="KOSDAQ")

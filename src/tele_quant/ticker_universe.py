@@ -304,7 +304,10 @@ def _build_kr_universe() -> list[dict[str, Any]]:
     """pykrx로 KOSPI + KOSDAQ + KONEX 전 종목 수집."""
     rows: list[dict[str, Any]] = []
     try:
-        from pykrx import stock
+        import contextlib
+        import io as _io
+        with contextlib.redirect_stdout(_io.StringIO()):
+            from pykrx import stock
 
         overrides = _load_overrides()
         for market_code, exch in [("KOSPI", "KS"), ("KOSDAQ", "KQ"), ("KONEX", "KN")]:

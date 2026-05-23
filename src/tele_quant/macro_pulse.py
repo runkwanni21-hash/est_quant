@@ -93,9 +93,20 @@ def _fetch_one(ticker: str, as_bp: bool = False) -> tuple[float | None, float | 
         return None, None
 
 
+def _warmup_yfinance() -> None:
+    """병렬 요청 전 crumb/쿠키 세션을 초기화한다."""
+    try:
+        import yfinance as yf
+        yf.Ticker("^GSPC").history(period="2d", interval="1d", auto_adjust=True)
+    except Exception:
+        pass
+
+
 def fetch_macro_snapshot() -> MacroSnapshot:
     """전체 매크로 지표 병렬 수집."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    _warmup_yfinance()
 
     snap = MacroSnapshot(fetched_at=datetime.now(UTC))
     keys = list(_MACRO_TICKERS.keys())
