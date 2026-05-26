@@ -1,0 +1,15 @@
+[Unit]
+Description=Tele Quant 평일 급등 수집 타이머 (4H 브리핑 20분 전)
+After=network-online.target
+
+[Timer]
+# Mon 10:40, Tue~Fri 01:40, 05:40, 09:40, 13:40 UTC (브리핑 20분 전)
+OnCalendar=Mon *-*-* 01,05,09,13,21:40:00
+OnCalendar=Tue,Wed,Thu *-*-* 01,05,09,13,21:40:00
+OnCalendar=Fri *-*-* 01,05:40:00
+OnCalendar=Mon,Tue,Wed,Thu *-*-* 21:40:00
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

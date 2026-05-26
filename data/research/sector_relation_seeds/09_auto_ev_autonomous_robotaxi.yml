@@ -1,0 +1,828 @@
+sector_relation_seeds:
+  sector_id: auto_ev_autonomous_robotaxi
+  sector_name: 자동차 / EV / 자율주행 / 로봇택시
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - source_3m_move_pct는 정확한 2026-02-17~2026-05-17 종가 수익률이 확인된 경우만 숫자로 입력했다.
+  - 이벤트 등락률, YTD, 고점/저점 대비 수익률만 확인된 경우 source_3m_move_pct는 null로 둔다.
+  - 모든 edge는 확정 상승/하락이 아니라 1일~1개월 스윙 관점의 후행 반응 관찰 후보이다.
+  edges:
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD 중국 기대, 로봇택시 확장 narrative와 Q1 2026 인도량 미스가 동시에 작동
+    source_3m_move_pct: 2.8
+    target_symbol: '373220'
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Tesla EV 인도·생산 회복 기대가 배터리 셀 수요 readthrough로 연결될 수 있으나 Q1 재고 증가로 관찰 강도는 제한.
+    evidence:
+    - title: Tesla deliveries mark weakest quarter in a year, inventory swells
+      url: https://www.reuters.com/business/autos-transportation/teslas-first-quarter-deliveries-miss-estimates-tax-credit-expiry-weighs-2026-04-02/
+    - title: LG Energy Solution signs $4.3 billion battery supply contract
+      url: https://www.reuters.com/business/energy/lg-energy-solution-signs-43-billion-battery-supply-contract-2025-07-30/
+    trading_note: Tesla 인도량·FSD 승인 뉴스 후 LGES의 1~5거래일 후행 반응과 배터리 섹터 동조를 관찰.
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD 중국 기대, 로봇택시 확장 narrative
+    source_3m_move_pct: 2.8
+    target_symbol: NVDA
+    target_name: Nvidia
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: FSD·로봇택시·Optimus narrative가 AI compute capex 기대와 동행할 수 있다.
+    evidence:
+    - title: Elon Musk Is Expected to Join Trump in China. What It Means for Tesla Stock.
+      url: https://www.barrons.com/articles/tesla-stock-elon-musk-trump-china-75012e6d
+    trading_note: Tesla AI/FSD 헤드라인 당일 NVDA와 AI capex basket 동조 여부를 관찰.
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD 중국 기대, 로봇택시 확장 narrative
+    source_3m_move_pct: 2.8
+    target_symbol: RIVN
+    target_name: Rivian
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Tesla Model Y/FSD/로봇택시 기대가 Rivian R2와 Autonomy+ valuation에 경쟁 압박으로 작동할 수 있다.
+    evidence:
+    - title: Rivian sees 2026 delivery jump driven by rollout of smaller, more affordable R2 SUVs
+      url: https://www.reuters.com/business/autos-transportation/rivian-sees-2026-delivery-jump-driven-rollout-smaller-more-affordable-r2-suvs-2026-02-12/
+    trading_note: TSLA 급등일 RIVN의 상대수익률과 EV startup basket 약세 여부를 관찰.
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD 중국 기대, 로봇택시 확장 narrative
+    source_3m_move_pct: 2.8
+    target_symbol: 005380
+    target_name: 현대차
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: LOW
+    rationale: Tesla FSD/로봇택시 기대가 현대차 SDV catch-up 부담으로 해석될 수 있다.
+    evidence:
+    - title: Latecomer Hyundai races Tesla on robots and self-driving cars
+      url: https://www.ft.com/content/545413e6-4ec6-4fbd-8ba6-a82a8fdb8e3f
+    trading_note: 미국 TSLA 급등 다음 한국장 현대차·기아의 상대 강도와 부품주 동조를 관찰.
+  - source_symbol: RIVN
+    source_name: Rivian
+    source_market: US
+    source_reason: R2 출시 기대와 Uber 로봇택시 계약
+    source_3m_move_pct: null
+    target_symbol: '373220'
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: LGES 4695 원통형 셀이 Rivian R2 북미 모델에 공급되는 명확한 공급망.
+    evidence:
+    - title: LG Energy Solution signs 5-year battery supply deal with Rivian
+      url: https://www.reuters.com/technology/lg-energy-solution-signs-5-year-battery-supply-deal-with-rivian-2024-11-07/
+    trading_note: RIVN R2 생산·예약·로봇택시 뉴스 후 LGES의 후행 반응을 관찰.
+  - source_symbol: RIVN
+    source_name: Rivian
+    source_market: US
+    source_reason: R2 출시 기대와 Uber 로봇택시 계약
+    source_3m_move_pct: null
+    target_symbol: UBER
+    target_name: Uber
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Uber가 Rivian에 투자하고 R2 기반 로봇택시 배치를 계획해 수요 연계가 명확하다.
+    evidence:
+    - title: Uber to invest up to $1.25 billion in Rivian as part of robotaxi deal
+      url: https://www.reuters.com/business/autos-transportation/uber-invest-up-125-billion-rivian-part-robotaxi-deal-2026-03-19/
+    trading_note: RIVN 급등일 UBER가 고객/플랫폼 readthrough로 동조하는지 관찰.
+  - source_symbol: RIVN
+    source_name: Rivian
+    source_market: US
+    source_reason: R2 출시 기대와 Uber 로봇택시 계약
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: R2는 Model Y 가격대와 SUV 수요에서 경쟁 후보이다.
+    evidence:
+    - title: Rivian sees 2026 delivery jump driven by rollout of smaller, more affordable R2 SUVs
+      url: https://www.reuters.com/business/autos-transportation/rivian-sees-2026-delivery-jump-driven-rollout-smaller-more-affordable-r2-suvs-2026-02-12/
+    trading_note: RIVN 강세일 TSLA 상대 약세 또는 EV peer rotation 여부를 관찰.
+  - source_symbol: RIVN
+    source_name: Rivian
+    source_market: US
+    source_reason: R2 출시 기대와 Uber 로봇택시 계약
+    source_3m_move_pct: null
+    target_symbol: LCID
+    target_name: Lucid
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: EV startup 내 자금과 수요 기대가 R2로 이동하면 Lucid Gravity 기대에는 부담 가능성이 있다.
+    evidence:
+    - title: Lucid misses first-quarter vehicle delivery estimates on supplier disruptions
+      url: https://www.reuters.com/business/autos-transportation/lucid-misses-first-quarter-vehicle-delivery-estimates-2026-04-03/
+    trading_note: RIVN 호재 후 LCID의 1~3거래일 상대수익률을 관찰.
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy, 배터리 ESS, AI 데이터센터 전력 수요 narrative
+    source_3m_move_pct: null
+    target_symbol: GM
+    target_name: General Motors
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Legacy OEM의 EV 손실 축소·전력/ESS 전환 re-rating이 GM에도 확산될 수 있다.
+    evidence:
+    - title: Ford stock surges 13% on investor optimism for new energy storage business
+      url: https://www.reuters.com/business/autos-transportation/ford-stock-surges-13-investor-optimism-new-energy-storage-business-2026-05-13/
+    trading_note: F 급등일 GM, STLA 등 legacy OEM basket 동조를 관찰.
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy, 배터리 ESS, AI 데이터센터 전력 수요 narrative
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: ESS와 AI 데이터센터 전력 narrative가 Tesla Energy peer로 확산될 수 있다.
+    evidence:
+    - title: Ford shares surge after launch of power unit for data centres
+      url: https://www.ft.com/content/3788778f-ea93-4811-80a8-4c8f4c5c0b1f
+    trading_note: Ford Energy 뉴스 후 Tesla Energy 관련 코멘트와 TSLA 동조를 관찰.
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy와 EV 전략 전환
+    source_3m_move_pct: null
+    target_symbol: '373220'
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: Ford의 LGES EV 배터리 공급계약 종료와 CATL LFP 활용은 한국 배터리 공급망의 수요 전환 리스크.
+    evidence:
+    - title: Ford cancels EV battery deal worth $6.5 billion with South Korea's LG Energy Solution
+      url: https://www.reuters.com/business/finance/south-koreas-lg-energy-solution-ends-65-billion-ev-battery-supply-deal-with-ford-2025-12-17/
+    trading_note: F가 EV 축소/ESS 전환으로 급등할 때 한국 배터리주의 3~10거래일 부담 반응을 관찰.
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy와 EV 전략 전환
+    source_3m_move_pct: null
+    target_symbol: 096770
+    target_name: SK이노베이션
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: Ford/SK On JV 종료와 Ford EV 축소는 SK On parent에 부담 후보.
+    evidence:
+    - title: Ford cancels EV battery deal worth $6.5 billion with South Korea's LG Energy Solution
+      url: https://www.reuters.com/business/finance/south-koreas-lg-energy-solution-ends-65-billion-ev-battery-supply-deal-with-ford-2025-12-17/
+    trading_note: Ford의 EV 축소 뉴스 후 SK이노베이션 및 한국 배터리 basket 약세를 관찰.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: Q1 실적 후 급등, AV 멀티파트너 플랫폼 전략
+    source_3m_move_pct: null
+    target_symbol: RIVN
+    target_name: Rivian
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Uber의 Rivian 로봇택시 투자와 배치 계획이 Rivian R2 수요 기대와 연결.
+    evidence:
+    - title: Uber to invest up to $1.25 billion in Rivian as part of robotaxi deal
+      url: https://www.reuters.com/business/autos-transportation/uber-invest-up-125-billion-rivian-part-robotaxi-deal-2026-03-19/
+    trading_note: UBER 강세일 RIVN 동조 및 robotaxi basket 동조를 관찰.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: Q1 실적 후 급등, AV 멀티파트너 플랫폼 전략
+    source_3m_move_pct: null
+    target_symbol: LCID
+    target_name: Lucid
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Uber의 Lucid 지분 확대와 Lucid Gravity 로봇택시 계획이 Lucid 수요 기대와 연결.
+    evidence:
+    - title: Uber Expands Stake In Lucid for Robo-Taxis
+      url: https://www.barrons.com/articles/uber-stake-lucid-robo-taxis-tesla-stock-d26085ba
+    trading_note: UBER AV 호재 후 LCID의 동조 강도를 관찰.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: Q1 실적 후 급등, AV 멀티파트너 플랫폼 전략
+    source_3m_move_pct: null
+    target_symbol: LYFT
+    target_name: Lyft
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Uber의 AV 플랫폼 규모가 Lyft의 AV 파트너십/시장점유 narrative에 부담 후보.
+    evidence:
+    - title: Why Uber Stock Is Rallying After Posting Mixed Q1 Results
+      url: https://www.investors.com/news/technology/uber-stock-q1-earnings-2026-robotaxi/
+    trading_note: UBER 호재 당일 LYFT 상대 약세 또는 다음 세션 되돌림을 관찰.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: Q1 실적 후 급등, AV 멀티파트너 플랫폼 전략
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: Uber의 멀티파트너 로봇택시 플랫폼이 Tesla 단독 로봇택시 네트워크 기대와 경쟁할 수 있다.
+    evidence:
+    - title: Uber has been taking direct and indirect shots at its partner, Waymo
+      url: https://www.businessinsider.com/uber-waymo-partnership-relationship-hybrid-market-2026-5
+    trading_note: UBER robotaxi 플랫폼 뉴스 후 TSLA robotaxi narrative 약화 여부를 관찰.
+  - source_symbol: MBLY
+    source_name: Mobileye
+    source_market: US
+    source_reason: Q1 beat, VW/MOIA robotaxi 진전
+    source_3m_move_pct: null
+    target_symbol: INTC
+    target_name: Intel
+    target_market: US
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Mobileye 가치 회복은 Intel 보유 지분 및 자율주행 exposure readthrough로 연결 가능.
+    evidence:
+    - title: Mobileye's robotaxi ambitions have progressed significantly
+      url: https://www.marketwatch.com/story/mobileyes-robotaxi-ambitions-have-progressed-significantly-and-the-stock-surges-971fb467
+    trading_note: MBLY 급등일 INTC의 동조 여부를 관찰.
+  - source_symbol: MBLY
+    source_name: Mobileye
+    source_market: US
+    source_reason: Q1 beat, VW/MOIA robotaxi 진전
+    source_3m_move_pct: null
+    target_symbol: '204320'
+    target_name: HL만도
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: ADAS·자율주행 부품 sentiment가 한국 ADAS tier-1로 후행 확산 가능.
+    evidence:
+    - title: Mobileye's robotaxi ambitions have progressed significantly
+      url: https://www.marketwatch.com/story/mobileyes-robotaxi-ambitions-have-progressed-significantly-and-the-stock-surges-971fb467
+    trading_note: MBLY 급등 다음 한국장 HL만도·현대모비스 동조를 관찰.
+  - source_symbol: MBLY
+    source_name: Mobileye
+    source_market: US
+    source_reason: Q1 beat, VW/MOIA robotaxi 진전
+    source_3m_move_pct: null
+    target_symbol: LAZR
+    target_name: Luminar
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: camera/SoC 중심 ADAS 강세가 lidar-only sentiment에 부담 가능.
+    evidence:
+    - title: 'Mobileye profile: EyeQ, ADAS and robotaxi'
+      url: https://en.wikipedia.org/wiki/Mobileye
+    trading_note: MBLY 급등일 LAZR/OUST 등 lidar basket의 상대수익률을 관찰.
+  - source_symbol: MBLY
+    source_name: Mobileye
+    source_market: US
+    source_reason: Q1 beat, VW/MOIA robotaxi 진전
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: VW/Mobileye robotaxi 진전은 Tesla FSD 독주 narrative와 경쟁 신호.
+    evidence:
+    - title: Mobileye's robotaxi ambitions have progressed significantly
+      url: https://www.marketwatch.com/story/mobileyes-robotaxi-ambitions-have-progressed-significantly-and-the-stock-surges-971fb467
+    trading_note: MBLY 호재 후 TSLA robotaxi premium 둔화 여부를 관찰.
+  - source_symbol: LCID
+    source_name: Lucid
+    source_market: US
+    source_reason: Q1 매출 미스, Gravity 공급 차질, 가이던스 중단
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Lucid 공급 차질은 Tesla의 상대적 실행력 premium을 강화할 수 있다.
+    evidence:
+    - title: EV maker Lucid suspends forecast, misses quarterly revenue estimates
+      url: https://www.reuters.com/business/autos-transportation/lucid-misses-quarterly-revenue-estimates-supplier-issue-hits-gravity-suv-2026-05-05/
+    trading_note: LCID 급락일 TSLA와 GM의 상대 강도 개선 여부를 관찰.
+  - source_symbol: LCID
+    source_name: Lucid
+    source_market: US
+    source_reason: Q1 매출 미스, Gravity 공급 차질, 가이던스 중단
+    source_3m_move_pct: null
+    target_symbol: GM
+    target_name: General Motors
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: EV startup 차질은 현금흐름 강한 legacy OEM의 상대 매력으로 읽힐 수 있다.
+    evidence:
+    - title: GM Says Iran War, High Gas Prices Aren't Denting Sales
+      url: https://www.wsj.com/business/earnings/gm-raises-adjusted-profit-guidance-on-lower-tariff-costs-52a449ab
+    trading_note: LCID 약세 후 GM/F 등 legacy OEM의 1~3거래일 상대수익률을 관찰.
+  - source_symbol: LCID
+    source_name: Lucid
+    source_market: US
+    source_reason: Q1 매출 미스, Gravity 공급 차질, 가이던스 중단
+    source_3m_move_pct: null
+    target_symbol: UBER
+    target_name: Uber
+    target_market: US
+    relation_type: CUSTOMER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Lucid Gravity 공급 차질은 Uber/Lucid/Nuro robotaxi fleet 실행 리스크로 번질 수 있다.
+    evidence:
+    - title: Uber Expands Stake In Lucid for Robo-Taxis
+      url: https://www.barrons.com/articles/uber-stake-lucid-robo-taxis-tesla-stock-d26085ba
+    trading_note: LCID 공급 차질 뉴스 후 UBER AV premium 둔화 여부를 관찰.
+  - source_symbol: LCID
+    source_name: Lucid
+    source_market: US
+    source_reason: Q1 매출 미스, Gravity 공급 차질, 가이던스 중단
+    source_3m_move_pct: null
+    target_symbol: RIVN
+    target_name: Rivian
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: EV startup 전반 risk premium 확대 시 Rivian에도 동조 부담이 생길 수 있다.
+    evidence:
+    - title: Lucid Shares Drop After-Hours Following EV Maker's Report of Lower Sales
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-05-2026/card/lucid-shares-drop-after-hours-following-ev-maker-s-report-of-lower-sales-5SME8fysG0ejZIt85oJE
+    trading_note: LCID 급락일 RIVN이 경쟁 수혜인지 peer 동조 부담인지 장중 상대강도로 판단.
+  - source_symbol: GM
+    source_name: General Motors
+    source_market: US
+    source_reason: Q1 profit beat, tariff refund 기대, ICE/하이브리드 resilience
+    source_3m_move_pct: null
+    target_symbol: APTV
+    target_name: Aptiv
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: GM 생산·ADAS/전장 콘텐츠 기대가 글로벌 tier-1 부품주로 후행 가능.
+    evidence:
+    - title: GM Says Iran War, High Gas Prices Aren't Denting Sales
+      url: https://www.wsj.com/business/earnings/gm-raises-adjusted-profit-guidance-on-lower-tariff-costs-52a449ab
+    trading_note: GM 실적/가이던스 호재 후 APTV와 supplier basket 후행 반응을 관찰.
+  - source_symbol: GM
+    source_name: General Motors
+    source_market: US
+    source_reason: Q1 profit beat, tariff refund 기대, ICE/하이브리드 resilience
+    source_3m_move_pct: null
+    target_symbol: '204320'
+    target_name: HL만도
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: HL만도는 GM 등 글로벌 OEM향 제동·조향·ADAS supply chain 관찰 후보.
+    evidence:
+    - title: 'HL Mando profile: customers include GM, Ford, Hyundai and Kia'
+      url: https://en.wikipedia.org/wiki/HL_Mando
+    trading_note: GM 호재 다음 한국장 HL만도 후행 반응을 관찰.
+  - source_symbol: GM
+    source_name: General Motors
+    source_market: US
+    source_reason: Q1 profit beat, tariff refund 기대, ICE/하이브리드 resilience
+    source_3m_move_pct: null
+    target_symbol: RIVN
+    target_name: Rivian
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: GM의 ICE/하이브리드 수익성 강화는 EV-only valuation에 부담 가능.
+    evidence:
+    - title: GM Says Iran War, High Gas Prices Aren't Denting Sales
+      url: https://www.wsj.com/business/earnings/gm-raises-adjusted-profit-guidance-on-lower-tariff-costs-52a449ab
+    trading_note: GM 강세일 RIVN/LCID 같은 EV-only의 상대 약세를 관찰.
+  - source_symbol: GM
+    source_name: General Motors
+    source_market: US
+    source_reason: Q1 profit beat, tariff refund 기대, ICE/하이브리드 resilience
+    source_3m_move_pct: null
+    target_symbol: LCID
+    target_name: Lucid
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: GM의 재무 안정성과 EV 축소에 따른 이익 개선은 Lucid 같은 고손실 EV 업체에 상대 부담.
+    evidence:
+    - title: Lucid Shares Drop After-Hours Following EV Maker's Report of Lower Sales
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-05-2026/card/lucid-shares-drop-after-hours-following-ev-maker-s-report-of-lower-sales-5SME8fysG0ejZIt85oJE
+    trading_note: GM 호재 후 LCID 상대수익률 약화 여부를 관찰.
+  - source_symbol: 005380
+    source_name: 현대차
+    source_market: KR
+    source_reason: AI 데이터센터, 로봇공장, 자율주행 투자와 주가 급등
+    source_3m_move_pct: null
+    target_symbol: '012330'
+    target_name: 현대모비스
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: 현대차그룹 AI/SDV 투자와 완성차 volume은 모듈·전장 핵심 계열사로 후행 가능.
+    evidence:
+    - title: Hyundai Motor Group to invest $6.3 bln in AI data centre, robot factory in South Korea
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-group-invest-63-bln-ai-data-centre-robot-factory-south-korea-2026-02-27/
+    trading_note: 현대차 급등 다음 현대모비스의 1~3거래일 후행 반응을 관찰.
+  - source_symbol: 005380
+    source_name: 현대차
+    source_market: KR
+    source_reason: AI 데이터센터, 로봇공장, 자율주행 투자와 주가 급등
+    source_3m_move_pct: null
+    target_symbol: '204320'
+    target_name: HL만도
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 조향·제동·ADAS 콘텐츠 증가 기대가 HL만도에 후행 반응 가능.
+    evidence:
+    - title: 'HL Mando profile: brake, steering, suspension and ADAS'
+      url: https://en.wikipedia.org/wiki/HL_Mando
+    trading_note: 현대차 SDV/ADAS 뉴스 후 HL만도 거래대금 증가 여부를 관찰.
+  - source_symbol: 005380
+    source_name: 현대차
+    source_market: KR
+    source_reason: AI 데이터센터, 로봇공장, 자율주행 투자와 주가 급등
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 현대차 로봇/자율주행 catch-up 기대가 Tesla 독주 narrative를 일부 희석할 수 있다.
+    evidence:
+    - title: Latecomer Hyundai races Tesla on robots and self-driving cars
+      url: https://www.ft.com/content/545413e6-4ec6-4fbd-8ba6-a82a8fdb8e3f
+    trading_note: 현대차 AI/로봇 뉴스가 나온 날 TSLA premkt/regular relative move를 관찰.
+  - source_symbol: 005380
+    source_name: 현대차
+    source_market: KR
+    source_reason: AI 데이터센터, 로봇공장, 자율주행 투자와 주가 급등
+    source_3m_move_pct: null
+    target_symbol: LCID
+    target_name: Lucid
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 현대차의 미국 현지화·하이브리드/EV 라인업 강화는 약한 EV startup 수요에 부담 가능.
+    evidence:
+    - title: Hyundai Motor posts Q1 profit drop, warns growing business headwind
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-reports-31-drop-q1-operating-profit-meets-forecasts-2026-04-23/
+    trading_note: 현대차 강세 후 LCID 등 EV startup basket 상대 약세를 관찰.
+  - source_symbol: '000270'
+    source_name: 기아
+    source_market: KR
+    source_reason: 2/25 그룹 투자 기대 급등, 4/9 SDV 지연·EV 목표 하향
+    source_3m_move_pct: null
+    target_symbol: 005850
+    target_name: 에스엘
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 기아 신차·고급 램프 콘텐츠 확대 시 램프 부품주 후행 반응 관찰 후보.
+    evidence:
+    - title: Kia delays launch of software-focused cars, unveils big hike to investment plans
+      url: https://www.reuters.com/business/autos-transportation/south-koreas-kia-cuts-2030-ev-target-over-20-plans-humanoid-robots-us-factory-2026-04-09/
+    trading_note: 기아 강세 후 에스엘의 3~5거래일 후행 반응을 관찰.
+  - source_symbol: '000270'
+    source_name: 기아
+    source_market: KR
+    source_reason: 2/25 그룹 투자 기대 급등, 4/9 SDV 지연·EV 목표 하향
+    source_3m_move_pct: null
+    target_symbol: 010690
+    target_name: 화신
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 기아/현대 미국 생산·차체/샤시 부품 local supply readthrough.
+    evidence:
+    - title: South Korean auto parts maker plans $176M plant in Georgia to supply Hyundai facility, hiring 460
+      url: https://apnews.com/article/39ef3d5aa43954b593beb9908bb20d67
+    trading_note: 기아 강세 후 화신의 거래대금과 자동차 부품주 동조를 관찰.
+  - source_symbol: '000270'
+    source_name: 기아
+    source_market: KR
+    source_reason: SDV 지연·2030 EV 목표 하향
+    source_3m_move_pct: null
+    target_symbol: '373220'
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 기아가 EV 목표를 낮추고 하이브리드 확대를 강조하면 배터리 수요 전환 리스크로 읽힐 수 있다.
+    evidence:
+    - title: Kia delays launch of software-focused cars, unveils big hike to investment plans
+      url: https://www.reuters.com/business/autos-transportation/south-koreas-kia-cuts-2030-ev-target-over-20-plans-humanoid-robots-us-factory-2026-04-09/
+    trading_note: 기아가 EV 목표를 낮추는 뉴스 이후 LGES·Samsung SDI 후행 약세를 관찰.
+  - source_symbol: '000270'
+    source_name: 기아
+    source_market: KR
+    source_reason: SDV 지연·2030 EV 목표 하향
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 기아 SDV 지연은 Tesla FSD/소프트웨어 우위 narrative에 상대 수혜 가능성.
+    evidence:
+    - title: Kia delays launch of software-focused cars, unveils big hike to investment plans
+      url: https://www.reuters.com/business/autos-transportation/south-koreas-kia-cuts-2030-ev-target-over-20-plans-humanoid-robots-us-factory-2026-04-09/
+    trading_note: 기아 SDV 지연 뉴스 당일 TSLA/MBLY의 상대 강도를 관찰.
+  - source_symbol: '012330'
+    source_name: 현대모비스
+    source_market: KR
+    source_reason: OPmobility와 lighting 사업 결합 검토, 전장/모듈 포트폴리오 재편
+    source_3m_move_pct: null
+    target_symbol: 005380
+    target_name: 현대차
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 모비스 포트폴리오 재편은 현대차그룹 부품 효율화·SDV 집중으로 읽힐 수 있다.
+    evidence:
+    - title: OPmobility signs deal to explore buying Hyundai Mobis' lighting business
+      url: https://www.reuters.com/business/opmobility-signs-deal-explore-buying-hyundai-mobis-lighting-business-2026-01-27/
+    trading_note: 모비스 포트폴리오 재편 뉴스 후 현대차·기아 동조를 관찰.
+  - source_symbol: '012330'
+    source_name: 현대모비스
+    source_market: KR
+    source_reason: OPmobility와 lighting 사업 결합 검토, 전장/모듈 포트폴리오 재편
+    source_3m_move_pct: null
+    target_symbol: '204320'
+    target_name: HL만도
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 한국 auto tier-1 전장/ADAS peer로 후행 반응 가능.
+    evidence:
+    - title: OPmobility signs deal to explore buying Hyundai Mobis' lighting business
+      url: https://www.reuters.com/business/opmobility-signs-deal-explore-buying-hyundai-mobis-lighting-business-2026-01-27/
+    trading_note: 모비스 강세 다음 HL만도·에스엘 등 tier-1 부품주 동조를 관찰.
+  - source_symbol: '012330'
+    source_name: 현대모비스
+    source_market: KR
+    source_reason: lighting 사업 재편
+    source_3m_move_pct: null
+    target_symbol: 005850
+    target_name: 에스엘
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 글로벌 조명사업 재편과 경쟁 강도 변화가 국내 램프 전문업체 valuation에 부담 가능.
+    evidence:
+    - title: OPmobility signs deal to explore buying Hyundai Mobis' lighting business
+      url: https://www.reuters.com/business/opmobility-signs-deal-explore-buying-hyundai-mobis-lighting-business-2026-01-27/
+    trading_note: 모비스 lighting 재편 뉴스 후 에스엘의 상대수익률을 관찰.
+  - source_symbol: '012330'
+    source_name: 현대모비스
+    source_market: KR
+    source_reason: 전장/SDV content shift
+    source_3m_move_pct: null
+    target_symbol: 010690
+    target_name: 화신
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 전장·소프트웨어 content re-rating이 단순 샤시 부품 대비 상대 선호를 낮출 수 있다.
+    evidence:
+    - title: 'Sector inference: SDV content shift'
+      url: ''
+    trading_note: 모비스/HL만도 강세 국면에서 화신 등 chassis supplier의 상대 약세를 관찰.
+  - source_symbol: '204320'
+    source_name: HL만도
+    source_market: KR
+    source_reason: 제동·조향·ADAS tier-1, HMG/GM/Ford supply readthrough
+    source_3m_move_pct: null
+    target_symbol: '012330'
+    target_name: 현대모비스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: ADAS/전장 부품 re-rating이 모비스로 확산 가능.
+    evidence:
+    - title: 'HL Mando profile: brake, steering, suspension and ADAS'
+      url: https://en.wikipedia.org/wiki/HL_Mando
+    trading_note: HL만도 강세 후 현대모비스 동조 여부를 관찰.
+  - source_symbol: '204320'
+    source_name: HL만도
+    source_market: KR
+    source_reason: 제동·조향·ADAS tier-1, HMG/GM/Ford supply readthrough
+    source_3m_move_pct: null
+    target_symbol: APTV
+    target_name: Aptiv
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 글로벌 ADAS/electrical architecture peer sentiment.
+    evidence:
+    - title: EV Hardware Spinoff Set For April 1. Here's What To Expect.
+      url: https://www.investors.com/news/aptiv-versigent-evs-electric-vehicles-autos-software-tech-ai-robotaxi/
+    trading_note: HL만도/모비스 강세가 미국 APTV/MBLY sentiment와 연결되는지 관찰.
+  - source_symbol: '204320'
+    source_name: HL만도
+    source_market: KR
+    source_reason: 통합 ADAS·조향·제동 시스템 수요
+    source_3m_move_pct: null
+    target_symbol: MBLY
+    target_name: Mobileye
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 완성차가 시스템 tier-1 통합을 선호할 경우 standalone ADAS chip narrative와 경쟁할 수 있다.
+    evidence:
+    - title: 'Mobileye profile: EyeQ, ADAS and robotaxi'
+      url: https://en.wikipedia.org/wiki/Mobileye
+    trading_note: HL만도 강세일 MBLY가 peer로 동조하는지 경쟁 부담으로 약한지 구분해 관찰.
+  - source_symbol: '204320'
+    source_name: HL만도
+    source_market: KR
+    source_reason: ADAS content shift
+    source_3m_move_pct: null
+    target_symbol: 010690
+    target_name: 화신
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: ADAS/steer-by-wire content가 주도하면 샤시 중심 부품주의 상대 매력 약화 가능.
+    evidence:
+    - title: 'Sector inference: ADAS content shift'
+      url: ''
+    trading_note: ADAS 부품주 강세 국면에서 chassis supplier 상대 약세를 관찰.
+  - source_symbol: 010690
+    source_name: 화신
+    source_market: KR
+    source_reason: 현대차그룹 Georgia/Kia 공급망 local content readthrough
+    source_3m_move_pct: null
+    target_symbol: 005380
+    target_name: 현대차
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 미국 현지 부품망 안정화는 현대차 현지 생산·관세 대응 관찰 포인트.
+    evidence:
+    - title: South Korean auto parts maker plans $176M plant in Georgia to supply Hyundai facility, hiring 460
+      url: https://apnews.com/article/39ef3d5aa43954b593beb9908bb20d67
+    trading_note: 화신 급등 시 현대차의 미국 생산/관세 대응 narrative 동조를 관찰.
+  - source_symbol: 010690
+    source_name: 화신
+    source_market: KR
+    source_reason: 현대차그룹 Georgia/Kia 공급망 local content readthrough
+    source_3m_move_pct: null
+    target_symbol: '000270'
+    target_name: 기아
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Kia West Point/미국 생산망과 차체 부품 공급 연계.
+    evidence:
+    - title: South Korean auto parts maker plans $176M plant in Georgia to supply Hyundai facility, hiring 460
+      url: https://apnews.com/article/39ef3d5aa43954b593beb9908bb20d67
+    trading_note: 화신 강세 후 기아와 미국 생산 관련 부품주 동조를 관찰.
+  - source_symbol: 010690
+    source_name: 화신
+    source_market: KR
+    source_reason: 미국 현지 샤시 부품 local supply
+    source_3m_move_pct: null
+    target_symbol: MGA
+    target_name: Magna
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: HMG 현지 공급망 내 한국 부품사 침투가 글로벌 샤시/차체 공급사에 경쟁 신호가 될 수 있다.
+    evidence:
+    - title: South Korean auto parts maker plans $176M plant in Georgia to supply Hyundai facility, hiring 460
+      url: https://apnews.com/article/39ef3d5aa43954b593beb9908bb20d67
+    trading_note: 화신/HMG supplier 강세 국면에서 Magna 등 글로벌 부품사의 상대수익률을 관찰.
+  - source_symbol: 010690
+    source_name: 화신
+    source_market: KR
+    source_reason: 미국 현지 샤시 부품 local supply
+    source_3m_move_pct: null
+    target_symbol: APTV
+    target_name: Aptiv
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 현지 부품 내재화와 한국 공급망 강화가 일부 글로벌 tier-1에 상대 부담으로 읽힐 수 있다.
+    evidence:
+    - title: 'Sector inference: HMG local supply chain'
+      url: ''
+    trading_note: 화신 강세 후 APTV/MGA 등 글로벌 tier-1 상대 약세 여부를 관찰.

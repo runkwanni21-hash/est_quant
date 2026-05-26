@@ -1,0 +1,16 @@
+[Unit]
+Description=Tele Quant 주말 이슈 브리핑 타이머 (토/일 4H)
+After=network-online.target
+
+[Timer]
+# Sat 07:00, 11:00, 15:00, 19:00 KST = UTC 22:00(금), 02:00, 06:00, 10:00
+OnCalendar=Fri *-*-* 22:00:00
+OnCalendar=Sat *-*-* 02,06,10:00:00
+# Sun 07:00, 11:00, 15:00, 19:00 KST = UTC 22:00(토), 02:00, 06:00, 10:00
+OnCalendar=Sat *-*-* 22:00:00
+OnCalendar=Sun *-*-* 02,06,10:00:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

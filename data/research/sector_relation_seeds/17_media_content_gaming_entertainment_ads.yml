@@ -1,0 +1,758 @@
+sector_relation_seeds:
+  sector_id: media_content_gaming_entertainment_ads
+  sector_name: 미디어 / 콘텐츠 / 게임 / 엔터 / 광고
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 상관관계는 인과관계가 아니며, 매수/매도 추천 아님.
+  - source_3m_move_pct는 기사·가격 보도 기반 근사치. 한국 엔터 일부는 가격 미검증으로 null.
+  - 1일~1개월 스윙 관점에서 후행 반응 관찰 후보로 사용.
+  edges:
+  - source_symbol: NFLX
+    source_name: Netflix
+    source_market: US
+    source_reason: Q1 beat, WBD breakup fee, 광고 매출 목표 $3B, 콘텐츠·가격 인상 모멘텀
+    source_3m_move_pct: 39
+    target_symbol: ROKU
+    target_name: Roku
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Netflix ad-tier와 CTV 광고 회복은 Roku의 CTV inventory·measurement sentiment로 후행 반응 관찰.
+    evidence:
+    - title: Netflix Stock Mauled As Video Streamer Faces Sluggish Growth Outlook
+      url: https://www.investors.com/news/technology/netflix-stock-mauled-sluggish-growth-outlook/
+    trading_note: Netflix 급등 후 CTV 광고주 예산 회복 뉴스와 Roku 거래대금 동반 증가를 관찰.
+  - source_symbol: NFLX
+    source_name: Netflix
+    source_market: US
+    source_reason: Q1 beat, WBD breakup fee, 광고 매출 목표 $3B, 콘텐츠·가격 인상 모멘텀
+    source_3m_move_pct: 39
+    target_symbol: TTD
+    target_name: The Trade Desk
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Streaming 광고 예산 확대 기대가 open internet DSP로 번질 수 있음.
+    evidence:
+    - title: Netflix Q1 2026 earnings; ad revenue target
+      url: https://www.businessinsider.com/netflix-first-quarter-earnings-advertising-price-increases-warner-bros-bid-2026-4
+    trading_note: Netflix 광고 매출 commentary 이후 TTD·ROKU·MGNI의 후행 반응 관찰.
+  - source_symbol: NFLX
+    source_name: Netflix
+    source_market: US
+    source_reason: Q1 beat, WBD breakup fee, 광고 매출 목표 $3B, 콘텐츠·가격 인상 모멘텀
+    source_3m_move_pct: 39
+    target_symbol: DIS
+    target_name: Disney
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 구독·시청시간 경쟁에서 Netflix 강세는 Disney DTC의 수요 전환 리스크.
+    evidence:
+    - title: Netflix streaming competition and Disney DTC margin watch
+      url: https://www.investors.com/news/technology/netflix-stock-upgraded-to-buy-goldman-sachs/
+    trading_note: Netflix 강세가 Disney streaming margin 기대를 누르는지 3~5거래일 관찰.
+  - source_symbol: NFLX
+    source_name: Netflix
+    source_market: US
+    source_reason: Q1 beat, WBD breakup fee, 광고 매출 목표 $3B, 콘텐츠·가격 인상 모멘텀
+    source_3m_move_pct: 39
+    target_symbol: WBD
+    target_name: Warner Bros Discovery
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Netflix의 콘텐츠 투자·광고 scale 우위는 HBO/Max와 legacy TV margin에 부담 후보.
+    evidence:
+    - title: Netflix co-founder Hastings exits; Q1 results and WBD termination fee
+      url: https://www.reuters.com/legal/legalindustry/netflix-co-founder-reed-hastings-exit-june-2026-04-16/
+    trading_note: Netflix 콘텐츠 spending commentary와 WBD spread/거래대금 동시 관찰.
+  - source_symbol: GOOGL
+    source_name: Alphabet
+    source_market: US
+    source_reason: YouTube 광고·구독 성장, Google 광고 회복, AI 기반 광고 효율 기대
+    source_3m_move_pct: 24
+    target_symbol: META
+    target_name: Meta Platforms
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 대형 디지털 광고 회복은 Meta와 Google을 동시 관찰하는 peer momentum.
+    evidence:
+    - title: YouTube revenue and subscription growth
+      url: https://www.investors.com/news/technology/google-stock-youtube-subscription-revenue-netflix/
+    trading_note: GOOGL 강세 당일 META 동조 여부와 광고주 업종 뉴스 확인.
+  - source_symbol: GOOGL
+    source_name: Alphabet
+    source_market: US
+    source_reason: YouTube 광고·구독 성장, Google 광고 회복, AI 기반 광고 효율 기대
+    source_3m_move_pct: 24
+    target_symbol: RDDT
+    target_name: Reddit
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 디지털 광고 risk-on은 커뮤니티·소셜 광고주 예산 회복으로 연결 가능.
+    evidence:
+    - title: Reddit Q1 2026 earnings; ad revenue beat
+      url: https://www.investors.com/news/technology/reddit-stock-rddt-q1-2026/
+    trading_note: 대형 광고 플랫폼 강세 후 RDDT의 1~3거래일 거래대금 확대 관찰.
+  - source_symbol: GOOGL
+    source_name: Alphabet
+    source_market: US
+    source_reason: YouTube 광고·구독 성장, Google 광고 회복, AI 기반 광고 효율 기대
+    source_3m_move_pct: 24
+    target_symbol: TTD
+    target_name: The Trade Desk
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Google의 walled garden·AI 광고 도구 강화는 open web DSP의 경쟁 부담.
+    evidence:
+    - title: Google advertising scale and YouTube revenue
+      url: https://www.investors.com/news/technology/google-stock-youtube-subscription-revenue-netflix/
+    trading_note: GOOGL 강세가 TTD에 동반 수혜인지 경쟁 부담인지 다음 세션 가격으로 분리.
+  - source_symbol: GOOGL
+    source_name: Alphabet
+    source_market: US
+    source_reason: YouTube 광고·구독 성장, Google 광고 회복, AI 기반 광고 효율 기대
+    source_3m_move_pct: 24
+    target_symbol: SNAP
+    target_name: Snap
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 광고 예산이 대형 플랫폼으로 집중될 경우 Snap의 수요 전환 리스크.
+    evidence:
+    - title: Meta poised to surpass Google in digital ad revenue; Snap/Pinterest exposure
+      url: https://www.reuters.com/business/media-telecom/meta-poised-surpass-google-digital-ad-revenue-first-time-report-says-2026-04-13/
+    trading_note: 대형 플랫폼 강세 후 SNAP/PINS가 상대 약세인지 관찰.
+  - source_symbol: APP
+    source_name: AppLovin
+    source_market: US
+    source_reason: Q1 revenue +59%, EBITDA +66%, AI performance ad 회복; SEC probe 리스크 병존
+    source_3m_move_pct: 34
+    target_symbol: U
+    target_name: Unity Software
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 모바일 앱 monetization·AI adtech sentiment가 Unity로 후행 반응 관찰.
+    evidence:
+    - title: AppLovin Q1 2026 earnings beat
+      url: https://www.barrons.com/articles/applovin-earnings-stock-price-78ec614a
+    trading_note: APP 급등 다음 세션 U의 동조/괴리 확인.
+  - source_symbol: APP
+    source_name: AppLovin
+    source_market: US
+    source_reason: Q1 revenue +59%, EBITDA +66%, AI performance ad 회복; SEC probe 리스크 병존
+    source_3m_move_pct: 34
+    target_symbol: RDDT
+    target_name: Reddit
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Performance 광고 회복 기대가 다른 고성장 광고 플랫폼으로 번질 수 있음.
+    evidence:
+    - title: AppLovin Q1 2026 beat and Reddit ad growth
+      url: https://www.barrons.com/articles/applovin-earnings-stock-price-78ec614a
+    trading_note: APP 강세 후 RDDT·META·GOOGL 광고주 commentary 확인.
+  - source_symbol: APP
+    source_name: AppLovin
+    source_market: US
+    source_reason: Q1 revenue +59%, EBITDA +66%, AI performance ad 회복; SEC probe 리스크 병존
+    source_3m_move_pct: 34
+    target_symbol: TTD
+    target_name: The Trade Desk
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: App-install·performance AI 광고 예산이 open internet DSP에서 이동할 리스크.
+    evidence:
+    - title: AppLovin earnings and AI ad platform momentum
+      url: https://www.barrons.com/articles/applovin-earnings-stock-price-78ec614a
+    trading_note: APP 급등 당일 TTD 상대 약세면 경쟁 부담 신호로 관찰.
+  - source_symbol: APP
+    source_name: AppLovin
+    source_market: US
+    source_reason: Q1 revenue +59%, EBITDA +66%, AI performance ad 회복; SEC probe 리스크 병존
+    source_3m_move_pct: 34
+    target_symbol: SNAP
+    target_name: Snap
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: SMB·mobile performance 광고 예산에서 Snap과 경쟁 구도.
+    evidence:
+    - title: Mobile ad budget competition
+      url: https://www.barrons.com/articles/applovin-earnings-stock-price-78ec614a
+    trading_note: APP 강세 후 SNAP의 광고 peer 대비 상대수익률 관찰.
+  - source_symbol: TTD
+    source_name: The Trade Desk
+    source_market: US
+    source_reason: Q1 mixed, Q2 guide 둔화, Amazon/Google 경쟁 부담
+    source_3m_move_pct: -43
+    target_symbol: GOOGL
+    target_name: Alphabet
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: TTD 약세 원인이 walled garden 경쟁이면 Google은 예산 흡수 관찰 후보.
+    evidence:
+    - title: Trade Desk falls after mixed earnings and slower guidance
+      url: https://www.barrons.com/articles/trade-desk-earnings-stock-price-c2edc6e1
+    trading_note: TTD 급락 다음 세션 GOOGL·AMZN 광고 관련 강세 여부 확인.
+  - source_symbol: TTD
+    source_name: The Trade Desk
+    source_market: US
+    source_reason: Q1 mixed, Q2 guide 둔화, Amazon/Google 경쟁 부담
+    source_3m_move_pct: -43
+    target_symbol: AMZN
+    target_name: Amazon
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: Retail media 경쟁 심화가 TTD 둔화 원인일 때 Amazon 광고 수혜 가능성.
+    evidence:
+    - title: Trade Desk competition from Amazon/Google
+      url: https://www.barrons.com/articles/trade-desk-stock-plunges-earnings-f0151062
+    trading_note: TTD 약세가 AMZN 광고 사업 기대와 연결되는지 1~3거래일 관찰.
+  - source_symbol: TTD
+    source_name: The Trade Desk
+    source_market: US
+    source_reason: Q1 mixed, Q2 guide 둔화, Amazon/Google 경쟁 부담
+    source_3m_move_pct: -43
+    target_symbol: MGNI
+    target_name: Magnite
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: CTV/open internet adtech 전반 multiple compression 후행 반응 관찰.
+    evidence:
+    - title: Trade Desk adtech sentiment shock
+      url: https://www.barrons.com/articles/trade-desk-earnings-stock-price-c2edc6e1
+    trading_note: TTD 급락 당일 MGNI·PUBM 동반 약세 확인.
+  - source_symbol: TTD
+    source_name: The Trade Desk
+    source_market: US
+    source_reason: Q1 mixed, Q2 guide 둔화, Amazon/Google 경쟁 부담
+    source_3m_move_pct: -43
+    target_symbol: PUBM
+    target_name: PubMatic
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 중소형 adtech 동반 디레이팅 후보.
+    evidence:
+    - title: Trade Desk adtech sentiment shock
+      url: https://www.barrons.com/articles/trade-desk-earnings-stock-price-c2edc6e1
+    trading_note: TTD 급락 후 PUBM의 반등 실패 여부 관찰.
+  - source_symbol: RBLX
+    source_name: Roblox
+    source_market: US
+    source_reason: FY outlook 하향, DAU 둔화, safety/age verification 영향
+    source_3m_move_pct: -50
+    target_symbol: EA
+    target_name: Electronic Arts
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Roblox engagement 둔화 시 일부 gaming wallet이 premium/live-service IP로 이동할 가능성.
+    evidence:
+    - title: Roblox slashes outlook as users grow slower than expected
+      url: https://www.investopedia.com/roblox-slashes-its-outlook-as-users-grow-slower-than-expected-the-stock-is-plummeting-rblx-11963440
+    trading_note: Roblox 급락 후 EA/TTWO가 동반 약세인지 대체 수요인지 분리 관찰.
+  - source_symbol: RBLX
+    source_name: Roblox
+    source_market: US
+    source_reason: FY outlook 하향, DAU 둔화, safety/age verification 영향
+    source_3m_move_pct: -50
+    target_symbol: TTWO
+    target_name: Take-Two
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Youth gaming attention 약화가 대형 premium IP 선호로 해석될 수 있으나 근거 약함.
+    evidence:
+    - title: Roblox DAU decline and bookings outlook
+      url: https://www.theverge.com/games/921694/roblox-q1-2026-132-million-dau
+    trading_note: RBLX 급락 후 TTWO가 방어적 상대강세인지 확인.
+  - source_symbol: RBLX
+    source_name: Roblox
+    source_market: US
+    source_reason: FY outlook 하향, DAU 둔화, safety/age verification 영향
+    source_3m_move_pct: -50
+    target_symbol: U
+    target_name: Unity Software
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: Creator economy·UGC game platform sentiment 악화의 후행 반응 관찰.
+    evidence:
+    - title: Roblox bookings and DAU slowdown
+      url: https://www.investopedia.com/roblox-slashes-its-outlook-as-users-grow-slower-than-expected-the-stock-is-plummeting-rblx-11963440
+    trading_note: RBLX 급락 다음 세션 U의 동반 약세 여부 관찰.
+  - source_symbol: RBLX
+    source_name: Roblox
+    source_market: US
+    source_reason: FY outlook 하향, DAU 둔화, safety/age verification 영향
+    source_3m_move_pct: -50
+    target_symbol: SNAP
+    target_name: Snap
+    target_market: US
+    relation_type: VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 청소년 engagement·ads cohort 우려가 Snap sentiment로 번질 수 있음.
+    evidence:
+    - title: Roblox youth platform slowdown
+      url: https://www.theverge.com/games/921694/roblox-q1-2026-132-million-dau
+    trading_note: RBLX 약세가 SNAP/PINS 같은 youth/social ads로 전이되는지 관찰.
+  - source_symbol: TTWO
+    source_name: Take-Two
+    source_market: US
+    source_reason: GTA VI preorder 기대, launch timing 모멘텀
+    source_3m_move_pct: 7
+    target_symbol: SONY
+    target_name: Sony Group
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: GTA VI는 console hardware·software attach 기대를 자극할 수 있음.
+    evidence:
+    - title: Take-Two stock rises on GTA VI preorder buzz
+      url: https://www.barrons.com/articles/take-two-stock-price-grand-theft-auto-vi-preorder-86dd9aff
+    trading_note: TTWO 급등 후 SONY의 gaming 관련 commentary와 상대강세 관찰.
+  - source_symbol: TTWO
+    source_name: Take-Two
+    source_market: US
+    source_reason: GTA VI preorder 기대, launch timing 모멘텀
+    source_3m_move_pct: 7
+    target_symbol: MSFT
+    target_name: Microsoft
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Xbox/PC storefront read-through 가능성은 있으나 platform split 불확실.
+    evidence:
+    - title: GTA VI preorder buzz
+      url: https://www.barrons.com/articles/take-two-stock-price-grand-theft-auto-vi-preorder-86dd9aff
+    trading_note: TTWO 강세 후 MSFT gaming 관련 뉴스 동반 여부 확인.
+  - source_symbol: TTWO
+    source_name: Take-Two
+    source_market: US
+    source_reason: GTA VI preorder 기대, launch timing 모멘텀
+    source_3m_move_pct: 7
+    target_symbol: EA
+    target_name: Electronic Arts
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: AAA marketing·player wallet 경쟁으로 EA에 단기 부담 후보.
+    evidence:
+    - title: GTA VI timing and AAA game competition
+      url: https://www.barrons.com/articles/take-two-stock-price-grand-theft-auto-vi-preorder-86dd9aff
+    trading_note: TTWO 급등 당일 EA 상대 약세 여부 관찰.
+  - source_symbol: TTWO
+    source_name: Take-Two
+    source_market: US
+    source_reason: GTA VI preorder 기대, launch timing 모멘텀
+    source_3m_move_pct: 7
+    target_symbol: RBLX
+    target_name: Roblox
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Gaming attention share가 대형 IP로 쏠릴 때 Roblox 부담 가능성.
+    evidence:
+    - title: GTA VI attention share
+      url: https://www.barrons.com/articles/take-two-stock-price-grand-theft-auto-vi-preorder-86dd9aff
+    trading_note: TTWO momentum 구간에서 RBLX가 반등 실패하는지 관찰.
+  - source_symbol: 352820.KS
+    source_name: HYBE
+    source_market: KR
+    source_reason: BTS ARIRANG tour, Q1 record revenue; 관객수·Bang Si-hyuk 수사 리스크 병존
+    source_3m_move_pct: -15
+    target_symbol: 037270.KQ
+    target_name: YG PLUS
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: K-pop album·MD·distribution commerce sentiment의 수혜 가능성.
+    evidence:
+    - title: BTS to visit 34 cities on comeback tour ARIRANG
+      url: https://www.reuters.com/business/media-telecom/kpop-boyband-bts-visit-34-cities-year-comeback-tour-arirang-2026-03-20/
+    trading_note: HYBE 강세 후 YG PLUS의 거래대금·상대강세 후행 반응 관찰.
+  - source_symbol: 352820.KS
+    source_name: HYBE
+    source_market: KR
+    source_reason: BTS ARIRANG tour, Q1 record revenue; 관객수·Bang Si-hyuk 수사 리스크 병존
+    source_3m_move_pct: -15
+    target_symbol: LYV
+    target_name: Live Nation
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: BTS stadium tour demand는 global live-event promoter sentiment로 관찰 가능하나 직접 계약 확인 부족.
+    evidence:
+    - title: BTS world tour ARIRANG
+      url: https://www.reuters.com/business/media-telecom/kpop-boyband-bts-visit-34-cities-year-comeback-tour-arirang-2026-03-20/
+    trading_note: BTS tour 관련 티켓 판매 뉴스와 LYV 동조 여부 관찰.
+  - source_symbol: 352820.KS
+    source_name: HYBE
+    source_market: KR
+    source_reason: BTS ARIRANG tour, Q1 record revenue; 관객수·Bang Si-hyuk 수사 리스크 병존
+    source_3m_move_pct: -15
+    target_symbol: 035900.KQ
+    target_name: JYP Ent.
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: K-pop peer 내 fandom wallet·수급 로테이션 부담 후보.
+    evidence:
+    - title: HYBE Q1 record revenue and BTS tour momentum
+      url: https://www.businessinsider.com/bts-hybe-q1-record-revenue-album-sales-world-tour-2026-4
+    trading_note: HYBE 급등 당일 JYP/SM/YG 상대수익률 비교.
+  - source_symbol: 352820.KS
+    source_name: HYBE
+    source_market: KR
+    source_reason: BTS ARIRANG tour, Q1 record revenue; 관객수·Bang Si-hyuk 수사 리스크 병존
+    source_3m_move_pct: -15
+    target_symbol: 041510.KQ
+    target_name: SM Ent.
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: HYBE 강세 시 K-pop peer 상대 약세 후행 반응 관찰.
+    evidence:
+    - title: HYBE Q1 record revenue and BTS tour momentum
+      url: https://www.businessinsider.com/bts-hybe-q1-record-revenue-album-sales-world-tour-2026-4
+    trading_note: HYBE 강세 구간에서 SM 상대 약세 또는 동반 강세 여부를 구분.
+  - source_symbol: 122870.KQ
+    source_name: YG Entertainment
+    source_market: KR
+    source_reason: BLACKPINK EP DEADLINE, 3년여 만의 group release, tour·YouTube scale
+    source_3m_move_pct: null
+    target_symbol: GOOGL
+    target_name: Alphabet
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: BLACKPINK YouTube engagement·global fan traffic이 YouTube 광고/구독 sentiment로 연결 가능.
+    evidence:
+    - title: K-pop's BLACKPINK returns with new release after more than 3 years
+      url: https://www.reuters.com/business/media-telecom/k-pops-blackpink-returns-with-new-release-after-more-than-3-years-2026-02-27/
+    trading_note: BLACKPINK MV·YouTube 지표 급증 후 GOOGL/YouTube 관련 뉴스 반응 관찰.
+  - source_symbol: 122870.KQ
+    source_name: YG Entertainment
+    source_market: KR
+    source_reason: BLACKPINK EP DEADLINE, 3년여 만의 group release, tour·YouTube scale
+    source_3m_move_pct: null
+    target_symbol: SPOT
+    target_name: Spotify
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Streaming count·playlist 트래픽 수혜 가능성은 있으나 stock read-through 약함.
+    evidence:
+    - title: BLACKPINK EP DEADLINE
+      url: https://www.reuters.com/business/media-telecom/k-pops-blackpink-returns-with-new-release-after-more-than-3-years-2026-02-27/
+    trading_note: BLACKPINK streaming chart momentum과 SPOT 상대강세를 3거래일 관찰.
+  - source_symbol: 122870.KQ
+    source_name: YG Entertainment
+    source_market: KR
+    source_reason: BLACKPINK EP DEADLINE, 3년여 만의 group release, tour·YouTube scale
+    source_3m_move_pct: null
+    target_symbol: 352820.KS
+    target_name: HYBE
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Girl-group mega IP 강세 시 K-pop peer 수급 로테이션 부담 후보.
+    evidence:
+    - title: BLACKPINK comeback and K-pop peer rotation
+      url: https://www.reuters.com/business/media-telecom/k-pops-blackpink-returns-with-new-release-after-more-than-3-years-2026-02-27/
+    trading_note: YG 강세 당일 HYBE/JYP/SM 상대수익률 비교.
+  - source_symbol: 122870.KQ
+    source_name: YG Entertainment
+    source_market: KR
+    source_reason: BLACKPINK EP DEADLINE, 3년여 만의 group release, tour·YouTube scale
+    source_3m_move_pct: null
+    target_symbol: 035900.KQ
+    target_name: JYP Ent.
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Fan spending·앨범/투어 attention 경쟁.
+    evidence:
+    - title: BLACKPINK comeback and K-pop peer rotation
+      url: https://www.reuters.com/business/media-telecom/k-pops-blackpink-returns-with-new-release-after-more-than-3-years-2026-02-27/
+    trading_note: YG 강세 당일 JYP의 로테이션 매도 여부 관찰.
+  - source_symbol: 035900.KQ
+    source_name: JYP Ent.
+    source_market: KR
+    source_reason: Stray Kids concert film 흥행, fanmeeting·festival headline 모멘텀
+    source_3m_move_pct: null
+    target_symbol: IMAX
+    target_name: IMAX
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K-pop concert film 흥행은 premium large-format/event cinema 수요 관찰 후보.
+    evidence:
+    - title: Stray Kids concert film topped opening day box office
+      url: https://nypost.com/2026/02/07/entertainment/stray-kids-school-competition-on-first-day-in-theaters/
+    trading_note: K-pop concert film box office surprise 이후 IMAX event cinema 관련 반응 관찰.
+  - source_symbol: 035900.KQ
+    source_name: JYP Ent.
+    source_market: KR
+    source_reason: Stray Kids concert film 흥행, fanmeeting·festival headline 모멘텀
+    source_3m_move_pct: null
+    target_symbol: AMC
+    target_name: AMC Entertainment
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Event cinema 관객 유입 수혜 가능성은 있으나 AMC 실적 영향은 제한적.
+    evidence:
+    - title: 'Stray Kids: The dominATE Experience theatrical release'
+      url: https://decider.com/2026/02/04/watch-stray-kids-movie-stray-kids-the-dominate-experience-movie-streaming-netflix-youtube/
+    trading_note: 콘서트 필름 흥행이 극장 체인으로 확산되는지 거래대금 확인.
+  - source_symbol: 035900.KQ
+    source_name: JYP Ent.
+    source_market: KR
+    source_reason: Stray Kids concert film 흥행, fanmeeting·festival headline 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 352820.KS
+    target_name: HYBE
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: K-pop 대형 기획사 간 수급 로테이션 부담 후보.
+    evidence:
+    - title: Stray Kids fanmeeting, concert film and festival headline cycle
+      url: https://en.wikipedia.org/wiki/Stray_Kids
+    trading_note: JYP 강세 당일 HYBE/SM/YG 상대수익률 비교.
+  - source_symbol: 035900.KQ
+    source_name: JYP Ent.
+    source_market: KR
+    source_reason: Stray Kids concert film 흥행, fanmeeting·festival headline 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 041510.KQ
+    target_name: SM Ent.
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Boy-group/festival momentum 경쟁으로 peer 상대 약세 관찰.
+    evidence:
+    - title: Stray Kids concert film and live-event cycle
+      url: https://nypost.com/2026/02/07/entertainment/stray-kids-school-competition-on-first-day-in-theaters/
+    trading_note: JYP 강세 시 SM 동반 강세인지 로테이션 약세인지 확인.
+  - source_symbol: 041510.KQ
+    source_name: SM Ent.
+    source_market: KR
+    source_reason: aespa Aexis Line, RIIZE tour, SM Town 30th anniversary live-event 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 035720.KS
+    target_name: Kakao
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Kakao·Kakao Ent의 SM 지분/전략 관계로 SM IP 강세의 후행 반응 관찰.
+    evidence:
+    - title: SM Entertainment ownership includes Kakao and Kakao Entertainment
+      url: https://en.wikipedia.org/wiki/SM_Entertainment
+    trading_note: SM 강세 후 Kakao의 엔터/IP 기대 반응을 3거래일 관찰.
+  - source_symbol: 041510.KQ
+    source_name: SM Ent.
+    source_market: KR
+    source_reason: aespa Aexis Line, RIIZE tour, SM Town 30th anniversary live-event 모멘텀
+    source_3m_move_pct: null
+    target_symbol: SPOT
+    target_name: Spotify
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: aespa/RIIZE streaming traction은 global music platform sentiment 후보.
+    evidence:
+    - title: 'Aespa Synk: Aexis Line and upcoming Complaexity tour'
+      url: https://en.wikipedia.org/wiki/Synk:_Aexis_Line
+    trading_note: SM artist release/tour cycle과 SPOT 반응은 LOW confidence로만 관찰.
+  - source_symbol: 041510.KQ
+    source_name: SM Ent.
+    source_market: KR
+    source_reason: aespa Aexis Line, RIIZE tour, SM Town 30th anniversary live-event 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 352820.KS
+    target_name: HYBE
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: K-pop peer 수급 로테이션과 팬 지출 경쟁.
+    evidence:
+    - title: SM artist tour cycle and K-pop peer rotation
+      url: https://en.wikipedia.org/wiki/Riizing_Loud
+    trading_note: SM 강세 당일 HYBE 상대수익률 확인.
+  - source_symbol: 041510.KQ
+    source_name: SM Ent.
+    source_market: KR
+    source_reason: aespa Aexis Line, RIIZE tour, SM Town 30th anniversary live-event 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 122870.KQ
+    target_name: YG Entertainment
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Girl-group/IP momentum 경쟁 부담 후보.
+    evidence:
+    - title: Aespa and RIIZE tour cycle
+      url: https://en.wikipedia.org/wiki/Synk:_Aexis_Line
+    trading_note: SM 강세 시 YG 동반 강세인지 peer 로테이션인지 확인.
+  - source_symbol: 259960.KS
+    source_name: Krafton
+    source_market: KR
+    source_reason: India Unicorn Growth Fund, BGMI scale, AI first; Blindspot shutdown 부담 병존
+    source_3m_move_pct: null
+    target_symbol: 035420.KS
+    target_name: NAVER
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: HIGH
+    rationale: Krafton·NAVER·Mirae Asset의 India fund 공동 참여로 직접 연결.
+    evidence:
+    - title: PUBG maker Krafton leads South Korean trio in $666 million India tech bet
+      url: https://www.reuters.com/world/asia-pacific/pubg-maker-krafton-leads-south-korean-trio-666-million-india-tech-bet-2025-12-19/
+    trading_note: Krafton India/BGMI 뉴스 후 NAVER의 해외 성장 narrative 반응 관찰.
+  - source_symbol: 259960.KS
+    source_name: Krafton
+    source_market: KR
+    source_reason: India Unicorn Growth Fund, BGMI scale, AI first; Blindspot shutdown 부담 병존
+    source_3m_move_pct: null
+    target_symbol: 006800.KS
+    target_name: Mirae Asset Securities
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: HIGH
+    rationale: Mirae Asset Venture India 운용 구조로 직접 수혜 가능성.
+    evidence:
+    - title: Krafton/Naver/Mirae Asset India fund
+      url: https://www.reuters.com/world/asia-pacific/pubg-maker-krafton-leads-south-korean-trio-666-million-india-tech-bet-2025-12-19/
+    trading_note: India fund 뉴스 후 미래에셋증권의 해외 투자/IB 기대 반응 관찰.
+  - source_symbol: 259960.KS
+    source_name: Krafton
+    source_market: KR
+    source_reason: India Unicorn Growth Fund, BGMI scale, AI first; Blindspot shutdown 부담 병존
+    source_3m_move_pct: null
+    target_symbol: 036570.KS
+    target_name: NCSoft
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Krafton의 PUBG/BGMI·AI game 강세는 국내 게임 peer 수급 로테이션 부담 후보.
+    evidence:
+    - title: PUBG maker Krafton is turning into an AI first developer
+      url: https://www.theverge.com/news/805509/krafton-pubg-ai-first-developer-agentic-gpu-cluster
+    trading_note: Krafton 강세 구간에서 NCSoft/Netmarble 상대 약세 여부 확인.
+  - source_symbol: 259960.KS
+    source_name: Krafton
+    source_market: KR
+    source_reason: India Unicorn Growth Fund, BGMI scale, AI first; Blindspot shutdown 부담 병존
+    source_3m_move_pct: null
+    target_symbol: 251270.KS
+    target_name: Netmarble
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 국내 모바일/글로벌 게임 예산·투자자 관심 경쟁.
+    evidence:
+    - title: Krafton AI first and BGMI scale
+      url: https://www.reuters.com/world/asia-pacific/pubg-maker-krafton-leads-south-korean-trio-666-million-india-tech-bet-2025-12-19/
+    trading_note: Krafton 강세 후 Netmarble의 동반 강세/상대 약세를 분리 관찰.

@@ -1,0 +1,18 @@
+[Unit]
+Description=Tele Quant 평일 4H 브리핑 타이머 (KST 11/15/19/23시)
+After=network-online.target
+
+[Timer]
+# Mon 11:00, 15:00, 19:00, 23:00 KST = UTC 02:00, 06:00, 10:00, 14:00
+OnCalendar=Mon *-*-* 02,06,10,14:00:00
+# Tue~Fri 07:00, 11:00, 15:00, 19:00, 23:00 KST = UTC 22:00(전날), 02:00, 06:00, 10:00, 14:00
+OnCalendar=Tue,Wed,Thu *-*-* 02,06,10,14:00:00
+OnCalendar=Mon,Tue,Wed,Thu *-*-* 22:00:00
+# Fri 07:00, 11:00, 15:00 KST = UTC 22:00(목요일), 02:00, 06:00
+OnCalendar=Fri *-*-* 02,06:00:00
+OnCalendar=Thu *-*-* 22:00:00
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,828 @@
+sector_relation_seeds:
+  sector_id: retail_ecommerce_logistics_travel_airline_casino
+  sector_name: 유통 / 전자상거래 / 물류 / 여행 / 항공 / 카지노
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 투자 추천이 아니라 후행 반응 관찰용 관계 seed.
+  - source_3m_move_pct는 기사 종가로 검증된 경우만 숫자 입력. 불확실한 경우 null.
+  - LOW confidence edge는 테마상 가능성만 있는 후보이므로 가격 검증 필요.
+  edges:
+  - source_symbol: AMZN
+    source_name: Amazon
+    source_market: US
+    source_reason: AWS/AI 수요와 리테일 배송 회복. 2026-02-17 $201.15 → 2026-05-15 $264.14 기준 약 +31.3%.
+    source_3m_move_pct: 31.3
+    target_symbol: NVDA
+    target_name: Nvidia
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Amazon의 대규모 AI capex와 AWS 성장 확인은 GPU/AI 인프라 수혜 가능성 관찰 후보.
+    evidence:
+    - title: Amazon beats quarterly cloud growth estimates
+      url: https://www.reuters.com/business/retail-consumer/amazon-beats-quarterly-cloud-growth-estimates-2026-04-29/
+    trading_note: 1일~1개월 스윙 관점에서 AMZN 급등 후 AI capex 공급망의 후행 반응 관찰.
+  - source_symbol: AMZN
+    source_name: Amazon
+    source_market: US
+    source_reason: AWS/AI 수요와 리테일 배송 회복.
+    source_3m_move_pct: 31.3
+    target_symbol: GOOGL
+    target_name: Alphabet
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 클라우드/AI capex peer sentiment 후행 반응 관찰 후보.
+    evidence:
+    - title: Amazon CEO says AWS AI services have multibillion-dollar run-rate
+      url: https://www.reuters.com/business/retail-consumer/amazon-investors-eye-ai-cloud-spending-ceos-annual-letter-2026-04-09/
+    trading_note: AMZN 급등 후 hyperscaler peer의 1~3거래일 반응 관찰.
+  - source_symbol: AMZN
+    source_name: Amazon
+    source_market: US
+    source_reason: 리테일·식료품·same-day delivery 강화.
+    source_3m_move_pct: 31.3
+    target_symbol: WMT
+    target_name: Walmart
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Amazon 식료품/빠른배송 강화는 Walmart 온라인 식료품 경쟁 부담 후보.
+    evidence:
+    - title: Amazon beats quarterly cloud growth estimates
+      url: https://www.reuters.com/business/retail-consumer/amazon-beats-quarterly-cloud-growth-estimates-2026-04-29/
+    - title: Walmart one-line grocery delivery boom is stretching workers thin
+      url: https://www.businessinsider.com/walmart-one-line-grocery-delivery-boom-stretching-workers-thin-2026-5
+    trading_note: AMZN 리테일 강세일 때 WMT의 온라인 grocery margin 및 배송비 부담을 관찰.
+  - source_symbol: AMZN
+    source_name: Amazon
+    source_market: US
+    source_reason: 식료품·배송 경쟁 강화.
+    source_3m_move_pct: 31.3
+    target_symbol: DASH
+    target_name: DoorDash
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Amazon grocery/Prime delivery 확장은 음식·식료품 배송 플랫폼의 수요 전환 리스크 관찰 후보.
+    evidence:
+    - title: Uber Stock, DoorDash Stock Struggle Despite Strong Forecasts
+      url: https://www.investors.com/news/technology/uber-stock-doordash-stock-q1-struggles-ai-robotaxi/
+    trading_note: AMZN grocery 관련 뉴스 후 DASH 주문 성장률·마진 가이던스 반응 관찰.
+  - source_symbol: SHOP
+    source_name: Shopify
+    source_market: US
+    source_reason: Q1 매출/GMV 고성장에도 가이던스·AI 경쟁 우려로 급락. 정확한 3개월 수익률은 미검증.
+    source_3m_move_pct: null
+    target_symbol: EBAY
+    target_name: eBay
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Shopify 약세가 SMB 판매자/마켓플레이스 대안으로 eBay 관심을 키울 가능성 관찰 후보.
+    evidence:
+    - title: Shopify Stock Plunges as Revenue Guidance Fails to Impress
+      url: https://www.barrons.com/articles/shopify-earnings-stock-price-0cf930e5
+    trading_note: SHOP 급락 후 marketplace 대안주로 EBAY 수급 이동 여부 관찰.
+  - source_symbol: SHOP
+    source_name: Shopify
+    source_market: US
+    source_reason: SMB commerce platform sentiment 약화.
+    source_3m_move_pct: null
+    target_symbol: AMZN
+    target_name: Amazon
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Shopify 약세는 판매자 유입·마켓플레이스 선호 측면에서 Amazon 상대 수혜 가능성 관찰 후보.
+    evidence:
+    - title: Shopify Stock Plunges as Revenue Guidance Fails to Impress
+      url: https://www.barrons.com/articles/shopify-earnings-stock-price-0cf930e5
+    trading_note: SHOP 약세와 AMZN marketplace 강세의 동시 발생 여부 관찰.
+  - source_symbol: SHOP
+    source_name: Shopify
+    source_market: US
+    source_reason: AI/수익성 우려로 commerce-enabler multiple 압박.
+    source_3m_move_pct: null
+    target_symbol: BIGC
+    target_name: BigCommerce
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 같은 e-commerce enablement peer의 밸류에이션 압박 후행 반응 관찰 후보.
+    evidence:
+    - title: Shopify shares slide on lukewarm forecast, AI disruption concerns
+      url: https://www.reuters.com/business/retail-consumer/shopify-shares-slide-lukewarm-forecast-ai-disruption-concerns-2026-05-05/
+    trading_note: SHOP 실적일/가이던스 발표 직후 BIGC 동조화 관찰.
+  - source_symbol: SHOP
+    source_name: Shopify
+    source_market: US
+    source_reason: SMB·온라인 소비 민감주 sentiment 약화.
+    source_3m_move_pct: null
+    target_symbol: ETSY
+    target_name: Etsy
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: discretionary SMB marketplace까지 수요 둔화/광고 효율 우려가 전이될 수 있는 후보.
+    evidence:
+    - title: Shopify Stock Plunges as Revenue Guidance Fails to Impress
+      url: https://www.barrons.com/articles/shopify-earnings-stock-price-0cf930e5
+    trading_note: SHOP 약세 다음 세션 ETSY·SMB marketplace 동반 약세 여부 관찰.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: 강한 예약/가이던스에도 가스비·투자비·로보택시 경쟁 우려. Zoox 제휴는 긍정 catalyst.
+    source_3m_move_pct: null
+    target_symbol: AMZN
+    target_name: Amazon / Zoox
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Uber-Zoox 제휴는 Amazon의 AV/robotaxi 옵션 가치 수혜 가능성 관찰 후보.
+    evidence:
+    - title: Uber Stock Rises on Amazon Zoox Robotaxi Partnership
+      url: https://www.barrons.com/articles/uber-stock-amazon-zoox-robo-taxi-e08b3bed
+    trading_note: UBER가 AV 제휴 뉴스로 강세일 때 AMZN의 Zoox read-through 관찰.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: ride-share sentiment와 연료비/투자비 부담.
+    source_3m_move_pct: null
+    target_symbol: LYFT
+    target_name: Lyft
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Uber 약세는 ride-share peer의 비용·수요 우려로 전이될 수 있음.
+    evidence:
+    - title: Uber Stock, DoorDash Stock Struggle Despite Strong Forecasts
+      url: https://www.investors.com/news/technology/uber-stock-doordash-stock-q1-struggles-ai-robotaxi/
+    trading_note: UBER 급락일 LYFT 동조화와 다음 세션 반등 강도 비교.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: 배송·mobility 플랫폼 비용 부담.
+    source_3m_move_pct: null
+    target_symbol: DASH
+    target_name: DoorDash
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: delivery 플랫폼 전반의 가스비·투자비 부담 리스크 후행 반응 관찰 후보.
+    evidence:
+    - title: Uber Stock, DoorDash Stock Struggle Despite Strong Forecasts
+      url: https://www.investors.com/news/technology/uber-stock-doordash-stock-q1-struggles-ai-robotaxi/
+    trading_note: UBER/DASH 동반 약세 때 비용 가이던스와 광고·subscription 지표 확인.
+  - source_symbol: UBER
+    source_name: Uber
+    source_market: US
+    source_reason: AV 경쟁 심화.
+    source_3m_move_pct: null
+    target_symbol: GOOGL
+    target_name: Alphabet / Waymo
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Uber가 로보택시 위협으로 약세일 때 Waymo 보유 Alphabet은 경쟁 수혜 가능성 관찰 후보.
+    evidence:
+    - title: Uber Stock, DoorDash Stock Struggle Despite Strong Forecasts
+      url: https://www.investors.com/news/technology/uber-stock-doordash-stock-q1-struggles-ai-robotaxi/
+    trading_note: UBER 약세가 AV 경쟁 때문인지 확인 후 GOOGL/TSLA AV sentiment 관찰.
+  - source_symbol: BKNG
+    source_name: Booking Holdings
+    source_market: US
+    source_reason: Q1 매출/예약은 강했으나 중동 전쟁 영향으로 연간 성장 가이던스 하향.
+    source_3m_move_pct: null
+    target_symbol: TCOM
+    target_name: Trip.com
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: BKNG의 gross bookings 성장 자체는 글로벌 여행 수요 peer에 긍정 read-through 가능성.
+    evidence:
+    - title: Booking Holdings quarterly profit rises, trims annual revenue growth forecast
+      url: https://www.reuters.com/business/booking-holdings-quarterly-profit-rises-2026-04-28/
+    trading_note: BKNG gross bookings 강세가 중국/아시아 OTA peer로 확산되는지 관찰.
+  - source_symbol: BKNG
+    source_name: Booking Holdings
+    source_market: US
+    source_reason: OTA demand는 견조, 지정학적 변수로 guide cut.
+    source_3m_move_pct: null
+    target_symbol: EXPE
+    target_name: Expedia
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 여행 예약 수요가 강할 때 OTA peer의 후행 반응 관찰 후보.
+    evidence:
+    - title: Booking Holdings quarterly profit rises
+      url: https://www.reuters.com/business/booking-holdings-quarterly-profit-rises-2026-04-28/
+    trading_note: BKNG 실적에서 room nights/gross bookings가 강하면 EXPE 후행 반응 확인.
+  - source_symbol: BKNG
+    source_name: Booking Holdings
+    source_market: US
+    source_reason: Middle East war/travel route risk로 가이던스 하향.
+    source_3m_move_pct: null
+    target_symbol: ABNB
+    target_name: Airbnb
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: travel 플랫폼 전반의 지정학·수요 불확실성 부담 후보.
+    evidence:
+    - title: Booking Stock Falls as Guidance Disappoints
+      url: https://www.barrons.com/articles/booking-earnings-stock-price-d9108dde
+    trading_note: BKNG guide cut 후 ABNB의 숙박 플랫폼 sentiment 동조화 관찰.
+  - source_symbol: BKNG
+    source_name: Booking Holdings
+    source_market: US
+    source_reason: travel demand와 항공 수요 연결.
+    source_3m_move_pct: null
+    target_symbol: DAL
+    target_name: Delta Air Lines
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: OTA guide cut이 항공 예약/여행 지출 둔화 신호로 해석될 경우 항공주 부담 후보.
+    evidence:
+    - title: Booking Holdings trims annual revenue growth forecast
+      url: https://www.reuters.com/business/booking-holdings-quarterly-profit-rises-2026-04-28/
+    trading_note: OTA 약세가 실제 항공 예약/운임 데이터와 연결되는지 확인.
+  - source_symbol: UAL
+    source_name: United Airlines
+    source_market: US
+    source_reason: 유가·제트유 급등으로 Q1/가이던스 부담, oil plunge 시 강한 반등.
+    source_3m_move_pct: null
+    target_symbol: VLO
+    target_name: Valero Energy
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항공주가 제트유 비용 압박으로 약세일 때 정유/연료마진 관련주는 상대 수혜 가능성 관찰 후보.
+    evidence:
+    - title: United Airlines warns fuel cost spike will hit quarterly results
+      url: https://www.reuters.com/business/united-airlines-warns-fuel-cost-spike-after-iran-strike-hit-quarterly-results-2026-03-06/
+    trading_note: UAL 급락 원인이 유가/jet fuel이면 VLO 등 정유주 동시 강세 확인.
+  - source_symbol: UAL
+    source_name: United Airlines
+    source_market: US
+    source_reason: 제트유·원유 민감도 확대.
+    source_3m_move_pct: null
+    target_symbol: XOM
+    target_name: Exxon Mobil
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항공주 비용 압박의 원인이 유가 상승이면 oil major는 원자재 민감 수혜 후보.
+    evidence:
+    - title: United Airlines warns fuel cost spike will hit quarterly results
+      url: https://www.reuters.com/business/united-airlines-warns-fuel-cost-spike-after-iran-strike-hit-quarterly-results-2026-03-06/
+    trading_note: UAL/DAL 약세와 XOM/CVX 강세가 같은 유가 이벤트에서 발생하는지 관찰.
+  - source_symbol: UAL
+    source_name: United Airlines
+    source_market: US
+    source_reason: 항공업 peer fuel shock.
+    source_3m_move_pct: null
+    target_symbol: DAL
+    target_name: Delta Air Lines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: UAL fuel shock는 Delta/American/Southwest 등 peer의 비용 압박 리스크로 동시 전이 가능.
+    evidence:
+    - title: United Airlines warns fuel cost spike will hit quarterly results
+      url: https://www.reuters.com/business/united-airlines-warns-fuel-cost-spike-after-iran-strike-hit-quarterly-results-2026-03-06/
+    trading_note: 항공주 basket 동조화가 강한 날 DAL의 상대 강도 관찰.
+  - source_symbol: UAL
+    source_name: United Airlines
+    source_market: US
+    source_reason: 항공업 fuel-cost shock.
+    source_3m_move_pct: null
+    target_symbol: LUV
+    target_name: Southwest Airlines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: LCC/국내선 비중 항공사는 유가 상승 시 운임 전가력 확인 필요.
+    evidence:
+    - title: United Airlines warns fuel cost spike will hit quarterly results
+      url: https://www.reuters.com/business/united-airlines-warns-fuel-cost-spike-after-iran-strike-hit-quarterly-results-2026-03-06/
+    trading_note: UAL fuel shock 당일 LUV의 하락률과 다음 세션 반등 강도 비교.
+  - source_symbol: LVS
+    source_name: Las Vegas Sands
+    source_market: US
+    source_reason: Macau/Singapore 수요로 Q1 이익 증가, 중국 관광·카지노 회복 read-through.
+    source_3m_move_pct: null
+    target_symbol: WYNN
+    target_name: Wynn Resorts
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Macau 노출 casino peer로 LVS 실적 개선 시 후행 반응 관찰 후보.
+    evidence:
+    - title: Las Vegas Sands quarterly profit rises on Macau, Singapore demand
+      url: https://www.reuters.com/world/china/casino-operator-las-vegas-sands-quarterly-profit-rises-macau-singapore-demand-2026-04-22/
+    trading_note: LVS 실적/마카오 GGR 뉴스 후 WYNN 동조화 관찰.
+  - source_symbol: LVS
+    source_name: Las Vegas Sands
+    source_market: US
+    source_reason: Macau/Singapore casino demand.
+    source_3m_move_pct: null
+    target_symbol: MGM
+    target_name: MGM Resorts
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 중국/마카오 gaming sentiment 개선 시 casino peer 수혜 가능성.
+    evidence:
+    - title: Las Vegas Sands quarterly profit rises on Macau, Singapore demand
+      url: https://www.reuters.com/world/china/casino-operator-las-vegas-sands-quarterly-profit-rises-macau-singapore-demand-2026-04-22/
+    trading_note: LVS/WYNN/MGM casino basket에서 1거래일 후행 반응 관찰.
+  - source_symbol: LVS
+    source_name: Las Vegas Sands
+    source_market: US
+    source_reason: Asia casino momentum.
+    source_3m_move_pct: null
+    target_symbol: CZR
+    target_name: Caesars Entertainment
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Macau/Asia 노출 선호가 커질 때 Las Vegas 중심 peer에는 상대적 수요 전환 리스크.
+    evidence:
+    - title: Las Vegas Sands quarterly profit rises on Macau, Singapore demand
+      url: https://www.reuters.com/world/china/casino-operator-las-vegas-sands-quarterly-profit-rises-macau-singapore-demand-2026-04-22/
+    trading_note: Asia casino 강세일 때 CZR 상대 약세 여부 관찰.
+  - source_symbol: LVS
+    source_name: Las Vegas Sands
+    source_market: US
+    source_reason: 오프라인 카지노 회복.
+    source_3m_move_pct: null
+    target_symbol: DKNG
+    target_name: DraftKings
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 오프라인 여행·카지노 지출 회복이 온라인 gaming pure-play 선호를 일부 분산시킬 수 있는 LOW 후보.
+    evidence:
+    - title: Las Vegas Sands quarterly profit rises on Macau, Singapore demand
+      url: https://www.reuters.com/world/china/casino-operator-las-vegas-sands-quarterly-profit-rises-macau-singapore-demand-2026-04-22/
+    trading_note: 카지노 오프라인 회복 뉴스와 온라인 gaming주 상대 약세 여부만 관찰.
+  - source_symbol: 003490
+    source_name: 대한항공
+    source_market: KR
+    source_reason: 유가 급등으로 emergency mode, 동시에 Boeing 103대 구매 계획 보도.
+    source_3m_move_pct: null
+    target_symbol: BA
+    target_name: Boeing
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: 대한항공의 대규모 Boeing 항공기 구매는 Boeing backlog 수혜 가능성 관찰 후보.
+    evidence:
+    - title: Korean Air plans 103 Boeing plane purchases valued at $36.2 bln until 2039
+      url: https://www.reuters.com/world/asia-pacific/korean-air-plans-103-boeing-plane-purchases-valued-362-bln-until-2039-2026-03-26/
+    trading_note: 항공기 주문 뉴스 후 BA backlog sentiment 후행 반응 관찰.
+  - source_symbol: 003490
+    source_name: 대한항공
+    source_market: KR
+    source_reason: 장기 기재 투자와 화물기 포함.
+    source_3m_move_pct: null
+    target_symbol: '000120'
+    target_name: CJ대한통운
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 항공화물/물류 capacity cycle이 개선될 때 국내 물류주 후행 반응 후보이나 직접 계약 근거는 약함.
+    evidence:
+    - title: Korean Air plans 103 Boeing plane purchases
+      url: https://www.reuters.com/world/asia-pacific/korean-air-plans-103-boeing-plane-purchases-valued-362-bln-until-2039-2026-03-26/
+    trading_note: 항공화물 운임·수출 물동량 데이터와 함께만 관찰.
+  - source_symbol: 003490
+    source_name: 대한항공
+    source_market: KR
+    source_reason: 제트유가 사업계획 대비 2배 이상, 항공업 비용 압박.
+    source_3m_move_pct: null
+    target_symbol: 089590
+    target_name: 제주항공
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 같은 항공 fuel-cost 구조로 LCC 비용 압박 리스크 후보.
+    evidence:
+    - title: Korean Air to shift to emergency mode in April amid rising oil prices
+      url: https://www.reuters.com/world/asia-pacific/korean-air-shift-emergency-mode-april-amid-rising-oil-prices-iran-war-2026-03-31/
+    trading_note: 대한항공 급락 원인이 유가라면 제주항공 동조 하락 여부 관찰.
+  - source_symbol: 003490
+    source_name: 대한항공
+    source_market: KR
+    source_reason: 유가·환율 부담.
+    source_3m_move_pct: null
+    target_symbol: 091810
+    target_name: 티웨이항공
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Reuters가 T’way 등도 emergency measures라고 보도, 항공 peer 비용 부담 후보.
+    evidence:
+    - title: Korean Air to shift to emergency mode in April amid rising oil prices
+      url: https://www.reuters.com/world/asia-pacific/korean-air-shift-emergency-mode-april-amid-rising-oil-prices-iran-war-2026-03-31/
+    trading_note: 유가/원달러 급등일 LCC basket 동조화 관찰.
+  - source_symbol: '034230'
+    source_name: 파라다이스
+    source_market: KR
+    source_reason: 외래객·중국 관광 회복, foreigner casino 수요 read-through.
+    source_3m_move_pct: null
+    target_symbol: '114090'
+    target_name: GKL
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 외국인 카지노 peer로 중국 관광 회복 시 후행 반응 관찰 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 파라다이스 강세 후 GKL 1거래일 후행 반응 관찰.
+  - source_symbol: '034230'
+    source_name: 파라다이스
+    source_market: KR
+    source_reason: 중국 관광 회복과 casino/hotel spend.
+    source_3m_move_pct: null
+    target_symbol: '032350'
+    target_name: 롯데관광개발
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 제주·카지노·호텔 노출로 중국 관광 회복 수혜 가능성 관찰 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 중국 입국자/카드지출 데이터 발표 후 롯데관광개발 후행 반응 관찰.
+  - source_symbol: '034230'
+    source_name: 파라다이스
+    source_market: KR
+    source_reason: 외국인 카지노 모멘텀.
+    source_3m_move_pct: null
+    target_symbol: '035250'
+    target_name: 강원랜드
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 외국인 카지노/중국 관광 테마로 수급이 이동하면 내국인 카지노 중심 peer는 상대 수요 전환 리스크.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 카지노 테마 내 외국인 카지노와 내국인 카지노의 상대강도 관찰.
+  - source_symbol: '034230'
+    source_name: 파라다이스
+    source_market: KR
+    source_reason: Korea inbound casino demand.
+    source_3m_move_pct: null
+    target_symbol: LVS
+    target_name: Las Vegas Sands
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 중국 관광 지출이 한국으로 분산될 경우 Macau casino에는 매우 약한 경쟁/분산 리스크 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 중국 관광 회복이 Korea vs Macau casino 수급으로 나뉘는지 장기 관찰.
+  - source_symbol: 008770
+    source_name: 호텔신라
+    source_market: KR
+    source_reason: 중국 단체관광/면세 회복 기대와 외래객 카드지출 증가.
+    source_3m_move_pct: null
+    target_symbol: 069960
+    target_name: 현대백화점
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 면세·백화점 관광 소비 회복 peer. 과거 visa-free 뉴스에서 현대백화점도 동반 상승.
+    evidence:
+    - title: South Korea to offer visa-free entry to Chinese tourists
+      url: https://www.reuters.com/world/china/south-korea-offer-visa-fee-entry-chinese-tourists-late-september-2025-08-06/
+    trading_note: 호텔신라 강세 후 백화점/면세 peer 동조화 관찰.
+  - source_symbol: 008770
+    source_name: 호텔신라
+    source_market: KR
+    source_reason: 외래객 소비·면세 회복.
+    source_3m_move_pct: null
+    target_symbol: '034230'
+    target_name: 파라다이스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 중국 관광 회복은 면세뿐 아니라 casino/hotel spend에도 수혜 가능성.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 중국 입국자/카드사용 뉴스 후 파라다이스 후행 반응 관찰.
+  - source_symbol: 008770
+    source_name: 호텔신라
+    source_market: KR
+    source_reason: 오프라인 관광소비 회복.
+    source_3m_move_pct: null
+    target_symbol: CPNG
+    target_name: Coupang
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 관광/면세 소비가 살아날 때 국내 온라인 소비주에는 직접 수혜가 약해 상대 수요 전환 리스크 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 면세/관광주 강세와 CPNG 상대 약세의 동시성만 관찰.
+  - source_symbol: 008770
+    source_name: 호텔신라
+    source_market: KR
+    source_reason: duty-free/tourism 회복.
+    source_3m_move_pct: null
+    target_symbol: '139480'
+    target_name: 이마트
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 관광 면세 지출 회복이 domestic grocery/hypermarket에는 직접 연결성이 낮아 상대 소외 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 관광/면세 basket과 domestic grocery basket 상대강도 관찰.
+  - source_symbol: '000120'
+    source_name: CJ대한통운
+    source_market: KR
+    source_reason: Coupang breach 이후 전통 유통/물류 경쟁사 반사수혜, Q4 overnight/one-day 물량 +120% 보도.
+    source_3m_move_pct: null
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Naver online 사용자/지출 증가와 CJ 물류 volume 증가는 e-commerce 물류 수혜 가능성.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: CJ대한통운 강세 후 NAVER commerce read-through 관찰.
+  - source_symbol: '000120'
+    source_name: CJ대한통운
+    source_market: KR
+    source_reason: 빠른 배송 경쟁 확대.
+    source_3m_move_pct: null
+    target_symbol: '139480'
+    target_name: 이마트
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대형마트 fast-delivery 규제 완화 기대는 물류·유통 동시 수혜 후보.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: 물류주 강세가 대형마트 fast-delivery theme로 확산되는지 관찰.
+  - source_symbol: '000120'
+    source_name: CJ대한통운
+    source_market: KR
+    source_reason: Coupang 물류 moat 약화 가능성.
+    source_3m_move_pct: null
+    target_symbol: CPNG
+    target_name: Coupang
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: CJ대한통운·Naver·E-Mart의 빠른배송 확대는 Coupang의 독주/신뢰도에 부담 후보.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: CJ대한통운/NAVER/이마트 강세와 CPNG 상대 약세 확인.
+  - source_symbol: '000120'
+    source_name: CJ대한통운
+    source_market: KR
+    source_reason: 물류비/배송 경쟁 심화.
+    source_3m_move_pct: null
+    target_symbol: '007070'
+    target_name: GS리테일
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 빠른배송 경쟁이 커지면 유통사는 배송비·물류비 흡수 부담이 발생할 수 있음.
+    evidence:
+    - title: Bunker fuel costs are rising and shipping costs are being passed on to consumers
+      url: https://apnews.com/article/db0ba1dbc0bd3ff2179a84118d0064d0
+    trading_note: 배송 경쟁 심화 뉴스 후 편의점/유통주의 물류비 부담 comment 관찰.
+  - source_symbol: '139480'
+    source_name: 이마트
+    source_market: KR
+    source_reason: Coupang breach·규제 완화 가능성·fast delivery 확대의 반사수혜 후보.
+    source_3m_move_pct: null
+    target_symbol: '000120'
+    target_name: CJ대한통운
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: E-Mart/Naver/Kurly 빠른배송 확대는 3PL/parcel volume 수혜 가능성.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: 이마트 강세가 CJ대한통운 물량 증가 기대감으로 이어지는지 관찰.
+  - source_symbol: '139480'
+    source_name: 이마트
+    source_market: KR
+    source_reason: 오프라인 유통의 빠른배송 확장.
+    source_3m_move_pct: null
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Coupang 신뢰도 하락 후 Naver online 사용자·지출 증가가 확인됨.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: 이마트 강세와 NAVER commerce 지표/검색량 동행 여부 관찰.
+  - source_symbol: '139480'
+    source_name: 이마트
+    source_market: KR
+    source_reason: Coupang 경쟁 압박.
+    source_3m_move_pct: null
+    target_symbol: CPNG
+    target_name: Coupang
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Reuters가 Coupang active users/spending 감소와 전통 유통/물류주 rally를 함께 보도.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: 이마트/롯데쇼핑/CJ대한통운 강세일 CPNG 상대 약세 확인.
+  - source_symbol: '139480'
+    source_name: 이마트
+    source_market: KR
+    source_reason: fast-delivery 경쟁.
+    source_3m_move_pct: null
+    target_symbol: '023530'
+    target_name: 롯데쇼핑
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: E-Mart가 빠른배송에서 점유를 가져오면 peer 유통사에는 경쟁비용 부담 후보.
+    evidence:
+    - title: Coupang braces for increased competition amid fallout from South Korea data breach
+      url: https://www.reuters.com/business/retail-consumer/coupang-braces-increased-competition-amid-fallout-south-korea-data-breach-2026-02-25/
+    trading_note: 이마트와 롯데쇼핑 상대강도 및 배송비 부담 comment 확인.
+  - source_symbol: '032350'
+    source_name: 롯데관광개발
+    source_market: KR
+    source_reason: 제주/카지노/호텔, 중국 관광 회복 read-through.
+    source_3m_move_pct: null
+    target_symbol: '034230'
+    target_name: 파라다이스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 외국인 casino 관광 peer 수혜 가능성.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 롯데관광개발 급등 후 파라다이스/GKL 동조화 관찰.
+  - source_symbol: '032350'
+    source_name: 롯데관광개발
+    source_market: KR
+    source_reason: 제주·외국인 casino demand.
+    source_3m_move_pct: null
+    target_symbol: '114090'
+    target_name: GKL
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 중국·일본·대만 inbound 증가 시 foreigner casino peer 후행 반응 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 외국인 카지노 basket 내 후행 반응 관찰.
+  - source_symbol: '032350'
+    source_name: 롯데관광개발
+    source_market: KR
+    source_reason: 외국인 관광·카지노 테마.
+    source_3m_move_pct: null
+    target_symbol: '035250'
+    target_name: 강원랜드
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 외국인 관광 카지노로 수급이 몰릴 때 내국인 casino는 상대 소외 후보.
+    evidence:
+    - title: South Korea posts record tourist arrivals in March
+      url: https://www.reuters.com/world/asia-pacific/south-korea-posts-record-tourist-arrivals-march-amid-bts-comeback-2026-04-16/
+    trading_note: 외국인 카지노주와 강원랜드의 상대강도 관찰.
+  - source_symbol: '032350'
+    source_name: 롯데관광개발
+    source_market: KR
+    source_reason: Korea inbound casino.
+    source_3m_move_pct: null
+    target_symbol: LVS
+    target_name: Las Vegas Sands
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 중국 관광 지출의 한국 유입 확대는 Macau casino와 약한 경쟁/분산 리스크 후보.
+    evidence:
+    - title: Las Vegas Sands quarterly profit rises on Macau, Singapore demand
+      url: https://www.reuters.com/world/china/casino-operator-las-vegas-sands-quarterly-profit-rises-macau-singapore-demand-2026-04-22/
+    trading_note: 중국 관광 수요가 Korea/Macau casino로 어떻게 나뉘는지 장기 상대강도 관찰.

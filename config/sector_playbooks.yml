@@ -1,0 +1,623 @@
+# 섹터별 분석 플레이북 — 24개 섹터
+# 공개 정보 기반 리서치 보조. 투자 판단 책임은 사용자에게 있음.
+# "매수 권장" / "확정 수익" 표현 금지.
+
+ai_semiconductor_hbm_foundry:
+  display_name: "AI 반도체 / HBM / 파운드리"
+  key_questions:
+    - "HBM / DRAM / NAND / 파운드리 / OSAT 중 어느 노출인가?"
+    - "고객사 NVDA/AMD/TSM/SK하이닉스 CAPEX 사이클은?"
+    - "HBM 공급부족/재고 사이클 위치는?"
+  key_metrics:
+    - "HBM 공급단가(ASP)"
+    - "파운드리 가동률"
+    - "DRAM/NAND 계약가 추세"
+    - "CAPEX 집행 속도"
+  catalysts:
+    - "HBM4/HBM4E 수요 확대"
+    - "NVDA/AMD 차세대 GPU 출시"
+    - "AI 추론용 반도체 주문 증가"
+    - "파운드리 선단공정 전환"
+  risks:
+    - "CAPEX 지연 또는 고객 주문 연기"
+    - "중국 수출 규제 강화"
+    - "과잉공급 전환 시 ASP 하락"
+    - "고객사 집중 리스크"
+  swing_checkpoints:
+    - "SOXX 방향 + NVDA 실적 가이던스"
+    - "10Y 금리 방향 (성장주 할인율)"
+    - "HBM 공급 타이트 여부"
+    - "4H RSI 50~60 눌림 구간 확인"
+  exit_checkpoints:
+    - "SOXX 2주 +15% 이상이면 차익실현 점수 강화"
+    - "NVDA 실적 발표 직전 가이던스 리스크"
+  valuation_note: "성장주 DCF — 금리 민감도 높음, PER(F) 30~40배 구간 관찰"
+
+semicap_equipment_materials_osat:
+  display_name: "반도체 장비 / 소재 / OSAT"
+  key_questions:
+    - "어느 고객사(TSMC/삼성/SK하이닉스)의 CAPEX 수혜인가?"
+    - "장비 backlog와 납기는?"
+    - "소재는 웨이퍼 투입량/가동률과 직결되는가?"
+  key_metrics:
+    - "장비 주문 잔고(backlog)"
+    - "소재 납품 단가"
+    - "고객사 CAPEX 예산"
+    - "OSAT 가동률"
+  catalysts:
+    - "TSMC/삼성 HBM 라인 증설 발주"
+    - "첨단 패키징(CoWoS/HBM) 물량 확대"
+  risks:
+    - "CAPEX 사이클 하강"
+    - "중국 소재 의존 리스크"
+    - "고객사 납기 연기"
+  swing_checkpoints:
+    - "SOXX 방향 + 고객사 CAPEX 발표"
+    - "4H RSI 45~55 눌림 후 반등 확인"
+  exit_checkpoints:
+    - "CAPEX 수혜 기대가 이미 선반영됐는지 확인"
+  valuation_note: "PER(F) 20~30배, EPS성장 + backlog 성장률 복합 평가"
+
+ai_software_cloud_cybersecurity:
+  display_name: "AI 소프트웨어 / 클라우드 / 사이버보안"
+  key_questions:
+    - "ARR/RPO 성장률은?"
+    - "Rule of 40 충족 여부는?"
+    - "AI 매출 기여와 GPU 비용 부담은?"
+    - "좌석형 SaaS vs 사용량 기반 SaaS?"
+  key_metrics:
+    - "ARR(연간반복매출) 성장률"
+    - "NRR(순매출유지율)"
+    - "FCF 마진"
+    - "Rule of 40 = 매출성장률 + FCF마진"
+  catalysts:
+    - "AI 기능 추가 → 고가 플랜 전환"
+    - "엔터프라이즈 AI 예산 집행 확대"
+  risks:
+    - "고PER 멀티플 → 가이던스 실망 시 급락"
+    - "AI 스타트업 경쟁 강화"
+    - "GPU 비용 부담 증가"
+  swing_checkpoints:
+    - "QQQ 방향 + 10Y 금리 방향"
+    - "실적 발표 전후 가이던스 리스크 확인"
+  exit_checkpoints:
+    - "Rule of 40 < 30 구간에서 과열 RSI이면 차익실현 점검"
+  valuation_note: "EV/Sales + Rule of 40 기준, 성장률 둔화 시 멀티플 급락 주의"
+
+ai_power_grid_copper_nuclear:
+  display_name: "AI 전력그리드 / 구리 / 원전"
+  key_questions:
+    - "데이터센터 전력 수요 증가 수혜 여부?"
+    - "구리 수급과 장기 계약 여부?"
+    - "원전 규제 및 허가 일정은?"
+  key_metrics:
+    - "구리 선물(HG=F) 가격"
+    - "변압기 리드타임"
+    - "전력 도매가격(PJM/ERCOT)"
+  catalysts:
+    - "AI 데이터센터 전력 수요 확대"
+    - "원전 재가동/신규 허가"
+  risks:
+    - "인프라 부채비용(10Y 금리)"
+    - "규제/허가 지연"
+    - "구리 공급 과잉 전환"
+  swing_checkpoints:
+    - "구리 선물 방향 + XLU 방향"
+    - "4H RSI 50 눌림 구간"
+  exit_checkpoints:
+    - "구리 급등 후 되돌림 주의"
+  valuation_note: "PBR + 배당수익률 + 장기 CAPEX 사이클"
+
+biotech_pharma_clinical_medtech:
+  display_name: "바이오테크 / 제약 / 임상 / 의료기기"
+  key_questions:
+    - "핵심 파이프라인 임상 단계와 다음 일정은?"
+    - "현금성 자산과 현금소진 속도(burn rate)는?"
+    - "파트너/기술이전 가능성은?"
+    - "FDA/MFDS/EMA PDUFA 일정이 있는가?"
+  key_metrics:
+    - "현금성 자산"
+    - "분기 현금소진(burn rate)"
+    - "파이프라인 단계별 성공 확률"
+    - "TAM(시장규모) 추정"
+  catalysts:
+    - "임상 2/3상 긍정 데이터 발표"
+    - "FDA/MFDS 허가 승인"
+    - "기술이전/파트너십 체결"
+  risks:
+    - "임상 실패 또는 중단"
+    - "현금소진 → 유상증자 가능성"
+    - "경쟁 파이프라인 등장"
+  swing_checkpoints:
+    - "XBI 방향 + 10Y 금리 방향"
+    - "임상 데이터 발표 전후 변동성 주의"
+  exit_checkpoints:
+    - "임상 발표 직전 과열이면 차익실현 점검"
+  valuation_note: "DCF 기반 + 임상 성공 확률 할인, 현금소진 제한 기간 확인"
+  special_module: "clinical_pipeline"
+
+cdmo_bioproduction_adc:
+  display_name: "CDMO / 바이오프로덕션 / ADC"
+  key_questions:
+    - "ADC/mRNA/세포치료 CMO 수주 파이프라인은?"
+    - "생산 용량(Capacity) 확충 일정은?"
+    - "고객사 임상 성공 의존도는?"
+  key_metrics:
+    - "수주 잔고(backlog)"
+    - "Capacity 가동률"
+    - "ADC 링커/페이로드 공정 차별화"
+  catalysts:
+    - "ADC/바이오의약 임상 성공 → 위탁생산 물량 확대"
+    - "mRNA 백신 긴급 수요"
+  risks:
+    - "고객사 임상 실패 → 물량 취소"
+    - "경쟁 CDMO 진입"
+  swing_checkpoints:
+    - "XBI 방향 + ADC 관련 임상 뉴스"
+    - "수주 공시 여부"
+  exit_checkpoints:
+    - "수주 공시 후 단기 급등 시 차익실현 점검"
+  valuation_note: "EV/EBITDA + 수주잔고 성장률 복합 평가"
+  special_module: "order_backlog"
+
+shipbuilding_shipping_lng_equipment:
+  display_name: "조선 / 해운 / LNG 기자재"
+  key_questions:
+    - "최근 수주 현황(LNG선/방산선/탱커 등)?"
+    - "수주잔고(Backlog)와 매출 인식 시점은?"
+    - "후판/환율/인건비 원가 리스크는?"
+    - "Clarkson 선가 트렌드는?"
+  key_metrics:
+    - "수주잔고(CGT)"
+    - "Clarkson 신조선가(Baltic/Clarkson)"
+    - "후판 가격($/t)"
+    - "달러/원 환율"
+    - "발틱건화물지수(BDI)"
+  catalysts:
+    - "LNG 신규 수주 공시"
+    - "방산 수출 계약"
+    - "발틱지수 상승 → 해운 수익성 개선"
+  risks:
+    - "후판/철강 가격 급등"
+    - "달러 약세 (수출 환차손)"
+    - "납기 지연 → 위약금"
+    - "중국 저가 수주 경쟁"
+  swing_checkpoints:
+    - "BDI 방향 + 원화 환율 방향"
+    - "신규 수주 공시 기대 구간"
+    - "4H RSI 40~50 눌림 확인"
+  exit_checkpoints:
+    - "수주 공시 후 갭 상승 시 차익실현 점검"
+    - "금요일 BDI/후판 급등 후 주간 급등이면 차익실현 모드"
+  valuation_note: "PBR + 수주잔고/매출 비율 + ROE 트렌드"
+  special_module: "order_backlog"
+
+defense_space_aerospace_drone:
+  display_name: "방산 / 우주 / 드론"
+  key_questions:
+    - "수출 허가(FMS/DCS) 승인 일정은?"
+    - "국방예산 증가 수혜 여부?"
+    - "수주잔고와 납품 일정은?"
+  key_metrics:
+    - "수주잔고(USD/KRW)"
+    - "국방예산 증가율"
+    - "수출 비중"
+  catalysts:
+    - "전쟁/지정학 위기 → 방산 수요 급증"
+    - "나토 GDP 2% 방위비 의무화"
+    - "방산 수출 허가 승인"
+  risks:
+    - "납품 지연 → 위약금"
+    - "수출 허가 불허"
+    - "지정학 완화 → 방산 멀티플 하락"
+  swing_checkpoints:
+    - "VIX 방향 (지정학 리스크 지표)"
+    - "ITA ETF 방향"
+    - "수출 계약 공시"
+  exit_checkpoints:
+    - "지정학 급등 후 단기 급등이면 차익실현 점검"
+  valuation_note: "PER + 수주잔고/매출 + FCF"
+  special_module: "order_backlog"
+
+auto_ev_autonomous_robotaxi:
+  display_name: "자동차 / EV / 자율주행 / 로보택시"
+  key_questions:
+    - "EV 침투율과 재고 수준은?"
+    - "배터리 원가 하락 트렌드는?"
+    - "자율주행 규제 승인 일정은?"
+  key_metrics:
+    - "EV 판매대수(QoQ)"
+    - "배터리 팩 원가($/kWh)"
+    - "리튬/구리 가격"
+    - "중국 EV 경쟁 강도"
+  catalysts:
+    - "배터리 원가 하락 → 수익성 개선"
+    - "자율주행 규제 완화/승인"
+    - "신모델 수요 예약"
+  risks:
+    - "중국 저가 EV 경쟁"
+    - "배터리 리콜"
+    - "충전 인프라 부족"
+  swing_checkpoints:
+    - "TSLA 방향 + 리튬(LIT) 방향"
+    - "EV 월별 판매 데이터"
+  exit_checkpoints:
+    - "TSLA 실적 발표 직전 과열 주의"
+  valuation_note: "EV/매출 + 장기 TAM, 전통차 대비 상대 멀티플"
+
+battery_materials_lithium_recycling:
+  display_name: "배터리 / 소재 / 리튬 / 리사이클"
+  key_questions:
+    - "리튬/니켈/망간 가격 사이클 위치는?"
+    - "배터리 셀 메이커 공급 계약은?"
+    - "LFP vs NCM 구조 변화 영향은?"
+  key_metrics:
+    - "리튬 탄산가격($/t)"
+    - "니켈 선물(NI=F)"
+    - "LIT ETF 방향"
+    - "배터리 팩 원가"
+  catalysts:
+    - "EV 수요 급증 → 리튬 공급 타이트"
+    - "ESS(에너지저장) 확대 계약"
+  risks:
+    - "리튬 공급 과잉"
+    - "LFP 전환으로 니켈 수요 감소"
+    - "중국 소재 의존 리스크"
+  swing_checkpoints:
+    - "LIT 방향 + 구리 방향"
+    - "배터리 메이커 실적 가이던스"
+  exit_checkpoints:
+    - "리튬 가격 급등 후 되돌림 주의"
+  valuation_note: "PER + 소재 마진 사이클"
+
+financials_banks_insurance_brokers:
+  display_name: "금융 / 은행 / 보험 / 증권"
+  key_questions:
+    - "NIM(순이자마진) 방향은?"
+    - "NPL/연체율 추세는?"
+    - "자본비율(CET1/K-ICS)은 충분한가?"
+    - "배당/자사주 정책은?"
+  key_metrics:
+    - "NIM(Net Interest Margin)"
+    - "NPL비율(고정이하여신율)"
+    - "CET1 또는 K-ICS 비율"
+    - "PBR"
+    - "배당수익률"
+  catalysts:
+    - "금리 인상 → NIM 확대"
+    - "자사주 매입/배당 확대"
+    - "부실채권 감소 확인"
+  risks:
+    - "금리 하락 → NIM 축소"
+    - "부동산 PF 부실 확대"
+    - "경기침체 → 대손충당금 급증"
+  swing_checkpoints:
+    - "10Y 금리 방향 + VIX 방향"
+    - "PBR 0.5 이하 저평가 구간 확인"
+    - "실적 발표 전후 NPL/대손 비용 확인"
+  exit_checkpoints:
+    - "PBR이 역사적 고점 근접이면 차익실현 점검"
+  valuation_note: "PBR + ROE + 배당수익률 복합, 은행은 금리 민감도 분석"
+
+energy_oil_lng_renewables:
+  display_name: "에너지 / 원유 / LNG / 재생에너지"
+  key_questions:
+    - "WTI/Brent 가격 사이클 위치는?"
+    - "LNG 장기 계약과 현물가 차이는?"
+    - "재생에너지 프로젝트 파이프라인은?"
+  key_metrics:
+    - "WTI 원유(CL=F)"
+    - "천연가스(NG=F)"
+    - "XLE ETF 방향"
+    - "재고(EIA 주간보고)"
+  catalysts:
+    - "OPEC 감산 유지/확대"
+    - "지정학 공급 차질"
+    - "LNG 수요 급증"
+  risks:
+    - "달러 강세 → 원자재 역상관"
+    - "경기침체 → 에너지 수요 감소"
+    - "재생에너지 확대로 구조적 수요 감소"
+  swing_checkpoints:
+    - "WTI 방향 + EIA 재고 변화"
+    - "OPEC 회의 일정"
+  exit_checkpoints:
+    - "WTI 급등 후 EIA 재고 증가이면 차익실현 점검"
+  valuation_note: "EV/EBITDA + FCF수익률 + 배당, 유가 민감도 분석"
+
+materials_chem_steel_metals_rareearth:
+  display_name: "소재 / 화학 / 철강 / 희토류"
+  key_questions:
+    - "구리/철강/희토류 가격 사이클은?"
+    - "중국 수요 의존도는?"
+    - "원자재 원가와 판매가 스프레드는?"
+  key_metrics:
+    - "구리 선물(HG=F)"
+    - "철강(SLX ETF)"
+    - "달러인덱스(DXY)"
+    - "중국 CSI300 방향"
+  catalysts:
+    - "중국 경기부양 → 원자재 수요 확대"
+    - "인프라 투자 확대"
+    - "희토류 수출 제한 → 가격 급등"
+  risks:
+    - "달러 강세 → 원자재 하락"
+    - "중국 수요 둔화"
+    - "과잉공급"
+  swing_checkpoints:
+    - "구리 방향 + DXY 방향"
+    - "중국 PMI/인프라 투자 데이터"
+  exit_checkpoints:
+    - "구리 급등 후 DXY 반등이면 차익실현 점검"
+  valuation_note: "PBR + 스프레드(판가-원가) 마진 + 사이클 위치"
+
+construction_infra_reits_cement:
+  display_name: "건설 / 인프라 / 리츠 / 시멘트"
+  key_questions:
+    - "금리 방향과 리츠 할인율은?"
+    - "PF 부실과 미분양 위험은?"
+    - "인프라 수주 파이프라인은?"
+  key_metrics:
+    - "10Y 국채금리"
+    - "IYR ETF 방향"
+    - "미분양 주택 수"
+    - "PF 연체율"
+  catalysts:
+    - "금리 인하 → 리츠 멀티플 회복"
+    - "인프라 예산 확대"
+  risks:
+    - "금리 상승 → 리츠 할인율 확대"
+    - "PF 부실 확대"
+    - "미분양 급증"
+  swing_checkpoints:
+    - "10Y 금리 방향 + IYR 방향"
+    - "기준금리 결정 일정"
+  exit_checkpoints:
+    - "금리 하락 기대 소멸 시 차익실현 점검"
+  valuation_note: "NAV 대비 할인율 + 배당수익률 (리츠), PBR + 수주잔고 (건설)"
+  special_module: "order_backlog"
+
+kbeauty_cosmetics_odm_consumer:
+  display_name: "K-뷰티 / 코스메틱 / ODM / 소비재"
+  key_questions:
+    - "미국/중국/일본 매출 비중과 채널은?"
+    - "ODM vs 브랜드 구분?"
+    - "TikTok Shop/Sephora/Ulta 채널 성장은?"
+    - "재고 수준과 마진 트렌드는?"
+  key_metrics:
+    - "XLY 소비재ETF 방향"
+    - "달러/원(KRW=X)"
+    - "중국 소비자신뢰지수"
+    - "미국 소매판매"
+  catalysts:
+    - "K-뷰티 해외 채널 신규 입점"
+    - "중국 소비 회복"
+    - "달러 강세 → 수출 환차익"
+  risks:
+    - "중국 불매/규제"
+    - "미국 소비 침체"
+    - "원자재 원가 상승"
+  swing_checkpoints:
+    - "XLY 방향 + KRW/USD 방향"
+    - "중국 CSI300 방향"
+  exit_checkpoints:
+    - "달러 강세 소멸 + 중국 소비 부진이면 차익실현 점검"
+  valuation_note: "PER + 영업이익률 + 수출성장률 복합"
+
+retail_ecommerce_logistics_travel_airline_casino:
+  display_name: "유통 / 이커머스 / 물류 / 여행 / 항공 / 카지노"
+  key_questions:
+    - "WTI(항공 원가)와 여행 수요 방향은?"
+    - "이커머스 GMV 성장률은?"
+    - "물류 단가(항공화물/해운)는?"
+  key_metrics:
+    - "XLY 소비재ETF"
+    - "WTI 원유(항공 원가)"
+    - "BDI (해운)"
+    - "여행 검색 지수"
+  catalysts:
+    - "소비자신뢰 개선 → 여행/소비 확대"
+    - "유가 하락 → 항공 마진 개선"
+  risks:
+    - "금리 상승 → 소비 위축"
+    - "유가 급등 → 항공 원가 급증"
+  swing_checkpoints:
+    - "XLY + WTI 방향"
+    - "소비자물가(CPI) 트렌드"
+  exit_checkpoints:
+    - "유가 급등 + 소비 위축 신호이면 차익실현 점검"
+  valuation_note: "EV/EBITDA + FCF + 소비 사이클 위치"
+
+media_content_gaming_entertainment_ads:
+  display_name: "미디어 / 콘텐츠 / 게임 / 광고"
+  key_questions:
+    - "구독자/MAU 성장률은?"
+    - "광고 시장과 글로벌 지역 다각화는?"
+    - "IP(지식재산권) 차별화는?"
+  key_metrics:
+    - "QQQ 방향"
+    - "XLY 방향"
+    - "달러인덱스(DXY) 방향 (글로벌 광고)"
+  catalysts:
+    - "메가 IP 출시/구독자 급증"
+    - "광고 시장 회복"
+  risks:
+    - "스트리밍 과잉 경쟁"
+    - "광고 경기 침체"
+    - "달러 강세 → 해외매출 환손실"
+  swing_checkpoints:
+    - "QQQ + VIX 방향"
+    - "광고 수익 발표 가이던스"
+  exit_checkpoints:
+    - "구독자 성장 둔화 + 고PER이면 차익실현 점검"
+  valuation_note: "EV/매출 + 구독자 당 가치(ARPU) + 광고 수익성"
+
+telecom_network_smartphone_equipment:
+  display_name: "통신 / 네트워크 / 스마트폰 / 장비"
+  key_questions:
+    - "5G 설비투자(CAPEX) 사이클 위치는?"
+    - "스마트폰 교체 사이클은?"
+    - "통신사 배당 안정성은?"
+  key_metrics:
+    - "10Y 국채금리 (설비투자 비용)"
+    - "XLK ETF 방향"
+    - "구리 (통신 인프라)"
+  catalysts:
+    - "5G/6G 장비 교체 사이클 도래"
+    - "AI 에지 컴퓨팅 수요"
+  risks:
+    - "설비투자 부채비용 (고금리)"
+    - "통신사 단말보조금 부담"
+  swing_checkpoints:
+    - "10Y 금리 방향 + XLK 방향"
+    - "스마트폰 출하량 데이터"
+  exit_checkpoints:
+    - "금리 상승 시 통신주 배당 매력 감소 → 차익실현 점검"
+  valuation_note: "배당수익률 + EBITDA 마진 + 설비투자/매출 비율"
+
+food_agriculture_fertilizer_staples:
+  display_name: "식품 / 농업 / 비료 / 필수소비재"
+  key_questions:
+    - "곡물(밀/옥수수) 가격과 원가 영향은?"
+    - "비료(암모니아) 원가와 천연가스 가격 연동은?"
+    - "필수소비재 가격전가력(Pricing Power)은?"
+  key_metrics:
+    - "XLP ETF"
+    - "밀선물(ZW=F)"
+    - "천연가스(NG=F) — 비료 원가"
+    - "달러인덱스 (수입 곡물)"
+  catalysts:
+    - "가뭄/기후 → 곡물 공급 차질 → 농업 수혜"
+    - "비료 가격 안정 → 수익성 개선"
+  risks:
+    - "천연가스 급등 → 비료 원가 상승"
+    - "달러 강세 → 수입 곡물 비용 증가"
+    - "소비자 소득 감소 → 브랜드 다운그레이드"
+  swing_checkpoints:
+    - "XLP 방향 + NG 방향"
+    - "곡물 선물 방향"
+  exit_checkpoints:
+    - "곡물 급등 후 날씨 개선 시 차익실현 점검"
+  valuation_note: "PER + 배당 + FCF수익률 (방어주 특성)"
+
+industrials_machinery_automation_robotics:
+  display_name: "산업재 / 기계 / 자동화 / 로보틱스"
+  key_questions:
+    - "수주잔고와 납기는?"
+    - "제조업 PMI 방향과 CAPEX 사이클은?"
+    - "자동화/로보틱스 구조적 수요는?"
+  key_metrics:
+    - "XLI ETF 방향"
+    - "구리 (산업 수요 대리)"
+    - "ISM 제조업 PMI"
+    - "달러인덱스 (수출 경쟁력)"
+  catalysts:
+    - "제조업 리쇼어링/니어쇼어링 수요"
+    - "자동화 투자 사이클 확대"
+  risks:
+    - "제조업 경기침체"
+    - "달러 강세 → 수출 경쟁력 약화"
+    - "원자재 원가 상승"
+  swing_checkpoints:
+    - "XLI + 구리 방향"
+    - "ISM PMI 추세"
+  exit_checkpoints:
+    - "PMI 하락 전환 시 차익실현 점검"
+  valuation_note: "PER + EV/EBITDA + 수주잔고/매출 복합"
+  special_module: "order_backlog"
+
+payments_crypto_exchange_brokerage:
+  display_name: "페이먼트 / 크립토 / 거래소 / 증권사"
+  key_questions:
+    - "BTC 방향과 크립토 거래량은?"
+    - "결제 GMV 성장률은?"
+    - "금리 환경이 성장주 멀티플에 미치는 영향은?"
+  key_metrics:
+    - "BTC-USD 방향"
+    - "VIX (공포지수)"
+    - "10Y 금리 (성장주 할인율)"
+  catalysts:
+    - "BTC 현물 ETF 승인/자금유입"
+    - "결제 GMV 고성장"
+    - "금리 인하 → 멀티플 회복"
+  risks:
+    - "규제 강화 (SEC/FSC)"
+    - "크립토 시장 급락 → 거래량 감소"
+    - "금리 상승 → 고PER 하락"
+  swing_checkpoints:
+    - "BTC 방향 + VIX 방향"
+    - "규제 뉴스 모니터링"
+  exit_checkpoints:
+    - "BTC 단기 급등 + VIX 상승이면 차익실현 점검"
+  valuation_note: "EV/매출 + 거래량 트렌드 (크립토), PER + FCF (결제)"
+
+healthcare_services_hospitals_diagnostics:
+  display_name: "의료서비스 / 병원 / 진단"
+  key_questions:
+    - "보험 수가 및 정부 지원 정책은?"
+    - "환자수(Volume) 트렌드는?"
+    - "디지털헬스/AI 진단 도입 여부는?"
+  key_metrics:
+    - "XLV ETF 방향"
+    - "10Y 금리 (부채비용)"
+    - "의료비 인플레이션"
+  catalysts:
+    - "고령화 → 의료 수요 구조적 성장"
+    - "AI 진단/수술 로봇 도입"
+  risks:
+    - "정부 수가 인하 정책"
+    - "의료 인력 부족 → 인건비 상승"
+  swing_checkpoints:
+    - "XLV 방향 + 정책 뉴스"
+    - "실적 시즌 환자수/수가 가이던스"
+  exit_checkpoints:
+    - "수가 인하 정책 발표 시 차익실현 점검"
+  valuation_note: "EV/EBITDA + 환자수 성장률"
+
+environment_waste_water_carbon_infra:
+  display_name: "환경 / 폐기물 / 수처리 / 탄소 인프라"
+  key_questions:
+    - "탄소배출권 가격 트렌드는?"
+    - "ESG 규제와 수처리 CAPEX 수요는?"
+    - "금리 영향(인프라 부채비용)은?"
+  key_metrics:
+    - "XLU ETF"
+    - "10Y 금리 (인프라 비용)"
+    - "KRBN 탄소배출권"
+  catalysts:
+    - "탄소중립 규제 강화 → 수혜"
+    - "수처리 인프라 투자 확대"
+  risks:
+    - "금리 상승 → 인프라 CAPEX 부담"
+    - "정책 완화 → 탄소배출권 하락"
+  swing_checkpoints:
+    - "XLU + 10Y 금리 방향"
+    - "탄소 규제 정책 뉴스"
+  exit_checkpoints:
+    - "정책 완화 발표 시 차익실현 점검"
+  valuation_note: "배당수익률 + NAV + EV/EBITDA (인프라 특성)"
+
+macro_sensitive_rates_fx_commodities:
+  display_name: "매크로 민감주 / 금리 / 환율 / 원자재"
+  key_questions:
+    - "현재 매크로 사이클(성장/침체/스태그플레이션)은?"
+    - "달러/원 환율 방향과 환헤지 수준은?"
+    - "10Y 금리 방향이 전체 포트폴리오에 미치는 영향은?"
+  key_metrics:
+    - "10Y 국채금리 (^TNX)"
+    - "달러인덱스 (DX-Y.NYB)"
+    - "금(GLD) — 위험회피"
+    - "VIX (공포지수)"
+  catalysts:
+    - "Fed 금리 인하 → 위험자산 상승"
+    - "달러 약세 → 신흥국/원자재 수혜"
+  risks:
+    - "인플레이션 재발 → 금리 상승"
+    - "지정학 → VIX 급등"
+    - "달러 강세 → 신흥국 자금 이탈"
+  swing_checkpoints:
+    - "VIX + 10Y 금리 + DXY 방향 3개 동시 확인"
+    - "FOMC 일정"
+  exit_checkpoints:
+    - "VIX 급등 + 금리 상승 동시 발생이면 차익실현 점검"
+  valuation_note: "매크로 사이클 포지셔닝 기반"

@@ -1,0 +1,888 @@
+sector_relation_seeds:
+  sector_id: cdmo_bioproduction_adc
+  sector_name: CDMO / 바이오 생산 / 항체·ADC / 위탁개발
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 관계는 확정 인과가 아니라 1일~1개월 스윙 관점의 후행 반응 관찰 후보.
+  - source_3m_move_pct가 null인 항목은 KRX/Nasdaq OHLCV 파이프라인에서 재계산 필요.
+  - '수혜/피해가 같은 target에 동시에 존재할 수 있음: 단기 피어모멘텀과 중기 비용·가격 압박 리스크를 분리해 관찰.'
+  edges:
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 대형 CDMO 순수주, 미국 생산거점 인수, 글로벌 항체 생산 수요 관찰
+    source_3m_move_pct: null
+    target_symbol: 053030.KQ
+    target_name: 바이넥스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대형 CDMO 수주·시설 확장은 중소 바이오 생산 CDMO의 후행 반응 관찰 후보. 직접 수주 연결은 별도 확인 필요.
+    evidence:
+    - title: '삼성바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=207940
+    - title: '바이넥스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=053030
+    - title: Samsung Biologics to buy US drug production facility from GSK for $280 million
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/samsung-biologics-buy-us-drug-production-facility-gsk-280-mln-2025-12-21/
+    trading_note: 1일~1개월 스윙 관점에서 삼성바이오 수주/시설 뉴스 이후 바이넥스 거래대금 증가와 3~5거래일 후행 반응 관찰
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 대형 CDMO 순수주, 미국 생산거점 인수
+    source_3m_move_pct: null
+    target_symbol: 334970.KQ
+    target_name: 프레스티지바이오로직스
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 한국 CDMO 대안군으로 관심이 번질 수 있으나 실제 가동률·신규수주 검증 필요.
+    evidence:
+    - title: '프레스티지바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=334970
+    - title: Samsung Biologics to buy US drug production facility from GSK for $280 million
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/samsung-biologics-buy-us-drug-production-facility-gsk-280-mln-2025-12-21/
+    trading_note: CDMO 대장주 강세 후 소형 CDMO 종목의 거래대금/상한가 추종 여부를 3~10거래일 관찰
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 대형 생산능력 확대
+    source_3m_move_pct: null
+    target_symbol: 053030.KQ
+    target_name: 바이넥스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 대형사 증설·수주가 인력, 배지, 일회용 부자재, GMP 밸리데이션 비용 경쟁을 키우면 중소 CDMO에는 비용 압박 리스크.
+    evidence:
+    - title: '바이넥스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=053030
+    trading_note: 초기에는 피어모멘텀, 이후 원가·가동률 코멘트가 나오면 반대 방향 리스크를 분리 관찰
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 대형 생산능력 확대
+    source_3m_move_pct: null
+    target_symbol: 334970.KQ
+    target_name: 프레스티지바이오로직스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 대형 CDMO가 가격·납기 기준을 선점할 경우 소형 CDMO에는 가격 압박 리스크.
+    evidence:
+    - title: '프레스티지바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=334970
+    trading_note: 후행 반응이 약하거나 거래대금이 꺼지면 수혜보다 비용·가격 압박 쪽으로 해석
+  - source_symbol: 207940.KS
+    source_name: 삼성바이오로직스
+    source_market: KR
+    source_reason: 글로벌 CDMO 대표주 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 068270.KS
+    target_name: 셀트리온
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 바이오 생산·바이오시밀러 대형주 피어로 수급이 같이 움직일 수 있는 관찰 후보.
+    evidence:
+    - title: '셀트리온 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=068270
+    trading_note: 대형 바이오 수급 동조 여부를 당일~익일 관찰
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: ALT-B4 SC 제형 플랫폼, Merck Keytruda SC read-through, Halozyme 특허 이슈
+    source_3m_move_pct: null
+    target_symbol: MRK
+    target_name: Merck
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: ALT-B4 플랫폼 신뢰도 상승은 Keytruda SC 전환 기대와 연결되는 수혜 가능성.
+    evidence:
+    - title: Merck plans U.S. launch of subcutaneous Keytruda
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    - title: New version of Merck's blockbuster cancer drug threatened by patent battle
+      url: https://www.wsj.com/health/pharma/new-version-of-mercks-blockbuster-cancer-drug-threatened-by-patent-battle-b8509c95
+    trading_note: 알테오젠 급등 후 MRK의 SC Keytruda 뉴스 플로우, 특허 헤드라인, 프리마켓 반응 관찰
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: SC 제형 플랫폼 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 298380.KQ
+    target_name: ABL바이오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항체·이중항체·ADC 플랫폼주로 플랫폼 라이선스아웃 기대가 후행 반응할 수 있음.
+    evidence:
+    - title: 'ABL바이오 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=298380
+    trading_note: 알테오젠 강세 후 플랫폼 바이오 내 거래대금 확산 여부 관찰
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: ALT-B4 vs Enhanze 경쟁 구도
+    source_3m_move_pct: null
+    target_symbol: HALO
+    target_name: Halozyme
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 알테오젠/머크 쪽 SC 플랫폼 가시성이 올라가면 Halozyme 특허·라이선스 협상력에는 수요 전환 리스크.
+    evidence:
+    - title: Merck Keytruda SC and Halozyme patent dispute
+      url: https://www.wsj.com/health/pharma/new-version-of-mercks-blockbuster-cancer-drug-threatened-by-patent-battle-b8509c95
+    trading_note: 알테오젠 급등일 미국장 HALO 상대 약세 또는 옵션 변동성 확대 여부 관찰
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: Keytruda SC 전환 기대
+    source_3m_move_pct: null
+    target_symbol: BMY
+    target_name: Bristol Myers Squibb
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Keytruda 투약 편의성 개선은 Opdivo 계열 경쟁 치료제에 상대적 부담 후보. 직접 가격 검증은 부족.
+    evidence:
+    - title: Merck plans U.S. launch of subcutaneous Keytruda
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    trading_note: 면역항암제 경쟁 뉴스가 BMY까지 전이되는지 1~3거래일 관찰
+  - source_symbol: 196170.KQ
+    source_name: 알테오젠
+    source_market: KR
+    source_reason: 바이오 플랫폼 피어 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 141080.KQ
+    target_name: 리가켐바이오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 국내 플랫폼주 수급 확산 시 ADC 플랫폼주로 후행 반응 관찰.
+    evidence:
+    - title: '리가켐바이오 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=141080
+    trading_note: 알테오젠 거래대금 폭증 후 리가켐바이오 당일/익일 상대강도 관찰
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC 플랫폼 ConjuALL, ADC 기술이전·파트너십 기대
+    source_3m_move_pct: null
+    target_symbol: 207940.KS
+    target_name: 삼성바이오로직스
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: ADC 파이프라인 확대는 항체 원액·ADC 생산 CDMO 수요로 연결될 수 있는 수혜 가능성.
+    evidence:
+    - title: '리가켐바이오 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=141080
+    - title: Samsung Biologics / LigaChem Bio partnership reference
+      url: https://en.wikipedia.org/wiki/Samsung_Biologics
+    trading_note: ADC 플랫폼 뉴스 이후 삼성바이오의 ADC/CDMO 수주 뉴스와 후행 거래대금 관찰
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC 플랫폼 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 298380.KQ
+    target_name: ABL바이오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항체·ADC·이중항체 플랫폼 섹터 내 후행 반응 관찰 후보.
+    evidence:
+    - title: 'ABL바이오 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=298380
+    trading_note: ADC 테마가 이중항체/플랫폼 바이오로 확산되는지 관찰
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC 플랫폼 경쟁력 부각
+    source_3m_move_pct: null
+    target_symbol: PFE
+    target_name: Pfizer
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Pfizer-Seagen ADC 포트폴리오와 경쟁·라이선스 밸류에이션 비교가 발생할 수 있으나 직접 가격 영향은 약함.
+    evidence:
+    - title: Pfizer completes Seagen acquisition
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    trading_note: 국내 ADC 플랫폼 급등 후 미국 ADC 보유 대형주의 상대수익률을 3~5거래일 관찰
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: ADC 플랫폼 경쟁력 부각
+    source_3m_move_pct: null
+    target_symbol: ABBV
+    target_name: AbbVie
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: ADC/항체 항암제 경쟁 구도에서 글로벌 대형 제약사의 외부 기술 도입 단가·경쟁 압박 관찰.
+    evidence:
+    - title: Pfizer-Seagen ADC industry read-through
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    trading_note: ADC read-through가 대형 항암제주에 부담으로 해석되는지 관찰
+  - source_symbol: 141080.KQ
+    source_name: 리가켐바이오
+    source_market: KR
+    source_reason: 국내 바이오 플랫폼 강세
+    source_3m_move_pct: null
+    target_symbol: 196170.KQ
+    target_name: 알테오젠
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 국내 플랫폼 바이오 대장주 간 수급 후행 반응 관찰 후보.
+    evidence:
+    - title: '알테오젠 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=196170
+    trading_note: 리가켐 급등일 알테오젠 동반 강세와 다음 세션 갭 유지 여부 관찰
+  - source_symbol: 237690.KQ
+    source_name: 에스티팜
+    source_market: KR
+    source_reason: 올리고핵산 API CDMO, mRNA CDMO, 탈중국 공급망 관심
+    source_3m_move_pct: null
+    target_symbol: DHR
+    target_name: Danaher
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 올리고·mRNA CDMO 증설은 바이오공정 장비·시약 공급사 수요로 이어질 수 있는 관찰 후보.
+    evidence:
+    - title: '에스티팜 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=237690
+    trading_note: 올리고/mRNA CDMO 뉴스가 글로벌 bioprocessing tool 종목으로 전이되는지 관찰
+  - source_symbol: 237690.KQ
+    source_name: 에스티팜
+    source_market: KR
+    source_reason: 올리고·mRNA CDMO 수요
+    source_3m_move_pct: null
+    target_symbol: TMO
+    target_name: Thermo Fisher
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: CDMO 생산·분석·GMP 공정 확대는 글로벌 생명과학 도구/서비스 업체에 간접 수혜 가능성.
+    evidence:
+    - title: '에스티팜 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=237690
+    trading_note: 국내 원료의약품 CDMO 강세 이후 TMO/DHR/RGEN 바스켓의 1주 후행 반응 관찰
+  - source_symbol: 237690.KQ
+    source_name: 에스티팜
+    source_market: KR
+    source_reason: oligo/mRNA 쪽 자금 선호
+    source_3m_move_pct: null
+    target_symbol: 053030.KQ
+    target_name: 바이넥스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 자금이 올리고·mRNA CDMO로 쏠릴 경우 전통 바이오의약품 CDMO에는 수급 공백 리스크.
+    evidence:
+    - title: '바이넥스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=053030
+    trading_note: 에스티팜 강세에도 바이넥스가 거래대금 없이 밀리면 자금 쏠림 리스크로 분류
+  - source_symbol: 237690.KQ
+    source_name: 에스티팜
+    source_market: KR
+    source_reason: oligo/mRNA 쪽 자금 선호
+    source_3m_move_pct: null
+    target_symbol: 334970.KQ
+    target_name: 프레스티지바이오로직스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 플랫폼·원료의약품 선호가 강하면 소형 바이오 생산 CDMO의 후행 반응이 약할 수 있음.
+    evidence:
+    - title: '프레스티지바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=334970
+    trading_note: 에스티팜 강세 이후 소형 CDMO 수급 공백 여부 관찰
+  - source_symbol: 237690.KQ
+    source_name: 에스티팜
+    source_market: KR
+    source_reason: 바이오 생산 소재·공정 수요
+    source_3m_move_pct: null
+    target_symbol: RGEN
+    target_name: Repligen
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 바이오공정 소모품·공정기술 피어로 글로벌 bioprocessing sentiment 후행 반응 관찰.
+    evidence:
+    - title: '에스티팜 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=237690
+    trading_note: 국내 CDMO 소재/공정 테마가 미국 bioprocessing 소모품주로 이어지는지 관찰
+  - source_symbol: 068270.KS
+    source_name: 셀트리온
+    source_market: KR
+    source_reason: 바이오시밀러·직판·미국 생산시설 확보, 생산/판매 통합
+    source_3m_move_pct: null
+    target_symbol: 207940.KS
+    target_name: 삼성바이오로직스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 바이오 대형주 수급·바이오시밀러 생산 밸류체인 모멘텀 후행 반응 관찰.
+    evidence:
+    - title: '셀트리온 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=068270
+    - title: '삼성바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=207940
+    trading_note: 셀트리온 강세일 삼성바이오 상대강도와 기관 수급 동조 관찰
+  - source_symbol: 068270.KS
+    source_name: 셀트리온
+    source_market: KR
+    source_reason: 바이오시밀러 생산/상업화 모멘텀
+    source_3m_move_pct: null
+    target_symbol: 053030.KQ
+    target_name: 바이넥스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 바이오시밀러 품목 다변화·생산 수요가 중소 CDMO 관심으로 번질 수 있음.
+    evidence:
+    - title: '바이넥스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=053030
+    trading_note: 셀트리온 강세 이후 바이오시밀러/CDMO 중소형 후행 거래대금 관찰
+  - source_symbol: 068270.KS
+    source_name: 셀트리온
+    source_market: KR
+    source_reason: 바이오시밀러 경쟁 심화
+    source_3m_move_pct: null
+    target_symbol: PFE
+    target_name: Pfizer
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 셀트리온 제품 점유율 확대는 글로벌 바이오시밀러/오리지널 포트폴리오 보유사에 가격 압박 리스크.
+    evidence:
+    - title: '셀트리온 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=068270
+    trading_note: 셀트리온 제품 점유율 뉴스가 PFE 등 대형 제약 경쟁사에 부담으로 읽히는지 관찰
+  - source_symbol: 068270.KS
+    source_name: 셀트리온
+    source_market: KR
+    source_reason: 바이오시밀러 경쟁 심화
+    source_3m_move_pct: null
+    target_symbol: VTRS
+    target_name: Viatris
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 바이오시밀러·제네릭 경쟁사에는 가격 압박 또는 점유율 방어 비용 부담 후보.
+    evidence:
+    - title: '셀트리온 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=068270
+    trading_note: 셀트리온 강세 이후 미국 바이오시밀러/제네릭 경쟁주의 상대 약세 관찰
+  - source_symbol: 068270.KS
+    source_name: 셀트리온
+    source_market: KR
+    source_reason: 국내 대형 바이오 피어
+    source_3m_move_pct: null
+    target_symbol: 207940.KS
+    target_name: 삼성바이오로직스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 한국 바이오 대형주 동반 수급 관찰 후보.
+    evidence:
+    - title: '삼성바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=207940
+    trading_note: 대형 바이오 동반 수급, 외국인/기관 순매수 동조 여부 관찰
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1 매출 급증, Zepbound/Mounjaro 성장, 경구 비만약 데이터
+    source_3m_move_pct: -0.5
+    target_symbol: WST
+    target_name: West Pharmaceutical Services
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: GLP-1 주사제 생산·출하 증가 기대는 주사제 포장/전달 부품 공급사 수요로 연결될 수 있음.
+    evidence:
+    - title: Lilly's GLP-1 drug sales nearly double
+      url: https://www.marketwatch.com/story/lillys-stock-rallies-as-sales-of-glp-1-drugs-nearly-double-09c01977
+    - title: Patients don't regain much weight switching to Lilly's weight-loss pill
+      url: https://www.reuters.com/legal/litigation/patients-dont-regain-much-weight-switching-injections-lillys-weight-loss-pill-2026-05-12/
+    trading_note: LLY GLP-1 뉴스 후 WST의 익일 갭, 거래대금, 상대강도 관찰
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1 생산·공급망 확대 기대
+    source_3m_move_pct: -0.5
+    target_symbol: TMO
+    target_name: Thermo Fisher
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 대형 제약사의 biologics/peptide 생산 확대는 CDMO·분석·공정 서비스에 간접 수혜 가능성.
+    evidence:
+    - title: Lilly's GLP-1 drug sales nearly double
+      url: https://www.marketwatch.com/story/lillys-stock-rallies-as-sales-of-glp-1-drugs-nearly-double-09c01977
+    trading_note: LLY 실적 후 TMO/DHR/RGEN 바스켓의 3거래일 후행 반응 관찰
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1 경쟁 우위
+    source_3m_move_pct: -0.5
+    target_symbol: NVO
+    target_name: Novo Nordisk
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Lilly GLP-1 실적·임상 우위가 부각될 때 Novo에는 시장점유율·가격 방어 부담 후보.
+    evidence:
+    - title: Novo stock hit after competition and guidance concerns
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-plunge-wipes-50-billion-off-obesity-drug-giant-2026-02-04/
+    trading_note: LLY 급등일 NVO 상대 약세 여부를 당일 관찰
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: GLP-1 리더십
+    source_3m_move_pct: -0.5
+    target_symbol: PFE
+    target_name: Pfizer
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 비만·대사 파이프라인 경쟁에서 Lilly 우위가 부각될 경우 후발 파이프라인 가치에는 부담 후보.
+    evidence:
+    - title: Lilly's GLP-1 drug sales nearly double
+      url: https://www.marketwatch.com/story/lillys-stock-rallies-as-sales-of-glp-1-drugs-nearly-double-09c01977
+    trading_note: LLY 비만약 뉴스가 후발 비만 파이프라인 보유주에 부담으로 전이되는지 관찰
+  - source_symbol: LLY
+    source_name: Eli Lilly
+    source_market: US
+    source_reason: 대형 GLP-1 피어 모멘텀
+    source_3m_move_pct: -0.5
+    target_symbol: NVO
+    target_name: Novo Nordisk
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: GLP-1 섹터 호재에는 Novo도 동반 반응할 수 있으나, 경쟁 뉴스일 때는 반대 방향 가능.
+    evidence:
+    - title: Novo price-cut plan and GLP-1 sector reaction
+      url: https://www.marketwatch.com/story/novo-nordisk-to-cut-price-of-ozempic-wegovy-by-more-than-half-under-trump-deal-shares-fall-9e0d
+    trading_note: 뉴스 성격을 섹터 호재와 경쟁 호재로 구분해 NVO 방향을 분리 관찰
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: 2월 가이던스/가격 압박 급락, Wegovy/Ozempic 경쟁·용량 확대 이슈
+    source_3m_move_pct: -25.0
+    target_symbol: LLY
+    target_name: Eli Lilly
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Novo의 가격·성장률 우려가 커질 때 Lilly는 상대적 경쟁 수혜 가능성.
+    evidence:
+    - title: Novo Nordisk plunge wipes $50 billion off obesity drug giant
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-plunge-wipes-50-billion-off-obesity-drug-giant-2026-02-04/
+    trading_note: NVO 급락일 LLY의 상대강도와 프리마켓 반응 관찰
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: GLP-1 경쟁 구도 흔들림
+    source_3m_move_pct: -25.0
+    target_symbol: VKTX
+    target_name: Viking Therapeutics
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: Novo 약세가 대체 비만 파이프라인 관심으로 이동할 수 있으나 CDMO 직접성은 낮고 가격 검증 필요.
+    evidence:
+    - title: Novo hit by competition concerns
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-plunge-wipes-50-billion-off-obesity-drug-giant-2026-02-04/
+    trading_note: NVO 약세 이후 비만 파이프라인 소형주의 단기 관심 이동만 관찰, CDMO 시드에서는 LOW 유지
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: 약가/성장률 우려
+    source_3m_move_pct: -25.0
+    target_symbol: WST
+    target_name: West Pharmaceutical Services
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: GLP-1 출하 성장률 둔화 우려는 주사제 공급부품 수요 기대를 낮출 수 있는 부담 후보.
+    evidence:
+    - title: Novo stock falls on pricing and guidance pressure
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/novo-nordisk-plunge-wipes-50-billion-off-obesity-drug-giant-2026-02-04/
+    trading_note: NVO 급락 이후 WST/DHR/TMO 공급망 바스켓의 3거래일 후행 약세 관찰
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: 내부 생산능력 확보·Catalent 편입 이슈
+    source_3m_move_pct: -25.0
+    target_symbol: TMO
+    target_name: Thermo Fisher
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Novo가 자체/계열 생산능력을 키우면 외부 CDMO 물량 기대가 낮아질 수 있는 수요 전환 리스크.
+    evidence:
+    - title: Novo Holdings closes acquisition of Catalent
+      url: https://www.novoholdings.dk/news/novo-holdings-completes-acquisition-of-catalent/
+    trading_note: Novo 자체 생산능력 뉴스 후 외부 CDMO/서비스주의 상대 약세 관찰
+  - source_symbol: NVO
+    source_name: Novo Nordisk
+    source_market: US
+    source_reason: GLP-1 피어 모멘텀
+    source_3m_move_pct: -25.0
+    target_symbol: LLY
+    target_name: Eli Lilly
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 약가 인하·규제·커버리지 우려가 GLP-1 섹터 전체로 번질 경우 동반 약세 관찰.
+    evidence:
+    - title: Novo price-cut plan hits Lilly shares too
+      url: https://www.marketwatch.com/story/novo-nordisk-to-cut-price-of-ozempic-wegovy-by-more-than-half-under-trump-deal-shares-fall-9e0d
+    trading_note: 경쟁 뉴스가 아니라 약가/정책 뉴스일 때 LLY 동반 약세 여부 관찰
+  - source_symbol: MRK
+    source_name: Merck
+    source_market: US
+    source_reason: Keytruda SC 전환, Alteogen ALT-B4, 특허 방어·SC 투약 편의성
+    source_3m_move_pct: -11.0
+    target_symbol: 196170.KQ
+    target_name: 알테오젠
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Keytruda SC 성공 가능성은 ALT-B4 공급/로열티 기대에 직접적인 수혜 가능성.
+    evidence:
+    - title: Merck plans U.S. launch of subcutaneous Keytruda
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    - title: New version of Merck's blockbuster cancer drug threatened by patent battle
+      url: https://www.wsj.com/health/pharma/new-version-of-mercks-blockbuster-cancer-drug-threatened-by-patent-battle-b8509c95
+    trading_note: MRK SC Keytruda 헤드라인 후 알테오젠의 장초반 갭·거래대금 관찰
+  - source_symbol: MRK
+    source_name: Merck
+    source_market: US
+    source_reason: 항체·SC 제형 수요
+    source_3m_move_pct: -11.0
+    target_symbol: 207940.KS
+    target_name: 삼성바이오로직스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대형 제약사의 항체 제형 전환·상업 생산 수요는 biologics CDMO 후행 반응 관찰 후보.
+    evidence:
+    - title: Merck Keytruda SC trial/launch
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    - title: '삼성바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=207940
+    trading_note: Merck/Keytruda 생산 수요 뉴스 이후 삼성바이오의 1~3거래일 후행 반응 관찰
+  - source_symbol: MRK
+    source_name: Merck
+    source_market: US
+    source_reason: ALT-B4 기반 SC 전환
+    source_3m_move_pct: -11.0
+    target_symbol: HALO
+    target_name: Halozyme
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Merck-Alteogen SC 전략이 가시화되면 Halozyme Enhanze 특허/라이선스 협상력에는 부담 후보.
+    evidence:
+    - title: Merck/Halozyme patent dispute over SC Keytruda
+      url: https://www.wsj.com/health/pharma/new-version-of-mercks-blockbuster-cancer-drug-threatened-by-patent-battle-b8509c95
+    trading_note: MRK/알테오젠 긍정 뉴스에 HALO가 역방향으로 움직이는지 당일 관찰
+  - source_symbol: MRK
+    source_name: Merck
+    source_market: US
+    source_reason: Keytruda 편의성 개선
+    source_3m_move_pct: -11.0
+    target_symbol: BMY
+    target_name: Bristol Myers Squibb
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Keytruda SC는 경쟁 면역항암제 대비 투약 편의성 차별화가 될 수 있어 BMY에는 경쟁 부담 후보.
+    evidence:
+    - title: Merck plans U.S. launch of subcutaneous Keytruda
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    trading_note: Keytruda SC 호재 이후 BMY 상대수익률을 1~3거래일 관찰
+  - source_symbol: MRK
+    source_name: Merck
+    source_market: US
+    source_reason: 대형 항암제 피어
+    source_3m_move_pct: -11.0
+    target_symbol: PFE
+    target_name: Pfizer
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 항암제 대형주/ADC·항체 섹터 수급이 같이 움직일 수 있으나 직접 연결은 약함.
+    evidence:
+    - title: Pfizer completes Seagen acquisition
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    trading_note: MRK 항암제 뉴스 이후 PFE/ABBV/BMY 피어 바스켓 반응 관찰
+  - source_symbol: PFE
+    source_name: Pfizer
+    source_market: US
+    source_reason: Seagen 인수로 ADC 포트폴리오 확보, 삼성바이오와 과거 바이오시밀러 생산 계약 이력
+    source_3m_move_pct: -5.0
+    target_symbol: 207940.KS
+    target_name: 삼성바이오로직스
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: Pfizer의 바이오시밀러/항체 생산 수요는 삼성바이오 CDMO 수주 read-through로 연결 가능.
+    evidence:
+    - title: Samsung Biologics and Pfizer manufacturing reference
+      url: https://en.wikipedia.org/wiki/Samsung_Biologics
+    - title: Pfizer completes Seagen acquisition
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    trading_note: PFE 생산/ADC 뉴스 후 삼성바이오 수주 기대와 1~3거래일 후행 반응 관찰
+  - source_symbol: PFE
+    source_name: Pfizer
+    source_market: US
+    source_reason: ADC 산업 밸류에이션 read-through
+    source_3m_move_pct: -5.0
+    target_symbol: 141080.KQ
+    target_name: 리가켐바이오
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Seagen ADC 인수·ADC 상업화 기대는 ADC 플랫폼 보유사에 후행 반응 관찰 후보.
+    evidence:
+    - title: Pfizer completes Seagen acquisition
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    - title: '리가켐바이오 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=141080
+    trading_note: 미국 ADC 대형 뉴스 이후 국내 ADC 플랫폼주 거래대금 유입 관찰
+  - source_symbol: PFE
+    source_name: Pfizer
+    source_market: US
+    source_reason: ADC·항암 포트폴리오 경쟁
+    source_3m_move_pct: -5.0
+    target_symbol: ABBV
+    target_name: AbbVie
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Pfizer-Seagen ADC 성과가 부각될 때 ADC/항암 포트폴리오 경쟁사에는 비교 부담 후보.
+    evidence:
+    - title: Pfizer completes Seagen acquisition
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    trading_note: ADC 대형주 간 상대수익률과 애널리스트 코멘트 관찰
+  - source_symbol: PFE
+    source_name: Pfizer
+    source_market: US
+    source_reason: 대형사 내부 ADC 생산/상업화
+    source_3m_move_pct: -5.0
+    target_symbol: 334970.KQ
+    target_name: 프레스티지바이오로직스
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 대형 제약사가 내부 ADC/항체 생산망을 강화하면 소형 외부 CDMO의 잠재 물량에는 수요 전환 리스크.
+    evidence:
+    - title: Pfizer completes Seagen acquisition
+      url: https://apnews.com/article/05b11f085125df5941f64a2ecbb5abba
+    - title: '프레스티지바이오로직스 : Naver Finance'
+      url: https://finance.naver.com/item/main.nhn?code=334970
+    trading_note: 대형사 내부화 뉴스 이후 소형 CDMO의 후행 약세 여부 관찰
+  - source_symbol: PFE
+    source_name: Pfizer
+    source_market: US
+    source_reason: 대형 항암·ADC 피어
+    source_3m_move_pct: -5.0
+    target_symbol: MRK
+    target_name: Merck
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 항암제 대형주 수급 확산 관찰 후보. 직접 공급망 연결은 낮음.
+    evidence:
+    - title: Merck plans U.S. launch of subcutaneous Keytruda
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    trading_note: PFE 항암/ADC 뉴스 후 MRK/ABBV/BMY 피어 반응 관찰
+  - source_symbol: HALO
+    source_name: Halozyme
+    source_market: US
+    source_reason: Enhanze SC 플랫폼, 파트너사 다수, Merck/Alteogen 특허 이슈
+    source_3m_move_pct: null
+    target_symbol: PFE
+    target_name: Pfizer
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Halozyme SC 플랫폼 채택 확대는 기존/잠재 파트너사의 SC 전환 옵션으로 수혜 가능성.
+    evidence:
+    - title: Halozyme stock in buy zone as Enhanze partner programs expand
+      url: https://www.investors.com/stock-lists/sector-leaders/medical-technology-halozyme-stock-halo-buy-zone-earnings-growth-investing-markets/
+    trading_note: HALO 강세가 SC 전환 파트너 대형주로 확산되는지 관찰
+  - source_symbol: HALO
+    source_name: Halozyme
+    source_market: US
+    source_reason: SC 변환 플랫폼 모멘텀
+    source_3m_move_pct: null
+    target_symbol: BMY
+    target_name: Bristol Myers Squibb
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Halozyme 파트너 프로그램이 확대되면 SC 제형 전환 파트너사에는 투약 편의성 개선 기대.
+    evidence:
+    - title: Halozyme stock in buy zone as Enhanze partner programs expand
+      url: https://www.investors.com/stock-lists/sector-leaders/medical-technology-halozyme-stock-halo-buy-zone-earnings-growth-investing-markets/
+    trading_note: HALO 플랫폼 뉴스 후 BMY/PFE 등 파트너 대형주의 상대강도 관찰
+  - source_symbol: HALO
+    source_name: Halozyme
+    source_market: US
+    source_reason: Enhanze 특허·경쟁력 부각
+    source_3m_move_pct: null
+    target_symbol: 196170.KQ
+    target_name: 알테오젠
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Halozyme 특허 방어력이 부각될 경우 ALT-B4 플랫폼에는 라이선스/소송 부담 리스크.
+    evidence:
+    - title: New version of Merck's blockbuster cancer drug threatened by patent battle
+      url: https://www.wsj.com/health/pharma/new-version-of-mercks-blockbuster-cancer-drug-threatened-by-patent-battle-b8509c95
+    trading_note: HALO 특허 호재 후 알테오젠의 당일/익일 갭다운 또는 상대 약세 관찰
+  - source_symbol: HALO
+    source_name: Halozyme
+    source_market: US
+    source_reason: 특허 분쟁/라이선스 리스크
+    source_3m_move_pct: null
+    target_symbol: MRK
+    target_name: Merck
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Halozyme 측 특허 리스크가 커지면 Merck Keytruda SC 출시·마진·법적 비용 부담 관찰.
+    evidence:
+    - title: Merck plans U.S. launch of subcutaneous Keytruda
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    - title: New version of Merck's blockbuster cancer drug threatened by patent battle
+      url: https://www.wsj.com/health/pharma/new-version-of-mercks-blockbuster-cancer-drug-threatened-by-patent-battle-b8509c95
+    trading_note: HALO 급등이 특허 리스크성인지 플랫폼 확장성인지 구분해 MRK 반응 관찰
+  - source_symbol: HALO
+    source_name: Halozyme
+    source_market: US
+    source_reason: SC 플랫폼 피어/경쟁 구도
+    source_3m_move_pct: null
+    target_symbol: 196170.KQ
+    target_name: 알테오젠
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: SC 변환 플랫폼 전체 관심이 커질 경우 알테오젠도 동반 관심을 받을 수 있으나, 특허 뉴스일 때는 반대 방향 가능.
+    evidence:
+    - title: Halozyme Enhanze partner programs
+      url: https://www.investors.com/stock-lists/sector-leaders/medical-technology-halozyme-stock-halo-buy-zone-earnings-growth-investing-markets/
+    - title: Merck Keytruda SC and Alteogen enzyme
+      url: https://www.reuters.com/business/healthcare-pharmaceuticals/merck-plans-us-launch-subcutaneous-version-keytruda-october-1-2025-03-27/
+    trading_note: SC 플랫폼 섹터 호재와 특허 분쟁 호재를 분리해 알테오젠 방향성 관찰

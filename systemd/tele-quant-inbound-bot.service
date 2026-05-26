@@ -1,0 +1,16 @@
+[Unit]
+Description=Tele Quant 수신 봇 — /분석·/브리핑·/포트·/매크로·/수혜주 즉시 응답
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/projects/quant_spillover/tele_quant
+ExecStart=%h/.local/bin/uv run tele-quant inbound-bot
+Restart=on-failure
+RestartSec=10s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

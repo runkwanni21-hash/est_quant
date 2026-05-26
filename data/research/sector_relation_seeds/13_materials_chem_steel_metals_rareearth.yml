@@ -1,0 +1,1035 @@
+sector_relation_seeds:
+  sector_id: materials_chem_steel_metals_rareearth
+  sector_name: 소재 / 화학 / 철강 / 비철 / 희토류
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 투자 추천이 아니라 1일~1개월 스윙 관점의 관계 seed.
+  - 'source_3m_move_pct: null은 정확한 2026-02-17~2026-05-17 종가쌍 미확인.'
+  - KR 종목은 가격 랭킹보다 공시/뉴스/업계 연결성 기반 이벤트 seed 성격이 강함.
+  - direction은 확정 예측이 아니라 후행 반응 관찰 방향.
+  edges:
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 구리 가격 강세와 방산부문 M&A 검토/철회 이벤트
+    source_3m_move_pct: null
+    target_symbol: 005810.KS
+    target_name: 풍산홀딩스
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 풍산 급등 시 지주/계열 노출 종목의 후행 반응 관찰 후보.
+    evidence:
+    - title: Hanwha seeks to buy Poongsan's ammunition business for about $1.1 billion, newspaper says
+      url: https://www.reuters.com/world/asia-pacific/hanwha-seeks-buy-poongsans-ammunition-business-about-11-billion-newspaper-says-2026-04-03/
+    - title: Hanwha Aerospace drops plan to acquire Poongsan's defence unit
+      url: https://www.reuters.com/world/asia-pacific/hanwha-aerospace-drops-plan-acquire-poongsans-defence-unit-2026-04-09/
+    trading_note: 1일~1개월 스윙 관점에서 풍산 뉴스 후 지주주 동조화 확인
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 구리 가격 강세와 방산부문 M&A 검토/철회 이벤트
+    source_3m_move_pct: null
+    target_symbol: 006260.KS
+    target_name: LS
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 구리·전선·전력기기 체인으로 수요/가격 모멘텀 수혜 가능성.
+    evidence:
+    - title: Copper reaches record highs on AI, EV, grid demand and supply concerns
+      url: https://www.wsj.com/finance/commodities-futures/copper-prices-hit-record-highs-as-ai-boom-powers-demand-62327d66
+    trading_note: 구리 가격 급등일 다음 세션 LS·전선주 후행 반응 관찰
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 구리 가격 강세와 방산부문 M&A 검토/철회 이벤트
+    source_3m_move_pct: null
+    target_symbol: 000720.KS
+    target_name: 현대건설
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 구리·철강 자재비 상승이 건설 원가 부담으로 연결될 수 있는 관찰 후보.
+    evidence:
+    - title: Copper hits record highs on supply and demand squeeze
+      url: https://www.marketwatch.com/story/copper-just-hit-a-record-high-it-may-be-in-a-perfect-storm
+    trading_note: 비철 가격 급등 후 건설주 마진 우려 반응 여부 관찰
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 구리 가격 강세와 방산부문 M&A 검토/철회 이벤트
+    source_3m_move_pct: null
+    target_symbol: 009540.KS
+    target_name: HD한국조선해양
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 선박 전장·비철·강재 원가 상승 시 비용 압박 리스크 관찰.
+    evidence:
+    - title: Copper and non-ferrous metals rally amid supply concerns
+      url: https://www.wsj.com/finance/commodities-futures/copper-prices-hit-record-highs-as-ai-boom-powers-demand-62327d66
+    trading_note: 비철 강세가 조선주 원가 우려로 번지는지 1주 내 관찰
+  - source_symbol: 103140.KS
+    source_name: 풍산
+    source_market: KR
+    source_reason: 구리 가격 강세와 방산부문 M&A 검토/철회 이벤트
+    source_3m_move_pct: null
+    target_symbol: 010130.KS
+    target_name: 고려아연
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 비철/critical metals 피어 모멘텀 관찰 후보.
+    evidence:
+    - title: Korea Zinc in talks with US tech firms to extract rare earths from data centre waste
+      url: https://www.reuters.com/world/asia-pacific/korea-zinc-talks-with-us-tech-firms-extract-rare-earths-data-centre-waste-2026-03-12/
+    trading_note: 풍산 강세 다음 거래일 비철 피어 동조화 관찰
+  - source_symbol: 010130.KS
+    source_name: 고려아연
+    source_market: KR
+    source_reason: 미국 희토류 회수·critical minerals·미국 smelter 기대
+    source_3m_move_pct: null
+    target_symbol: 000670.KS
+    target_name: 영풍
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 아연·비철 계열 피어/지분 관계로 후행 반응 관찰 후보.
+    evidence:
+    - title: Korea Zinc in talks with US tech firms to extract rare earths from data centre waste
+      url: https://www.reuters.com/world/asia-pacific/korea-zinc-talks-with-us-tech-firms-extract-rare-earths-data-centre-waste-2026-03-12/
+    trading_note: 고려아연 급등 시 영풍 동조화 여부 관찰
+  - source_symbol: 010130.KS
+    source_name: 고려아연
+    source_market: KR
+    source_reason: 미국 희토류 회수·critical minerals·미국 smelter 기대
+    source_3m_move_pct: null
+    target_symbol: MP
+    target_name: MP Materials
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 희토류 공급망 정책 read-through 가능성.
+    evidence:
+    - title: Rare earths surge above price floor given to MP Materials
+      url: https://www.reuters.com/business/energy/rare-earths-surge-above-price-floor-given-mp-materials-2026-02-18/
+    trading_note: 한국 critical minerals 뉴스 후 미국 희토류주 후행 반응 관찰
+  - source_symbol: 010130.KS
+    source_name: 고려아연
+    source_market: KR
+    source_reason: 미국 희토류 회수·critical minerals·미국 smelter 기대
+    source_3m_move_pct: null
+    target_symbol: 005930.KS
+    target_name: 삼성전자
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: critical minerals 가격 상승은 반도체 소재비 부담 후보이나 직접 가격 검증은 약함.
+    evidence:
+    - title: Trump, Xi weigh rare earth truce extension as China's curbs still bite
+      url: https://www.reuters.com/business/aerospace-defense/trump-xi-weigh-rare-earth-truce-extension-chinas-curbs-still-bite-2026-05-13/
+    trading_note: 희토류 공급망 뉴스가 대형 반도체주 비용 우려로 확산되는지 관찰
+  - source_symbol: 010130.KS
+    source_name: 고려아연
+    source_market: KR
+    source_reason: 미국 희토류 회수·critical minerals·미국 smelter 기대
+    source_3m_move_pct: null
+    target_symbol: 000660.KS
+    target_name: SK하이닉스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 희소금속 공급 차질 시 소재비·공급망 리스크 관찰 후보.
+    evidence:
+    - title: China rare earth export restrictions continue to bite
+      url: https://www.reuters.com/business/aerospace-defense/trump-xi-weigh-rare-earth-truce-extension-chinas-curbs-still-bite-2026-05-13/
+    trading_note: 희토류 공급망 리스크가 반도체 대형주에 후행 반영되는지 관찰
+  - source_symbol: 010130.KS
+    source_name: 고려아연
+    source_market: KR
+    source_reason: 미국 희토류 회수·critical minerals·미국 smelter 기대
+    source_3m_move_pct: null
+    target_symbol: 103140.KS
+    target_name: 풍산
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 비철 금속주 동반 모멘텀 관찰 후보.
+    evidence:
+    - title: Copper reaches record highs as metals rally
+      url: https://www.wsj.com/finance/commodities-futures/copper-prices-hit-record-highs-as-ai-boom-powers-demand-62327d66
+    trading_note: 고려아연 강세 다음 세션 풍산 후행 반응 관찰
+  - source_symbol: 005490.KS
+    source_name: POSCO홀딩스
+    source_market: KR
+    source_reason: 철강 가격/미국 steel 투자/피어 실적 read-through
+    source_3m_move_pct: null
+    target_symbol: 004020.KS
+    target_name: 현대제철
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 고로·전기로 철강 피어 후행 반응 관찰.
+    evidence:
+    - title: South Korea's Hyundai Steel plans $2.9 billion capital increase for US steel plant
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-hyundai-steel-says-plans-29-bln-capital-increase-us-steel-plant-2026-01-26/
+    trading_note: POSCO홀딩스 강세 후 현대제철 1거래일 후행 반응 관찰
+  - source_symbol: 005490.KS
+    source_name: POSCO홀딩스
+    source_market: KR
+    source_reason: 철강 가격/미국 steel 투자/피어 실적 read-through
+    source_3m_move_pct: null
+    target_symbol: 001430.KS
+    target_name: 세아베스틸지주
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 특수강 가격/철강 심리 개선 수혜 가능성.
+    evidence:
+    - title: Steel Dynamics posts higher Q1 profit and sales amid growth in steel shipments
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강 가격 모멘텀 확산 시 특수강 후행 관찰
+  - source_symbol: 005490.KS
+    source_name: POSCO홀딩스
+    source_market: KR
+    source_reason: 철강 가격/미국 steel 투자/피어 실적 read-through
+    source_3m_move_pct: null
+    target_symbol: 000720.KS
+    target_name: 현대건설
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 철근·강재 가격 상승 시 건설 원가 부담 후보.
+    evidence:
+    - title: Steel prices and lead times improved
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강주 급등 후 건설주 원가 우려 반응 관찰
+  - source_symbol: 005490.KS
+    source_name: POSCO홀딩스
+    source_market: KR
+    source_reason: 철강 가격/미국 steel 투자/피어 실적 read-through
+    source_3m_move_pct: null
+    target_symbol: 329180.KS
+    target_name: HD현대중공업
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 후판 가격 상승 시 조선 원가 압박 리스크.
+    evidence:
+    - title: Steel Dynamics reports improved prices, backlogs and shipments
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강 가격 강세가 조선 원가 우려로 연결되는지 관찰
+  - source_symbol: 005490.KS
+    source_name: POSCO홀딩스
+    source_market: KR
+    source_reason: 철강 가격/미국 steel 투자/피어 실적 read-through
+    source_3m_move_pct: null
+    target_symbol: NUE
+    target_name: Nucor
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 글로벌 철강 피어 실적·가격 read-through.
+    evidence:
+    - title: Nucor beats quarterly revenue estimates on steel mills strength
+      url: https://www.reuters.com/business/nucor-beats-quarterly-revenue-estimates-steel-mills-strength-2026-04-27/
+    trading_note: 한국 철강주 강세와 미국 철강 피어 동조화 관찰
+  - source_symbol: 004020.KS
+    source_name: 현대제철
+    source_market: KR
+    source_reason: 미국 Louisiana steel plant 투자와 철강 가격 read-through
+    source_3m_move_pct: null
+    target_symbol: 005490.KS
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 철강 대형주 피어 모멘텀 관찰.
+    evidence:
+    - title: Hyundai Steel plans US steel plant capital increase
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-hyundai-steel-says-plans-29-bln-capital-increase-us-steel-plant-2026-01-26/
+    trading_note: 현대제철 강세 후 POSCO홀딩스 후행 반응 관찰
+  - source_symbol: 004020.KS
+    source_name: 현대제철
+    source_market: KR
+    source_reason: 미국 Louisiana steel plant 투자와 철강 가격 read-through
+    source_3m_move_pct: null
+    target_symbol: 012330.KS
+    target_name: 현대모비스
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 현대차그룹 내 공급 안정성 기대는 고객사 비용 안정 후보이나 직접 가격 검증은 약함.
+    evidence:
+    - title: Hyundai Steel and POSCO Louisiana steel plant plan
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-hyundai-steel-says-plans-29-bln-capital-increase-us-steel-plant-2026-01-26/
+    trading_note: 그룹 공급망 안정 뉴스가 자동차 부품주에 확산되는지 관찰
+  - source_symbol: 004020.KS
+    source_name: 현대제철
+    source_market: KR
+    source_reason: 미국 Louisiana steel plant 투자와 철강 가격 read-through
+    source_3m_move_pct: null
+    target_symbol: 000720.KS
+    target_name: 현대건설
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 강재 가격 상승 시 건설 원가 부담 후보.
+    evidence:
+    - title: Steel prices improved amid stronger shipments
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강주 강세 후 건설주 원가 우려 반응 관찰
+  - source_symbol: 004020.KS
+    source_name: 현대제철
+    source_market: KR
+    source_reason: 미국 Louisiana steel plant 투자와 철강 가격 read-through
+    source_3m_move_pct: null
+    target_symbol: 009540.KS
+    target_name: HD한국조선해양
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 후판·강재 가격 상승 시 조선 원가 압박 리스크.
+    evidence:
+    - title: Steel prices and backlogs improved
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강 강세가 조선 후판 원가 우려로 연결되는지 관찰
+  - source_symbol: 004020.KS
+    source_name: 현대제철
+    source_market: KR
+    source_reason: 미국 Louisiana steel plant 투자와 철강 가격 read-through
+    source_3m_move_pct: null
+    target_symbol: STLD
+    target_name: Steel Dynamics
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 미국 전기로 피어 실적 모멘텀 read-through.
+    evidence:
+    - title: Steel Dynamics posts higher first-quarter profit and sales
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 한국 철강 뉴스와 미국 전기로 피어 동조화 관찰
+  - source_symbol: 011170.KS
+    source_name: 롯데케미칼
+    source_market: KR
+    source_reason: 한국 petrochemical 구조조정 승인, Daesan NCC 가동 중단
+    source_3m_move_pct: null
+    target_symbol: 051910.KS
+    target_name: LG화학
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 공급 축소가 화학 스프레드 개선 기대를 만들 수 있음.
+    evidence:
+    - title: South Korea approves first petrochemical restructuring deal
+      url: https://www.reuters.com/world/asia-pacific/south-korea-approves-first-petrochemical-restructuring-deal-supply-glut-weighs-2026-02-24/
+    trading_note: 구조조정 뉴스 후 국내 화학 대형주 스프레드 기대 관찰
+  - source_symbol: 011170.KS
+    source_name: 롯데케미칼
+    source_market: KR
+    source_reason: 한국 petrochemical 구조조정 승인, Daesan NCC 가동 중단
+    source_3m_move_pct: null
+    target_symbol: 011780.KS
+    target_name: 금호석유
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 화학 구조조정/마진 개선 피어 후행 반응 관찰.
+    evidence:
+    - title: Korea petrochemical restructuring deal amid supply glut
+      url: https://www.reuters.com/world/asia-pacific/south-korea-approves-first-petrochemical-restructuring-deal-supply-glut-weighs-2026-02-24/
+    trading_note: 롯데케미칼 급등 후 금호석유 동조화 관찰
+  - source_symbol: 011170.KS
+    source_name: 롯데케미칼
+    source_market: KR
+    source_reason: 한국 petrochemical 구조조정 승인, Daesan NCC 가동 중단
+    source_3m_move_pct: null
+    target_symbol: 090430.KS
+    target_name: 아모레퍼시픽
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 플라스틱·포장재 가격 상승 시 비용 압박 후보.
+    evidence:
+    - title: Historic plastic price hikes
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: 화학 스프레드 개선 뉴스가 소비재 포장비 우려로 이어지는지 관찰
+  - source_symbol: 011170.KS
+    source_name: 롯데케미칼
+    source_market: KR
+    source_reason: 한국 petrochemical 구조조정 승인, Daesan NCC 가동 중단
+    source_3m_move_pct: null
+    target_symbol: 051900.KS
+    target_name: LG생활건강
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 생활소비재 포장재 원가 부담 관찰 후보.
+    evidence:
+    - title: Plastic price hikes pressure consumer goods
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: 화학 원재료 강세가 소비재 비용 우려로 확산되는지 관찰
+  - source_symbol: 011170.KS
+    source_name: 롯데케미칼
+    source_market: KR
+    source_reason: 한국 petrochemical 구조조정 승인, Daesan NCC 가동 중단
+    source_3m_move_pct: null
+    target_symbol: DOW
+    target_name: Dow
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 글로벌 PE/화학 스프레드 피어 read-through.
+    evidence:
+    - title: Dow upgraded as PE profit improvement expected
+      url: https://www.barrons.com/articles/dow-stock-upgrade-plastic-war-iran-b66dcf54
+    trading_note: 한국 화학 구조조정 뉴스와 미국 PE 피어 반응 관찰
+  - source_symbol: 051910.KS
+    source_name: LG화학
+    source_market: KR
+    source_reason: Yeosu ethylene plant shutdown, naphtha 조달 차질
+    source_3m_move_pct: null
+    target_symbol: DOW
+    target_name: Dow
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 아시아 naphtha 기반 공급 차질은 북미 ethane 기반 PE 업체 수혜 가능성.
+    evidence:
+    - title: LG Chem plans to shut down No. 2 ethylene plant
+      url: https://www.reuters.com/world/asia-pacific/lg-chem-plans-shut-down-its-no-2-ethylene-plant-soon-source-says-2026-03-23/
+    - title: Historic plastic price hikes benefit North American plastic makers
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: LG화학 약세/공급 차질 뉴스 후 DOW·LYB 후행 강세 관찰
+  - source_symbol: 051910.KS
+    source_name: LG화학
+    source_market: KR
+    source_reason: Yeosu ethylene plant shutdown, naphtha 조달 차질
+    source_3m_move_pct: null
+    target_symbol: LYB
+    target_name: LyondellBasell
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 글로벌 PE 공급 축소 시 대체 공급/가격 수혜 가능성.
+    evidence:
+    - title: Plastic prices rise as supply is disrupted
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: 아시아 공급 차질 후 북미 화학주 가격 반응 관찰
+  - source_symbol: 051910.KS
+    source_name: LG화학
+    source_market: KR
+    source_reason: Yeosu ethylene plant shutdown, naphtha 조달 차질
+    source_3m_move_pct: null
+    target_symbol: 011170.KS
+    target_name: 롯데케미칼
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 같은 naphtha 조달 리스크에 노출된 한국 화학 피어.
+    evidence:
+    - title: Asian petrochemicals face naphtha disruption as Iran conflict widens
+      url: https://www.reuters.com/world/asia-pacific/asian-petrochemicals-face-naphtha-disruption-iran-conflict-widens-2026-03-04/
+    trading_note: LG화학 feedstock 악재 발생 시 롯데케미칼 동반 약세 관찰
+  - source_symbol: 051910.KS
+    source_name: LG화학
+    source_market: KR
+    source_reason: Yeosu ethylene plant shutdown, naphtha 조달 차질
+    source_3m_move_pct: null
+    target_symbol: 011780.KS
+    target_name: 금호석유
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: feedstock 비용 상승/화학 심리 악화 후행 관찰.
+    evidence:
+    - title: Asian petrochemicals face naphtha disruption
+      url: https://www.reuters.com/world/asia-pacific/asian-petrochemicals-face-naphtha-disruption-iran-conflict-widens-2026-03-04/
+    trading_note: 한국 naphtha 기반 화학주 동반 약세 여부 관찰
+  - source_symbol: 051910.KS
+    source_name: LG화학
+    source_market: KR
+    source_reason: Yeosu ethylene plant shutdown, naphtha 조달 차질
+    source_3m_move_pct: null
+    target_symbol: 011170.KS
+    target_name: 롯데케미칼
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 국내 대형 화학 피어로 뉴스 동조화 가능성.
+    evidence:
+    - title: LG Chem ethylene plant shutdown
+      url: https://www.reuters.com/world/asia-pacific/lg-chem-plans-shut-down-its-no-2-ethylene-plant-soon-source-says-2026-03-23/
+    trading_note: LG화학 악재 다음 세션 국내 화학 피어 동조화 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 가격 사상 최고권, Grasberg 회복 이슈
+    source_3m_move_pct: 8.8
+    target_symbol: SCCO
+    target_name: Southern Copper
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 구리 대형 광산주 피어 모멘텀 관찰 후보.
+    evidence:
+    - title: Freeport says Grasberg recovery not delayed until 2028, stands by 2027 forecast
+      url: https://www.reuters.com/world/asia-pacific/freeport-says-grasberg-recovery-not-delayed-until-2028-stands-by-2027-forecast-2026-05-11/
+    trading_note: FCX 급등일 SCCO 동조화 강도 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 가격 사상 최고권, Grasberg 회복 이슈
+    source_3m_move_pct: 8.8
+    target_symbol: TECK
+    target_name: Teck Resources
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 구리 노출 광산 피어 수혜 가능성.
+    evidence:
+    - title: Copper prices hit record highs as AI boom powers demand
+      url: https://www.wsj.com/finance/commodities-futures/copper-prices-hit-record-highs-as-ai-boom-powers-demand-62327d66
+    trading_note: 구리 가격 급등 후 TECK 후행 반응 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 가격 사상 최고권, Grasberg 회복 이슈
+    source_3m_move_pct: 8.8
+    target_symbol: DHI
+    target_name: D.R. Horton
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 주택건설 전기·배관 원가 상승 부담 후보.
+    evidence:
+    - title: Copper just hit a record high
+      url: https://www.marketwatch.com/story/copper-just-hit-a-record-high-it-may-be-in-a-perfect-storm
+    trading_note: 구리 급등 후 주택건설주 원가 우려 반응 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 가격 사상 최고권, Grasberg 회복 이슈
+    source_3m_move_pct: 8.8
+    target_symbol: GM
+    target_name: General Motors
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: EV·전장 부품 구리 원가 부담 관찰 후보.
+    evidence:
+    - title: Copper demand tied to AI, EV and grid construction
+      url: https://www.wsj.com/finance/commodities-futures/copper-prices-hit-record-highs-as-ai-boom-powers-demand-62327d66
+    trading_note: 구리 강세 후 자동차/EV 비용 우려 반응 관찰
+  - source_symbol: FCX
+    source_name: Freeport-McMoRan
+    source_market: US
+    source_reason: 구리 가격 사상 최고권, Grasberg 회복 이슈
+    source_3m_move_pct: 8.8
+    target_symbol: 103140.KS
+    target_name: 풍산
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 구리 가격 상승의 한국 비철/동제품 후행 관찰 후보.
+    evidence:
+    - title: Copper prices hit record highs
+      url: https://www.wsj.com/finance/commodities-futures/copper-prices-hit-record-highs-as-ai-boom-powers-demand-62327d66
+    trading_note: FCX·구리 선물 급등 다음 세션 풍산 반응 관찰
+  - source_symbol: NUE
+    source_name: Nucor
+    source_market: US
+    source_reason: Q1 매출 beat, steel mill shipment/ASP 개선
+    source_3m_move_pct: 26.1
+    target_symbol: STLD
+    target_name: Steel Dynamics
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 미국 철강 피어 실적·가격 read-through.
+    evidence:
+    - title: Nucor beats quarterly revenue estimates on steel mills strength
+      url: https://www.reuters.com/business/nucor-beats-quarterly-revenue-estimates-steel-mills-strength-2026-04-27/
+    trading_note: NUE 실적/급등일 STLD 동조화 관찰
+  - source_symbol: NUE
+    source_name: Nucor
+    source_market: US
+    source_reason: Q1 매출 beat, steel mill shipment/ASP 개선
+    source_3m_move_pct: 26.1
+    target_symbol: CMC
+    target_name: Commercial Metals
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 철근/봉형강 가격·수요 개선 수혜 가능성.
+    evidence:
+    - title: Nucor steel mills strength from higher prices and volumes
+      url: https://www.reuters.com/business/nucor-beats-quarterly-revenue-estimates-steel-mills-strength-2026-04-27/
+    trading_note: NUE 강세 후 봉형강/철근 노출주 후행 관찰
+  - source_symbol: NUE
+    source_name: Nucor
+    source_market: US
+    source_reason: Q1 매출 beat, steel mill shipment/ASP 개선
+    source_3m_move_pct: 26.1
+    target_symbol: LEN
+    target_name: Lennar
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 주택건설 강재 원가 상승 비용 압박 후보.
+    evidence:
+    - title: Steel prices and lead times improved
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강주 강세 후 주택건설주 비용 우려 관찰
+  - source_symbol: NUE
+    source_name: Nucor
+    source_market: US
+    source_reason: Q1 매출 beat, steel mill shipment/ASP 개선
+    source_3m_move_pct: 26.1
+    target_symbol: F
+    target_name: Ford
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 자동차 강재 원가 부담 후행 관찰.
+    evidence:
+    - title: Nucor reports higher average selling prices and volumes
+      url: https://www.reuters.com/business/nucor-beats-quarterly-revenue-estimates-steel-mills-strength-2026-04-27/
+    trading_note: 철강 가격 강세가 자동차 원가 우려로 반영되는지 관찰
+  - source_symbol: NUE
+    source_name: Nucor
+    source_market: US
+    source_reason: Q1 매출 beat, steel mill shipment/ASP 개선
+    source_3m_move_pct: 26.1
+    target_symbol: 005490.KS
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 글로벌 철강 대형주 동조화 관찰.
+    evidence:
+    - title: Nucor beats quarterly revenue estimates
+      url: https://www.reuters.com/business/nucor-beats-quarterly-revenue-estimates-steel-mills-strength-2026-04-27/
+    trading_note: 미국 철강주 급등 다음 한국 철강주 후행 관찰
+  - source_symbol: STLD
+    source_name: Steel Dynamics
+    source_market: US
+    source_reason: Q1 이익/매출 증가, 백로그·steel price 개선
+    source_3m_move_pct: 20.3
+    target_symbol: NUE
+    target_name: Nucor
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 미국 철강 대형 피어 동조화.
+    evidence:
+    - title: Steel Dynamics posts higher first-quarter profit and sales
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: STLD 실적/급등일 NUE 동조화 관찰
+  - source_symbol: STLD
+    source_name: Steel Dynamics
+    source_market: US
+    source_reason: Q1 이익/매출 증가, 백로그·steel price 개선
+    source_3m_move_pct: 20.3
+    target_symbol: RS
+    target_name: Reliance
+    target_market: US
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: steel service center 가격/물량 read-through.
+    evidence:
+    - title: Steel shipments, prices and backlogs improved
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: STLD 백로그 개선 후 steel service center 후행 관찰
+  - source_symbol: STLD
+    source_name: Steel Dynamics
+    source_market: US
+    source_reason: Q1 이익/매출 증가, 백로그·steel price 개선
+    source_3m_move_pct: 20.3
+    target_symbol: DHI
+    target_name: D.R. Horton
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 건설 강재 비용 압박 리스크.
+    evidence:
+    - title: Steel prices and lead times improved
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 철강 가격 강세 후 주택건설주 후행 약세 관찰
+  - source_symbol: STLD
+    source_name: Steel Dynamics
+    source_market: US
+    source_reason: Q1 이익/매출 증가, 백로그·steel price 개선
+    source_3m_move_pct: 20.3
+    target_symbol: GM
+    target_name: General Motors
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 자동차 강재 비용 부담 후보.
+    evidence:
+    - title: Steel prices improved in Q1
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: STLD 강세 후 자동차주 원가 우려 반응 관찰
+  - source_symbol: STLD
+    source_name: Steel Dynamics
+    source_market: US
+    source_reason: Q1 이익/매출 증가, 백로그·steel price 개선
+    source_3m_move_pct: 20.3
+    target_symbol: 004020.KS
+    target_name: 현대제철
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 전기로/철강 피어 글로벌 read-through.
+    evidence:
+    - title: Steel Dynamics Q1 profit and sales rise
+      url: https://www.wsj.com/business/earnings/steel-dynamics-posts-higher-first-quarter-profit-sales-amid-growth-in-steel-shipments-20b5d86c
+    trading_note: 미국 전기로주 강세 다음 한국 철강 피어 관찰
+  - source_symbol: AA
+    source_name: Alcoa
+    source_market: US
+    source_reason: 알루미늄 가격 급등, 중동 공급 충격 우려
+    source_3m_move_pct: 14.7
+    target_symbol: CENX
+    target_name: Century Aluminum
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 미국 primary aluminum 피어 모멘텀.
+    evidence:
+    - title: Aluminium faces 'black swan' supply shock
+      url: https://www.reuters.com/world/china/aluminium-faces-black-swan-supply-shock-mercuria-says-2026-04-22/
+    trading_note: AA 급등일 CENX 동조화 관찰
+  - source_symbol: AA
+    source_name: Alcoa
+    source_market: US
+    source_reason: 알루미늄 가격 급등, 중동 공급 충격 우려
+    source_3m_move_pct: 14.7
+    target_symbol: ACHR
+    target_name: Archer Aviation
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 항공·전기기체 알루미늄 원가 부담 후보.
+    evidence:
+    - title: Aluminum prices hit multi-year highs on supply shock fears
+      url: https://www.reuters.com/world/china/aluminium-faces-black-swan-supply-shock-mercuria-says-2026-04-22/
+    trading_note: 알루미늄 가격 급등 후 알루미늄 사용 비중 높은 성장주 비용 우려 관찰
+  - source_symbol: AA
+    source_name: Alcoa
+    source_market: US
+    source_reason: 알루미늄 가격 급등, 중동 공급 충격 우려
+    source_3m_move_pct: 14.7
+    target_symbol: BALL
+    target_name: Ball Corp
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 알루미늄 캔 소재비 상승 부담 후보.
+    evidence:
+    - title: Aluminium premiums and prices surge
+      url: https://www.reuters.com/world/china/aluminium-faces-black-swan-supply-shock-mercuria-says-2026-04-22/
+    trading_note: 알루미늄 강세 후 캔 포장재 업체 원가 우려 관찰
+  - source_symbol: AA
+    source_name: Alcoa
+    source_market: US
+    source_reason: 알루미늄 가격 급등, 중동 공급 충격 우려
+    source_3m_move_pct: 14.7
+    target_symbol: CCK
+    target_name: Crown Holdings
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 캔 포장재 원가 상승 부담 후보.
+    evidence:
+    - title: Aluminium faces supply shock risk
+      url: https://www.reuters.com/world/china/aluminium-faces-black-swan-supply-shock-mercuria-says-2026-04-22/
+    trading_note: AA/CENX 강세 후 CCK 원가 부담 반응 관찰
+  - source_symbol: AA
+    source_name: Alcoa
+    source_market: US
+    source_reason: 알루미늄 가격 급등, 중동 공급 충격 우려
+    source_3m_move_pct: 14.7
+    target_symbol: 010130.KS
+    target_name: 고려아연
+    target_market: KR
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: LOW
+    rationale: 비철 금속 전반 risk-on 후행 관찰 후보.
+    evidence:
+    - title: Non-ferrous metals rally as aluminum and copper rise
+      url: https://www.reuters.com/world/china/aluminium-faces-black-swan-supply-shock-mercuria-says-2026-04-22/
+    trading_note: 미국 알루미늄주 급등 다음 한국 비철주 후행 관찰
+  - source_symbol: DOW
+    source_name: Dow
+    source_market: US
+    source_reason: PE 가격 상승, 북미 ethane 기반 화학 스프레드 개선 기대
+    source_3m_move_pct: 23.4
+    target_symbol: LYB
+    target_name: LyondellBasell
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 북미 petrochemical 피어 마진 read-through.
+    evidence:
+    - title: Historic plastic price hikes benefit North American plastic makers
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: DOW 급등일 LYB 동조화 관찰
+  - source_symbol: DOW
+    source_name: Dow
+    source_market: US
+    source_reason: PE 가격 상승, 북미 ethane 기반 화학 스프레드 개선 기대
+    source_3m_move_pct: 23.4
+    target_symbol: WLK
+    target_name: Westlake
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: PE/PVC 체인 가격 상승 수혜 가능성.
+    evidence:
+    - title: Dow upgraded as PE profit improvement is expected
+      url: https://www.barrons.com/articles/dow-stock-upgrade-plastic-war-iran-b66dcf54
+    trading_note: DOW 강세 후 WLK 등 화학 체인 후행 관찰
+  - source_symbol: DOW
+    source_name: Dow
+    source_market: US
+    source_reason: PE 가격 상승, 북미 ethane 기반 화학 스프레드 개선 기대
+    source_3m_move_pct: 23.4
+    target_symbol: PG
+    target_name: Procter & Gamble
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 소비재 포장재·플라스틱 비용 압박 후보.
+    evidence:
+    - title: Plastic price hikes could hit consumer goods companies
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: 화학주 강세 후 PG 등 포장비 부담주 관찰
+  - source_symbol: DOW
+    source_name: Dow
+    source_market: US
+    source_reason: PE 가격 상승, 북미 ethane 기반 화학 스프레드 개선 기대
+    source_3m_move_pct: 23.4
+    target_symbol: MAT
+    target_name: Mattel
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 플라스틱 원재료 비중 높은 소비재 비용 부담 후보.
+    evidence:
+    - title: Plastic prices reach highest levels in years
+      url: https://www.barrons.com/articles/oil-plastic-prices-consumer-goods-d84cfdbf
+    trading_note: 플라스틱 가격 급등 후 완구/소비재 원가 부담 관찰
+  - source_symbol: DOW
+    source_name: Dow
+    source_market: US
+    source_reason: PE 가격 상승, 북미 ethane 기반 화학 스프레드 개선 기대
+    source_3m_move_pct: 23.4
+    target_symbol: 011170.KS
+    target_name: 롯데케미칼
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 글로벌 화학 스프레드 개선 read-through.
+    evidence:
+    - title: Dow stock upgraded on PE profit improvement
+      url: https://www.barrons.com/articles/dow-stock-upgrade-plastic-war-iran-b66dcf54
+    trading_note: 미국 화학주 강세 다음 한국 화학주 후행 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 희토류 가격 상승, 중국 수출 통제, 미국 공급망 정책
+    source_3m_move_pct: null
+    target_symbol: USAR
+    target_name: USA Rare Earth
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 미국 희토류 공급망 피어 모멘텀.
+    evidence:
+    - title: Rare earth curbs still bite
+      url: https://www.reuters.com/business/aerospace-defense/trump-xi-weigh-rare-earth-truce-extension-chinas-curbs-still-bite-2026-05-13/
+    trading_note: MP 강세일 USAR 동조화 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 희토류 가격 상승, 중국 수출 통제, 미국 공급망 정책
+    source_3m_move_pct: null
+    target_symbol: UUUU
+    target_name: Energy Fuels
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 미국 critical minerals/processing 정책 수혜 가능성.
+    evidence:
+    - title: Rare earths surge above price floor given to MP Materials
+      url: https://www.reuters.com/business/energy/rare-earths-surge-above-price-floor-given-mp-materials-2026-02-18/
+    trading_note: MP/희토류 뉴스 후 critical minerals 피어 3일 내 반응 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 희토류 가격 상승, 중국 수출 통제, 미국 공급망 정책
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 희토류 자석·EV 공급망 비용 압박 후보.
+    evidence:
+    - title: China rare earth export restrictions and shortages
+      url: https://www.reuters.com/business/aerospace-defense/trump-xi-weigh-rare-earth-truce-extension-chinas-curbs-still-bite-2026-05-13/
+    trading_note: 희토류 가격/수출통제 뉴스 후 EV 원가 우려 반응 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 희토류 가격 상승, 중국 수출 통제, 미국 공급망 정책
+    source_3m_move_pct: null
+    target_symbol: GM
+    target_name: General Motors
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: EV·모터 부품 원가/조달 리스크 관찰.
+    evidence:
+    - title: Rare earth shortages and price spikes
+      url: https://www.reuters.com/business/aerospace-defense/trump-xi-weigh-rare-earth-truce-extension-chinas-curbs-still-bite-2026-05-13/
+    trading_note: 희토류 공급망 뉴스 후 자동차주 비용 우려 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 희토류 가격 상승, 중국 수출 통제, 미국 공급망 정책
+    source_3m_move_pct: null
+    target_symbol: 010130.KS
+    target_name: 고려아연
+    target_market: KR
+    relation_type: DEFENSE_GEOPOLITICS
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: critical minerals 공급망 재편 read-through.
+    evidence:
+    - title: Korea Zinc in talks to extract rare earths from data centre waste
+      url: https://www.reuters.com/world/asia-pacific/korea-zinc-talks-with-us-tech-firms-extract-rare-earths-data-centre-waste-2026-03-12/
+    trading_note: MP/희토류 정책 뉴스 후 고려아연 critical minerals 프리미엄 관찰

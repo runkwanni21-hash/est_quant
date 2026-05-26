@@ -1,0 +1,876 @@
+sector_relation_seeds:
+  sector_id: food_agriculture_fertilizer_staples
+  sector_name: 음식료 / 농업 / 비료 / 필수소비재
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - source_3m_move_pct는 공개 뉴스/종목 페이지 기반 근사치다. 실거래 데이터로 재검증 필요.
+  - 관계는 관찰 후보이며 확정 상승/하락 신호가 아니다.
+  - 1일~1개월 스윙 관점에서는 source 급등/급락 직후 target의 거래대금, 상대강도, 뉴스 후행 반응을 같이 확인한다.
+  edges:
+  - source_symbol: '003230'
+    source_name: 삼양식품
+    source_market: KR
+    source_reason: 불닭/K-라면 수출, 공급 병목 완화 기대
+    source_3m_move_pct: 30.0
+    target_symbol: '004370'
+    target_name: 농심
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 삼양식품 강세는 K-라면 해외 수요 확인 신호로 농심의 해외 라면 매출 후행 반응 관찰 후보.
+    evidence:
+    - title: 네이버증권 삼양식품 리서치/뉴스
+      url: https://m.stock.naver.com/domestic/stock/003230/total
+    - title: 네이버증권 농심 뉴스/리서치
+      url: https://m.stock.naver.com/domestic/stock/004370/total
+    trading_note: 삼양식품 급등 후 농심의 외국인/기관 순매수와 해외 매출 관련 리포트 후행 반응 관찰.
+  - source_symbol: '003230'
+    source_name: 삼양식품
+    source_market: KR
+    source_reason: 불닭/K-라면 수출, 공급 병목 완화 기대
+    source_3m_move_pct: 30.0
+    target_symbol: '007310'
+    target_name: 오뚜기
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K-라면 3사 해외 매출 개선 read-through. 오뚜기는 후행 반응 관찰 후보.
+    evidence:
+    - title: 네이버증권 오뚜기 - K-라면 빅3 관련 뉴스
+      url: https://m.stock.naver.com/domestic/stock/007310/total
+    trading_note: 라면 수출 데이터와 오뚜기 거래대금 증가 여부를 3거래일 내 확인.
+  - source_symbol: '003230'
+    source_name: 삼양식품
+    source_market: KR
+    source_reason: 불닭/K-라면 수출, 공급 병목 완화 기대
+    source_3m_move_pct: 30.0
+    target_symbol: KHC
+    target_name: Kraft Heinz
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 미국 가공식품 진열·프로모션 예산 내에서 K-푸드 수요 전환 리스크. 직접 공급망은 약하다.
+    evidence:
+    - title: Barron's - Food Stocks Tumble After General Mills Cuts Sales Forecast
+      url: https://www.barrons.com/articles/general-mills-food-stocks-sales-75f17f5c
+    trading_note: KHC 자체 실적/가이던스와 K-푸드 뉴스의 동시성을 분리해서 관찰.
+  - source_symbol: '003230'
+    source_name: 삼양식품
+    source_market: KR
+    source_reason: 불닭/K-라면 수출, 공급 병목 완화 기대
+    source_3m_move_pct: 30.0
+    target_symbol: CAG
+    target_name: Conagra Brands
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 냉동·스낵·간편식 소비 지갑 내 대체 가능성만 있는 약한 관찰 후보.
+    evidence:
+    - title: MarketWatch - Conagra underperforms peers
+      url: https://www.marketwatch.com/data-news/conagra-brands-inc-stock-underperforms-friday-when-compared-to-competitors-046fa918-31204bfe2ce7
+    trading_note: CAG는 원재료·소비 둔화 변수 영향이 더 크므로 K-푸드와의 단독 인과로 보지 않는다.
+  - source_symbol: '003230'
+    source_name: 삼양식품
+    source_market: KR
+    source_reason: 불닭/K-라면 수출, 공급 병목 완화 기대
+    source_3m_move_pct: 30.0
+    target_symbol: '271560'
+    target_name: 오리온
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K-푸드 수출주 바스켓 내 피어 모멘텀. 라면과 제과는 제품은 다르나 해외 성장성 프레임을 공유한다.
+    evidence:
+    - title: 네이버증권 오리온 - 해외 법인 견인 1Q 실적 뉴스
+      url: https://m.stock.naver.com/domestic/stock/271560/total
+    trading_note: 삼양식품 이후 오리온의 외국인 수급과 중국/베트남/러시아 법인 뉴스 후행 반응 관찰.
+  - source_symbol: '271560'
+    source_name: 오리온
+    source_market: KR
+    source_reason: 해외 법인 견인 1Q 호실적, 초코파이/K-스낵 수출
+    source_3m_move_pct: 20.0
+    target_symbol: 001800
+    target_name: 오리온홀딩스
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 오리온 본업 가치 상승은 지주사 NAV 후행 반응 관찰 후보.
+    evidence:
+    - title: 네이버증권 오리온 - 1Q 해외 법인 견인 뉴스
+      url: https://m.stock.naver.com/domestic/stock/271560/total
+    trading_note: 오리온 급등일에 오리온홀딩스 괴리율과 동시 거래대금 증가 확인.
+  - source_symbol: '271560'
+    source_name: 오리온
+    source_market: KR
+    source_reason: 해외 법인 견인 1Q 호실적, 초코파이/K-스낵 수출
+    source_3m_move_pct: 20.0
+    target_symbol: '003230'
+    target_name: 삼양식품
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K-푸드 수출 수요가 라면·제과로 확산되는지 확인하는 관찰 후보.
+    evidence:
+    - title: 네이버증권 삼양식품 - 불닭/K-푸드 뉴스
+      url: https://m.stock.naver.com/domestic/stock/003230/total
+    trading_note: 오리온 실적 뉴스 후 삼양식품의 수출/공급 병목 관련 리포트가 붙는지 관찰.
+  - source_symbol: '271560'
+    source_name: 오리온
+    source_market: KR
+    source_reason: 해외 법인 견인 1Q 호실적, 초코파이/K-스낵 수출
+    source_3m_move_pct: 20.0
+    target_symbol: 097950
+    target_name: CJ제일제당
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 해외 K-푸드 수요가 만두/가공식품 대형주로 확산되는지 후행 반응 관찰.
+    evidence:
+    - title: 네이버증권 CJ제일제당 - 1Q/K-푸드 뉴스
+      url: https://m.stock.naver.com/domestic/stock/097950/total
+    trading_note: CJ제일제당의 바이오와 식품 부문을 분리해 식품 수출 관련 반응만 체크.
+  - source_symbol: '271560'
+    source_name: 오리온
+    source_market: KR
+    source_reason: 해외 법인 견인 1Q 호실적, 초코파이/K-스낵 수출
+    source_3m_move_pct: 20.0
+    target_symbol: 026960
+    target_name: 동서
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 해외 성장주로 수급이 이동할 때 내수형 음식료의 상대 소외 리스크.
+    evidence:
+    - title: 네이버증권 오리온 - 해외 법인 견인 1Q 실적 뉴스
+      url: https://m.stock.naver.com/domestic/stock/271560/total
+    trading_note: 동서 자체 배당/방어주 수급과 구분해 상대강도만 관찰.
+  - source_symbol: '271560'
+    source_name: 오리온
+    source_market: KR
+    source_reason: 해외 법인 견인 1Q 호실적, 초코파이/K-스낵 수출
+    source_3m_move_pct: 20.0
+    target_symbol: '005610'
+    target_name: SPC삼립
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 내수 베이커리/식품 대비 해외 성장 프리미엄 차별화 가능성. 직접 경쟁은 약하다.
+    evidence:
+    - title: 네이버증권 오리온 - 해외 성장 뉴스
+      url: https://m.stock.naver.com/domestic/stock/271560/total
+    trading_note: SPC삼립은 내수 소비/원가 이슈가 크므로 오리온과의 상대강도만 보조 지표로 사용.
+  - source_symbol: '004370'
+    source_name: 농심
+    source_market: KR
+    source_reason: 1Q 영업익 증가, 해외 매출이 내수 둔화 보완
+    source_3m_move_pct: 6.0
+    target_symbol: '003230'
+    target_name: 삼양식품
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 농심 해외 실적 강세는 라면 수출 피어인 삼양식품 후행 반응 관찰 후보.
+    evidence:
+    - title: 네이버증권 농심 - 1Q 영업익 증가/해외 매출 뉴스
+      url: https://m.stock.naver.com/domestic/stock/004370/total
+    trading_note: 농심 급등이 라면주 전체 거래대금 증가로 이어지는지 same_day 확인.
+  - source_symbol: '004370'
+    source_name: 농심
+    source_market: KR
+    source_reason: 1Q 영업익 증가, 해외 매출이 내수 둔화 보완
+    source_3m_move_pct: 6.0
+    target_symbol: '007310'
+    target_name: 오뚜기
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 라면 카테고리 수출·글로벌 확장 기대가 오뚜기까지 확산되는지 관찰.
+    evidence:
+    - title: 네이버증권 오뚜기 - K-라면 빅3 관련 뉴스
+      url: https://m.stock.naver.com/domestic/stock/007310/total
+    trading_note: 오뚜기 후행 반응은 라면 가격/수출 뉴스가 붙을 때만 신뢰도 상향.
+  - source_symbol: '004370'
+    source_name: 농심
+    source_market: KR
+    source_reason: 1Q 영업익 증가, 해외 매출이 내수 둔화 보완
+    source_3m_move_pct: 6.0
+    target_symbol: KHC
+    target_name: Kraft Heinz
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: K-라면/간편식 수요 확대가 미국 전통 포장식품의 수요 전환 리스크로 해석될 수 있다.
+    evidence:
+    - title: Barron's - Food Stocks Tumble After General Mills Cuts Sales Forecast
+      url: https://www.barrons.com/articles/general-mills-food-stocks-sales-75f17f5c
+    trading_note: KHC 자체 소비 둔화 변수와 K-라면 대체 수요를 분리해서 관찰.
+  - source_symbol: '004370'
+    source_name: 농심
+    source_market: KR
+    source_reason: 1Q 영업익 증가, 해외 매출이 내수 둔화 보완
+    source_3m_move_pct: 6.0
+    target_symbol: CAG
+    target_name: Conagra Brands
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 간편식 지갑 내 카테고리 경쟁 가능성. 직접 대체성은 제한적이다.
+    evidence:
+    - title: MarketWatch - Conagra underperforms peers
+      url: https://www.marketwatch.com/data-news/conagra-brands-inc-stock-underperforms-friday-when-compared-to-competitors-046fa918-31204bfe2ce7
+    trading_note: CAG는 원재료와 소비 둔화 뉴스가 더 큰 변수이므로 LOW로 유지.
+  - source_symbol: '004370'
+    source_name: 농심
+    source_market: KR
+    source_reason: 1Q 영업익 증가, 해외 매출이 내수 둔화 보완
+    source_3m_move_pct: 6.0
+    target_symbol: '271560'
+    target_name: 오리온
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K-푸드 수출주 동반 바스켓 수급 관찰 후보.
+    evidence:
+    - title: 네이버증권 오리온 - 해외 법인 견인 1Q 실적 뉴스
+      url: https://m.stock.naver.com/domestic/stock/271560/total
+    trading_note: 농심 이후 오리온이 수출/해외 법인 뉴스로 재평가되는지 3거래일 관찰.
+  - source_symbol: '005300'
+    source_name: 롯데칠성
+    source_market: KR
+    source_reason: 1Q 컨센서스 상회, 음료/주류 성수기 기대와 중동 비용 변수
+    source_3m_move_pct: 8.0
+    target_symbol: 000080
+    target_name: 하이트진로
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 음료·주류 성수기/월드컵 이벤트 기대가 주류 피어로 확산되는지 관찰.
+    evidence:
+    - title: 네이버증권 롯데칠성 - 1Q 컨센서스 상회/중동 비용 변수
+      url: https://m.stock.naver.com/domestic/stock/005300/total
+    - title: 네이버증권 하이트진로 - 주류 소비/월드컵 뉴스
+      url: https://m.stock.naver.com/domestic/stock/000080/total
+    trading_note: 롯데칠성 급등 후 하이트진로의 성수기/월드컵 맥주 뉴스 후행 반응 관찰.
+  - source_symbol: '005300'
+    source_name: 롯데칠성
+    source_market: KR
+    source_reason: 1Q 컨센서스 상회, 음료/주류 성수기 기대와 중동 비용 변수
+    source_3m_move_pct: 8.0
+    target_symbol: KO
+    target_name: Coca-Cola
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 글로벌 음료 방어주 선호의 cross-market read-through. 직접 연결은 약하다.
+    evidence:
+    - title: IBD - Coca-Cola earnings beat and stock jump
+      url: https://www.investors.com/news/coca-cola-ko-stock-coke-earnings-inflation/
+    trading_note: KR beverage 모멘텀과 US beverage 모멘텀은 직접성보다 섹터 risk-on 여부로만 관찰.
+  - source_symbol: '005300'
+    source_name: 롯데칠성
+    source_market: KR
+    source_reason: 1Q 컨센서스 상회, 음료/주류 성수기 기대와 중동 비용 변수
+    source_3m_move_pct: 8.0
+    target_symbol: 033920
+    target_name: 무학
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 주류·소주 시장 내 점유율 경쟁 구도에서 상대 부담 후보.
+    evidence:
+    - title: 네이버증권 하이트진로/주류 피어 뉴스
+      url: https://m.stock.naver.com/domestic/stock/000080/total
+    trading_note: 무학은 지역 주류 소비/실적 변수가 커서 상대강도만 보조로 사용.
+  - source_symbol: '005300'
+    source_name: 롯데칠성
+    source_market: KR
+    source_reason: 1Q 컨센서스 상회, 음료/주류 성수기 기대와 중동 비용 변수
+    source_3m_move_pct: 8.0
+    target_symbol: '043650'
+    target_name: 국순당
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 음료/주류 대형주의 성수기 프로모션 강화 시 중소 주류주 상대 부담 후보.
+    evidence:
+    - title: 네이버증권 롯데칠성 - 성수기/비용 변수
+      url: https://m.stock.naver.com/domestic/stock/005300/total
+    trading_note: 국순당 자체 전통주/수출 뉴스와 분리해 관찰.
+  - source_symbol: '005300'
+    source_name: 롯데칠성
+    source_market: KR
+    source_reason: 1Q 컨센서스 상회, 음료/주류 성수기 기대와 중동 비용 변수
+    source_3m_move_pct: 8.0
+    target_symbol: PEP
+    target_name: PepsiCo
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 글로벌 음료·스낵 필수소비재 바스켓 후행 반응 관찰 후보.
+    evidence:
+    - title: 네이버증권 KO peer list including PEP
+      url: https://m.stock.naver.com/worldstock/stock/KO.O/total
+    trading_note: PEP는 스낵 비중이 커서 KO와 롯데칠성 단순 동행보다 자체 실적을 우선 확인.
+  - source_symbol: 025860
+    source_name: 남해화학
+    source_market: KR
+    source_reason: 비료/요소 공급·가격 변동성, 농업 input cost 민감
+    source_3m_move_pct: 15.0
+    target_symbol: '001550'
+    target_name: 조비
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 국내 비료주 바스켓 내 동행 관찰 후보.
+    evidence:
+    - title: 네이버증권 남해화학 - 비료/요소 뉴스
+      url: https://m.stock.naver.com/domestic/stock/025860/total
+    trading_note: 남해화학 급등일에 조비 거래대금이 동반 증가하는지 same_day 확인.
+  - source_symbol: 025860
+    source_name: 남해화학
+    source_market: KR
+    source_reason: 비료/요소 공급·가격 변동성, 농업 input cost 민감
+    source_3m_move_pct: 15.0
+    target_symbol: 097870
+    target_name: 효성오앤비
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 비료·친환경 비료 테마 내 후행 반응 관찰 후보.
+    evidence:
+    - title: 네이버증권 남해화학 - 비료/요소 뉴스
+      url: https://m.stock.naver.com/domestic/stock/025860/total
+    trading_note: 친환경 비료 테마성 수급은 빠르게 소멸할 수 있어 1거래일 중심으로 확인.
+  - source_symbol: 025860
+    source_name: 남해화학
+    source_market: KR
+    source_reason: 비료/요소 공급·가격 변동성, 농업 input cost 민감
+    source_3m_move_pct: 15.0
+    target_symbol: '003230'
+    target_name: 삼양식품
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: MEDIUM
+    rationale: 비료/곡물 비용 상승은 밀가루·전분·포장 원가 압박 리스크.
+    evidence:
+    - title: Reuters - Nitrogen surge to lift CF, Nutrien earnings; Mosaic faces headwinds
+      url: https://www.reuters.com/business/nitrogen-surge-lift-cf-nutrien-earnings-mosaic-faces-headwinds-2026-05-04/
+    - title: Reuters - Japan price hikes due to energy/raw material/labor costs
+      url: https://www.reuters.com/world/japan/japan-price-hikes-food-services-accelerate-costs-rise-middle-east-conflict-2026-05-15/
+    trading_note: 비료주 급등 후 라면주의 원재료비 코멘트가 나오는지 10거래일 내 확인.
+  - source_symbol: 025860
+    source_name: 남해화학
+    source_market: KR
+    source_reason: 비료/요소 공급·가격 변동성, 농업 input cost 민감
+    source_3m_move_pct: 15.0
+    target_symbol: 097950
+    target_name: CJ제일제당
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: MEDIUM
+    rationale: 곡물·유지·소재 원가 민감도가 큰 대형 음식료의 비용 압박 리스크.
+    evidence:
+    - title: 네이버증권 CJ제일제당 - 식품/바이오 실적 뉴스
+      url: https://m.stock.naver.com/domestic/stock/097950/total
+    - title: Reuters - Food/raw material cost pressure
+      url: https://www.reuters.com/world/japan/japan-price-hikes-food-services-accelerate-costs-rise-middle-east-conflict-2026-05-15/
+    trading_note: CJ제일제당은 바이오 시황과 식품 원가를 분리해서 반응 확인.
+  - source_symbol: 025860
+    source_name: 남해화학
+    source_market: KR
+    source_reason: 비료/요소 공급·가격 변동성, 농업 input cost 민감
+    source_3m_move_pct: 15.0
+    target_symbol: 001390
+    target_name: KG케미칼
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 화학/비료 관련 바스켓 후행 반응 관찰 후보. 직접 가격 검증은 약하다.
+    evidence:
+    - title: 네이버증권 남해화학 - 비료/요소 뉴스
+      url: https://m.stock.naver.com/domestic/stock/025860/total
+    trading_note: 테마성 후행 수급만 관찰하고 기업 고유 실적 연결은 별도 검증.
+  - source_symbol: CF
+    source_name: CF Industries
+    source_market: US
+    source_reason: 중동 전쟁·가스 차질·질소비료 가격 급등, 실적 beat
+    source_3m_move_pct: 30.0
+    target_symbol: NTR
+    target_name: Nutrien
+    target_market: US
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: CF와 Nutrien은 질소 가격 수혜 축으로 직접 언급됐다.
+    evidence:
+    - title: Reuters - Nitrogen surge to lift CF, Nutrien earnings; Mosaic faces headwinds
+      url: https://www.reuters.com/business/nitrogen-surge-lift-cf-nutrien-earnings-mosaic-faces-headwinds-2026-05-04/
+    trading_note: CF 급등 직후 NTR ADR 거래대금과 질소비료 가격 뉴스 동시 확인.
+  - source_symbol: CF
+    source_name: CF Industries
+    source_market: US
+    source_reason: 중동 전쟁·가스 차질·질소비료 가격 급등, 실적 beat
+    source_3m_move_pct: 30.0
+    target_symbol: UAN
+    target_name: CVR Partners
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 미국 질소비료 pure-play로 CF 강세 후행 반응 관찰 후보.
+    evidence:
+    - title: IBD - Fertilizer maker CF beats earnings as prices surge
+      url: https://www.investors.com/news/cf-industries-stock-fertilizer-maker-trounces-earnings-cvr-partners/
+    trading_note: UAN은 유동성이 CF보다 낮을 수 있어 거래대금 필터 필수.
+  - source_symbol: CF
+    source_name: CF Industries
+    source_market: US
+    source_reason: 중동 전쟁·가스 차질·질소비료 가격 급등, 실적 beat
+    source_3m_move_pct: 30.0
+    target_symbol: MOS
+    target_name: Mosaic
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: HIGH
+    rationale: Mosaic은 비료 가격 상승에도 황/원재료 비용 압박으로 차별화된 부담 후보.
+    evidence:
+    - title: Barron's - Mosaic slips after Q1 loss and sulfur cost pressure
+      url: https://www.barrons.com/articles/mosaic-earnings-stock-price-295820cc
+    - title: WSJ - Mosaic swings to loss on surging sulfuric acid prices
+      url: https://www.wsj.com/business/earnings/mosaic-swings-to-loss-on-surging-sulfuric-acid-prices-fec74551
+    trading_note: CF 강세와 MOS 약세가 동시에 나오면 질소 vs 인산/황 비용 차별화로 분류.
+  - source_symbol: CF
+    source_name: CF Industries
+    source_market: US
+    source_reason: 중동 전쟁·가스 차질·질소비료 가격 급등, 실적 beat
+    source_3m_move_pct: 30.0
+    target_symbol: GIS
+    target_name: General Mills
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: MEDIUM
+    rationale: 비료 상승은 곡물·식품 input cost로 후행 전가될 수 있어 포장식품 비용 압박 리스크.
+    evidence:
+    - title: AP/Market data - Energy and food cost pressure from Middle East conflict
+      url: https://apnews.com/article/inflation-wholesale-prices-economy-fed-tariffs-iran-war
+    trading_note: GIS의 원가 코멘트, 가격 전가 실패, gross margin 가이던스 변화를 같이 확인.
+  - source_symbol: CF
+    source_name: CF Industries
+    source_market: US
+    source_reason: 중동 전쟁·가스 차질·질소비료 가격 급등, 실적 beat
+    source_3m_move_pct: 30.0
+    target_symbol: KHC
+    target_name: Kraft Heinz
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: MEDIUM
+    rationale: 원재료·물류·에너지 비용 재상승 시 가격 전가가 어려운 포장식품 부담 후보.
+    evidence:
+    - title: Barron's - Food stocks tumble after General Mills cuts sales forecast
+      url: https://www.barrons.com/articles/general-mills-food-stocks-sales-75f17f5c
+    trading_note: KHC는 소비 둔화와 input cost가 동시에 작용할 수 있어 뉴스 원인 분리 필요.
+  - source_symbol: ADM
+    source_name: Archer-Daniels-Midland
+    source_market: US
+    source_reason: 바이오연료·대두유 수요, 이익 가이던스 상향
+    source_3m_move_pct: 30.0
+    target_symbol: BG
+    target_name: Bunge
+    target_market: US
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: ADM/Bunge 모두 바이오연료·soy crush margin 수혜로 함께 언급됐다.
+    evidence:
+    - title: WSJ - Strong Biofuel Demand Sends Grain Companies’ Stocks Soaring
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-05-2026/card/strong-biofuel-demand-sends-grain-companies-stocks-soaring-sKn4NEEURugkNDeVYTdB
+    - title: Reuters - Grain trader ADM raises profit forecast on biofuel demand outlook
+      url: https://www.reuters.com/sustainability/climate-energy/grain-trader-adm-raises-profit-forecast-biofuel-demand-outlook-2026-05-05/
+    trading_note: ADM 가이던스 뉴스 직후 BG가 동반 거래대금 증가하는지 same_day 확인.
+  - source_symbol: ADM
+    source_name: Archer-Daniels-Midland
+    source_market: US
+    source_reason: 바이오연료·대두유 수요, 이익 가이던스 상향
+    source_3m_move_pct: 30.0
+    target_symbol: DE
+    target_name: Deere
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 곡물/대두 economics 개선이 농가 현금흐름과 농기계 수요 심리에 긍정일 수 있으나 직접성은 낮다.
+    evidence:
+    - title: Reuters - ADM raises profit forecast on biofuel demand
+      url: https://www.reuters.com/sustainability/climate-energy/grain-trader-adm-raises-profit-forecast-biofuel-demand-outlook-2026-05-05/
+    trading_note: DE는 농기계 주문/농가 소득 뉴스가 붙을 때만 신뢰도 상향.
+  - source_symbol: ADM
+    source_name: Archer-Daniels-Midland
+    source_market: US
+    source_reason: 바이오연료·대두유 수요, 이익 가이던스 상향
+    source_3m_move_pct: 30.0
+    target_symbol: TSN
+    target_name: Tyson Foods
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 곡물·대두박 가격 강세는 육류/사료 원가 부담 후보.
+    evidence:
+    - title: Reuters - Iran war's boost to biofuels lifts US agriculture giants' earnings
+      url: https://www.reuters.com/business/energy/iran-wars-boost-biofuels-lifts-us-agriculture-giants-earnings-2026-04-28/
+    trading_note: TSN은 축산 마진과 사료비 코멘트를 함께 확인.
+  - source_symbol: ADM
+    source_name: Archer-Daniels-Midland
+    source_market: US
+    source_reason: 바이오연료·대두유 수요, 이익 가이던스 상향
+    source_3m_move_pct: 30.0
+    target_symbol: CAG
+    target_name: Conagra Brands
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 대두유·곡물·물류 비용 재상승은 포장식품 마진 부담 후보.
+    evidence:
+    - title: Reuters - ADM raises profit forecast on biofuel demand
+      url: https://www.reuters.com/sustainability/climate-energy/grain-trader-adm-raises-profit-forecast-biofuel-demand-outlook-2026-05-05/
+    trading_note: CAG의 gross margin, pricing, input cost 가이던스 변화를 후행 관찰.
+  - source_symbol: ADM
+    source_name: Archer-Daniels-Midland
+    source_market: US
+    source_reason: 바이오연료·대두유 수요, 이익 가이던스 상향
+    source_3m_move_pct: 30.0
+    target_symbol: ANDE
+    target_name: The Andersons
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 곡물 트레이딩/농업 유통 피어로 ADM 강세 후행 반응 관찰 후보.
+    evidence:
+    - title: WSJ - Grain companies’ stocks soar on biofuel demand
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-05-2026/card/strong-biofuel-demand-sends-grain-companies-stocks-soaring-sKn4NEEURugkNDeVYTdB
+    trading_note: ANDE는 유동성·스프레드 확인 후 3거래일 내 후행 반응만 관찰.
+  - source_symbol: MOS
+    source_name: Mosaic
+    source_market: US
+    source_reason: 비료 가격 상승에도 황/원재료 비용 급등, 가이던스 철회
+    source_3m_move_pct: -8.0
+    target_symbol: CF
+    target_name: CF Industries
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: MOS 비용 압박은 CF 같은 질소비료 수혜주로 상대 수급 이동 가능성.
+    evidence:
+    - title: Barron's - Mosaic slips after Q1 loss
+      url: https://www.barrons.com/articles/mosaic-earnings-stock-price-295820cc
+    - title: Reuters - CF/Nutrien benefit, Mosaic faces headwinds
+      url: https://www.reuters.com/business/nitrogen-surge-lift-cf-nutrien-earnings-mosaic-faces-headwinds-2026-05-04/
+    trading_note: MOS 약세와 CF 강세가 동시에 나오면 질소 vs 인산/황 비용 차별화로 분류.
+  - source_symbol: MOS
+    source_name: Mosaic
+    source_market: US
+    source_reason: 비료 가격 상승에도 황/원재료 비용 급등, 가이던스 철회
+    source_3m_move_pct: -8.0
+    target_symbol: NTR
+    target_name: Nutrien
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: Nutrien은 질소 가격 수혜와 Mosaic의 부담이 구분되는 관찰 후보.
+    evidence:
+    - title: Reuters - Nitrogen surge to lift CF, Nutrien earnings; Mosaic faces headwinds
+      url: https://www.reuters.com/business/nitrogen-surge-lift-cf-nutrien-earnings-mosaic-faces-headwinds-2026-05-04/
+    trading_note: NTR은 NYSE ADR과 TSX 본주 동시 확인.
+  - source_symbol: MOS
+    source_name: Mosaic
+    source_market: US
+    source_reason: 비료 가격 상승에도 황/원재료 비용 급등, 가이던스 철회
+    source_3m_move_pct: -8.0
+    target_symbol: ICL
+    target_name: ICL Group
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 인산/칼륨 비료 피어의 비용·가격 민감도 후행 반응 관찰 후보.
+    evidence:
+    - title: Barron's - Mosaic earnings and sulfur cost pressure
+      url: https://www.barrons.com/articles/mosaic-earnings-stock-price-295820cc
+    trading_note: ICL의 제품 믹스 차이를 감안해 MOS와 동행 여부만 확인.
+  - source_symbol: MOS
+    source_name: Mosaic
+    source_market: US
+    source_reason: 비료 가격 상승에도 황/원재료 비용 급등, 가이던스 철회
+    source_3m_move_pct: -8.0
+    target_symbol: DE
+    target_name: Deere
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 비료 비용 급등이 농가 마진을 압박하면 농기계 수요 심리에 부담 가능성. 직접성은 낮다.
+    evidence:
+    - title: WSJ - Mosaic cuts spending as fertilizer costs surge
+      url: https://www.wsj.com/business/earnings/mosaic-swings-to-loss-on-surging-sulfuric-acid-prices-fec74551
+    trading_note: DE는 농기계 주문/농가 소득 뉴스가 없으면 LOW 유지.
+  - source_symbol: MOS
+    source_name: Mosaic
+    source_market: US
+    source_reason: 비료 가격 상승에도 황/원재료 비용 급등, 가이던스 철회
+    source_3m_move_pct: -8.0
+    target_symbol: UAN
+    target_name: CVR Partners
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: MOS 약세가 질소비료 pure-play 상대 수혜로 이어지는지 관찰.
+    evidence:
+    - title: Reuters - CF/Nutrien benefit vs Mosaic headwinds
+      url: https://www.reuters.com/business/nitrogen-surge-lift-cf-nutrien-earnings-mosaic-faces-headwinds-2026-05-04/
+    trading_note: UAN은 CF보다 유동성이 낮아 과도한 갭 상승 추격은 제외하고 후행 반응만 관찰.
+  - source_symbol: KO
+    source_name: Coca-Cola
+    source_market: US
+    source_reason: 1Q 매출/EPS beat, 글로벌 volume 증가, 주가 급등
+    source_3m_move_pct: 8.0
+    target_symbol: COKE
+    target_name: Coca-Cola Consolidated
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: KO volume beat는 병입/유통 파트너의 물량 기대 후행 반응 관찰 후보.
+    evidence:
+    - title: IBD - Coca-Cola earnings beat and stock jump
+      url: https://www.investors.com/news/coca-cola-ko-stock-coke-earnings-inflation/
+    trading_note: KO 급등 후 COKE의 거래대금과 bottler 실적 코멘트 확인.
+  - source_symbol: KO
+    source_name: Coca-Cola
+    source_market: US
+    source_reason: 1Q 매출/EPS beat, 글로벌 volume 증가, 주가 급등
+    source_3m_move_pct: 8.0
+    target_symbol: CCEP
+    target_name: Coca-Cola Europacific Partners
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 글로벌 Coca-Cola bottler의 volume read-through 가능성.
+    evidence:
+    - title: Barron's - Coke earnings beat; shares jump
+      url: https://www.barrons.com/articles/coca-cola-earnings-stock-price-41d18efd
+    trading_note: CCEP는 환율/유럽 소비 변수도 함께 확인.
+  - source_symbol: KO
+    source_name: Coca-Cola
+    source_market: US
+    source_reason: 1Q 매출/EPS beat, 글로벌 volume 증가, 주가 급등
+    source_3m_move_pct: 8.0
+    target_symbol: PEP
+    target_name: PepsiCo
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: KO share/price mix 강세가 PEP 음료 부문 상대 부담으로 해석될 수 있다. PEP는 스낵도 있어 LOW.
+    evidence:
+    - title: 네이버증권 KO peer list including PEP
+      url: https://m.stock.naver.com/worldstock/stock/KO.O/total
+    trading_note: PEP는 음료보다 스낵/원가 이슈가 클 수 있어 KO 단독 신호로 사용하지 않는다.
+  - source_symbol: KO
+    source_name: Coca-Cola
+    source_market: US
+    source_reason: 1Q 매출/EPS beat, 글로벌 volume 증가, 주가 급등
+    source_3m_move_pct: 8.0
+    target_symbol: KDP
+    target_name: Keurig Dr Pepper
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 탄산·RTD 음료 경쟁 구도 내 상대 점유율 부담 후보.
+    evidence:
+    - title: 네이버증권 KO peer list including KDP
+      url: https://m.stock.naver.com/worldstock/stock/KO.O/total
+    trading_note: KDP 자체 커피/RTD 이슈와 분리해서 상대강도만 관찰.
+  - source_symbol: KO
+    source_name: Coca-Cola
+    source_market: US
+    source_reason: 1Q 매출/EPS beat, 글로벌 volume 증가, 주가 급등
+    source_3m_move_pct: 8.0
+    target_symbol: MNST
+    target_name: Monster Beverage
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 음료 방어주·성장 음료 피어 모멘텀 관찰 후보.
+    evidence:
+    - title: MarketWatch - Monster trades near 52-week high
+      url: https://www.marketwatch.com/data-news/monster-beverage-corp-stock-rises-thursday-still-underperforms-market-8f9a5898-c3070b31797e
+    trading_note: MNST는 energy drink 성장 모멘텀이 별도이므로 KO와 같은 날 동행 여부만 우선 체크.
+  - source_symbol: GIS
+    source_name: General Mills
+    source_market: US
+    source_reason: 판매 전망 하향, 약한 소비, 포장식품주 동반 약세
+    source_3m_move_pct: -25.0
+    target_symbol: COST
+    target_name: Costco
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 브랜드 포장식품 약세는 value/club retail, private-label 소비 이전 관찰 후보.
+    evidence:
+    - title: Business Insider - General Mills cites value-focused consumers
+      url: https://www.businessinsider.com/stocks-general-mills-earnings-spending-food-stocks-consumer-weakness-economy-2026-2
+    trading_note: GIS 약세 후 COST가 방어주/가치소비 수혜로 반응하는지 3거래일 관찰.
+  - source_symbol: GIS
+    source_name: General Mills
+    source_market: US
+    source_reason: 판매 전망 하향, 약한 소비, 포장식품주 동반 약세
+    source_3m_move_pct: -25.0
+    target_symbol: WMT
+    target_name: Walmart
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 소비자가 value basket으로 이동할 때 할인 유통주 후행 반응 관찰 후보.
+    evidence:
+    - title: Business Insider - Consumer weakness and value focus
+      url: https://www.businessinsider.com/stocks-general-mills-earnings-spending-food-stocks-consumer-weakness-economy-2026-2
+    trading_note: WMT는 전체 소비/매크로 민감도도 커서 GIS 단독 신호는 보조로 사용.
+  - source_symbol: GIS
+    source_name: General Mills
+    source_market: US
+    source_reason: 판매 전망 하향, 약한 소비, 포장식품주 동반 약세
+    source_3m_move_pct: -25.0
+    target_symbol: KHC
+    target_name: Kraft Heinz
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: GIS 급락과 함께 Kraft Heinz 등 포장식품주 동반 하락이 기사에서 명시됐다.
+    evidence:
+    - title: Barron's - Food Stocks Tumble After General Mills Cuts Sales Forecast
+      url: https://www.barrons.com/articles/general-mills-food-stocks-sales-75f17f5c
+    trading_note: GIS 가이던스 쇼크 당일 KHC 동반 약세 여부는 same_day 신호로 분류.
+  - source_symbol: GIS
+    source_name: General Mills
+    source_market: US
+    source_reason: 판매 전망 하향, 약한 소비, 포장식품주 동반 약세
+    source_3m_move_pct: -25.0
+    target_symbol: CAG
+    target_name: Conagra Brands
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 약한 소비/가격 전가 한계가 포장식품 피어로 전이되는 관찰 후보.
+    evidence:
+    - title: Barron's - Food stocks tumble after General Mills
+      url: https://www.barrons.com/articles/general-mills-food-stocks-sales-75f17f5c
+    - title: Business Insider - Packaged food stocks fall on weak consumer spending
+      url: https://www.businessinsider.com/stocks-general-mills-earnings-spending-food-stocks-consumer-weakness-economy-2026-2
+    trading_note: CAG는 GIS 쇼크 직후 동반 약세와 자체 원가 뉴스가 겹치는지 확인.
+  - source_symbol: GIS
+    source_name: General Mills
+    source_market: US
+    source_reason: 판매 전망 하향, 약한 소비, 포장식품주 동반 약세
+    source_3m_move_pct: -25.0
+    target_symbol: CPB
+    target_name: Campbell's
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Campbell도 GIS와 함께 동반 하락한 포장식품 피어로 언급됐다.
+    evidence:
+    - title: Barron's - Food Stocks Tumble After General Mills Cuts Sales Forecast
+      url: https://www.barrons.com/articles/general-mills-food-stocks-sales-75f17f5c
+    trading_note: CPB는 포장식품 방어주 바스켓의 동반 약세 여부를 same_day로 체크.

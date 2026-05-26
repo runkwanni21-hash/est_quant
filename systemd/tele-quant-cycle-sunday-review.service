@@ -1,0 +1,14 @@
+[Unit]
+Description=Tele Quant 주간사이클 — 일요일 23시 주간 성과 리뷰
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/projects/quant_spillover/tele_quant
+ExecStart=%h/.local/bin/uv run tele-quant cycle-briefing --slot sunday-review --send
+EnvironmentFile=%h/projects/quant_spillover/tele_quant/.env.local
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

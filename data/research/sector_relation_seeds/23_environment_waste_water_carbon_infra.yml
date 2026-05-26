@@ -1,0 +1,1094 @@
+sector_relation_seeds:
+  sector_id: environment_waste_water_carbon_infra
+  sector_name: 친환경 / 폐기물 / 수처리 / 탄소 / 환경 인프라
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  edges:
+  - source_symbol: BE
+    source_name: Bloom Energy
+    source_market: US
+    source_reason: AI 데이터센터 onsite power / Oracle·Q1 실적; 3개월 수익률은 Mar10 147.86 → Apr29 287.56 근사
+    source_3m_move_pct: 95.0
+    target_symbol: FCEL
+    target_name: FuelCell Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: BE 급등은 연료전지·저탄소 onsite power peer 동반 반응 관찰 후보
+    evidence:
+    - title: Bloom Energy Earnings Surge On AI Data Centers, Lifting Fuel-Cell Stocks
+      url: https://www.investors.com/news/bloom-energy-earnings-q1-be-stock/
+    trading_note: 1일~1개월 스윙 관점에서 FCEL의 후행 반응과 거래대금 증가를 관찰
+  - source_symbol: BE
+    source_name: Bloom Energy
+    source_market: US
+    source_reason: AI 데이터센터 onsite power / Oracle·Q1 실적
+    source_3m_move_pct: 95.0
+    target_symbol: PLUG
+    target_name: Plug Power
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: AI 전력·수소/연료전지 테마가 PLUG로 확산될 수 있는 후행 반응 관찰
+    evidence:
+    - title: Bloom Energy is riding the AI wave with a major lift from Oracle
+      url: https://www.marketwatch.com/story/bloom-energy-is-riding-the-ai-wave-with-a-major-lift-from-oracle-200109b4
+    trading_note: BE 급등 후 PLUG의 장중 상대강도와 short-covering 여부 관찰
+  - source_symbol: BE
+    source_name: Bloom Energy
+    source_market: US
+    source_reason: AI 데이터센터 onsite power / Oracle·Q1 실적
+    source_3m_move_pct: 95.0
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 데이터센터 백업 디젤/가스 발전기 일부 수요 전환 리스크 관찰
+    evidence:
+    - title: Bloom Energy Stock Jumps on Expanded Fuel Cell Deal for Oracle
+      url: https://www.barrons.com/articles/bloom-energy-stock-price-oracle-fuel-cell-deal-d42b6523
+    trading_note: BE 급등 후 CAT의 발전기·엔진 exposure 관련 뉴스 민감도만 보조 관찰
+  - source_symbol: BE
+    source_name: Bloom Energy
+    source_market: US
+    source_reason: AI 데이터센터 onsite power / Oracle·Q1 실적
+    source_3m_move_pct: 95.0
+    target_symbol: CMI
+    target_name: Cummins
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 연료전지 전원 채택 기대가 기존 엔진·발전기 투자심리 부담으로 번질 가능성
+    evidence:
+    - title: Bloom Energy is riding the AI wave with a major lift from Oracle
+      url: https://www.marketwatch.com/story/bloom-energy-is-riding-the-ai-wave-with-a-major-lift-from-oracle-200109b4
+    trading_note: 확정 하락이 아니라 대체 전원 narrative가 나올 때만 부담 후보로 관찰
+  - source_symbol: FCEL
+    source_name: FuelCell Energy
+    source_market: US
+    source_reason: 연료전지 peer rally / 데이터센터 전력 readthrough; Feb13 7.22 → May15 21.36 근사
+    source_3m_move_pct: 196.0
+    target_symbol: BE
+    target_name: Bloom Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: FCEL 급등은 BE의 AI 전력 narrative를 재확인하는 peer momentum 후보
+    evidence:
+    - title: FuelCell Energy Inc. stock rises Friday, outperforms market
+      url: https://www.marketwatch.com/story/fuelcell-energy-inc-stock-rises-friday-outperforms-market-5c94a973
+    trading_note: FCEL 급등일 BE의 premarket/regular session 동조 여부 관찰
+  - source_symbol: FCEL
+    source_name: FuelCell Energy
+    source_market: US
+    source_reason: 연료전지 peer rally / 데이터센터 전력 readthrough
+    source_3m_move_pct: 196.0
+    target_symbol: PLUG
+    target_name: Plug Power
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 수소·연료전지 basket 강세 시 PLUG 후행 반응 관찰
+    evidence:
+    - title: FuelCell Energy Inc. stock rises Thursday, outperforms market
+      url: https://www.marketwatch.com/story/fuelcell-energy-inc-stock-rises-thursday-outperforms-market-49c4657d
+    trading_note: FCEL 거래대금 급증 후 PLUG 숏커버 성격의 후행 양봉 여부 관찰
+  - source_symbol: FCEL
+    source_name: FuelCell Energy
+    source_market: US
+    source_reason: 연료전지 peer rally / 데이터센터 전력 readthrough
+    source_3m_move_pct: 196.0
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 저탄소 onsite power 선호가 genset 대체 논리로 확대될 경우 부담 후보
+    evidence:
+    - title: Bloom Energy Earnings Surge On AI Data Centers, Lifting Fuel-Cell Stocks
+      url: https://www.investors.com/news/bloom-energy-earnings-q1-be-stock/
+    trading_note: 대체 전원 narrative가 기사화될 때만 CAT 약세 후행 여부 관찰
+  - source_symbol: FCEL
+    source_name: FuelCell Energy
+    source_market: US
+    source_reason: 연료전지 peer rally / 데이터센터 전력 readthrough
+    source_3m_move_pct: 196.0
+    target_symbol: CMI
+    target_name: Cummins
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 기존 엔진·발전기 대비 연료전지 선호가 강해질 때 투자심리 부담 가능성
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: FCEL 급등 단독보다는 BE·PLUG 동반 강세일 때만 관찰
+  - source_symbol: PLUG
+    source_name: Plug Power
+    source_market: US
+    source_reason: Q1 beat / 수소 턴어라운드 / 숏커버; Feb17 전후 1.89 → May14 3.79 근사
+    source_3m_move_pct: 100.0
+    target_symbol: FCEL
+    target_name: FuelCell Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: PLUG 실적 beat와 손실 축소가 연료전지 peer로 확산 가능
+    evidence:
+    - title: Plug shares surge as revenue beats, loss narrows
+      url: https://www.timesunion.com/business/article/plug-shares-surge-revenue-beats-loss-narrows-20327402.php
+    trading_note: PLUG 실적 갭상승 후 FCEL의 next-session 거래대금 증가 관찰
+  - source_symbol: PLUG
+    source_name: Plug Power
+    source_market: US
+    source_reason: Q1 beat / 수소 턴어라운드 / 숏커버
+    source_3m_move_pct: 100.0
+    target_symbol: BLDP
+    target_name: Ballard Power
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 수소·연료전지 basket 후행 반응 관찰 후보
+    evidence:
+    - title: Plug Stock is Soaring After Earnings Beat. Why Its Future May Be Brighter.
+      url: https://www.barrons.com/articles/plug-stock-price-earnings-beat-52c43136
+    trading_note: PLUG beat 이후 BLDP의 수소 basket 동조 여부 관찰
+  - source_symbol: PLUG
+    source_name: Plug Power
+    source_market: US
+    source_reason: Q1 beat / 수소 턴어라운드 / 숏커버
+    source_3m_move_pct: 100.0
+    target_symbol: ENS
+    target_name: EnerSys
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 물류·산업용 연료전지 채택 기대가 일부 배터리/납축전 수요 전환 논리로 번질 수 있음
+    evidence:
+    - title: Plug Stock is Soaring After Earnings Beat. Why Its Future May Be Brighter.
+      url: https://www.barrons.com/articles/plug-stock-price-earnings-beat-52c43136
+    trading_note: PLUG 단독보다 물류용 연료전지 수요 기사 동반 시에만 관찰
+  - source_symbol: PLUG
+    source_name: Plug Power
+    source_market: US
+    source_reason: Q1 beat / 수소 턴어라운드 / 숏커버
+    source_3m_move_pct: 100.0
+    target_symbol: CMI
+    target_name: Cummins
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 수소 전환 narrative가 기존 엔진·발전기 쪽 투자심리 부담 후보
+    evidence:
+    - title: Plug shares surge as revenue beats, loss narrows
+      url: https://www.timesunion.com/business/article/plug-shares-surge-revenue-beats-loss-narrows-20327402.php
+    trading_note: 수소 전환 뉴스와 CMI 약세가 동시에 나올 때만 후행 부담 후보로 기록
+  - source_symbol: SEDG
+    source_name: SolarEdge
+    source_market: US
+    source_reason: 태양광 인버터 회복 / 상대강도 개선; Feb5 33.28 → May14 50.24 근사
+    source_3m_move_pct: 51.0
+    target_symbol: ENPH
+    target_name: Enphase Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 인버터 peer 동반 re-rating 관찰 후보
+    evidence:
+    - title: SolarEdge Technologies Clears Technical Benchmark, Hitting 95-Plus RS Rating
+      url: https://www.investors.com/news/solaredge-technologies-clears-technical-benchmark-hitting-95-plus-rs-rating/
+    trading_note: SEDG 강세 후 ENPH의 인버터 peer 동조 여부 관찰
+  - source_symbol: SEDG
+    source_name: SolarEdge
+    source_market: US
+    source_reason: 태양광 인버터 회복 / 상대강도 개선
+    source_3m_move_pct: 51.0
+    target_symbol: RUN
+    target_name: Sunrun
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 주거용 태양광 설치 수요 회복 기대가 설치업체로 확산 가능
+    evidence:
+    - title: SolarEdge Technologies Inc. stock rises Wednesday, outperforms market
+      url: https://www.marketwatch.com/story/solaredge-technologies-inc-stock-rises-wednesday-outperforms-market-79ef3bd6
+    trading_note: SEDG가 강할 때 RUN이 금리 부담을 이기고 따라붙는지 관찰
+  - source_symbol: SEDG
+    source_name: SolarEdge
+    source_market: US
+    source_reason: 태양광 인버터 회복 / 상대강도 개선
+    source_3m_move_pct: 51.0
+    target_symbol: DUK
+    target_name: Duke Energy
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 분산형 태양광 회복은 전력 소매 수요 잠식 우려로 해석될 수 있음
+    evidence:
+    - title: SolarEdge Technologies Clears Technical Benchmark, Hitting 95-Plus RS Rating
+      url: https://www.investors.com/news/solaredge-technologies-clears-technical-benchmark-hitting-95-plus-rs-rating/
+    trading_note: 태양광 정책·금리 우호 뉴스가 동반될 때만 DUK 방어주 약세를 관찰
+  - source_symbol: SEDG
+    source_name: SolarEdge
+    source_market: US
+    source_reason: 태양광 인버터 회복 / 상대강도 개선
+    source_3m_move_pct: 51.0
+    target_symbol: SO
+    target_name: Southern Company
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 분산형 태양광 확산 narrative가 일부 regulated utility 투자심리 부담 후보
+    evidence:
+    - title: SolarEdge Technologies Inc. stock rises Wednesday, outperforms market
+      url: https://www.marketwatch.com/story/solaredge-technologies-inc-stock-rises-wednesday-outperforms-market-79ef3bd6
+    trading_note: SO는 유틸리티 방어 성격이 강하므로 SEDG 단독 신호는 낮은 가중치
+  - source_symbol: RUN
+    source_name: Sunrun
+    source_market: US
+    source_reason: 주거용 태양광 약세 / 금리 민감; Feb5 18.97 → May14 14.66 근사
+    source_3m_move_pct: -23.0
+    target_symbol: DUK
+    target_name: Duke Energy
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 주거용 태양광 둔화는 전통 유틸리티 수요 방어 readthrough 가능
+    evidence:
+    - title: Sunrun Inc. stock rises Wednesday, outperforms market
+      url: https://www.marketwatch.com/story/sunrun-inc-stock-rises-wednesday-outperforms-market-2abecb85
+    trading_note: RUN 약세와 유틸리티 강세가 금리 하락/상승 요인과 분리되는지 관찰
+  - source_symbol: RUN
+    source_name: Sunrun
+    source_market: US
+    source_reason: 주거용 태양광 약세 / 금리 민감
+    source_3m_move_pct: -23.0
+    target_symbol: SO
+    target_name: Southern Company
+    target_market: US
+    relation_type: RATE_SENSITIVE
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 설치업체 약세가 regulated utility 상대 방어 논리로 연결 가능
+    evidence:
+    - title: First Solar Inc. stock rises Wednesday, outperforms market
+      url: https://www.marketwatch.com/story/first-solar-inc-stock-rises-wednesday-outperforms-market-e1105867
+    trading_note: RUN 약세가 태양광 수요 둔화로 해석될 때 SO 상대강도 관찰
+  - source_symbol: RUN
+    source_name: Sunrun
+    source_market: US
+    source_reason: 주거용 태양광 약세 / 금리 민감
+    source_3m_move_pct: -23.0
+    target_symbol: ENPH
+    target_name: Enphase Energy
+    target_market: US
+    relation_type: VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 설치업체 약세는 인버터·마이크로인버터 수요 우려로 연결
+    evidence:
+    - title: Sunrun Inc. stock rises Wednesday, outperforms market
+      url: https://www.marketwatch.com/story/sunrun-inc-stock-rises-wednesday-outperforms-market-2abecb85
+    trading_note: RUN 급락 후 ENPH가 다음 세션 수요 우려로 약해지는지 관찰
+  - source_symbol: RUN
+    source_name: Sunrun
+    source_market: US
+    source_reason: 주거용 태양광 약세 / 금리 민감
+    source_3m_move_pct: -23.0
+    target_symbol: SEDG
+    target_name: SolarEdge
+    target_market: US
+    relation_type: VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 주거용 태양광 수요 둔화 readthrough
+    evidence:
+    - title: SolarEdge Technologies Inc. stock rises Wednesday, outperforms market
+      url: https://www.marketwatch.com/story/solaredge-technologies-inc-stock-rises-wednesday-outperforms-market-79ef3bd6
+    trading_note: RUN 약세가 설치 수요 둔화로 해석될 때 SEDG의 후행 약세 관찰
+  - source_symbol: XYL
+    source_name: Xylem
+    source_market: US
+    source_reason: Q1 beat에도 주가 약세 / 물 인프라 peer de-rating; Feb5 139.24 → May15 108.12 근사
+    source_3m_move_pct: -22.0
+    target_symbol: PNR
+    target_name: Pentair
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: XYL 특이 실행·마진 실망이면 물처리 경쟁사 상대 선호 가능성
+    evidence:
+    - title: Xylem Earnings Beat Estimates. The Stock Is Sinking.
+      url: https://www.barrons.com/articles/xylem-stock-price-earnings-4db2967e
+    trading_note: XYL 약세가 sector-wide인지 company-specific인지 구분해 PNR 상대강도 관찰
+  - source_symbol: XYL
+    source_name: Xylem
+    source_market: US
+    source_reason: Q1 beat에도 주가 약세 / 물 인프라 peer de-rating
+    source_3m_move_pct: -22.0
+    target_symbol: FLS
+    target_name: Flowserve
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 물·펌프·처리 장비에서 상대 대안 후보
+    evidence:
+    - title: Xylem Earnings Beat Estimates. The Stock Is Sinking.
+      url: https://www.barrons.com/articles/xylem-stock-price-earnings-4db2967e
+    trading_note: XYL 약세가 수요 둔화가 아니라 밸류/개별 이슈일 때만 FLS 수혜 가능성 관찰
+  - source_symbol: XYL
+    source_name: Xylem
+    source_market: US
+    source_reason: Q1 beat에도 주가 약세 / 물 인프라 peer de-rating
+    source_3m_move_pct: -22.0
+    target_symbol: DOV
+    target_name: Dover
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 물·산업장비 peer 밸류에이션 경계가 확산될 수 있음
+    evidence:
+    - title: Xylem Inc. stock underperforms Friday when compared to competitors
+      url: https://www.marketwatch.com/story/xylem-inc-stock-underperforms-friday-when-compared-to-competitors-59b1fe24
+    trading_note: XYL 약세가 산업장비 basket 약세로 번지는지 DOV 동조율 관찰
+  - source_symbol: XYL
+    source_name: Xylem
+    source_market: US
+    source_reason: Q1 beat에도 주가 약세 / 물 인프라 peer de-rating
+    source_3m_move_pct: -22.0
+    target_symbol: IR
+    target_name: Ingersoll Rand
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 산업 인프라 장비 basket 약세 후행 반응 관찰
+    evidence:
+    - title: Xylem Inc. stock underperforms Friday when compared to competitors
+      url: https://www.marketwatch.com/story/xylem-inc-stock-underperforms-friday-when-compared-to-competitors-59b1fe24
+    trading_note: XYL 급락 당일 IR의 industrial infrastructure beta를 관찰
+  - source_symbol: ECL
+    source_name: Ecolab
+    source_market: US
+    source_reason: CoolIT 인수 / AI 데이터센터 액체냉각·물 인프라; Feb18 302.59 → May14 248.88 근사
+    source_3m_move_pct: -18.0
+    target_symbol: VRT
+    target_name: Vertiv
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: ECL 주가는 거래 부담이지만 CoolIT 인수는 데이터센터 액체냉각 수요 검증
+    evidence:
+    - title: Ecolab to acquire data center cooling firm CoolIT for $4.75 billion
+      url: https://www.reuters.com/markets/deals/ecolab-acquire-data-center-cooling-firm-coolit-475-billion-2026-03-20/
+    trading_note: ECL 약세와 별개로 VRT의 AI 냉각/전력 인프라 수혜 가능성 관찰
+  - source_symbol: ECL
+    source_name: Ecolab
+    source_market: US
+    source_reason: CoolIT 인수 / AI 데이터센터 액체냉각·물 인프라
+    source_3m_move_pct: -18.0
+    target_symbol: NVT
+    target_name: nVent Electric
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AI 전력·냉각 인프라 capex readthrough 관찰 후보
+    evidence:
+    - title: Ecolab Agrees to Buy Liquid Cooling Firm CoolIT
+      url: https://www.barrons.com/articles/ecolab-stock-price-liquid-cooling-coolit-29c5876d
+    trading_note: CoolIT 거래가 액체냉각 capex 검증으로 해석될 때 NVT 후행 강세 관찰
+  - source_symbol: ECL
+    source_name: Ecolab
+    source_market: US
+    source_reason: CoolIT 인수 / AI 데이터센터 액체냉각·물 인프라
+    source_3m_move_pct: -18.0
+    target_symbol: XYL
+    target_name: Xylem
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 물·쿨링 인프라 peer의 밸류에이션/인수 부담 경계 가능
+    evidence:
+    - title: Ecolab to acquire data center cooling firm CoolIT for $4.75 billion
+      url: https://www.reuters.com/markets/deals/ecolab-acquire-data-center-cooling-firm-coolit-475-billion-2026-03-20/
+    trading_note: ECL 약세가 밸류에이션 부담으로 해석될 때 XYL 후행 약세 관찰
+  - source_symbol: ECL
+    source_name: Ecolab
+    source_market: US
+    source_reason: CoolIT 인수 / AI 데이터센터 액체냉각·물 인프라
+    source_3m_move_pct: -18.0
+    target_symbol: PNR
+    target_name: Pentair
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 물처리 인프라 peer de-rating 후행 관찰
+    evidence:
+    - title: Ecolab Agrees to Buy Liquid Cooling Firm CoolIT
+      url: https://www.barrons.com/articles/ecolab-stock-price-liquid-cooling-coolit-29c5876d
+    trading_note: ECL 약세가 물처리/냉각 인프라 전체 밸류 부담으로 번지는지 관찰
+  - source_symbol: CLH
+    source_name: Clean Harbors
+    source_market: US
+    source_reason: 유해·산업폐기물 처리 수요 / 환경서비스; Feb18 276.25 → May14 308.40 근사
+    source_3m_move_pct: 12.0
+    target_symbol: WM
+    target_name: Waste Management
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 폐기물 처리 pricing/margin 기대가 대형 peer로 확산 가능
+    evidence:
+    - title: Waste Management Inc. stock underperforms Thursday when compared to competitors
+      url: https://www.marketwatch.com/story/waste-management-inc-stock-underperforms-thursday-when-compared-to-competitors-f5bdf7f0
+    trading_note: CLH 강세 후 WM이 방어주 성격으로 따라붙는지 관찰
+  - source_symbol: CLH
+    source_name: Clean Harbors
+    source_market: US
+    source_reason: 유해·산업폐기물 처리 수요 / 환경서비스
+    source_3m_move_pct: 12.0
+    target_symbol: RSG
+    target_name: Republic Services
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 환경서비스·폐기물 처리 peer 후행 반응 관찰
+    evidence:
+    - title: Republic Services Inc. stock underperforms Wednesday when compared to competitors
+      url: https://www.marketwatch.com/story/republic-services-inc-stock-underperforms-wednesday-when-compared-to-competitors-55d053df
+    trading_note: CLH 상승이 산업폐기물 pricing 기대라면 RSG 후행 반응 관찰
+  - source_symbol: CLH
+    source_name: Clean Harbors
+    source_market: US
+    source_reason: 유해·산업폐기물 처리 수요 / 환경서비스
+    source_3m_move_pct: 12.0
+    target_symbol: DOW
+    target_name: Dow
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 산업폐기물 처리비 상승 기대는 화학·제조 원가 부담 후보
+    evidence:
+    - title: Clean Harbors company profile - environmental and industrial services
+      url: https://www.cleanharbors.com/
+    trading_note: CLH 강세가 처리 단가 상승으로 해석될 때만 DOW 비용 부담 후보로 관찰
+  - source_symbol: CLH
+    source_name: Clean Harbors
+    source_market: US
+    source_reason: 유해·산업폐기물 처리 수요 / 환경서비스
+    source_3m_move_pct: 12.0
+    target_symbol: LYB
+    target_name: LyondellBasell
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 폐기물 처리·규제 비용 상승 시 원가 압박 리스크
+    evidence:
+    - title: Clean Harbors environmental and industrial services
+      url: https://www.cleanharbors.com/
+    trading_note: CLH 강세가 규제·처리비 상승 뉴스와 결합될 때만 LYB 부담 후보 관찰
+  - source_symbol: '336260'
+    source_name: 두산퓨얼셀
+    source_market: KR
+    source_reason: AI 데이터센터 전력용 연료전지 readthrough; 국내 3개월 수익률은 가격 재검증 필요
+    source_3m_move_pct: null
+    target_symbol: '475150'
+    target_name: SK이터닉스
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Bloom·SK 연료전지 Eco Park와 전력 인프라 수요 readthrough
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: 두산퓨얼셀 강세 후 SK이터닉스의 발전용 연료전지 후행 반응 관찰
+  - source_symbol: '336260'
+    source_name: 두산퓨얼셀
+    source_market: KR
+    source_reason: AI 데이터센터 전력용 연료전지 readthrough
+    source_3m_move_pct: null
+    target_symbol: '382900'
+    target_name: 범한퓨얼셀
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 연료전지 peer 후행 반응 관찰
+    evidence:
+    - title: Bumhan Industries / Bumhan Fuel Cell business profile
+      url: https://www.bumhan.com/en/
+    trading_note: 두산퓨얼셀 급등 후 범한퓨얼셀 거래대금 증가 관찰
+  - source_symbol: '336260'
+    source_name: 두산퓨얼셀
+    source_market: KR
+    source_reason: AI 데이터센터 전력용 연료전지 readthrough
+    source_3m_move_pct: null
+    target_symbol: '042670'
+    target_name: HD현대인프라코어
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 데이터센터 전원 논리가 디젤 발전기 대체 논리로 번질 가능성
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: 연료전지 전원이 기존 genset 대체로 언급될 때만 약한 부담 후보로 관찰
+  - source_symbol: '336260'
+    source_name: 두산퓨얼셀
+    source_market: KR
+    source_reason: AI 데이터센터 전력용 연료전지 readthrough
+    source_3m_move_pct: null
+    target_symbol: '015760'
+    target_name: 한국전력
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 자가 onsite power 확대 담론은 계통 의존도 완화 논리로 해석될 수 있음
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: 분산전원 확대 뉴스와 전력망 병목 이슈가 함께 나올 때만 관찰
+  - source_symbol: '475150'
+    source_name: SK이터닉스
+    source_market: KR
+    source_reason: Bloom-SK SOFC Eco Park 파트너십 readthrough
+    source_3m_move_pct: null
+    target_symbol: BE
+    target_name: Bloom Energy
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: HIGH
+    rationale: SK 프로젝트 상승은 Bloom 공급·실행 기대와 직접 연결
+    evidence:
+    - title: Bloom Energy partnered with SK Eternix for Eco Park fuel cell installations
+      url: https://en.wikipedia.org/wiki/Bloom_Energy
+    trading_note: SK이터닉스 강세가 Bloom SOFC 실행 기대에서 나온 경우 BE 후행 반응 관찰
+  - source_symbol: '475150'
+    source_name: SK이터닉스
+    source_market: KR
+    source_reason: Bloom-SK SOFC Eco Park 파트너십 readthrough
+    source_3m_move_pct: null
+    target_symbol: '336260'
+    target_name: 두산퓨얼셀
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 발전용 연료전지 peer 후행 반응 관찰
+    evidence:
+    - title: Ceres Power says South Korean group’s factory is first to make its fuel cells
+      url: https://www.thetimes.com/article/2bde3345-ff1c-4bd2-b99b-b0dfc1f979a9
+    trading_note: SK이터닉스 급등 후 두산퓨얼셀의 동일 테마 동조 여부 관찰
+  - source_symbol: '475150'
+    source_name: SK이터닉스
+    source_market: KR
+    source_reason: Bloom-SK SOFC Eco Park 파트너십 readthrough
+    source_3m_move_pct: null
+    target_symbol: '015760'
+    target_name: 한국전력
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 자가 발전·분산전원 확대 narrative에 따른 부담 후보
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: 분산전원 확대 narrative가 강할 때만 한국전력 부담 후보 관찰
+  - source_symbol: '475150'
+    source_name: SK이터닉스
+    source_market: KR
+    source_reason: Bloom-SK SOFC Eco Park 파트너십 readthrough
+    source_3m_move_pct: null
+    target_symbol: '042670'
+    target_name: HD현대인프라코어
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 기존 디젤 genset 대체 narrative 부담 후보
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: SK이터닉스 강세가 데이터센터 전원 대체 논리와 결합될 때만 관찰
+  - source_symbol: '382900'
+    source_name: 범한퓨얼셀
+    source_market: KR
+    source_reason: 수소연료전지·건물/방산용 peer
+    source_3m_move_pct: null
+    target_symbol: '336260'
+    target_name: 두산퓨얼셀
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 연료전지 peer 후행 반응 관찰
+    evidence:
+    - title: Bumhan Fuel Cell produces hydrogen stations, submarine fuel cells and building fuel cells
+      url: https://www.bumhan.com/en/
+    trading_note: 범한퓨얼셀 급등 후 두산퓨얼셀 대형 peer 후행 반응 관찰
+  - source_symbol: '382900'
+    source_name: 범한퓨얼셀
+    source_market: KR
+    source_reason: 수소연료전지·건물/방산용 peer
+    source_3m_move_pct: null
+    target_symbol: 005380
+    target_name: 현대차
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 수소연료전지 생태계 확장 readthrough
+    evidence:
+    - title: Hyundai Motor breaks ground on hydrogen fuel cell plant in Ulsan
+      url: https://www.reuters.com/business/autos-transportation/hyundai-motor-breaks-ground-hydrogen-fuel-cell-plant-ulsan-2025-10-30/
+    trading_note: 수소 정책/설비투자 뉴스가 동반될 때 현대차 수소 exposure 후행 관찰
+  - source_symbol: '382900'
+    source_name: 범한퓨얼셀
+    source_market: KR
+    source_reason: 수소연료전지·건물/방산용 peer
+    source_3m_move_pct: null
+    target_symbol: '042670'
+    target_name: HD현대인프라코어
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 연료전지 전원 확대 시 기존 발전기·엔진 sentiment 부담 후보
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: 범한퓨얼셀 급등 단독보다 연료전지 전원 대체 뉴스와 결합될 때 관찰
+  - source_symbol: '382900'
+    source_name: 범한퓨얼셀
+    source_market: KR
+    source_reason: 수소연료전지·건물/방산용 peer
+    source_3m_move_pct: null
+    target_symbol: '015760'
+    target_name: 한국전력
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 분산전원 확대 기대가 전력망 독점 수요 narrative를 약화할 가능성
+    evidence:
+    - title: Fuel cell groups ride AI power demand wave
+      url: https://www.ft.com/content/c818cb50-60ee-4439-9ce0-7f36ecc37ced
+    trading_note: 전력망 병목·자가발전 확대 뉴스가 동반될 때만 관찰
+  - source_symbol: '383310'
+    source_name: 에코프로에이치엔
+    source_market: KR
+    source_reason: K-ETS / 환경설비 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: '119650'
+    target_name: KC코트렐
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 탄소·대기오염 규제 강화 시 환경설비 수요 관찰 후보
+    evidence:
+    - title: Korea Emissions Trading Scheme overview
+      url: https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme
+    trading_note: 에코프로에이치엔 강세가 탄소/환경규제 뉴스에서 나온 경우 KC코트렐 후행 관찰
+  - source_symbol: '383310'
+    source_name: 에코프로에이치엔
+    source_market: KR
+    source_reason: K-ETS / 환경설비 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: 083420
+    target_name: 그린케미칼
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 탄소활용·CCU 테마 후행 관찰 후보
+    evidence:
+    - title: Korean Carbon Capture and Sequestration R&D Center
+      url: https://www.kcrc.re.kr/
+    trading_note: 정책성 테마 연결이므로 거래대금 확인 후 낮은 가중치로 관찰
+  - source_symbol: '383310'
+    source_name: 에코프로에이치엔
+    source_market: KR
+    source_reason: K-ETS / 환경설비 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: 005490
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 탄소·대기오염 규제 강화는 대형 배출 업종 비용 압박 리스크
+    evidence:
+    - title: Korea Emissions Trading Scheme covers major emitters
+      url: https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme
+    trading_note: 탄소가격·배출권 비용 관련 뉴스가 나올 때만 철강 비용 압박 관찰
+  - source_symbol: '383310'
+    source_name: 에코프로에이치엔
+    source_market: KR
+    source_reason: K-ETS / 환경설비 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: '004020'
+    target_name: 현대제철
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 배출권·환경설비 비용 부담 후보
+    evidence:
+    - title: Korea Emissions Trading Scheme overview
+      url: https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme
+    trading_note: 탄소가격 상승 또는 환경설비 capex 뉴스와 결합될 때만 관찰
+  - source_symbol: '119650'
+    source_name: KC코트렐
+    source_market: KR
+    source_reason: 집진·탈황·탈질 등 대기오염 방지설비
+    source_3m_move_pct: null
+    target_symbol: 009440
+    target_name: KC그린홀딩스
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 그룹 환경설비 readthrough 관찰 후보
+    evidence:
+    - title: KC Cottrell / Lodge Cottrell air pollution control products
+      url: https://www.lodgecottrell.com/
+    trading_note: KC코트렐 급등 당일 KC그린홀딩스의 동조율 관찰
+  - source_symbol: '119650'
+    source_name: KC코트렐
+    source_market: KR
+    source_reason: 집진·탈황·탈질 등 대기오염 방지설비
+    source_3m_move_pct: null
+    target_symbol: '383310'
+    target_name: 에코프로에이치엔
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 대기오염·환경설비 peer 후행 반응 관찰
+    evidence:
+    - title: KC Cottrell air pollution control products include ESP, fabric filters, FGD and De-NOx
+      url: https://www.lodgecottrell.com/
+    trading_note: KC코트렐 강세가 대기환경 설비 뉴스에서 나온 경우 에코프로에이치엔 관찰
+  - source_symbol: '119650'
+    source_name: KC코트렐
+    source_market: KR
+    source_reason: 집진·탈황·탈질 등 대기오염 방지설비
+    source_3m_move_pct: null
+    target_symbol: '015760'
+    target_name: 한국전력
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 발전부문 오염저감 설비 투자 비용 부담 후보
+    evidence:
+    - title: KC Cottrell air pollution control systems
+      url: https://www.lodgecottrell.com/
+    trading_note: 환경설비 투자 의무 강화 뉴스가 함께 나올 때만 비용 부담 후보로 관찰
+  - source_symbol: '119650'
+    source_name: KC코트렐
+    source_market: KR
+    source_reason: 집진·탈황·탈질 등 대기오염 방지설비
+    source_3m_move_pct: null
+    target_symbol: 005490
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: 제철·제조 배출 저감 설비 투자 부담 후보
+    evidence:
+    - title: KC Cottrell air pollution control products
+      url: https://www.lodgecottrell.com/
+    trading_note: 대기오염 저감 투자 뉴스와 철강 마진 부담이 겹칠 때 관찰
+  - source_symbol: 083420
+    source_name: 그린케미칼
+    source_market: KR
+    source_reason: CCU / 탄소활용 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: '383310'
+    target_name: 에코프로에이치엔
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 탄소 저감·환경설비 basket 후행 반응 관찰
+    evidence:
+    - title: Korean Carbon Capture and Sequestration R&D Center
+      url: https://www.kcrc.re.kr/
+    trading_note: 정책성 테마이므로 가격·거래대금 확인 후 관찰
+  - source_symbol: 083420
+    source_name: 그린케미칼
+    source_market: KR
+    source_reason: CCU / 탄소활용 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: '119650'
+    target_name: KC코트렐
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 탄소·대기오염 설비 정책 기대 확산 후보
+    evidence:
+    - title: Korea Emissions Trading Scheme overview
+      url: https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme
+    trading_note: 탄소 정책 뉴스가 환경설비로 확산되는지 KC코트렐 후행 관찰
+  - source_symbol: 083420
+    source_name: 그린케미칼
+    source_market: KR
+    source_reason: CCU / 탄소활용 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: 005490
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 탄소비용 상승 narrative의 비용 압박 후보
+    evidence:
+    - title: Korea Emissions Trading Scheme overview
+      url: https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme
+    trading_note: 그린케미칼 강세 단독보다 탄소가격·배출권 뉴스 동반 시 관찰
+  - source_symbol: 083420
+    source_name: 그린케미칼
+    source_market: KR
+    source_reason: CCU / 탄소활용 정책 readthrough
+    source_3m_move_pct: null
+    target_symbol: '004020'
+    target_name: 현대제철
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 탄소비용·저감투자 부담 후보
+    evidence:
+    - title: Korea Emissions Trading Scheme overview
+      url: https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme
+    trading_note: 탄소비용 뉴스와 철강 마진 압박이 같이 나올 때만 관찰
+  - source_symbol: '060150'
+    source_name: 인선이엔티
+    source_market: KR
+    source_reason: 건설폐기물·재활용 수요
+    source_3m_move_pct: null
+    target_symbol: 010780
+    target_name: 아이에스동서
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 폐기물 자산·건설폐기물 처리 readthrough 관찰
+    evidence:
+    - title: Waste management in South Korea
+      url: https://en.wikipedia.org/wiki/Waste_management_in_South_Korea
+    trading_note: 인선이엔티 강세가 건설폐기물 단가/물량 뉴스에서 나온 경우 관찰
+  - source_symbol: '060150'
+    source_name: 인선이엔티
+    source_market: KR
+    source_reason: 건설폐기물·재활용 수요
+    source_3m_move_pct: null
+    target_symbol: 029960
+    target_name: 코엔텍
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 폐기물 처리 peer 후행 반응 관찰
+    evidence:
+    - title: South Korea recycling policy and waste system
+      url: https://en.wikipedia.org/wiki/Recycling_in_South_Korea
+    trading_note: 인선이엔티 급등 후 코엔텍 거래대금 동조 여부 관찰
+  - source_symbol: '060150'
+    source_name: 인선이엔티
+    source_market: KR
+    source_reason: 건설폐기물·재활용 수요
+    source_3m_move_pct: null
+    target_symbol: '000720'
+    target_name: 현대건설
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 건설폐기물 처리 단가 상승 시 공사 원가 부담 리스크
+    evidence:
+    - title: Waste management in South Korea
+      url: https://en.wikipedia.org/wiki/Waste_management_in_South_Korea
+    trading_note: 폐기물 처리 단가 상승 뉴스와 건설주 마진 부담이 겹칠 때 관찰
+  - source_symbol: '060150'
+    source_name: 인선이엔티
+    source_market: KR
+    source_reason: 건설폐기물·재활용 수요
+    source_3m_move_pct: null
+    target_symbol: '047040'
+    target_name: 대우건설
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 폐기물 처리·환경규제 비용 상승 부담 후보
+    evidence:
+    - title: South Korea waste separation and recycling system
+      url: https://en.wikipedia.org/wiki/Waste_management_in_South_Korea
+    trading_note: 건설폐기물 처리비 상승 뉴스가 있을 때만 대우건설 비용 부담 후보 관찰
+  - source_symbol: 029960
+    source_name: 코엔텍
+    source_market: KR
+    source_reason: 산업폐기물 소각·매립 수요
+    source_3m_move_pct: null
+    target_symbol: 067900
+    target_name: 와이엔텍
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 폐기물 처리 peer 후행 반응 관찰
+    evidence:
+    - title: South Korea recycling policy and waste management
+      url: https://en.wikipedia.org/wiki/Recycling_in_South_Korea
+    trading_note: 코엔텍 급등 후 와이엔텍의 폐기물 peer 동조 여부 관찰
+  - source_symbol: 029960
+    source_name: 코엔텍
+    source_market: KR
+    source_reason: 산업폐기물 소각·매립 수요
+    source_3m_move_pct: null
+    target_symbol: '060150'
+    target_name: 인선이엔티
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 폐기물 처리 basket momentum 관찰
+    evidence:
+    - title: Waste management in South Korea
+      url: https://en.wikipedia.org/wiki/Waste_management_in_South_Korea
+    trading_note: 코엔텍 강세가 폐기물 단가/정책 수혜로 해석될 때 인선이엔티 관찰
+  - source_symbol: 029960
+    source_name: 코엔텍
+    source_market: KR
+    source_reason: 산업폐기물 소각·매립 수요
+    source_3m_move_pct: null
+    target_symbol: 005490
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 산업폐기물 처리비 상승 시 제조 원가 부담 후보
+    evidence:
+    - title: South Korea waste management and recycling system
+      url: https://en.wikipedia.org/wiki/Waste_management_in_South_Korea
+    trading_note: 산업폐기물 처리비 상승 뉴스가 철강 비용 압박으로 번지는지 관찰
+  - source_symbol: 029960
+    source_name: 코엔텍
+    source_market: KR
+    source_reason: 산업폐기물 소각·매립 수요
+    source_3m_move_pct: null
+    target_symbol: '004020'
+    target_name: 현대제철
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 산업폐기물 처리비·환경규제 비용 부담 후보
+    evidence:
+    - title: South Korea recycling policy and waste management
+      url: https://en.wikipedia.org/wiki/Recycling_in_South_Korea
+    trading_note: 산업폐기물 처리비 상승과 철강 마진 부담 뉴스가 함께 나올 때 관찰

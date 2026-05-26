@@ -1,0 +1,756 @@
+sector_relation_seeds:
+  sector_id: energy_oil_lng_renewables
+  sector_name: 에너지 / 정유 / LNG / 셰일 / 태양광 / 풍력
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  price_note: US source_3m_move_pct는 공개 MarketWatch 종가 스냅샷 기반 근사치. 2026-05-17은 일요일이므로 2026-05-15 종가 사용. KR source_3m_move_pct는
+    KRX OHLCV 재검증 전까지 null.
+  edges:
+  - source_symbol: 096770
+    source_name: SK이노베이션
+    source_market: KR
+    source_reason: Q1 영업이익 2.2조원, 정유·물류 회복 read-through
+    source_3m_move_pct: null
+    target_symbol: 010950
+    target_name: S-Oil
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: HIGH
+    rationale: 정유 peer. SK이노베이션 실적·정제마진 개선이 S-Oil 후행 반응 관찰 후보.
+    evidence:
+    - title: SK Innovation beats Q1 profit estimates; S-Oil expected robust refining margins
+      url: https://www.reuters.com/world/asia-pacific/sk-innovation-warns-refining-recovery-take-time-beats-q1-profit-estimates-2026-05-13/
+    trading_note: 1일~1개월 스윙 관점에서 정제마진과 SK이노베이션 실적 read-through 후행 반응 관찰
+  - source_symbol: 096770
+    source_name: SK이노베이션
+    source_market: KR
+    source_reason: Q1 실적 서프라이즈와 정유 회복
+    source_3m_move_pct: null
+    target_symbol: 078930
+    target_name: GS
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: GS칼텍스 비상장 노출. 정유마진 개선 시 지주사 후행 수혜 가능성.
+    evidence:
+    - title: SK Innovation Q1 profit beat and refining recovery context
+      url: https://www.reuters.com/world/asia-pacific/sk-innovation-warns-refining-recovery-take-time-beats-q1-profit-estimates-2026-05-13/
+    trading_note: 1일~1개월 스윙 관점에서 정유마진과 지주사 할인율 변화를 후행 반응 관찰
+  - source_symbol: 096770
+    source_name: SK이노베이션
+    source_market: KR
+    source_reason: 유가·정제마진 민감
+    source_3m_move_pct: null
+    target_symbol: 003490
+    target_name: 대한항공
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 유가 급등 시 항공유 비용 압박 리스크. 정유 강세와 항공 원가 부담이 같은 유가 변수에서 분기.
+    evidence:
+    - title: Oil prices rise on fragile US-Iran talks and supply worries
+      url: https://www.reuters.com/business/energy/oil-prices-rise-fragile-us-iran-talks-sustain-supply-worries-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 유가 급등일 항공주 비용 압박 리스크 후행 반응 관찰
+  - source_symbol: 096770
+    source_name: SK이노베이션
+    source_market: KR
+    source_reason: 유가·정제마진 민감
+    source_3m_move_pct: null
+    target_symbol: '011170'
+    target_name: 롯데케미칼
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 나프타·에너지 원가 부담과 국내 석화 구조조정 압력 관찰 후보.
+    evidence:
+    - title: LG Chem submits petrochemical restructuring plan to South Korean government
+      url: https://www.reuters.com/world/asia-pacific/lg-chem-submits-petrochem-restructuring-plan-government-2025-12-19/
+    trading_note: 1일~1개월 스윙 관점에서 정유 강세 후 석화 마진 압박 반응 관찰
+  - source_symbol: 010950
+    source_name: S-Oil
+    source_market: KR
+    source_reason: Q4 영업이익 91% 증가, 견조한 정제마진 기대
+    source_3m_move_pct: null
+    target_symbol: 096770
+    target_name: SK이노베이션
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: HIGH
+    rationale: 같은 정유 peer. S-Oil 강세는 SK이노베이션 정유 부문 후행 반응 관찰 후보.
+    evidence:
+    - title: SK Innovation reports Q4 operating profit; S-Oil operating profit surge
+      url: https://www.reuters.com/business/energy/sk-innovation-reports-q4-operating-profit-235-million-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 S-Oil 정제마진 뉴스 후 SK이노베이션 후행 반응 관찰
+  - source_symbol: 010950
+    source_name: S-Oil
+    source_market: KR
+    source_reason: 정제마진·유가 민감
+    source_3m_move_pct: null
+    target_symbol: 078930
+    target_name: GS
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: GS칼텍스 익스포저. 정제마진 확대 시 지주사 valuation read-through 가능성.
+    evidence:
+    - title: S-Oil expected robust refining margins
+      url: https://www.reuters.com/business/energy/sk-innovation-reports-q4-operating-profit-235-million-2026-01-27/
+    trading_note: 1일~1개월 스윙 관점에서 정유 peer 강세 후 GS 후행 반응 관찰
+  - source_symbol: 010950
+    source_name: S-Oil
+    source_market: KR
+    source_reason: 유가 상승·정유주 강세
+    source_3m_move_pct: null
+    target_symbol: 003490
+    target_name: 대한항공
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 항공유 원가 부담 리스크. 유가 급등일에는 정유주와 항공주 방향성이 엇갈릴 수 있음.
+    evidence:
+    - title: Oil prices rise on supply worries
+      url: https://www.reuters.com/business/energy/oil-prices-rise-fragile-us-iran-talks-sustain-supply-worries-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 유가와 항공주 스프레드 후행 반응 관찰
+  - source_symbol: 010950
+    source_name: S-Oil
+    source_market: KR
+    source_reason: 유가 상승·정유주 강세
+    source_3m_move_pct: null
+    target_symbol: 051910
+    target_name: LG화학
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 화학 원료·에너지 비용 압박 및 국내 NCC 구조조정 관찰 후보.
+    evidence:
+    - title: LG Chem submits petrochemical restructuring plan
+      url: https://www.reuters.com/world/asia-pacific/lg-chem-submits-petrochem-restructuring-plan-government-2025-12-19/
+    trading_note: 1일~1개월 스윙 관점에서 정유 강세 후 화학 마진 부담 반응 관찰
+  - source_symbol: '036460'
+    source_name: 한국가스공사
+    source_market: KR
+    source_reason: Qatar LNG 차질, 아시아 spot LNG 가격·국내 가스수급 변수
+    source_3m_move_pct: null
+    target_symbol: '042660'
+    target_name: 한화오션
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LNG 공급망 재편·운송 수요 확대 시 LNG선/FLNG 수주 기대가 조선주로 후행 반응 가능.
+    evidence:
+    - title: South Korea says it does not expect LNG supply disruption due Qatar plant damage
+      url: https://www.reuters.com/business/energy/south-korea-says-it-does-not-expect-lng-supply-disruption-due-qatar-plant-damage-2026-03-20/
+    trading_note: 1일~1개월 스윙 관점에서 LNG 가격·수송 병목 뉴스 후 조선주 후행 반응 관찰
+  - source_symbol: '036460'
+    source_name: 한국가스공사
+    source_market: KR
+    source_reason: LNG 수급·가격 민감
+    source_3m_move_pct: null
+    target_symbol: '329180'
+    target_name: HD현대중공업
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LNG 운반선·해양 에너지 인프라 발주 기대 관찰 후보.
+    evidence:
+    - title: Top Asian LNG markets boost coal use as Iran war limits supply
+      url: https://www.reuters.com/business/energy/top-asian-lng-markets-boost-coal-use-iran-war-limits-supply-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 LNG 운송·발주 기대 후행 반응 관찰
+  - source_symbol: '036460'
+    source_name: 한국가스공사
+    source_market: KR
+    source_reason: LNG 가격 상승·발전 믹스 조정
+    source_3m_move_pct: null
+    target_symbol: '071320'
+    target_name: 지역난방공사
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: LNG 연료비 상승 시 열·전력 생산 원가 부담 리스크.
+    evidence:
+    - title: South Korea flags Qatar LNG supply and gas-fired power exposure
+      url: https://www.reuters.com/business/energy/south-korea-says-it-does-not-expect-lng-supply-disruption-due-qatar-plant-damage-2026-03-20/
+    trading_note: 1일~1개월 스윙 관점에서 LNG spot 가격 급등 후 열병합 원가 부담 반응 관찰
+  - source_symbol: '036460'
+    source_name: 한국가스공사
+    source_market: KR
+    source_reason: LNG 가격 상승·가스발전 비중 변수
+    source_3m_move_pct: null
+    target_symbol: '015760'
+    target_name: 한국전력
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 가스발전 원가 부담 가능성. 다만 요금·정책·연료믹스 변수로 confidence는 LOW.
+    evidence:
+    - title: Korea to reduce gas-fired generation and boost coal/nuclear amid LNG uncertainty
+      url: https://www.reuters.com/business/energy/south-korea-says-it-does-not-expect-lng-supply-disruption-due-qatar-plant-damage-2026-03-20/
+    trading_note: 1일~1개월 스윙 관점에서 LNG 가격과 전력 원가·요금 정책의 후행 반응 관찰
+  - source_symbol: 009830
+    source_name: 한화솔루션
+    source_market: KR
+    source_reason: 태양광 정책·미국 현지 생산·석화 구조조정 동시 민감
+    source_3m_move_pct: null
+    target_symbol: FSLR
+    target_name: First Solar
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 미국 내 태양광 제조·정책 민감 peer. 국내 solar 강세 시 FSLR 후행 관찰 후보.
+    evidence:
+    - title: First Solar plunges after downbeat net sales forecast amid policy uncertainty
+      url: https://www.reuters.com/sustainability/climate-energy/first-solar-plunges-after-downbeat-net-sales-forecast-2026-02-24/
+    trading_note: 1일~1개월 스윙 관점에서 solar 제조 정책 뉴스 후 FSLR 후행 반응 관찰
+  - source_symbol: 009830
+    source_name: 한화솔루션
+    source_market: KR
+    source_reason: 태양광 capex read-through
+    source_3m_move_pct: null
+    target_symbol: NXT
+    target_name: Nextpower/Nextracker
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대형 태양광 프로젝트·트래커 backlog가 모듈·시공 capex 회복으로 연결될 가능성.
+    evidence:
+    - title: Nextpower jumps after earnings and record backlog
+      url: https://www.barrons.com/articles/nextpower-earnings-stock-price-2eb218a5
+    trading_note: 1일~1개월 스윙 관점에서 solar capex·backlog 뉴스 후 트래커 peer 후행 반응 관찰
+  - source_symbol: 009830
+    source_name: 한화솔루션
+    source_market: KR
+    source_reason: 태양광 제조·정책 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: RUN
+    target_name: Sunrun
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 제조·관세 수혜와 별개로 주거용 설치사는 세액공제 종료·금리 민감 부담 관찰 후보.
+    evidence:
+    - title: Enphase earnings and homeowner demand before Section 25D expiry
+      url: https://www.barrons.com/articles/enphase-earnings-stock-price-303ba7fe
+    trading_note: 1일~1개월 스윙 관점에서 제조주 강세와 주거용 설치주 괴리 관찰
+  - source_symbol: 009830
+    source_name: 한화솔루션
+    source_market: KR
+    source_reason: 태양광 제조·정책 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: SEDG
+    target_name: SolarEdge
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 모듈/제조 수혜와 인버터·주거용 수요는 분리될 수 있음. 정책·수요 전환 리스크.
+    evidence:
+    - title: Solar stocks show mixed moves
+      url: https://www.marketwatch.com/data-news/first-solar-inc-stock-underperforms-wednesday-when-compared-to-competitors-despite-daily-gains-29253906-5aab1bb8e8dc
+    trading_note: 1일~1개월 스윙 관점에서 solar 제조주와 인버터 peer의 괴리 관찰
+  - source_symbol: '112610'
+    source_name: 씨에스윈드
+    source_market: KR
+    source_reason: 풍력 정책·유럽/영국 해상풍력 발주·중국 장비 규제 read-through
+    source_3m_move_pct: null
+    target_symbol: GEV
+    target_name: GE Vernova
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 풍력 터빈·전력 인프라 peer. 대형 풍력 발주와 중국 공급사 규제가 서방 공급망 수혜 가능성.
+    evidence:
+    - title: Vestas receives UK order for 92 wind turbines
+      url: https://www.reuters.com/sustainability/climate-energy/denmarks-vestas-receives-uk-order-92-wind-turbines-2026-03-10/
+    trading_note: 1일~1개월 스윙 관점에서 해상풍력 발주와 GEV 전력·풍력 후행 반응 관찰
+  - source_symbol: '112610'
+    source_name: 씨에스윈드
+    source_market: KR
+    source_reason: 풍력 공급망·정책 민감
+    source_3m_move_pct: null
+    target_symbol: NEE
+    target_name: NextEra Energy
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 재생에너지 개발사 수혜 가능성. 다만 유틸리티 금리·규제 리스크로 LOW.
+    evidence:
+    - title: EU scrutiny of Chinese wind suppliers and Europe wind policy context
+      url: https://www.reuters.com/sustainability/climate-energy/chinas-ming-yang-plans-europe-factory-after-uk-wind-turbine-snub-2026-05-14/
+    trading_note: 1일~1개월 스윙 관점에서 풍력 정책과 재생 개발사 후행 반응 관찰
+  - source_symbol: '112610'
+    source_name: 씨에스윈드
+    source_market: KR
+    source_reason: 풍력·에너지전환 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: '036460'
+    target_name: 한국가스공사
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장기적으로 재생에너지 확대가 가스발전 수요 전환 리스크가 될 수 있음.
+    evidence:
+    - title: Korea gas-fired power and LNG supply context
+      url: https://www.reuters.com/business/energy/south-korea-says-it-does-not-expect-lng-supply-disruption-due-qatar-plant-damage-2026-03-20/
+    trading_note: 1일~1개월 스윙보다는 중기 에너지믹스 전환 리스크로 후행 반응 관찰
+  - source_symbol: '112610'
+    source_name: 씨에스윈드
+    source_market: KR
+    source_reason: 에너지전환 theme
+    source_3m_move_pct: null
+    target_symbol: 010950
+    target_name: S-Oil
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장기 에너지전환 관점의 연료 수요 전환 리스크. 단기 가격 검증은 약함.
+    evidence:
+    - title: Vestas UK wind order and energy transition context
+      url: https://www.reuters.com/sustainability/climate-energy/denmarks-vestas-receives-uk-order-92-wind-turbines-2026-03-10/
+    trading_note: 1일~1개월 스윙에서는 직접성 낮음. 전환 테마 강세와 정유주 상대강도만 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정제마진·유가 충격. Feb17 197.34 → May15 250.74
+    source_3m_move_pct: 27.1
+    target_symbol: MPC
+    target_name: Marathon Petroleum
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 같은 미국 정유 peer. crack spread·제품마진 강세 시 동행/후행 반응 관찰 후보.
+    evidence:
+    - title: Valero and Marathon Petroleum MarketWatch close data; Phillips 66 higher refining margins
+      url: https://www.marketwatch.com/data-news/valero-energy-corp-stock-underperforms-friday-when-compared-to-competitors-despite-daily-gains-574626aa-4446cdde1ddc
+    trading_note: 1일~1개월 스윙 관점에서 정유 3사 상대강도와 crack spread 후행 반응 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정제마진·유가 충격
+    source_3m_move_pct: 27.1
+    target_symbol: PSX
+    target_name: Phillips 66
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: Phillips 66의 Q1 surprise profit가 higher refining margins에서 발생. VLO 강세와 peer read-through.
+    evidence:
+    - title: Phillips 66 posts surprise profit on higher refining margins
+      url: https://www.reuters.com/business/energy/refiner-phillips-66-posts-surprise-profit-higher-refining-margins-2026-04-29/
+    trading_note: 1일~1개월 스윙 관점에서 정제마진 뉴스 후 PSX 후행 반응 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정유 강세·유가 상승
+    source_3m_move_pct: 27.1
+    target_symbol: DAL
+    target_name: Delta Air Lines
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 유가·항공유 원가 상승에 따른 비용 압박 리스크.
+    evidence:
+    - title: Oil prices rise on supply worries
+      url: https://www.reuters.com/business/energy/oil-prices-rise-fragile-us-iran-talks-sustain-supply-worries-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 유가 급등일 항공주 비용 압박 반응 관찰
+  - source_symbol: VLO
+    source_name: Valero Energy
+    source_market: US
+    source_reason: 정유 강세·유가 상승
+    source_3m_move_pct: 27.1
+    target_symbol: LYB
+    target_name: LyondellBasell
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 화학 feedstock·에너지 비용 압박 관찰 후보.
+    evidence:
+    - title: Korea energy-intensive sectors risk from oil shock, applied as sector analog
+      url: https://www.reuters.com/markets/asia/iran-war-panic-made-south-korean-stocks-cheaper-not-weaker-2026-03-26/
+    trading_note: 1일~1개월 스윙 관점에서 정유 강세 후 화학주 비용 압박 반응 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정제마진·유가 충격. Feb17 200.54 → May15 255.03
+    source_3m_move_pct: 27.2
+    target_symbol: VLO
+    target_name: Valero Energy
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 미국 정유 peer. 정제마진·제품마진 강세 read-through.
+    evidence:
+    - title: Marathon Petroleum and Valero MarketWatch close data
+      url: https://www.marketwatch.com/data-news/marathon-petroleum-corp-stock-underperforms-friday-when-compared-to-competitors-despite-daily-gains-c0d8940f-89ea378f2d2e
+    trading_note: 1일~1개월 스윙 관점에서 정유 peer 간 상대강도 후행 반응 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정제마진·유가 충격
+    source_3m_move_pct: 27.2
+    target_symbol: PSX
+    target_name: Phillips 66
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: PSX 실적에서 higher refining margins가 확인되어 peer momentum 관찰 후보.
+    evidence:
+    - title: Phillips 66 posts surprise profit on higher refining margins
+      url: https://www.reuters.com/business/energy/refiner-phillips-66-posts-surprise-profit-higher-refining-margins-2026-04-29/
+    trading_note: 1일~1개월 스윙 관점에서 MPC 강세 후 PSX 후행 반응 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정유 강세·유가 상승
+    source_3m_move_pct: 27.2
+    target_symbol: AAL
+    target_name: American Airlines Group
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 항공유 비용 압박 리스크.
+    evidence:
+    - title: Oil prices rise on supply worries
+      url: https://www.reuters.com/business/energy/oil-prices-rise-fragile-us-iran-talks-sustain-supply-worries-2026-05-12/
+    trading_note: 1일~1개월 스윙 관점에서 유가 급등일 항공주 비용 압박 반응 관찰
+  - source_symbol: MPC
+    source_name: Marathon Petroleum
+    source_market: US
+    source_reason: 정유 강세·유가 상승
+    source_3m_move_pct: 27.2
+    target_symbol: DOW
+    target_name: Dow Inc.
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 에너지·원료비 상승에 따른 화학 마진 부담 관찰 후보.
+    evidence:
+    - title: Energy-intensive sectors risk from oil shock
+      url: https://www.reuters.com/markets/asia/iran-war-panic-made-south-korean-stocks-cheaper-not-weaker-2026-03-26/
+    trading_note: 1일~1개월 스윙 관점에서 정유 강세 후 화학주 비용 압박 반응 관찰
+  - source_symbol: SLB
+    source_name: SLB Ltd.
+    source_market: US
+    source_reason: 유전서비스·rig activity. Feb17 49.84 → May15 55.38
+    source_3m_move_pct: 10.8
+    target_symbol: HAL
+    target_name: Halliburton
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: oilfield service peer. Halliburton Q1 profit·repair demand read-through.
+    evidence:
+    - title: Halliburton posts higher Q1 profit; SLB MarketWatch close data
+      url: https://www.reuters.com/business/energy/halliburton-posts-higher-first-quarter-profit-2026-04-21/
+    trading_note: 1일~1개월 스윙 관점에서 SLB 강세 후 HAL 후행 반응 관찰
+  - source_symbol: SLB
+    source_name: SLB Ltd.
+    source_market: US
+    source_reason: 유전서비스·에너지 capex
+    source_3m_move_pct: 10.8
+    target_symbol: BKR
+    target_name: Baker Hughes
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Baker Hughes는 LNG/gas infrastructure·data center 전력 인프라 주문 증가. 서비스 peer 후행 관찰.
+    evidence:
+    - title: Baker Hughes beats Q1 profit estimates; IET orders rise
+      url: https://www.reuters.com/business/energy/baker-hughes-beats-first-quarter-profit-estimates-2026-04-23/
+    trading_note: 1일~1개월 스윙 관점에서 oil service와 LNG/gas infrastructure 주문 후행 반응 관찰
+  - source_symbol: SLB
+    source_name: SLB Ltd.
+    source_market: US
+    source_reason: 서비스 단가·물류 비용 민감
+    source_3m_move_pct: 10.8
+    target_symbol: XOM
+    target_name: Exxon Mobil
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: E&P는 유가 상승 수혜도 크지만 서비스·물류 비용 상승 시 capex 부담 가능성.
+    evidence:
+    - title: US drillers add oil and gas rigs; service/logistics disruption context
+      url: https://www.reuters.com/legal/litigation/us-drillers-add-oil-gas-rigs-fourth-week-row-says-baker-hughes-2026-05-15/
+    trading_note: 1일~1개월 스윙 관점에서 서비스주 강세와 integrated oil capex 부담 괴리 관찰
+  - source_symbol: SLB
+    source_name: SLB Ltd.
+    source_market: US
+    source_reason: 서비스 단가·물류 비용 민감
+    source_3m_move_pct: 10.8
+    target_symbol: CVX
+    target_name: Chevron
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 고유가 수혜와 비용 부담이 혼재. 서비스 비용 압박 리스크만 따로 관찰.
+    evidence:
+    - title: US drillers add oil and gas rigs; WTI expected higher
+      url: https://www.reuters.com/legal/litigation/us-drillers-add-oil-gas-rigs-fourth-week-row-says-baker-hughes-2026-05-15/
+    trading_note: 1일~1개월 스윙 관점에서 service cost와 integrated oil 상대강도 관찰
+  - source_symbol: LNG
+    source_name: Cheniere Energy
+    source_market: US
+    source_reason: Qatar LNG 차질·미국 LNG 수출 read-through. Feb18 223.72 → May15 241.84
+    source_3m_move_pct: 7.8
+    target_symbol: VG
+    target_name: Venture Global
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 같은 미국 LNG exporter. Qatar 차질 시 spot/contract 가격 read-through가 직접적.
+    evidence:
+    - title: Cheniere and Venture Global shares surge amid Iran attacks on Qatar LNG infrastructure
+      url: https://www.reuters.com/business/energy/cheniere-venture-global-shares-surge-amid-iran-attacks-qatar-lng-infrastructure-2026-03-19/
+    trading_note: 1일~1개월 스윙 관점에서 미국 LNG exporter 동행·후행 반응 관찰
+  - source_symbol: LNG
+    source_name: Cheniere Energy
+    source_market: US
+    source_reason: LNG 공급 차질·수출가격 민감
+    source_3m_move_pct: 7.8
+    target_symbol: NEXT
+    target_name: NextDecade
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: LNG export capacity pipeline에 대한 후행 반응 관찰 후보.
+    evidence:
+    - title: Cheniere raises 2026 core profit outlook on higher LNG production and margins
+      url: https://www.reuters.com/business/energy/cheniere-energy-posts-first-quarter-loss-2026-05-07/
+    trading_note: 1일~1개월 스윙 관점에서 LNG exporter 강세 후 개발 pipeline peer 관찰
+  - source_symbol: LNG
+    source_name: Cheniere Energy
+    source_market: US
+    source_reason: LNG 가격 상승·미국 수출 수혜
+    source_3m_move_pct: 7.8
+    target_symbol: '036460'
+    target_name: 한국가스공사
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 한국은 LNG 수입국. spot 가격 상승과 조달 비용 압박 리스크.
+    evidence:
+    - title: South Korea flags Qatar LNG plant damage and LNG importer exposure
+      url: https://www.reuters.com/business/energy/south-korea-says-it-does-not-expect-lng-supply-disruption-due-qatar-plant-damage-2026-03-20/
+    trading_note: 1일~1개월 스윙 관점에서 미국 LNG exporter 강세 후 한국 가스비용 부담 반응 관찰
+  - source_symbol: LNG
+    source_name: Cheniere Energy
+    source_market: US
+    source_reason: LNG 가격 상승·미국 수출 수혜
+    source_3m_move_pct: 7.8
+    target_symbol: '071320'
+    target_name: 지역난방공사
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LNG 기반 열·전력 생산 원가 부담 관찰 후보.
+    evidence:
+    - title: Korea gas-fired power and LNG cost exposure
+      url: https://www.reuters.com/business/energy/south-korea-says-it-does-not-expect-lng-supply-disruption-due-qatar-plant-damage-2026-03-20/
+    trading_note: 1일~1개월 스윙 관점에서 LNG spot 가격 상승 후 열병합 비용 압박 관찰
+  - source_symbol: NXT
+    source_name: Nextpower/Nextracker
+    source_market: US
+    source_reason: 실적 후 +13%, YTD +75%, backlog 52.5억달러. 3m exact 미검증
+    source_3m_move_pct: null
+    target_symbol: FSLR
+    target_name: First Solar
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: utility-scale solar capex 회복 read-through. 모듈·트래커 동반 관찰 후보.
+    evidence:
+    - title: Nextpower earnings stock jumps; record backlog
+      url: https://www.barrons.com/articles/nextpower-earnings-stock-price-2eb218a5
+    trading_note: 1일~1개월 스윙 관점에서 utility solar capex 회복 후 FSLR 후행 반응 관찰
+  - source_symbol: NXT
+    source_name: Nextpower/Nextracker
+    source_market: US
+    source_reason: 태양광 프로젝트 backlog
+    source_3m_move_pct: null
+    target_symbol: SEDG
+    target_name: SolarEdge
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: solar basket momentum. 단, SEDG는 인버터·주거용 노출이 달라 변동성 큼.
+    evidence:
+    - title: Solar stocks rebound as charts turn bullish
+      url: https://www.barrons.com/articles/solar-stocks-room-to-run-first-solar-solaredge-charts-turn-bullish-c92a4de7
+    trading_note: 1일~1개월 스윙 관점에서 solar basket 후행 반응 관찰
+  - source_symbol: NXT
+    source_name: Nextpower/Nextracker
+    source_market: US
+    source_reason: 재생에너지 capex
+    source_3m_move_pct: null
+    target_symbol: VLO
+    target_name: Valero Energy
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장기 에너지전환이 정유 수요 전환 리스크가 될 수 있으나 단기 인과는 약함.
+    evidence:
+    - title: Solar stocks rebound and energy transition context
+      url: https://www.barrons.com/articles/solar-stocks-room-to-run-first-solar-solaredge-charts-turn-bullish-c92a4de7
+    trading_note: 1일~1개월 스윙에서는 직접성 낮음. 재생에너지 강세와 정유주 상대강도만 관찰
+  - source_symbol: NXT
+    source_name: Nextpower/Nextracker
+    source_market: US
+    source_reason: 재생에너지 capex
+    source_3m_move_pct: null
+    target_symbol: XOM
+    target_name: Exxon Mobil
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장기 전환 리스크 관찰 후보. 단기 고유가 수혜와 상쇄 가능.
+    evidence:
+    - title: Solar stocks rebound and oil price shock context
+      url: https://www.barrons.com/articles/solar-stocks-room-to-run-first-solar-solaredge-charts-turn-bullish-c92a4de7
+    trading_note: 1일~1개월 스윙에서는 직접성 낮음. 에너지전환 테마와 integrated oil 상대강도 관찰
+  - source_symbol: ENPH
+    source_name: Enphase Energy
+    source_market: US
+    source_reason: Feb27 42.27 → May15 52.89, Q4 실적·가이던스 및 25D 수요
+    source_3m_move_pct: 25.8
+    target_symbol: SEDG
+    target_name: SolarEdge
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 인버터/태양광 peer. ENPH 강세 시 SEDG 후행 반응 관찰 후보.
+    evidence:
+    - title: Enphase Energy stock outperforms on strong trading day
+      url: https://www.marketwatch.com/data-news/enphase-energy-inc-stock-outperforms-competitors-on-strong-trading-day-e0fe3a24-8375af5ae52b
+    trading_note: 1일~1개월 스윙 관점에서 ENPH 강세 후 SEDG 후행 반응 관찰
+  - source_symbol: ENPH
+    source_name: Enphase Energy
+    source_market: US
+    source_reason: 주거용 solar+battery 수요
+    source_3m_move_pct: 25.8
+    target_symbol: RUN
+    target_name: Sunrun
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 설치·리스 채널 수요 read-through. 25D 만료 전 수요 선반영 관찰 후보.
+    evidence:
+    - title: Enphase earnings stock jumps on better results and guidance
+      url: https://www.barrons.com/articles/enphase-earnings-stock-price-303ba7fe
+    trading_note: 1일~1개월 스윙 관점에서 ENPH 수요 신호 후 RUN 후행 반응 관찰
+  - source_symbol: ENPH
+    source_name: Enphase Energy
+    source_market: US
+    source_reason: 분산형 태양광 수요
+    source_3m_move_pct: 25.8
+    target_symbol: DUK
+    target_name: Duke Energy
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 분산형 태양광 확대는 장기 소매전력 수요 전환 리스크. 유틸리티 규제 구조 때문에 LOW.
+    evidence:
+    - title: Enphase homeowner demand and Section 25D context
+      url: https://www.barrons.com/articles/enphase-earnings-stock-price-303ba7fe
+    trading_note: 1일~1개월 스윙에서는 직접성 낮음. 분산형 태양광과 전통 유틸리티 상대강도 관찰
+  - source_symbol: ENPH
+    source_name: Enphase Energy
+    source_market: US
+    source_reason: 분산형 태양광 수요
+    source_3m_move_pct: 25.8
+    target_symbol: SO
+    target_name: Southern Co.
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 장기 수요 전환 리스크 관찰 후보. 단기 영향은 금리·규제·지역별 net metering에 좌우.
+    evidence:
+    - title: Enphase homeowner demand and Section 25D context
+      url: https://www.barrons.com/articles/enphase-earnings-stock-price-303ba7fe
+    trading_note: 1일~1개월 스윙에서는 직접성 낮음. 분산형 태양광과 regulated utility 상대강도 관찰

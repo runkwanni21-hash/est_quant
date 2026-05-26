@@ -1,0 +1,10 @@
+[Unit]
+Description=Tele Quant Universe — KR/US 5000+ 종목 메타데이터 주간 갱신
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/projects/quant_spillover/tele_quant
+ExecStart=%h/.local/bin/uv run tele-quant build-universe
+StandardOutput=journal
+StandardError=journal

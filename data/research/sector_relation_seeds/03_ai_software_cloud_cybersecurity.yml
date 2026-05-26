@@ -1,0 +1,1017 @@
+sector_relation_seeds:
+  sector_id: ai_software_cloud_cybersecurity
+  sector_name: AI 소프트웨어 / 클라우드 / SaaS / 사이버보안
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - Markdown summary table converted to YAML by ChatGPT package builder.
+  - source_3m_move strings kept in source_3m_move_note; price backfill required.
+  edges:
+  - source_symbol: AKAM
+    source_name: Akamai Technologies
+    source_market: US
+    source_reason: Anthropic 7년 $1.8B 클라우드 인프라 딜·AI edge/inference 기대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+60~80%
+    target_symbol: NVDA
+    target_name: Nvidia
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AI 클라우드·추론 인프라 수요가 GPU/가속기 수요로 연결되는 관찰 후보
+    evidence:
+    - title: Akamai-Anthropic AI infra / hyperscaler CAPEX citeturn494090news2turn581180news8turn581180news0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: AKAM
+    source_name: Akamai Technologies
+    source_market: US
+    source_reason: Anthropic 7년 $1.8B 클라우드 인프라 딜·AI edge/inference 기대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+60~80%
+    target_symbol: VRT
+    target_name: Vertiv
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 데이터센터 전력·냉각·UPS 수요 확대의 후행 반응 관찰 후보
+    evidence:
+    - title: Akamai-Anthropic AI infra / hyperscaler CAPEX citeturn494090news2turn581180news8turn581180news0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: AKAM
+    source_name: Akamai Technologies
+    source_market: US
+    source_reason: Anthropic 7년 $1.8B 클라우드 인프라 딜·AI edge/inference 기대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+60~80%
+    target_symbol: NET
+    target_name: Cloudflare
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: edge/cloud security 고객 예산에서 AKAM 대형 계약이 NET의 상대 모멘텀을 희석할 가능성
+    evidence:
+    - title: Akamai-Anthropic AI infra / hyperscaler CAPEX citeturn494090news2turn581180news8turn581180news0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: AKAM
+    source_name: Akamai Technologies
+    source_market: US
+    source_reason: Anthropic 7년 $1.8B 클라우드 인프라 딜·AI edge/inference 기대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+60~80%
+    target_symbol: FSLY
+    target_name: Fastly
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: CDN/edge 경쟁 구도에서 대형 AI 인프라 레퍼런스 격차가 수요 전환 리스크로 작용할 수 있음
+    evidence:
+    - title: Akamai-Anthropic AI infra / hyperscaler CAPEX citeturn494090news2turn581180news8turn581180news0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRWD
+    source_name: CrowdStrike
+    source_market: US
+    source_reason: Q4 beat·ARR +24%·5월 52주 신고가
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~55%
+    target_symbol: FTNT
+    target_name: Fortinet
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AI발 위협·엔드포인트 보안 강세가 보안 peer로 확산되는 후행 반응 관찰
+    evidence:
+    - title: CrowdStrike earnings/52w high; Anthropic cyber shock citeturn438224news7turn438224news1turn257158news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRWD
+    source_name: CrowdStrike
+    source_market: US
+    source_reason: Q4 beat·ARR +24%·5월 52주 신고가
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~55%
+    target_symbol: 053800
+    target_name: 안랩
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 미국 보안 대장주 강세가 한국 보안주로 넘어오는 관찰 후보
+    evidence:
+    - title: CrowdStrike earnings/52w high; Anthropic cyber shock citeturn438224news7turn438224news1turn257158news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRWD
+    source_name: CrowdStrike
+    source_market: US
+    source_reason: Q4 beat·ARR +24%·5월 52주 신고가
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~55%
+    target_symbol: S
+    target_name: SentinelOne
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 엔드포인트/AI 보안 플랫폼 경쟁에서 CRWD의 ARR·대형고객 확대는 S의 상대 점유율 부담 후보
+    evidence:
+    - title: CrowdStrike earnings/52w high; Anthropic cyber shock citeturn438224news7turn438224news1turn257158news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRWD
+    source_name: CrowdStrike
+    source_market: US
+    source_reason: Q4 beat·ARR +24%·5월 52주 신고가
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~55%
+    target_symbol: OKTA
+    target_name: Okta
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 플랫폼 보안 벤더가 ID·접근보안 영역을 확장할 때 단품형 ID SaaS 밸류에이션 부담 가능성
+    evidence:
+    - title: CrowdStrike earnings/52w high; Anthropic cyber shock citeturn438224news7turn438224news1turn257158news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: FTNT
+    source_name: Fortinet
+    source_market: US
+    source_reason: Q1 EPS/매출/빌링스 beat, 실적 후 주가 20%대 급등
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~45%
+    target_symbol: CSCO
+    target_name: Cisco
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 네트워크 보안·AI 인프라 주문 강세가 레거시 네트워크 보안 peer로 확산될 수 있음
+    evidence:
+    - title: Fortinet Q1 beat / AI security demand citeturn628320news6turn628320news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: FTNT
+    source_name: Fortinet
+    source_market: US
+    source_reason: Q1 EPS/매출/빌링스 beat, 실적 후 주가 20%대 급등
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~45%
+    target_symbol: '136540'
+    target_name: WINS
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 방화벽·Anti-DDoS·보안관제 수요가 한국 네트워크 보안주 후행 반응 후보
+    evidence:
+    - title: Fortinet Q1 beat / AI security demand citeturn628320news6turn628320news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: FTNT
+    source_name: Fortinet
+    source_market: US
+    source_reason: Q1 EPS/매출/빌링스 beat, 실적 후 주가 20%대 급등
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~45%
+    target_symbol: ZS
+    target_name: Zscaler
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Fortinet의 SASE/보안 플랫폼 billings 강세는 고PER 순수 SASE 업체의 수요 전환 리스크로 관찰
+    evidence:
+    - title: Fortinet Q1 beat / AI security demand citeturn628320news6turn628320news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: FTNT
+    source_name: Fortinet
+    source_market: US
+    source_reason: Q1 EPS/매출/빌링스 beat, 실적 후 주가 20%대 급등
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~45%
+    target_symbol: NET
+    target_name: Cloudflare
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 네트워크 보안 예산이 FTNT형 통합 어플라이언스/ASIC 플랫폼으로 쏠리면 NET에는 상대 부담 가능성
+    evidence:
+    - title: Fortinet Q1 beat / AI security demand citeturn628320news6turn628320news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: DDOG
+    source_name: Datadog
+    source_market: US
+    source_reason: Q1 revenue +32%, 실적 후 +30% 급등, AI observability 수요
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+25~35%
+    target_symbol: SNOW
+    target_name: Snowflake
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: AI/클라우드 사용량 증가가 데이터 플랫폼으로 확산; DDOG 급등 당일 SNOW 동반 급등 보도
+    evidence:
+    - title: Datadog Q1 + Snowflake read-through citeturn794462news8turn794462news9turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: DDOG
+    source_name: Datadog
+    source_market: US
+    source_reason: Q1 revenue +32%, 실적 후 +30% 급등, AI observability 수요
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+25~35%
+    target_symbol: DT
+    target_name: Dynatrace
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: observability/APM peer로 AI agent 운영·모니터링 수요 후행 반응 관찰
+    evidence:
+    - title: Datadog Q1 + Snowflake read-through citeturn794462news8turn794462news9turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: DDOG
+    source_name: Datadog
+    source_market: US
+    source_reason: Q1 revenue +32%, 실적 후 +30% 급등, AI observability 수요
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+25~35%
+    target_symbol: CRM
+    target_name: Salesforce
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 사용량 기반 인프라 SW가 강할 때 좌석형 SaaS에는 예산 전환·성장 둔화 부담 가능성
+    evidence:
+    - title: Datadog Q1 + Snowflake read-through citeturn794462news8turn794462news9turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: DDOG
+    source_name: Datadog
+    source_market: US
+    source_reason: Q1 revenue +32%, 실적 후 +30% 급등, AI observability 수요
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+25~35%
+    target_symbol: WDAY
+    target_name: Workday
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AI가 인력·좌석 수요를 줄인다는 우려가 per-seat SaaS peer에 후행 부담으로 관찰
+    evidence:
+    - title: Datadog Q1 + Snowflake read-through citeturn794462news8turn794462news9turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PANW
+    source_name: Palo Alto Networks
+    source_market: US
+    source_reason: 2월 인수비용 부담 급락 후 AI 보안·플랫폼화 기대로 회복/돌파
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~60%
+    target_symbol: CRWD
+    target_name: CrowdStrike
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AI 보안 플랫폼 수요가 대형 보안 peer로 동반 확산되는 관찰 후보
+    evidence:
+    - title: Palo Alto AI security/CyberArk/platformization citeturn299040news6turn299040news4turn299040news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PANW
+    source_name: Palo Alto Networks
+    source_market: US
+    source_reason: 2월 인수비용 부담 급락 후 AI 보안·플랫폼화 기대로 회복/돌파
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~60%
+    target_symbol: OKTA
+    target_name: Okta
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: CyberArk 인수로 ID 보안 전략가치가 부각되면 OKTA 등 ID 보안 peer 재평가 가능성
+    evidence:
+    - title: Palo Alto AI security/CyberArk/platformization citeturn299040news6turn299040news4turn299040news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PANW
+    source_name: Palo Alto Networks
+    source_market: US
+    source_reason: 2월 인수비용 부담 급락 후 AI 보안·플랫폼화 기대로 회복/돌파
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~60%
+    target_symbol: ZS
+    target_name: Zscaler
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 플랫폼형 보안 번들 강화는 순수 SASE/SSE 업체의 가격·수요 전환 리스크
+    evidence:
+    - title: Palo Alto AI security/CyberArk/platformization citeturn299040news6turn299040news4turn299040news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PANW
+    source_name: Palo Alto Networks
+    source_market: US
+    source_reason: 2월 인수비용 부담 급락 후 AI 보안·플랫폼화 기대로 회복/돌파
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+45~60%
+    target_symbol: S
+    target_name: SentinelOne
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 대형 플랫폼이 SOC/endpoint/AI 보안을 묶을수록 단품 endpoint vendor에는 상대 부담 후보
+    evidence:
+    - title: Palo Alto AI security/CyberArk/platformization citeturn299040news6turn299040news4turn299040news7
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PLTR
+    source_name: Palantir
+    source_market: US
+    source_reason: AI 수요로 고성장; Q1 매출 +85%에도 밸류에이션 부담으로 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-5~+5%
+    target_symbol: ORCL
+    target_name: Oracle
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 정부·엔터프라이즈 AI 워크로드 확대가 클라우드/데이터 인프라 수요로 연결될 수 있음
+    evidence:
+    - title: Palantir AI demand/Q1 volatility citeturn974675news7turn974675news8turn974675news6
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PLTR
+    source_name: Palantir
+    source_market: US
+    source_reason: AI 수요로 고성장; Q1 매출 +85%에도 밸류에이션 부담으로 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-5~+5%
+    target_symbol: '012510'
+    target_name: 더존비즈온
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: LOW
+    rationale: 기업 업무·ERP 데이터에 AI를 붙이는 내러티브가 한국 엔터프라이즈 AI SW로 후행될 수 있음
+    evidence:
+    - title: Palantir AI demand/Q1 volatility citeturn974675news7turn974675news8turn974675news6
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PLTR
+    source_name: Palantir
+    source_market: US
+    source_reason: AI 수요로 고성장; Q1 매출 +85%에도 밸류에이션 부담으로 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-5~+5%
+    target_symbol: CRM
+    target_name: Salesforce
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AIP/agentic workflow가 전통 CRM·워크플로 SaaS의 좌석 성장률을 압박할 수 있음
+    evidence:
+    - title: Palantir AI demand/Q1 volatility citeturn974675news7turn974675news8turn974675news6
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: PLTR
+    source_name: Palantir
+    source_market: US
+    source_reason: AI 수요로 고성장; Q1 매출 +85%에도 밸류에이션 부담으로 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-5~+5%
+    target_symbol: AI
+    target_name: C3.ai
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 엔터프라이즈 AI 플랫폼 예산에서 PLTR의 레퍼런스 확대는 C3.ai의 상대 경쟁 부담 후보
+    evidence:
+    - title: Palantir AI demand/Q1 volatility citeturn974675news7turn974675news8turn974675news6
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRM
+    source_name: Salesforce
+    source_market: US
+    source_reason: 약한 매출 가이던스·SaaS-pocalypse 우려로 YTD/3개월 약세
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-25~-35%
+    target_symbol: MSFT
+    target_name: Microsoft
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 좌석형 SaaS 우려가 커질수록 통합 플랫폼·Copilot·Azure 생태계로 예산이 쏠리는 관찰 후보
+    evidence:
+    - title: Salesforce weak guide/SaaS-pocalypse citeturn890999news6turn890999news4turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRM
+    source_name: Salesforce
+    source_market: US
+    source_reason: 약한 매출 가이던스·SaaS-pocalypse 우려로 YTD/3개월 약세
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-25~-35%
+    target_symbol: SNOW
+    target_name: Snowflake
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: CRM 약세가 애플리케이션 SaaS에서 데이터/사용량 기반 플랫폼으로의 수요 전환 관찰 포인트가 될 수 있음
+    evidence:
+    - title: Salesforce weak guide/SaaS-pocalypse citeturn890999news6turn890999news4turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRM
+    source_name: Salesforce
+    source_market: US
+    source_reason: 약한 매출 가이던스·SaaS-pocalypse 우려로 YTD/3개월 약세
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-25~-35%
+    target_symbol: WDAY
+    target_name: Workday
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: per-seat 엔터프라이즈 SaaS 피어로 성장률·AI 대체 우려가 동반 반영될 수 있음
+    evidence:
+    - title: Salesforce weak guide/SaaS-pocalypse citeturn890999news6turn890999news4turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: CRM
+    source_name: Salesforce
+    source_market: US
+    source_reason: 약한 매출 가이던스·SaaS-pocalypse 우려로 YTD/3개월 약세
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-25~-35%
+    target_symbol: ADBE
+    target_name: Adobe
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 생성AI가 콘텐츠/마케팅 SaaS의 가격 결정력에 미치는 부담이 동반 관찰될 수 있음
+    evidence:
+    - title: Salesforce weak guide/SaaS-pocalypse citeturn890999news6turn890999news4turn187318news3
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '012510'
+    source_name: 더존비즈온
+    source_market: KR
+    source_reason: ERP·클라우드·AI SW, 52주 고점권·마진 개선 리포트
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+70~90%
+    target_symbol: '030520'
+    target_name: 한글과컴퓨터
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 국내 AI 오피스/업무 SW 피어로 기업 AI 투자 심리 후행 반응 관찰
+    evidence:
+    - title: Duzon AI/ERP high; Hancom/Gavia/ESTsoft context citeturn725317view0turn775412view0turn194042view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '012510'
+    source_name: 더존비즈온
+    source_market: KR
+    source_reason: ERP·클라우드·AI SW, 52주 고점권·마진 개선 리포트
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+70~90%
+    target_symbol: 079940
+    target_name: 가비아
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: D-cloud/기업 DX 수요가 클라우드·IDC·AI 인프라 업체의 수혜 가능성으로 연결
+    evidence:
+    - title: Duzon AI/ERP high; Hancom/Gavia/ESTsoft context citeturn725317view0turn775412view0turn194042view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '012510'
+    source_name: 더존비즈온
+    source_market: KR
+    source_reason: ERP·클라우드·AI SW, 52주 고점권·마진 개선 리포트
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+70~90%
+    target_symbol: '047560'
+    target_name: 이스트소프트
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 수익성 있는 엔터프라이즈 AI SW로 선호가 쏠리면 적자/소형 AI SaaS에는 상대 부담 가능성
+    evidence:
+    - title: Duzon AI/ERP high; Hancom/Gavia/ESTsoft context citeturn725317view0turn775412view0turn194042view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '012510'
+    source_name: 더존비즈온
+    source_market: KR
+    source_reason: ERP·클라우드·AI SW, 52주 고점권·마진 개선 리포트
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+70~90%
+    target_symbol: '041020'
+    target_name: 폴라리스오피스
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: AI 업무 SW 예산에서 대형 ERP/그룹웨어 플랫폼 우위가 AI 오피스 단품주의 수요 전환 리스크
+    evidence:
+    - title: Duzon AI/ERP high; Hancom/Gavia/ESTsoft context citeturn725317view0turn775412view0turn194042view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '356680'
+    source_name: 엑스게이트
+    source_market: KR
+    source_reason: PQC/양자보안 뉴스로 급등 후 5/15 -14% 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+80~130%
+    target_symbol: '203650'
+    target_name: 드림시큐리티
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: PQC/양자내성암호 정책·테마가 동일 보안주로 확산되는 관찰 후보
+    evidence:
+    - title: Xgate PQC/quantum headlines; Ksign/Dream PQC citeturn845066view0turn178499view1turn959985view5
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '356680'
+    source_name: 엑스게이트
+    source_market: KR
+    source_reason: PQC/양자보안 뉴스로 급등 후 5/15 -14% 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+80~130%
+    target_symbol: '192250'
+    target_name: 케이사인
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 양자내성암호 전환·국책사업 뉴스가 암호/인증 보안 peer에 후행 가능
+    evidence:
+    - title: Xgate PQC/quantum headlines; Ksign/Dream PQC citeturn845066view0turn178499view1turn959985view5
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '356680'
+    source_name: 엑스게이트
+    source_market: KR
+    source_reason: PQC/양자보안 뉴스로 급등 후 5/15 -14% 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+80~130%
+    target_symbol: '136540'
+    target_name: WINS
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 테마 수급이 PQC로 쏠릴 때 실적형 네트워크 보안주는 상대 소외될 수 있음
+    evidence:
+    - title: Xgate PQC/quantum headlines; Ksign/Dream PQC citeturn845066view0turn178499view1turn959985view5
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '356680'
+    source_name: 엑스게이트
+    source_market: KR
+    source_reason: PQC/양자보안 뉴스로 급등 후 5/15 -14% 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+80~130%
+    target_symbol: 053800
+    target_name: 안랩
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 단기 PQC 테마 과열 시 전통 보안 대형주는 수급 부담 후보이나 실적 근거는 별도 확인 필요
+    evidence:
+    - title: Xgate PQC/quantum headlines; Ksign/Dream PQC citeturn845066view0turn178499view1turn959985view5
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '263860'
+    source_name: 지니언스
+    source_market: KR
+    source_reason: 1Q 영업이익 47배·EDR/공공 보안·AI 보안 정책
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~60%
+    target_symbol: 053800
+    target_name: 안랩
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: EDR/XDR·공공 보안 수요가 국내 보안 대형주로 후행 반응
+    evidence:
+    - title: Genian EDR/govt AI security; WINS/platform cost context citeturn178499view0turn483097view0turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '263860'
+    source_name: 지니언스
+    source_market: KR
+    source_reason: 1Q 영업이익 47배·EDR/공공 보안·AI 보안 정책
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~60%
+    target_symbol: '136540'
+    target_name: WINS
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 공공·기업 보안 예산 확대가 네트워크 보안/관제 업체로 확산 가능
+    evidence:
+    - title: Genian EDR/govt AI security; WINS/platform cost context citeturn178499view0turn483097view0turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '263860'
+    source_name: 지니언스
+    source_market: KR
+    source_reason: 1Q 영업이익 47배·EDR/공공 보안·AI 보안 정책
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~60%
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 대형 플랫폼은 보안 투자·개인정보 대응 비용 증가가 마진 부담으로 관찰될 수 있음
+    evidence:
+    - title: Genian EDR/govt AI security; WINS/platform cost context citeturn178499view0turn483097view0turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '263860'
+    source_name: 지니언스
+    source_market: KR
+    source_reason: 1Q 영업이익 47배·EDR/공공 보안·AI 보안 정책
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+35~60%
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 보안 위협·규제 대응 강화가 플랫폼사의 비용 압박 리스크로 연결될 수 있음
+    evidence:
+    - title: Genian EDR/govt AI security; WINS/platform cost context citeturn178499view0turn483097view0turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '203650'
+    source_name: 드림시큐리티
+    source_market: KR
+    source_reason: 양자내성암호·국가 보안체계 뉴스, 투자경고 후 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+40~80%
+    target_symbol: '356680'
+    target_name: 엑스게이트
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 양자/PQC 테마 내 상호 후행 반응 관찰 후보
+    evidence:
+    - title: DreamSecurity PQC/quantum; Raon/WINS/AhnLab context citeturn178499view1turn178499view2turn483097view0turn194042view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '203650'
+    source_name: 드림시큐리티
+    source_market: KR
+    source_reason: 양자내성암호·국가 보안체계 뉴스, 투자경고 후 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+40~80%
+    target_symbol: '042510'
+    target_name: 라온시큐어
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 인증·DID·디지털트러스트 보안 수요가 디지털 ID 보안주로 확산 가능
+    evidence:
+    - title: DreamSecurity PQC/quantum; Raon/WINS/AhnLab context citeturn178499view1turn178499view2turn483097view0turn194042view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '203650'
+    source_name: 드림시큐리티
+    source_market: KR
+    source_reason: 양자내성암호·국가 보안체계 뉴스, 투자경고 후 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+40~80%
+    target_symbol: '136540'
+    target_name: WINS
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 양자 테마 수급 과열 시 일반 네트워크 보안주는 상대 소외되는 수급 리스크
+    evidence:
+    - title: DreamSecurity PQC/quantum; Raon/WINS/AhnLab context citeturn178499view1turn178499view2turn483097view0turn194042view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '203650'
+    source_name: 드림시큐리티
+    source_market: KR
+    source_reason: 양자내성암호·국가 보안체계 뉴스, 투자경고 후 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈+40~80%
+    target_symbol: 053800
+    target_name: 안랩
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 단기 테마 장세에서는 실적형 보안 대형주의 상대 모멘텀이 둔화될 수 있음
+    evidence:
+    - title: DreamSecurity PQC/quantum; Raon/WINS/AhnLab context citeturn178499view1turn178499view2turn483097view0turn194042view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: 053800
+    source_name: 안랩
+    source_market: KR
+    source_reason: AI 해킹/XDR·대만 CYBERSEC·보안 R&D 확대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈0~+10%
+    target_symbol: '263860'
+    target_name: 지니언스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 국내 보안 대형주의 AI/XDR 모멘텀은 EDR peer에 후행 확산 가능
+    evidence:
+    - title: AhnLab AI XDR/CYBERSEC; Genian/Raon/platform context citeturn194042view0turn178499view0turn178499view2turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: 053800
+    source_name: 안랩
+    source_market: KR
+    source_reason: AI 해킹/XDR·대만 CYBERSEC·보안 R&D 확대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈0~+10%
+    target_symbol: '042510'
+    target_name: 라온시큐어
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: AI 해킹 방어·디지털 인증 보안 수요 확대가 라온시큐어로 후행 가능
+    evidence:
+    - title: AhnLab AI XDR/CYBERSEC; Genian/Raon/platform context citeturn194042view0turn178499view0turn178499view2turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: 053800
+    source_name: 안랩
+    source_market: KR
+    source_reason: AI 해킹/XDR·대만 CYBERSEC·보안 R&D 확대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈0~+10%
+    target_symbol: '035420'
+    target_name: NAVER
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 보안 위협 부각은 플랫폼사의 보안비·개인정보 대응비 증가 리스크로 관찰
+    evidence:
+    - title: AhnLab AI XDR/CYBERSEC; Genian/Raon/platform context citeturn194042view0turn178499view0turn178499view2turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: 053800
+    source_name: 안랩
+    source_market: KR
+    source_reason: AI 해킹/XDR·대만 CYBERSEC·보안 R&D 확대
+    source_3m_move_pct: null
+    source_3m_move_note: ≈0~+10%
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 사이버보안 지출 확대는 카카오 같은 플랫폼 고객사의 비용 압박 후보
+    evidence:
+    - title: AhnLab AI XDR/CYBERSEC; Genian/Raon/platform context citeturn194042view0turn178499view0turn178499view2turn224735view0turn224735view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '047560'
+    source_name: 이스트소프트
+    source_market: KR
+    source_reason: AI SaaS/아바타 뉴스에도 적자·저점권 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-20~-40%
+    target_symbol: '012510'
+    target_name: 더존비즈온
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 적자형 AI SaaS 약세가 수익성 있는 엔터프라이즈 AI/ERP로의 선호 전환 관찰 포인트
+    evidence:
+    - title: ESTsoft AI SaaS/loss; Konan/Saltlux/Hancom context citeturn188081view0turn959985view0turn959985view1turn194042view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '047560'
+    source_name: 이스트소프트
+    source_market: KR
+    source_reason: AI SaaS/아바타 뉴스에도 적자·저점권 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-20~-40%
+    target_symbol: '030520'
+    target_name: 한글과컴퓨터
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: AI 오피스/업무 SW 내에서 실적·제품화 가시성이 높은 종목으로 상대 선호가 이동할 수 있음
+    evidence:
+    - title: ESTsoft AI SaaS/loss; Konan/Saltlux/Hancom context citeturn188081view0turn959985view0turn959985view1turn194042view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '047560'
+    source_name: 이스트소프트
+    source_market: KR
+    source_reason: AI SaaS/아바타 뉴스에도 적자·저점권 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-20~-40%
+    target_symbol: '402030'
+    target_name: 코난테크놀로지
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 소형 AI SW의 적자·R&D 부담 우려가 B2B/B2G AI peer에 동반 부담으로 작용 가능
+    evidence:
+    - title: ESTsoft AI SaaS/loss; Konan/Saltlux/Hancom context citeturn188081view0turn959985view0turn959985view1turn194042view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '047560'
+    source_name: 이스트소프트
+    source_market: KR
+    source_reason: AI SaaS/아바타 뉴스에도 적자·저점권 변동성
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-20~-40%
+    target_symbol: '304100'
+    target_name: 솔트룩스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AI 플랫폼/R&D 부담이 큰 peer의 수익성 검증 요구가 커질 수 있음
+    evidence:
+    - title: ESTsoft AI SaaS/loss; Konan/Saltlux/Hancom context citeturn188081view0turn959985view0turn959985view1turn194042view1
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: AI탭/AI 광고 수익화 기대 vs 마진 악화 리포트, 05/15 -4.46%
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-10~-20%
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 대형 플랫폼의 AI 광고/에이전트 수익화 기대가 카카오 톡비즈·AI 에이전트 기대와 동행 가능
+    evidence:
+    - title: NAVER AI tab/margin; Kakao/Gavia/ESTsoft context citeturn224735view0turn224735view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: AI탭/AI 광고 수익화 기대 vs 마진 악화 리포트, 05/15 -4.46%
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-10~-20%
+    target_symbol: 079940
+    target_name: 가비아
+    target_market: KR
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 국내 플랫폼 AI 서비스 확대는 클라우드/IDC/AI 인프라 수요 후행 관찰 포인트
+    evidence:
+    - title: NAVER AI tab/margin; Kakao/Gavia/ESTsoft context citeturn224735view0turn224735view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: AI탭/AI 광고 수익화 기대 vs 마진 악화 리포트, 05/15 -4.46%
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-10~-20%
+    target_symbol: '035720'
+    target_name: 카카오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: AI 투자비·마진 악화로 NAVER가 약세일 때 플랫폼 peer 카카오에도 후행 부담 가능
+    evidence:
+    - title: NAVER AI tab/margin; Kakao/Gavia/ESTsoft context citeturn224735view0turn224735view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰
+  - source_symbol: '035420'
+    source_name: NAVER
+    source_market: KR
+    source_reason: AI탭/AI 광고 수익화 기대 vs 마진 악화 리포트, 05/15 -4.46%
+    source_3m_move_pct: null
+    source_3m_move_note: ≈-10~-20%
+    target_symbol: '047560'
+    target_name: 이스트소프트
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 대형 플랫폼도 AI 비용·마진 부담을 받는 국면이면 소형 AI SaaS의 비용 압박 리스크가 더 커질 수 있음
+    evidence:
+    - title: NAVER AI tab/margin; Kakao/Gavia/ESTsoft context citeturn224735view0turn224735view1turn468578view2turn188081view0
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 후행 반응 관찰

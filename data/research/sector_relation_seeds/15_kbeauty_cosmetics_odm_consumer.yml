@@ -1,0 +1,931 @@
+sector_relation_seeds:
+  sector_id: kbeauty_cosmetics_odm_consumer
+  sector_name: K뷰티 / 화장품 / ODM / 소비재
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 상관관계는 인과관계가 아니며, 아래 엣지는 1일~1개월 스윙 관점의 후행 반응 관찰 후보입니다.
+  - KR 종목의 source_3m_move_pct는 실시간 KRX 가격 API로 재검증 필요하여 null로 둡니다.
+  - US 종목 중 ULTA, EL, COTY는 기사 스니펫의 2월/5월 종가 기반 근사치입니다.
+  - confidence LOW는 테마 가능성은 있으나 직접 공급망/공시/가격 검증이 약하다는 의미입니다.
+  edges:
+  - source_symbol: 278470.KS
+    source_name: 에이피알
+    source_market: KR
+    source_reason: Medicube 해외매출·TikTok·Ulta 확장
+    source_3m_move_pct: null
+    target_symbol: 192820.KS
+    target_name: 코스맥스
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: APR·Medicube류 인디 K뷰티 성장 시 ODM 물량 후행 반응 관찰 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: APR 급등 후 1일~1개월 스윙 관점에서 ODM 피어의 후행 반응 관찰
+  - source_symbol: 278470.KS
+    source_name: 에이피알
+    source_market: KR
+    source_reason: Medicube 해외매출·TikTok·Ulta 확장
+    source_3m_move_pct: null
+    target_symbol: 257720.KQ
+    target_name: 실리콘투
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 미국·글로벌 K뷰티 수요 확대가 역직구·도매 유통 수혜 가능성으로 연결
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: APR 모멘텀 이후 K뷰티 유통·수출 대장주의 후행 반응 관찰
+  - source_symbol: 278470.KS
+    source_name: 에이피알
+    source_market: KR
+    source_reason: Medicube 해외매출·TikTok·Ulta 확장
+    source_3m_move_pct: null
+    target_symbol: 090430.KS
+    target_name: 아모레퍼시픽
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 인디·바이럴 브랜드 선호가 레거시 브랜드에 수요 전환 리스크로 작용 가능. 단 COSRX·Laneige 효과도 있어 LOW
+    evidence:
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    - title: Marie Claire - Best Korean skincare brands
+      url: https://www.marieclaire.com/beauty/best-korean-skincare-brands/
+    trading_note: APR 강세가 레거시 브랜드주에 부담으로 읽히는지 5거래일 내 상대수익률 관찰
+  - source_symbol: 278470.KS
+    source_name: 에이피알
+    source_market: KR
+    source_reason: Medicube 해외매출·TikTok·Ulta 확장
+    source_3m_move_pct: null
+    target_symbol: 051900.KS
+    target_name: LG생활건강
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 중국·면세·레거시 소비재 노출이 큰 기업에는 K뷰티 인디 확산이 상대적 부담 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: APR·인디 K뷰티 강세 구간에서 LG생활건강의 상대 약세 여부 관찰
+  - source_symbol: 278470.KS
+    source_name: 에이피알
+    source_market: KR
+    source_reason: Medicube 해외매출·TikTok·Ulta 확장
+    source_3m_move_pct: null
+    target_symbol: 018290.KQ
+    target_name: 브이티
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: TikTok·Amazon 기반 K뷰티 바이럴 피어로 후행 반응 관찰
+    evidence:
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    trading_note: 바이럴 K뷰티 동조화가 같은 날~익일 나타나는지 관찰
+  - source_symbol: 257720.KQ
+    source_name: 실리콘투
+    source_market: KR
+    source_reason: K뷰티 인디브랜드 미국 오프라인·이커머스 확장
+    source_3m_move_pct: null
+    target_symbol: 192820.KS
+    target_name: 코스맥스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 실리콘투 유통 물량 증가가 인디 브랜드 ODM 수요로 후행 연결될 가능성
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 유통주 강세 이후 ODM 피어의 3거래일 내 후행 반응 관찰
+  - source_symbol: 257720.KQ
+    source_name: 실리콘투
+    source_market: KR
+    source_reason: K뷰티 인디브랜드 미국 오프라인·이커머스 확장
+    source_3m_move_pct: null
+    target_symbol: 161890.KS
+    target_name: 한국콜마
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: K뷰티 수출 브랜드 확산 시 ODM 수주·가동률 수혜 가능성
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 실리콘투 강세 후 한국콜마의 후행 수급 전환 관찰
+  - source_symbol: 257720.KQ
+    source_name: 실리콘투
+    source_market: KR
+    source_reason: K뷰티 인디브랜드 미국 오프라인·이커머스 확장
+    source_3m_move_pct: null
+    target_symbol: 090430.KS
+    target_name: 아모레퍼시픽
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 인디 브랜드 유통 강세는 레거시 브랜드에 점유율·마케팅 효율 부담 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Marie Claire - Best Korean skincare brands
+      url: https://www.marieclaire.com/beauty/best-korean-skincare-brands/
+    trading_note: 실리콘투 강세 구간에서 레거시 브랜드주의 상대 약세 여부 관찰
+  - source_symbol: 257720.KQ
+    source_name: 실리콘투
+    source_market: KR
+    source_reason: K뷰티 인디브랜드 미국 오프라인·이커머스 확장
+    source_3m_move_pct: null
+    target_symbol: 051900.KS
+    target_name: LG생활건강
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 중국 소비 둔화·면세 의존 기업은 미국 인디 K뷰티 강세와 대비되는 부담 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: K뷰티 수출주 강세와 중국·면세 노출주의 디커플링 관찰
+  - source_symbol: 257720.KQ
+    source_name: 실리콘투
+    source_market: KR
+    source_reason: K뷰티 인디브랜드 미국 오프라인·이커머스 확장
+    source_3m_move_pct: null
+    target_symbol: 278470.KS
+    target_name: 에이피알
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: K뷰티 미국 확장이라는 동일 테마의 브랜드 피어 모멘텀
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: 실리콘투 모멘텀 이후 APR·브이티 등 브랜드주 동조화 관찰
+  - source_symbol: 192820.KS
+    source_name: 코스맥스
+    source_market: KR
+    source_reason: K뷰티 ODM 물량·수출 후행 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 161890.KS
+    target_name: 한국콜마
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 국내 양대 ODM 피어로 가격·수주 기대가 동시 반영될 가능성
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: ODM 대장주 강세 시 같은 날 한국콜마 동조 여부 관찰
+  - source_symbol: 192820.KS
+    source_name: 코스맥스
+    source_market: KR
+    source_reason: K뷰티 ODM 물량·수출 후행 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 352480.KQ
+    target_name: 씨앤씨인터내셔널
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 색조·인디 브랜드 ODM 피어로 후행 반응 관찰 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 코스맥스 강세 이후 중소형 ODM 피어 후행 반응 관찰
+  - source_symbol: 192820.KS
+    source_name: 코스맥스
+    source_market: KR
+    source_reason: K뷰티 ODM 물량·수출 후행 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 251970.KQ
+    target_name: 펌텍코리아
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 화장품 생산 물량 증가는 용기·패키징 물량으로 후행 연결 가능
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: ODM 강세 후 패키징 밸류체인의 3~10일 후행 반응 관찰
+  - source_symbol: 192820.KS
+    source_name: 코스맥스
+    source_market: KR
+    source_reason: K뷰티 ODM 물량·수출 후행 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: EL
+    target_name: Estée Lauder
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 저비용·빠른 ODM 기반 K뷰티 확산은 서구 레거시 브랜드에 수요 전환 리스크
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    - title: Le Monde - French cosmetics sales drop in the US after being struck by tariffs
+      url: https://www.lemonde.fr/en/economy/article/2026/02/08/french-cosmetics-sales-drop-in-the-us-after-being-struck-by-tariffs_6750278_19.html
+    trading_note: K뷰티 ODM 강세가 미국 레거시 뷰티 약세와 함께 나타나는지 관찰
+  - source_symbol: 192820.KS
+    source_name: 코스맥스
+    source_market: KR
+    source_reason: K뷰티 ODM 물량·수출 후행 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: COTY
+    target_name: Coty
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: K뷰티 ODM 생태계의 가격·속도 경쟁력이 글로벌 레거시 뷰티에 부담 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    trading_note: ODM 강세와 COTY 상대 약세의 5~10일 후행 관계 관찰
+  - source_symbol: 161890.KS
+    source_name: 한국콜마
+    source_market: KR
+    source_reason: ODM·북미 K뷰티 물량 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 192820.KS
+    target_name: 코스맥스
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: ODM 피어로 수출·인디 브랜드 수주 기대가 동시 반영될 가능성
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 한국콜마 강세 시 코스맥스 동조 여부를 같은 날 관찰
+  - source_symbol: 161890.KS
+    source_name: 한국콜마
+    source_market: KR
+    source_reason: ODM·북미 K뷰티 물량 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 950140.KQ
+    target_name: 잉글우드랩
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 북미 ODM·현지 생산 노출이 있어 미국 K뷰티 수요의 후행 관찰 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 한국콜마 강세 이후 북미 ODM 노출주의 3~10일 후행 반응 관찰
+  - source_symbol: 161890.KS
+    source_name: 한국콜마
+    source_market: KR
+    source_reason: ODM·북미 K뷰티 물량 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 352480.KQ
+    target_name: 씨앤씨인터내셔널
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 인디 브랜드 ODM 수요 확산 시 중소형 ODM 피어 반응 가능
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 한국콜마 급등 후 씨앤씨인터내셔널 후행 수급 관찰
+  - source_symbol: 161890.KS
+    source_name: 한국콜마
+    source_market: KR
+    source_reason: ODM·북미 K뷰티 물량 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 090430.KS
+    target_name: 아모레퍼시픽
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: ODM·인디 브랜드 강세가 자체 브랜드 중심 기업의 상대 매력 저하로 연결될 수 있음
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: Marie Claire - Best Korean skincare brands
+      url: https://www.marieclaire.com/beauty/best-korean-skincare-brands/
+    trading_note: ODM주 강세와 브랜드주 상대 약세의 분리 여부 관찰
+  - source_symbol: 161890.KS
+    source_name: 한국콜마
+    source_market: KR
+    source_reason: ODM·북미 K뷰티 물량 수혜 가능성
+    source_3m_move_pct: null
+    target_symbol: 051900.KS
+    target_name: LG생활건강
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 중국·면세 레거시 모델 대비 미국 인디 ODM 모델 선호가 부담 후보
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: 한국콜마 강세 이후 LG생활건강 상대 약세 여부 관찰
+  - source_symbol: 018290.KQ
+    source_name: 브이티
+    source_market: KR
+    source_reason: Reedle Shot 바이럴·Amazon 판매 관찰
+    source_3m_move_pct: null
+    target_symbol: 278470.KS
+    target_name: 에이피알
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 바이럴 스킨케어·뷰티 디바이스/기능성 제품 피어 모멘텀
+    evidence:
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: 브이티 바이럴 모멘텀 이후 APR의 동조화 관찰
+  - source_symbol: 018290.KQ
+    source_name: 브이티
+    source_market: KR
+    source_reason: Reedle Shot 바이럴·Amazon 판매 관찰
+    source_3m_move_pct: null
+    target_symbol: 237880.KQ
+    target_name: 클리오
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 미국 소비자 노출이 커지는 K뷰티 색조·브랜드 피어
+    evidence:
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    - title: Byrdie - Grammys 2026 Beauty Products
+      url: https://www.byrdie.com/grammys-2026-beauty-products-11897036
+    trading_note: 브이티 강세 후 클리오 등 K뷰티 브랜드주의 후행 반응 관찰
+  - source_symbol: 018290.KQ
+    source_name: 브이티
+    source_market: KR
+    source_reason: Reedle Shot 바이럴·Amazon 판매 관찰
+    source_3m_move_pct: null
+    target_symbol: EL
+    target_name: Estée Lauder
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 저가·기능성·바이럴 제품 강세는 프레스티지 레거시 브랜드에 수요 전환 리스크
+    evidence:
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    trading_note: 브이티 급등 시 EL 등 프레스티지 뷰티의 상대 약세 여부 관찰
+  - source_symbol: 018290.KQ
+    source_name: 브이티
+    source_market: KR
+    source_reason: Reedle Shot 바이럴·Amazon 판매 관찰
+    source_3m_move_pct: null
+    target_symbol: COTY
+    target_name: Coty
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 빠른 제품 사이클의 K뷰티 강세가 레거시 색조·향수 기업에 부담 후보
+    evidence:
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    trading_note: K뷰티 바이럴 브랜드 강세와 COTY 상대 약세의 후행 관계 관찰
+  - source_symbol: 018290.KQ
+    source_name: 브이티
+    source_market: KR
+    source_reason: Reedle Shot 바이럴·Amazon 판매 관찰
+    source_3m_move_pct: null
+    target_symbol: 192820.KS
+    target_name: 코스맥스
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 바이럴 브랜드 확산이 ODM 수요로 이어질 가능성은 있으나 직접 공급 관계 미확인
+    evidence:
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    trading_note: 브이티 제품 모멘텀 이후 ODM 피어가 따라붙는지 관찰
+  - source_symbol: ELF
+    source_name: e.l.f. Beauty
+    source_market: US
+    source_reason: 실적 beat·가이던스 상향·가성비 뷰티 강세
+    source_3m_move_pct: null
+    target_symbol: ULTA
+    target_name: Ulta Beauty
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: e.l.f. 수요 강세는 Ulta 등 뷰티 리테일 트래픽·카테고리 수요 확인 신호
+    evidence:
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    - title: Reuters - Ulta Beauty slides as rising costs hit margins
+      url: https://www.reuters.com/business/retail-consumer/ulta-beauty-slides-rising-costs-hit-margins-focus-tiktok-push-under-new-ceo-2026-03-13/
+    trading_note: ELF 호실적 이후 뷰티 리테일 피어의 익일 반응 관찰
+  - source_symbol: ELF
+    source_name: e.l.f. Beauty
+    source_market: US
+    source_reason: 실적 beat·가이던스 상향·가성비 뷰티 강세
+    source_3m_move_pct: null
+    target_symbol: ODD
+    target_name: Oddity Tech
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: DTC·디지털·가성비 뷰티 피어로 모멘텀 동조 가능성
+    evidence:
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    trading_note: ELF 급등 후 디지털 뷰티 피어의 후행 반응 관찰
+  - source_symbol: ELF
+    source_name: e.l.f. Beauty
+    source_market: US
+    source_reason: 실적 beat·가이던스 상향·가성비 뷰티 강세
+    source_3m_move_pct: null
+    target_symbol: EL
+    target_name: Estée Lauder
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 가성비·인디 브랜드 강세가 프레스티지 레거시 브랜드에 점유율 부담 후보
+    evidence:
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    trading_note: ELF 강세 당일 EL 상대 약세 여부 관찰
+  - source_symbol: ELF
+    source_name: e.l.f. Beauty
+    source_market: US
+    source_reason: 실적 beat·가이던스 상향·가성비 뷰티 강세
+    source_3m_move_pct: null
+    target_symbol: COTY
+    target_name: Coty
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 저가·소셜 뷰티 강세는 레거시 색조·향수 포트폴리오에 부담 후보
+    evidence:
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    trading_note: ELF 강세와 COTY 상대 약세의 같은 날 반응 관찰
+  - source_symbol: ELF
+    source_name: e.l.f. Beauty
+    source_market: US
+    source_reason: 실적 beat·가이던스 상향·가성비 뷰티 강세
+    source_3m_move_pct: null
+    target_symbol: 278470.KS
+    target_name: 에이피알
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 미국 저가·바이럴 뷰티 강세는 K뷰티 TikTok·Amazon 브랜드로 후행 확산 가능
+    evidence:
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: 미국 뷰티 성장주 강세 후 한국 K뷰티 브랜드주의 3거래일 후행 반응 관찰
+  - source_symbol: ULTA
+    source_name: Ulta Beauty
+    source_market: US
+    source_reason: 비용·마진 부담 및 가이던스 실망
+    source_3m_move_pct: -29.5
+    target_symbol: ELF
+    target_name: e.l.f. Beauty
+    target_market: US
+    relation_type: BENEFICIARY
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: Ulta 비용 부담이 커질수록 저가·DTC 브랜드 선호가 부각될 수 있음
+    evidence:
+    - title: Reuters - Ulta Beauty slides as rising costs hit margins
+      url: https://www.reuters.com/business/retail-consumer/ulta-beauty-slides-rising-costs-hit-margins-focus-tiktok-push-under-new-ceo-2026-03-13/
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    trading_note: Ulta 급락 후 ELF가 방어·상대강세를 보이는지 관찰
+  - source_symbol: ULTA
+    source_name: Ulta Beauty
+    source_market: US
+    source_reason: 비용·마진 부담 및 가이던스 실망
+    source_3m_move_pct: -29.5
+    target_symbol: 257720.KQ
+    target_name: 실리콘투
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 오프라인 리테일 마진 부담은 Amazon/TikTok/도매 유통 채널 상대 매력 관찰 포인트
+    evidence:
+    - title: Reuters - Ulta Beauty slides as rising costs hit margins
+      url: https://www.reuters.com/business/retail-consumer/ulta-beauty-slides-rising-costs-hit-margins-focus-tiktok-push-under-new-ceo-2026-03-13/
+    - title: Reuters - Korean beauty startups bet booming US demand outlasts tariff pain
+      url: https://www.reuters.com/world/asia-pacific/korean-beauty-startups-bet-booming-us-demand-outlasts-tariff-pain-2025-06-05/
+    trading_note: Ulta 약세 이후 K뷰티 유통주의 상대강세 가능성 관찰
+  - source_symbol: ULTA
+    source_name: Ulta Beauty
+    source_market: US
+    source_reason: 비용·마진 부담 및 가이던스 실망
+    source_3m_move_pct: -29.5
+    target_symbol: 278470.KS
+    target_name: 에이피알
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: Medicube 등 Ulta 입점 브랜드에는 미국 뷰티 리테일 트래픽·마진 둔화가 채널 리스크
+    evidence:
+    - title: Reuters - Ulta Beauty slides as rising costs hit margins
+      url: https://www.reuters.com/business/retail-consumer/ulta-beauty-slides-rising-costs-hit-margins-focus-tiktok-push-under-new-ceo-2026-03-13/
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: Ulta 급락 후 Ulta 입점 K뷰티 브랜드주의 채널 리스크 반영 여부 관찰
+  - source_symbol: ULTA
+    source_name: Ulta Beauty
+    source_market: US
+    source_reason: 비용·마진 부담 및 가이던스 실망
+    source_3m_move_pct: -29.5
+    target_symbol: TGT
+    target_name: Target
+    target_market: US
+    relation_type: CUSTOMER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: Ulta–Target 파트너십 종료와 뷰티 채널 부담이 동반 관찰됨
+    evidence:
+    - title: AP - Target and Ulta won’t renew partnership
+      url: https://apnews.com/article/ulta-target-beauty-partnership-2026
+    - title: Reuters - Ulta, Target to end beauty mini-shop partnership
+      url: https://www.reuters.com/business/ulta-target-end-beauty-mini-shop-partnership-2026-2025-08-14/
+    trading_note: Ulta 약세와 Target 뷰티 채널 부담의 동조 여부 관찰
+  - source_symbol: ULTA
+    source_name: Ulta Beauty
+    source_market: US
+    source_reason: 비용·마진 부담 및 가이던스 실망
+    source_3m_move_pct: -29.5
+    target_symbol: SBH
+    target_name: Sally Beauty
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 뷰티 리테일 피어로 비용·트래픽 둔화 이슈 후행 반응 관찰
+    evidence:
+    - title: Reuters - Ulta Beauty slides as rising costs hit margins
+      url: https://www.reuters.com/business/retail-consumer/ulta-beauty-slides-rising-costs-hit-margins-focus-tiktok-push-under-new-ceo-2026-03-13/
+    trading_note: Ulta 급락일 SBH 등 뷰티 리테일 피어 동조 여부 관찰
+  - source_symbol: EL
+    source_name: Estée Lauder
+    source_market: US
+    source_reason: 구조조정·관세·마진 압박
+    source_3m_move_pct: -27.9
+    target_symbol: 090430.KS
+    target_name: 아모레퍼시픽
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 미국에서 레거시 프레스티지 약세가 Laneige·COSRX 등 K뷰티 브랜드 상대 수혜 가능성으로 연결
+    evidence:
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    - title: Le Monde - French cosmetics sales drop in the US after being struck by tariffs
+      url: https://www.lemonde.fr/en/economy/article/2026/02/08/french-cosmetics-sales-drop-in-the-us-after-being-struck-by-tariffs_6750278_19.html
+    - title: Marie Claire - Best Korean skincare brands
+      url: https://www.marieclaire.com/beauty/best-korean-skincare-brands/
+    trading_note: EL 급락 후 아모레퍼시픽의 미국 K뷰티 대체 수요 반응 관찰
+  - source_symbol: EL
+    source_name: Estée Lauder
+    source_market: US
+    source_reason: 구조조정·관세·마진 압박
+    source_3m_move_pct: -27.9
+    target_symbol: 278470.KS
+    target_name: 에이피알
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 레거시 프레스티지 약세는 Medicube 같은 디지털 K뷰티 브랜드 후행 관찰 포인트
+    evidence:
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    - title: Vogue Business - How K-beauty brand Medicube pulled off its global breakout
+      url: https://www.vogue.com/article/how-k-beauty-brand-medicube-pulled-off-its-global-breakout
+    trading_note: EL 약세 후 APR·VT 등 디지털 K뷰티 브랜드의 상대강세 관찰
+  - source_symbol: EL
+    source_name: Estée Lauder
+    source_market: US
+    source_reason: 구조조정·관세·마진 압박
+    source_3m_move_pct: -27.9
+    target_symbol: COTY
+    target_name: Coty
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 글로벌 레거시 뷰티 피어로 마진·관세·수요 둔화 우려가 동시 반영될 가능성
+    evidence:
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    trading_note: EL 급락일 COTY 동조 하락 여부 관찰
+  - source_symbol: EL
+    source_name: Estée Lauder
+    source_market: US
+    source_reason: 구조조정·관세·마진 압박
+    source_3m_move_pct: -27.9
+    target_symbol: PG
+    target_name: Procter & Gamble
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: Olay/SK-II 등 뷰티·생활소비재 대형 피어에 방어 소비재 부담으로 후행 반응 관찰
+    evidence:
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    - title: MarketWatch - Procter & Gamble stock underperforms
+      url: https://www.marketwatch.com/data-news/procter-gamble-co-stock-underperforms-monday-when-compared-to-competitors-61b52a1a-6ba02504d7d3
+    trading_note: EL 약세 이후 PG·CL 등 대형 소비재 피어 동조 관찰
+  - source_symbol: EL
+    source_name: Estée Lauder
+    source_market: US
+    source_reason: 구조조정·관세·마진 압박
+    source_3m_move_pct: -27.9
+    target_symbol: ELF
+    target_name: e.l.f. Beauty
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 프레스티지 약세와 구조조정은 저가·고성장 뷰티 대체 수요 관찰 후보
+    evidence:
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    trading_note: EL 하락 후 ELF 상대강세가 나타나는지 관찰
+  - source_symbol: COTY
+    source_name: Coty
+    source_market: US
+    source_reason: 중동 수요 차질·소비자뷰티 전략검토
+    source_3m_move_pct: -19.5
+    target_symbol: ELF
+    target_name: e.l.f. Beauty
+    target_market: US
+    relation_type: BENEFICIARY
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 레거시 색조·향수 약세는 가성비·소셜 뷰티 브랜드 상대 수혜 가능성
+    evidence:
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    trading_note: COTY 약세 이후 ELF 상대강세 관찰
+  - source_symbol: COTY
+    source_name: Coty
+    source_market: US
+    source_reason: 중동 수요 차질·소비자뷰티 전략검토
+    source_3m_move_pct: -19.5
+    target_symbol: 018290.KQ
+    target_name: 브이티
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 서구 레거시 제품 약세가 기능성 K뷰티 바이럴 제품으로 수요 전환될 가능성은 관찰 수준
+    evidence:
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    - title: InStyle - VT Cosmetics Cica Reedles Shot Review
+      url: https://www.instyle.com/vt-cosmetics-cica-reedles-shot-review-amazon-11941688
+    trading_note: COTY 약세와 K뷰티 바이럴 브랜드의 상대 수혜 가능성 관찰
+  - source_symbol: COTY
+    source_name: Coty
+    source_market: US
+    source_reason: 중동 수요 차질·소비자뷰티 전략검토
+    source_3m_move_pct: -19.5
+    target_symbol: EL
+    target_name: Estée Lauder
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 레거시 뷰티 피어로 매출·마진 우려가 동반 반영될 가능성
+    evidence:
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    trading_note: COTY 급락일 EL 동조 하락 관찰
+  - source_symbol: COTY
+    source_name: Coty
+    source_market: US
+    source_reason: 중동 수요 차질·소비자뷰티 전략검토
+    source_3m_move_pct: -19.5
+    target_symbol: IPAR
+    target_name: Interparfums
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 향수·프래그런스 피어로 지역 수요 둔화 후행 반응 관찰
+    evidence:
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    trading_note: COTY 악재 후 향수 피어의 같은 날~익일 반응 관찰
+  - source_symbol: COTY
+    source_name: Coty
+    source_market: US
+    source_reason: 중동 수요 차질·소비자뷰티 전략검토
+    source_3m_move_pct: -19.5
+    target_symbol: IFF
+    target_name: International Flavors & Fragrances
+    target_market: US
+    relation_type: SUPPLIER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Coty가 런칭·마케팅을 줄이면 향료·원료 공급망에는 수요 둔화 리스크 가능
+    evidence:
+    - title: Reuters - Coty reinstates annual profit target, warns on Middle East challenges
+      url: https://www.reuters.com/business/retail-consumer/coty-reinstates-annual-profit-target-warns-middle-east-challenges-2026-05-05/
+    trading_note: COTY 전략 축소 뉴스 후 향료·원료 공급주 후행 반응 관찰
+  - source_symbol: PG
+    source_name: Procter & Gamble
+    source_market: US
+    source_reason: 방어 소비재·뷰티 대형주 부담 관찰
+    source_3m_move_pct: null
+    target_symbol: ELF
+    target_name: e.l.f. Beauty
+    target_market: US
+    relation_type: BENEFICIARY
+    direction: DOWN_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 대형 소비재 비용·가격 부담이 커질수록 저가 뷰티 대체 수요가 부각될 수 있음
+    evidence:
+    - title: MarketWatch - Procter & Gamble stock underperforms
+      url: https://www.marketwatch.com/data-news/procter-gamble-co-stock-underperforms-monday-when-compared-to-competitors-61b52a1a-6ba02504d7d3
+    - title: Barron's - e.l.f. Beauty results and stock reaction
+      url: https://www.barrons.com/articles/elf-beauty-results-stock-9fc12acf
+    trading_note: PG 약세 후 저가 뷰티 ELF의 상대강세 관찰
+  - source_symbol: PG
+    source_name: Procter & Gamble
+    source_market: US
+    source_reason: 방어 소비재·뷰티 대형주 부담 관찰
+    source_3m_move_pct: null
+    target_symbol: 090430.KS
+    target_name: 아모레퍼시픽
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Olay/SK-II 등 글로벌 대형 브랜드 부담은 Laneige·COSRX 등 K뷰티 대안 관찰 후보
+    evidence:
+    - title: MarketWatch - Procter & Gamble stock underperforms
+      url: https://www.marketwatch.com/data-news/procter-gamble-co-stock-underperforms-monday-when-compared-to-competitors-61b52a1a-6ba02504d7d3
+    - title: Marie Claire - Best Korean skincare brands
+      url: https://www.marieclaire.com/beauty/best-korean-skincare-brands/
+    trading_note: 미국 대형 뷰티·생활소비재 약세 후 K뷰티 대안 수요 관찰
+  - source_symbol: PG
+    source_name: Procter & Gamble
+    source_market: US
+    source_reason: 방어 소비재·뷰티 대형주 부담 관찰
+    source_3m_move_pct: null
+    target_symbol: CL
+    target_name: Colgate-Palmolive
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 대형 생활소비재 피어로 비용·가격·소비 둔화 이슈 동조 가능
+    evidence:
+    - title: MarketWatch - Procter & Gamble stock underperforms
+      url: https://www.marketwatch.com/data-news/procter-gamble-co-stock-underperforms-monday-when-compared-to-competitors-61b52a1a-6ba02504d7d3
+    trading_note: PG 약세일 CL 동조 여부 관찰
+  - source_symbol: PG
+    source_name: Procter & Gamble
+    source_market: US
+    source_reason: 방어 소비재·뷰티 대형주 부담 관찰
+    source_3m_move_pct: null
+    target_symbol: CHD
+    target_name: Church & Dwight
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 생활소비재 피어로 방어주 밸류에이션·마진 부담 후행 관찰
+    evidence:
+    - title: MarketWatch - Procter & Gamble stock underperforms
+      url: https://www.marketwatch.com/data-news/procter-gamble-co-stock-underperforms-monday-when-compared-to-competitors-61b52a1a-6ba02504d7d3
+    trading_note: PG 약세일 CHD 동조 여부 관찰
+  - source_symbol: PG
+    source_name: Procter & Gamble
+    source_market: US
+    source_reason: 방어 소비재·뷰티 대형주 부담 관찰
+    source_3m_move_pct: null
+    target_symbol: EL
+    target_name: Estée Lauder
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 뷰티·스킨케어 대형주 전반의 비용 압박 리스크 관찰
+    evidence:
+    - title: MarketWatch - Procter & Gamble stock underperforms
+      url: https://www.marketwatch.com/data-news/procter-gamble-co-stock-underperforms-monday-when-compared-to-competitors-61b52a1a-6ba02504d7d3
+    - title: Barron's - Estée Lauder earnings stock price
+      url: https://www.barrons.com/articles/estee-lauder-earnings-stock-price-c192fe09
+    trading_note: PG 약세 이후 EL 등 뷰티 대형주의 비용 압박 리스크 후행 관찰

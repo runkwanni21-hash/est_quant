@@ -1,0 +1,1028 @@
+sector_relation_seeds:
+  sector_id: battery_materials_lithium_recycling
+  sector_name: 배터리 / 양극재 / 음극재 / 리튬 / 재활용
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  data_quality_note: 미국 일부 종목은 기사상 가격/당일 급등률/YTD 기반 proxy. 한국 개별 종목 3개월 수익률은 공개 웹 검색만으로 일관 검증이 어려워 null 처리. 매매 추천이 아니라 후행
+    반응 관찰 seed.
+  edges:
+  - source_symbol: ALB
+    source_name: Albemarle
+    source_market: US
+    source_reason: 리튬 가격 반등, EV/ESS 수요, Q1 실적 서프라이즈
+    source_3m_move_pct: 26.0
+    target_symbol: SQM
+    target_name: SQM
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 리튬 가격과 판매량 개선이 같은 리튬 생산 피어에 동시 반영될 가능성.
+    evidence:
+    - title: Albemarle's profit far exceed expectations as lithium prices rebound
+      url: https://www.reuters.com/business/albemarles-quarterly-profit-jumps-rising-lithium-prices-2026-05-06/
+    trading_note: 1일~1개월 스윙 관점에서 리튬 생산주 간 동행/후행 반응 관찰
+  - source_symbol: ALB
+    source_name: Albemarle
+    source_market: US
+    source_reason: 리튬 가격 반등, EV/ESS 수요, Q1 실적 서프라이즈
+    source_3m_move_pct: 26.0
+    target_symbol: LAC
+    target_name: Lithium Americas
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 미국 리튬 개발주가 리튬 가격 및 정책 모멘텀에 후행 반응할 가능성.
+    evidence:
+    - title: Albemarle Stock Is Surging. Demand for EVs, Specialty Chemicals Fuels Lithium Gains.
+      url: https://www.barrons.com/articles/albemarle-lithium-stock-price-668225a8
+    trading_note: ALB 급등 후 LAC의 1일~3일 후행 강도 관찰
+  - source_symbol: ALB
+    source_name: Albemarle
+    source_market: US
+    source_reason: 리튬 가격 반등, EV/ESS 수요, Q1 실적 서프라이즈
+    source_3m_move_pct: 26.0
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 리튬 가격 상승은 셀 업체 원재료 비용 압박 리스크로 해석 가능. 고객사 전가 구조 확인 필요.
+    evidence:
+    - title: LG Energy Solution flags Q1 operating loss on weak EV demand
+      url: https://www.reuters.com/business/autos-transportation/lg-energy-solution-flags-q1-operating-loss-weak-ev-demand-2026-04-07/
+    trading_note: 리튬 가격 급등 후 셀 업체 마진 우려 뉴스와 주가 후행 반응 관찰
+  - source_symbol: ALB
+    source_name: Albemarle
+    source_market: US
+    source_reason: 리튬 가격 반등, EV/ESS 수요, Q1 실적 서프라이즈
+    source_3m_move_pct: 26.0
+    target_symbol: 006400.KS
+    target_name: 삼성SDI
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 리튬 급등은 셀 원가 부담 요인. 완성차 고객 전가 여부가 관찰 포인트.
+    evidence:
+    - title: Samsung SDI battery business and customer/JV profile
+      url: https://en.wikipedia.org/wiki/Samsung_SDI
+    trading_note: 리튬 급등 구간에서 삼성SDI의 원가 부담/판가 전가 코멘트 확인
+  - source_symbol: ALB
+    source_name: Albemarle
+    source_market: US
+    source_reason: 리튬 가격 반등, EV/ESS 수요, Q1 실적 서프라이즈
+    source_3m_move_pct: 26.0
+    target_symbol: 003670.KS
+    target_name: 포스코퓨처엠
+    target_market: KR
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 양극재·음극재 소재 체인에서 리튬 ASP, 재고평가, 수요 회복 기대가 후행 반응할 수 있음.
+    evidence:
+    - title: POSCO Future M profile
+      url: https://en.wikipedia.org/wiki/POSCO_Future_M
+    trading_note: 리튬 생산주 급등 후 한국 소재주의 3일~10일 후행 반응 관찰
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD/로보택시 기대, EV·ESS 배터리 수요, LGES LFP 딜
+    source_3m_move_pct: 7.9
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: HIGH
+    rationale: Tesla-LGES 미국 LFP/Megapack 배터리 딜로 Tesla 수요 개선 시 LGES 후행 반응 관찰 후보.
+    evidence:
+    - title: US government confirms Tesla and LG Energy Solution's $4.3 billion battery deal
+      url: https://www.reuters.com/business/energy/us-government-confirms-tesla-lg-energy-solutions-43-billion-battery-deal-2026-03-17/
+    trading_note: Tesla 장중 급등 후 다음 한국장 LGES·소재주 갭/거래대금 관찰
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD/로보택시 기대, EV·ESS 배터리 수요, LGES LFP 딜
+    source_3m_move_pct: 7.9
+    target_symbol: ALB
+    target_name: Albemarle
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Tesla EV/ESS 수요 회복은 리튬 수요 기대를 자극할 수 있음.
+    evidence:
+    - title: Panasonic Raises EV Battery Outlook Based On Tesla's Sales Bounce
+      url: https://www.investors.com/news/tesla-sales-ev-electric-vehicle-batteries-panasonic-tsmc-samsung/
+    trading_note: Tesla 수요 뉴스 이후 리튬 생산주 강도 확인
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD/로보택시 기대, EV·ESS 배터리 수요, LGES LFP 딜
+    source_3m_move_pct: 7.9
+    target_symbol: F
+    target_name: Ford
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: Tesla EV/FSD 강세는 미국 EV 경쟁사에 상대적 수요 전환 리스크로 해석될 수 있음.
+    evidence:
+    - title: Tesla Stock Wobbles. Full Self-Driving in China Is a Hot Topic.
+      url: https://www.barrons.com/articles/tesla-stock-price-china-fsd-77152ad2
+    trading_note: Tesla 급등일 Ford/Rivian/GM 상대강도 관찰
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD/로보택시 기대, EV·ESS 배터리 수요, LGES LFP 딜
+    source_3m_move_pct: 7.9
+    target_symbol: 066970.KQ
+    target_name: 엘앤에프
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: Tesla의 ESS/LFP 중심 확대가 고니켈·4680 노출 소재주에는 믹스 전환 리스크로 읽힐 수 있음.
+    evidence:
+    - title: South Korea's L&F says value of battery material supply deal with Tesla cut
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-lf-says-value-battery-material-supply-deal-with-tesla-cut-7386-2025-12-29/
+    trading_note: Tesla 강세가 LFP/ESS 중심인지 4680 회복인지 구분해서 엘앤에프 반응 관찰
+  - source_symbol: TSLA
+    source_name: Tesla
+    source_market: US
+    source_reason: FSD/로보택시 기대, EV·ESS 배터리 수요, LGES LFP 딜
+    source_3m_move_pct: 7.9
+    target_symbol: QS
+    target_name: QuantumScape
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: Tesla의 기존 LFP/4680/ESS 확장 모멘텀은 고체전지 옵션주의 상대 매력에 부담 가능성.
+    evidence:
+    - title: QuantumScape Stock Tumbles After Earnings
+      url: https://www.barrons.com/articles/quantumscape-stock-earnings-14512d15
+    trading_note: Tesla 배터리 전략 뉴스 후 QS/SLDP의 상대강도 확인
+  - source_symbol: SQM
+    source_name: SQM
+    source_market: US
+    source_reason: Q4 이익 +53%, 리튬 판매량·ESS 수요 기대, 4월 breakout
+    source_3m_move_pct: null
+    target_symbol: ALB
+    target_name: Albemarle
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 리튬 가격·수급 개선에 따른 생산주 동반 반응 관찰 후보.
+    evidence:
+    - title: Chilean lithium miner SQM's fourth-quarter profit jumps 53%
+      url: https://www.reuters.com/world/americas/chilean-lithium-miner-sqms-fourth-quarter-profit-jumps-53-2026-02-28/
+    trading_note: SQM 급등 후 ALB/LAC 동반 반응 관찰
+  - source_symbol: SQM
+    source_name: SQM
+    source_market: US
+    source_reason: Q4 이익 +53%, 리튬 판매량·ESS 수요 기대, 4월 breakout
+    source_3m_move_pct: null
+    target_symbol: LAC
+    target_name: Lithium Americas
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 리튬 피어 모멘텀이 미국 리튬 개발주로 확산될 가능성.
+    evidence:
+    - title: SQM, IBD Stock Of The Day, Breaks Out As Iran War Provides Dual Catalysts
+      url: https://www.investors.com/research/ibd-stock-of-the-day/sqm-stock-lithium-ev-battery-fertilizer-iran/
+    trading_note: 리튬 생산주 breakout 후 개발주 후행 반응 관찰
+  - source_symbol: SQM
+    source_name: SQM
+    source_market: US
+    source_reason: Q4 이익 +53%, 리튬 판매량·ESS 수요 기대, 4월 breakout
+    source_3m_move_pct: null
+    target_symbol: 003670.KS
+    target_name: 포스코퓨처엠
+    target_market: KR
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 리튬 가격 상승은 소재 ASP·재고평가 기대를 자극할 수 있음.
+    evidence:
+    - title: POSCO Future M profile
+      url: https://en.wikipedia.org/wiki/POSCO_Future_M
+    trading_note: SQM/ALB 강세 후 한국 양극재·음극재 후행 관찰
+  - source_symbol: SQM
+    source_name: SQM
+    source_market: US
+    source_reason: Q4 이익 +53%, 리튬 판매량·ESS 수요 기대, 4월 breakout
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 리튬 원가 상승은 셀 업체 마진 부담 후보.
+    evidence:
+    - title: LG Energy Solution flags Q1 operating loss on weak EV demand
+      url: https://www.reuters.com/business/autos-transportation/lg-energy-solution-flags-q1-operating-loss-weak-ev-demand-2026-04-07/
+    trading_note: 리튬주 급등 후 셀 업체 마진 우려 반응 확인
+  - source_symbol: SQM
+    source_name: SQM
+    source_market: US
+    source_reason: Q4 이익 +53%, 리튬 판매량·ESS 수요 기대, 4월 breakout
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 리튬 가격 상승은 EV 배터리 원가 부담이지만 Tesla는 규모·계약 구조 영향으로 confidence 낮음.
+    evidence:
+    - title: Panasonic Raises EV Battery Outlook Based On Tesla's Sales Bounce
+      url: https://www.investors.com/news/tesla-sales-ev-electric-vehicle-batteries-panasonic-tsmc-samsung/
+    trading_note: 리튬 가격 급등이 EV 완성차 마진 이슈로 번지는지 확인
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 미국 정부 가격지지, 핵심광물 정책, Q4 흑자 전환
+    source_3m_move_pct: null
+    target_symbol: LAC
+    target_name: Lithium Americas
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 미국 핵심광물 내재화 정책 모멘텀이 리튬 개발주로 확산될 가능성.
+    evidence:
+    - title: MP Materials swings to Q4 profit on US government price support
+      url: https://www.reuters.com/business/mp-materials-swings-q4-profit-us-government-price-support-2026-02-26/
+    trading_note: MP 정책 모멘텀 후 LAC/ALB 후행 반응 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 미국 정부 가격지지, 핵심광물 정책, Q4 흑자 전환
+    source_3m_move_pct: null
+    target_symbol: ALB
+    target_name: Albemarle
+    target_market: US
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 정부 지원·전략광물 프레임이 리튬 생산주에도 정책 수혜 가능성으로 연결.
+    evidence:
+    - title: MP Materials swings to Q4 profit on US government price support
+      url: https://www.reuters.com/business/mp-materials-swings-q4-profit-us-government-price-support-2026-02-26/
+    trading_note: 미국 핵심광물 정책 뉴스 후 리튬주 동반 반응 확인
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 미국 정부 가격지지, 핵심광물 정책, Q4 흑자 전환
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 희토류 자석 가격·공급 이슈가 EV 모터 원가 압박 리스크로 번질 가능성.
+    evidence:
+    - title: MP Materials swings to Q4 profit on US government price support
+      url: https://www.reuters.com/business/mp-materials-swings-q4-profit-us-government-price-support-2026-02-26/
+    trading_note: 희토류 급등 시 EV 완성차 원가 부담 내러티브 확인
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 미국 정부 가격지지, 핵심광물 정책, Q4 흑자 전환
+    source_3m_move_pct: null
+    target_symbol: F
+    target_name: Ford
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 완성차 업체는 희토류·자석 공급망 비용 압박 리스크 노출.
+    evidence:
+    - title: MP Materials swings to Q4 profit on US government price support
+      url: https://www.reuters.com/business/mp-materials-swings-q4-profit-us-government-price-support-2026-02-26/
+    trading_note: MP 급등이 EV 완성차 비용 부담으로 연결되는지 관찰
+  - source_symbol: MP
+    source_name: MP Materials
+    source_market: US
+    source_reason: 미국 정부 가격지지, 핵심광물 정책, Q4 흑자 전환
+    source_3m_move_pct: null
+    target_symbol: SQM
+    target_name: SQM
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 핵심광물 테마 동반 반응 후보이나 직접 공급망 연결은 약함.
+    evidence:
+    - title: MP Materials relative strength rating rises
+      url: https://www.investors.com/news/mp-materials-stock-rare-earths-critical-minerals/
+    trading_note: 핵심광물 테마 전체 확산 여부만 관찰
+  - source_symbol: QS
+    source_name: QuantumScape
+    source_market: US
+    source_reason: 실적 후 급락, 이후 AI data center/defense 타깃 발표로 급등
+    source_3m_move_pct: null
+    target_symbol: SLDP
+    target_name: Solid Power
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 고체전지 기술주 간 피어 모멘텀 후행 반응 관찰.
+    evidence:
+    - title: 'QuantumScape: The Next Stock to Try an AI Makeover'
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-23-2026/card/quantumscape-the-next-stock-to-try-an-ai-makeover-yWmTQlzLbXQGzQ0bKSsI
+    trading_note: QS 급등 후 SLDP/ENVX/SES 같은 차세대 배터리주 반응 확인
+  - source_symbol: QS
+    source_name: QuantumScape
+    source_market: US
+    source_reason: 실적 후 급락, 이후 AI data center/defense 타깃 발표로 급등
+    source_3m_move_pct: null
+    target_symbol: ENVX
+    target_name: Enovix
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 차세대 배터리 기술주 테마 동반 반응 후보.
+    evidence:
+    - title: 'QuantumScape: The Next Stock to Try an AI Makeover'
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-23-2026/card/quantumscape-the-next-stock-to-try-an-ai-makeover-yWmTQlzLbXQGzQ0bKSsI
+    trading_note: 기술주 테마성 반응이므로 거래대금 동반 여부 확인
+  - source_symbol: QS
+    source_name: QuantumScape
+    source_market: US
+    source_reason: 실적 후 급락, 이후 AI data center/defense 타깃 발표로 급등
+    source_3m_move_pct: null
+    target_symbol: 247540.KQ
+    target_name: 에코프로비엠
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 고체전지 상용화 기대가 장기적으로 기존 액체전해질·고니켈 소재 체인에 수요 전환 리스크로 읽힐 수 있음.
+    evidence:
+    - title: QuantumScape's stock is falling after earnings
+      url: https://www.marketwatch.com/story/quantumscapes-stock-is-falling-heres-why-wall-street-is-panning-the-ev-battery-makers-earnings-f7b17ffb
+    trading_note: 장기 대체 리스크라 단기 신호는 LOW로만 관찰
+  - source_symbol: QS
+    source_name: QuantumScape
+    source_market: US
+    source_reason: 실적 후 급락, 이후 AI data center/defense 타깃 발표로 급등
+    source_3m_move_pct: null
+    target_symbol: 066970.KQ
+    target_name: 엘앤에프
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_DOWN
+    expected_lag: 10d
+    confidence: LOW
+    rationale: 고체전지 기대 확산 시 기존 고니켈 cathode 체인에는 장기 대체 리스크 후보.
+    evidence:
+    - title: 'QuantumScape: The Next Stock to Try an AI Makeover'
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-23-2026/card/quantumscape-the-next-stock-to-try-an-ai-makeover-yWmTQlzLbXQGzQ0bKSsI
+    trading_note: 기술 대체 내러티브 발생 시 고니켈 소재주 상대약세만 관찰
+  - source_symbol: QS
+    source_name: QuantumScape
+    source_market: US
+    source_reason: 실적 후 급락, 이후 AI data center/defense 타깃 발표로 급등
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 차세대 배터리 내러티브가 기존 EV 배터리 전략과 상대 비교될 수 있으나 직접 영향은 약함.
+    evidence:
+    - title: 'QuantumScape: The Next Stock to Try an AI Makeover'
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-04-23-2026/card/quantumscape-the-next-stock-to-try-an-ai-makeover-yWmTQlzLbXQGzQ0bKSsI
+    trading_note: QS 급등이 Tesla 배터리 전략 리스크로 해석되는지 뉴스 플로우 확인
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy/ESS 사업 기대, 5월 13일 하루 +13.2%
+    source_3m_move_pct: null
+    target_symbol: ALB
+    target_name: Albemarle
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: ESS·data center battery 수요 확대는 리튬 수요 기대에 우호적.
+    evidence:
+    - title: Ford Stock Is Today's Best Performer in S&P 500
+      url: https://www.barrons.com/articles/ford-stock-energy-storage-business-7e3a1f08
+    trading_note: ESS 사업 뉴스 후 리튬 생산주 후행 반응 관찰
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy/ESS 사업 기대, 5월 13일 하루 +13.2%
+    source_3m_move_pct: null
+    target_symbol: SQM
+    target_name: SQM
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: ESS 확장은 리튬 생산주 수요 기대를 자극할 수 있음.
+    evidence:
+    - title: Ford Stock Surges on Support for Energy-Storage Business
+      url: https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-05-13-2026/card/ford-stock-surges-on-support-for-energy-storage-business-o8x5g6qK3wE8LwS7S0wN
+    trading_note: Ford Energy 뉴스 이후 리튬 생산주 동조 확인
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy/ESS 사업 기대, 5월 13일 하루 +13.2%
+    source_3m_move_pct: null
+    target_symbol: 096770.KS
+    target_name: SK이노베이션/SK On
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: Ford의 EV 배터리 JV 조정·ESS 전환은 기존 SK On EV 공급망에 부담 후보.
+    evidence:
+    - title: Ford's EV pivot impacts Korean battery suppliers
+      url: https://www.marketwatch.com/story/ford-shares-rise-korean-battery-stocks-fall-after-electric-vehicle-shift-1d8aa9f7
+    trading_note: Ford 급등이 CATL/LFP/ESS 중심이면 한국 EV 배터리 체인 부담 관찰
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy/ESS 사업 기대, 5월 13일 하루 +13.2%
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: Ford의 CATL 기반 ESS·기존 공급계약 조정은 한국 셀 업체에 수요 전환 리스크.
+    evidence:
+    - title: Ford's EV pivot impacts Korean battery suppliers
+      url: https://www.marketwatch.com/story/ford-shares-rise-korean-battery-stocks-fall-after-electric-vehicle-shift-1d8aa9f7
+    trading_note: Ford Energy 뉴스의 수혜 공급망이 한국인지 중국 LFP인지 구분
+  - source_symbol: F
+    source_name: Ford
+    source_market: US
+    source_reason: Ford Energy/ESS 사업 기대, 5월 13일 하루 +13.2%
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: Ford Energy가 Tesla Megapack 경쟁 내러티브로 해석될 수 있으나 시장 검증 필요.
+    evidence:
+    - title: Ford Goes Full Tesla—Again
+      url: https://www.barrons.com/articles/ford-energy-storage-stock-tesla-1b2b5a12
+    trading_note: Ford ESS 급등일 Tesla Energy 관련 뉴스와 상대강도 확인
+  - source_symbol: 373220.KS
+    source_name: LG에너지솔루션
+    source_market: KR
+    source_reason: Tesla LFP/Megapack 딜 vs Q1 적자·EV 둔화 혼재
+    source_3m_move_pct: null
+    target_symbol: 003670.KS
+    target_name: 포스코퓨처엠
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: LGES 수주·가동률 개선은 양극재/음극재 공급망 후행 반응 후보.
+    evidence:
+    - title: US government confirms Tesla and LG Energy Solution's $4.3 billion battery deal
+      url: https://www.reuters.com/business/energy/us-government-confirms-tesla-lg-energy-solutions-43-billion-battery-deal-2026-03-17/
+    trading_note: LGES 강세 후 소재 공급망 거래대금 증가 여부 확인
+  - source_symbol: 373220.KS
+    source_name: LG에너지솔루션
+    source_market: KR
+    source_reason: Tesla LFP/Megapack 딜 vs Q1 적자·EV 둔화 혼재
+    source_3m_move_pct: null
+    target_symbol: 247540.KQ
+    target_name: 에코프로비엠
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 셀 업체 수요 개선 시 양극재 피어 후행 반응 가능.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: LGES 수요 회복 뉴스 후 양극재 피어 후행 관찰
+  - source_symbol: 373220.KS
+    source_name: LG에너지솔루션
+    source_market: KR
+    source_reason: Tesla LFP/Megapack 딜 vs Q1 적자·EV 둔화 혼재
+    source_3m_move_pct: null
+    target_symbol: 006400.KS
+    target_name: 삼성SDI
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: LGES가 미국 ESS/LFP 딜을 확보하면 경쟁 셀 업체에는 상대적 수주 경쟁 부담.
+    evidence:
+    - title: US government confirms Tesla and LG Energy Solution's $4.3 billion battery deal
+      url: https://www.reuters.com/business/energy/us-government-confirms-tesla-lg-energy-solutions-43-billion-battery-deal-2026-03-17/
+    trading_note: LGES 단독 수주성 뉴스에서 삼성SDI 상대약세 여부 관찰
+  - source_symbol: 373220.KS
+    source_name: LG에너지솔루션
+    source_market: KR
+    source_reason: Tesla LFP/Megapack 딜 vs Q1 적자·EV 둔화 혼재
+    source_3m_move_pct: null
+    target_symbol: 096770.KS
+    target_name: SK이노베이션/SK On
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 미국 배터리·ESS 고객사 확보 경쟁에서 SK On 상대 부담 후보.
+    evidence:
+    - title: South Korea's SK signs ESS battery supply deal with Flatiron Energy
+      url: https://www.reuters.com/business/energy/south-koreas-sk-signs-ess-battery-supply-deal-with-us-based-flatiron-energy-2025-09-03/
+    trading_note: LGES 수주 뉴스와 SK On ESS 경쟁 구도 비교
+  - source_symbol: 373220.KS
+    source_name: LG에너지솔루션
+    source_market: KR
+    source_reason: Tesla LFP/Megapack 딜 vs Q1 적자·EV 둔화 혼재
+    source_3m_move_pct: null
+    target_symbol: TSLA
+    target_name: Tesla
+    target_market: US
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: LOW
+    rationale: LGES 딜은 Tesla ESS 공급망 안정화 신호지만 Tesla 주가 영향은 상대적으로 작음.
+    evidence:
+    - title: US government confirms Tesla and LG Energy Solution's $4.3 billion battery deal
+      url: https://www.reuters.com/business/energy/us-government-confirms-tesla-lg-energy-solutions-43-billion-battery-deal-2026-03-17/
+    trading_note: LGES발 뉴스가 Tesla Energy 기대와 연결되는지 제한적으로 관찰
+  - source_symbol: 096770.KS
+    source_name: SK이노베이션/SK On
+    source_market: KR
+    source_reason: Q1 이익 beat, SK On ESS 전환 vs 미국 공장 감원
+    source_3m_move_pct: null
+    target_symbol: 361610.KS
+    target_name: SK아이이테크놀로지
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: SK On 가동률·ESS 물량 회복 시 분리막 공급망 후행 반응 후보.
+    evidence:
+    - title: SK Battery America lays off 958 workers
+      url: https://apnews.com/article/79a4ec7a5b7f2816f64033f8b3d4898d
+    trading_note: SK On 회복 뉴스가 분리막 체인으로 확산되는지 확인
+  - source_symbol: 096770.KS
+    source_name: SK이노베이션/SK On
+    source_market: KR
+    source_reason: Q1 이익 beat, SK On ESS 전환 vs 미국 공장 감원
+    source_3m_move_pct: null
+    target_symbol: 247540.KQ
+    target_name: 에코프로비엠
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: MEDIUM
+    rationale: SK On·Ford 관련 cathode 프로젝트 및 EV/ESS 전환 모멘텀 후행 반응 가능.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: SK On 회복/ESS 뉴스 후 cathode 체인 반응 확인
+  - source_symbol: 096770.KS
+    source_name: SK이노베이션/SK On
+    source_market: KR
+    source_reason: Q1 이익 beat, SK On ESS 전환 vs 미국 공장 감원
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: SK On ESS·고객 확보가 LGES와 경쟁 구도로 해석될 수 있음.
+    evidence:
+    - title: South Korea's SK signs ESS battery supply deal with Flatiron Energy
+      url: https://www.reuters.com/business/energy/south-koreas-sk-signs-ess-battery-supply-deal-with-us-based-flatiron-energy-2025-09-03/
+    trading_note: SK On 수주 뉴스에서 LGES 상대강도 확인
+  - source_symbol: 096770.KS
+    source_name: SK이노베이션/SK On
+    source_market: KR
+    source_reason: Q1 이익 beat, SK On ESS 전환 vs 미국 공장 감원
+    source_3m_move_pct: null
+    target_symbol: 006400.KS
+    target_name: 삼성SDI
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: ESS/EV 배터리 고객 확보 경쟁 부담 후보.
+    evidence:
+    - title: Samsung SDI profile
+      url: https://en.wikipedia.org/wiki/Samsung_SDI
+    trading_note: 배터리 셀 3사 상대강도 비교
+  - source_symbol: 096770.KS
+    source_name: SK이노베이션/SK On
+    source_market: KR
+    source_reason: Q1 이익 beat, SK On ESS 전환 vs 미국 공장 감원
+    source_3m_move_pct: null
+    target_symbol: F
+    target_name: Ford
+    target_market: US
+    relation_type: CUSTOMER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: SK On 미국 감원·Ford EV 조정은 고객사 EV 수요 둔화 신호로 해석 가능.
+    evidence:
+    - title: SK Battery America lays off 958 workers
+      url: https://apnews.com/article/79a4ec7a5b7f2816f64033f8b3d4898d
+    trading_note: SK On 악재가 Ford EV 수요 둔화로 연결되는지 확인
+  - source_symbol: 006400.KS
+    source_name: 삼성SDI
+    source_market: KR
+    source_reason: 미국 배터리 자립/IRA·ESS 수혜 후보, EV 둔화 리스크 병존
+    source_3m_move_pct: null
+    target_symbol: 003670.KS
+    target_name: 포스코퓨처엠
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: Samsung SDI 수주·가동률 개선은 양극재 공급망 후행 반응 후보.
+    evidence:
+    - title: US battery autonomy will upend EV hierarchy
+      url: https://www.reuters.com/commentary/breakingviews/us-battery-autonomy-will-upend-ev-hierarchy-2026-01-02/
+    trading_note: 삼성SDI 수주/가동률 뉴스 후 소재 공급망 관찰
+  - source_symbol: 006400.KS
+    source_name: 삼성SDI
+    source_market: KR
+    source_reason: 미국 배터리 자립/IRA·ESS 수혜 후보, EV 둔화 리스크 병존
+    source_3m_move_pct: null
+    target_symbol: 247540.KQ
+    target_name: 에코프로비엠
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: cathode 공급망 테마 후행 반응 후보이나 직접 계약 검증 부족.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: 삼성SDI 강세가 양극재 전반으로 확산되는지 관찰
+  - source_symbol: 006400.KS
+    source_name: 삼성SDI
+    source_market: KR
+    source_reason: 미국 배터리 자립/IRA·ESS 수혜 후보, EV 둔화 리스크 병존
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 삼성SDI 수주 모멘텀은 LGES와 고객사 경쟁 구도로 해석될 수 있음.
+    evidence:
+    - title: US battery autonomy will upend EV hierarchy
+      url: https://www.reuters.com/commentary/breakingviews/us-battery-autonomy-will-upend-ev-hierarchy-2026-01-02/
+    trading_note: 셀 업체 단독 수주 뉴스에서 경쟁사 상대약세 관찰
+  - source_symbol: 006400.KS
+    source_name: 삼성SDI
+    source_market: KR
+    source_reason: 미국 배터리 자립/IRA·ESS 수혜 후보, EV 둔화 리스크 병존
+    source_3m_move_pct: null
+    target_symbol: 096770.KS
+    target_name: SK이노베이션/SK On
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 셀 업체 간 미국 고객·ESS 물량 경쟁 부담 후보.
+    evidence:
+    - title: US battery autonomy will upend EV hierarchy
+      url: https://www.reuters.com/commentary/breakingviews/us-battery-autonomy-will-upend-ev-hierarchy-2026-01-02/
+    trading_note: 셀 3사 간 상대강도와 뉴스의 고객사 겹침 여부 확인
+  - source_symbol: 006400.KS
+    source_name: 삼성SDI
+    source_market: KR
+    source_reason: 미국 배터리 자립/IRA·ESS 수혜 후보, EV 둔화 리스크 병존
+    source_3m_move_pct: null
+    target_symbol: QS
+    target_name: QuantumScape
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 삼성SDI의 전고체 배터리 기대가 고체전지 피어 내러티브로 번질 가능성.
+    evidence:
+    - title: Samsung SDI solid-state battery profile
+      url: https://en.wikipedia.org/wiki/Samsung_SDI
+    trading_note: 전고체 키워드 뉴스에서 QS/SLDP 후행 반응 확인
+  - source_symbol: 247540.KQ
+    source_name: 에코프로비엠
+    source_market: KR
+    source_reason: 고니켈 양극재, 리튬 가격, SK On/Ford 공급망 read-through
+    source_3m_move_pct: null
+    target_symbol: 450080.KS
+    target_name: 에코프로머티리얼즈
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 에코프로머티리얼즈는 전구체·그룹 밸류체인으로 에코프로비엠 모멘텀에 민감.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: 에코프로비엠 급등일 에코프로머티리얼즈 동행성 확인
+  - source_symbol: 247540.KQ
+    source_name: 에코프로비엠
+    source_market: KR
+    source_reason: 고니켈 양극재, 리튬 가격, SK On/Ford 공급망 read-through
+    source_3m_move_pct: null
+    target_symbol: 096770.KS
+    target_name: SK이노베이션/SK On
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: SK On/Ford 관련 cathode 프로젝트 노출로 고객사 수요 회복 기대 연결.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: 에코프로비엠 강세가 SK On 수요 회복 신호인지 확인
+  - source_symbol: 247540.KQ
+    source_name: 에코프로비엠
+    source_market: KR
+    source_reason: 고니켈 양극재, 리튬 가격, SK On/Ford 공급망 read-through
+    source_3m_move_pct: null
+    target_symbol: 003670.KS
+    target_name: 포스코퓨처엠
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 양극재 수주 경쟁 구도에서 에코프로비엠 강세는 피어 상대 부담 후보.
+    evidence:
+    - title: POSCO Future M profile
+      url: https://en.wikipedia.org/wiki/POSCO_Future_M
+    trading_note: 양극재 수주 뉴스에서 경쟁 피어 상대강도 확인
+  - source_symbol: 247540.KQ
+    source_name: 에코프로비엠
+    source_market: KR
+    source_reason: 고니켈 양극재, 리튬 가격, SK On/Ford 공급망 read-through
+    source_3m_move_pct: null
+    target_symbol: 066970.KQ
+    target_name: 엘앤에프
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 고니켈 cathode 경쟁 피어. 수주·고객 믹스에 따라 상대 부담 가능성.
+    evidence:
+    - title: South Korea's L&F says value of battery material supply deal with Tesla cut
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-lf-says-value-battery-material-supply-deal-with-tesla-cut-7386-2025-12-29/
+    trading_note: 에코프로비엠 강세가 엘앤에프와 차별화되는지 관찰
+  - source_symbol: 247540.KQ
+    source_name: 에코프로비엠
+    source_market: KR
+    source_reason: 고니켈 양극재, 리튬 가격, SK On/Ford 공급망 read-through
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: cathode 수요 강세는 셀 수요 회복 신호일 수 있으나 직접 고객관계 검증 부족.
+    evidence:
+    - title: LG Energy Solution flags Q1 operating loss on weak EV demand
+      url: https://www.reuters.com/business/autos-transportation/lg-energy-solution-flags-q1-operating-loss-weak-ev-demand-2026-04-07/
+    trading_note: 양극재 강세가 셀 업체 수요 회복 신호인지 제한적으로 확인
+  - source_symbol: 003670.KS
+    source_name: 포스코퓨처엠
+    source_market: KR
+    source_reason: 양극재·음극재·리튬 밸류체인, 고객사 backlog read-through
+    source_3m_move_pct: null
+    target_symbol: 005490.KS
+    target_name: POSCO홀딩스
+    target_market: KR
+    relation_type: BENEFICIARY
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 포스코 그룹 리튬·소재 수직계열화로 자회사/소재 모멘텀 후행 반응 가능.
+    evidence:
+    - title: POSCO Future M profile
+      url: https://en.wikipedia.org/wiki/POSCO_Future_M
+    trading_note: 포스코퓨처엠 급등 후 POSCO홀딩스 리튬 체인 반응 확인
+  - source_symbol: 003670.KS
+    source_name: 포스코퓨처엠
+    source_market: KR
+    source_reason: 양극재·음극재·리튬 밸류체인, 고객사 backlog read-through
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 포스코퓨처엠 강세가 고객사 배터리 수요 회복 신호로 읽힐 가능성.
+    evidence:
+    - title: POSCO Future M profile
+      url: https://en.wikipedia.org/wiki/POSCO_Future_M
+    trading_note: 소재주 강세가 셀 고객사 수요 신호인지 확인
+  - source_symbol: 003670.KS
+    source_name: 포스코퓨처엠
+    source_market: KR
+    source_reason: 양극재·음극재·리튬 밸류체인, 고객사 backlog read-through
+    source_3m_move_pct: null
+    target_symbol: 006400.KS
+    target_name: 삼성SDI
+    target_market: KR
+    relation_type: CUSTOMER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: cathode backlog 기대가 Samsung SDI 고객 수요 회복 read-through 가능.
+    evidence:
+    - title: Samsung SDI profile
+      url: https://en.wikipedia.org/wiki/Samsung_SDI
+    trading_note: 포스코퓨처엠 강세 후 삼성SDI 후행 반응 확인
+  - source_symbol: 003670.KS
+    source_name: 포스코퓨처엠
+    source_market: KR
+    source_reason: 양극재·음극재·리튬 밸류체인, 고객사 backlog read-through
+    source_3m_move_pct: null
+    target_symbol: 247540.KQ
+    target_name: 에코프로비엠
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 양극재 수주 경쟁 피어로 상대 부담 후보.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: 포스코퓨처엠 단독 수주 뉴스에서 에코프로비엠 상대강도 확인
+  - source_symbol: 003670.KS
+    source_name: 포스코퓨처엠
+    source_market: KR
+    source_reason: 양극재·음극재·리튬 밸류체인, 고객사 backlog read-through
+    source_3m_move_pct: null
+    target_symbol: 066970.KQ
+    target_name: 엘앤에프
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 고니켈·양극재 고객 믹스 경쟁에서 상대 부담 후보.
+    evidence:
+    - title: South Korea's L&F says value of battery material supply deal with Tesla cut
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-lf-says-value-battery-material-supply-deal-with-tesla-cut-7386-2025-12-29/
+    trading_note: 양극재 피어 간 수주 차별화 관찰
+  - source_symbol: 066970.KQ
+    source_name: 엘앤에프
+    source_market: KR
+    source_reason: Tesla 4680 고니켈 cathode 계약 축소 오버행
+    source_3m_move_pct: null
+    target_symbol: 247540.KQ
+    target_name: 에코프로비엠
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 엘앤에프 약세가 고객·제품 믹스 문제라면 경쟁 cathode 업체 반사 수혜 가능성.
+    evidence:
+    - title: South Korea's L&F says value of battery material supply deal with Tesla cut
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-lf-says-value-battery-material-supply-deal-with-tesla-cut-7386-2025-12-29/
+    trading_note: 엘앤에프 급락 후 경쟁 양극재주의 반사 수혜 가능성 관찰
+  - source_symbol: 066970.KQ
+    source_name: 엘앤에프
+    source_market: KR
+    source_reason: Tesla 4680 고니켈 cathode 계약 축소 오버행
+    source_3m_move_pct: null
+    target_symbol: 003670.KS
+    target_name: 포스코퓨처엠
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 고니켈 cathode 경쟁 피어로 고객 다변화가 상대 수혜 가능성.
+    evidence:
+    - title: South Korea's L&F says value of battery material supply deal with Tesla cut
+      url: https://www.reuters.com/world/asia-pacific/south-koreas-lf-says-value-battery-material-supply-deal-with-tesla-cut-7386-2025-12-29/
+    trading_note: 엘앤에프 약세가 포스코퓨처엠 차별화로 이어지는지 확인
+  - source_symbol: 066970.KQ
+    source_name: 엘앤에프
+    source_market: KR
+    source_reason: Tesla 4680 고니켈 cathode 계약 축소 오버행
+    source_3m_move_pct: null
+    target_symbol: 450080.KS
+    target_name: 에코프로머티리얼즈
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 고니켈·전구체 밸류체인 센티먼트 악화가 동반 부담 후보.
+    evidence:
+    - title: EcoPro Materials profile
+      url: https://en.wikipedia.org/wiki/Ecopro_Materials
+    trading_note: 소재 체인 전반의 센티먼트 전염 여부 관찰
+  - source_symbol: 066970.KQ
+    source_name: 엘앤에프
+    source_market: KR
+    source_reason: Tesla 4680 고니켈 cathode 계약 축소 오버행
+    source_3m_move_pct: null
+    target_symbol: 361610.KS
+    target_name: SK아이이테크놀로지
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: EV 배터리 부품 체인 전반의 수요 둔화 신호로 해석될 경우 동반 부담.
+    evidence:
+    - title: Ford's EV pivot impacts Korean battery suppliers
+      url: https://www.marketwatch.com/story/ford-shares-rise-korean-battery-stocks-fall-after-electric-vehicle-shift-1d8aa9f7
+    trading_note: EV 체인 센티먼트 악화가 분리막까지 확산되는지 확인
+  - source_symbol: 066970.KQ
+    source_name: 엘앤에프
+    source_market: KR
+    source_reason: Tesla 4680 고니켈 cathode 계약 축소 오버행
+    source_3m_move_pct: null
+    target_symbol: 373220.KS
+    target_name: LG에너지솔루션
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 고니켈 cathode 주문 축소가 셀 고객 수요 둔화 신호로 해석될 수 있으나 직접성 약함.
+    evidence:
+    - title: LG Energy Solution flags Q1 operating loss on weak EV demand
+      url: https://www.reuters.com/business/autos-transportation/lg-energy-solution-flags-q1-operating-loss-weak-ev-demand-2026-04-07/
+    trading_note: 엘앤에프 약세가 셀 업체 수요 둔화 신호인지 제한적으로 확인

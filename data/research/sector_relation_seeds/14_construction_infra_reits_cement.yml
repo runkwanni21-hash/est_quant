@@ -1,0 +1,860 @@
+sector_relation_seeds:
+  sector_id: construction_infra_reits_cement
+  sector_name: 건설 / 인프라 / 리츠 / 부동산 / 시멘트
+  as_of: '2026-05-17'
+  window: 2026-02-17~2026-05-17
+  notes:
+  - 투자판단 추천이 아닌 relation seed. 1일~1개월 스윙 관점의 후행 반응 관찰 후보.
+  - source_3m_move_pct는 확인 가능한 종가/가격기사 기반. 한국 일부 종목은 exact 2026-02-17 종가 미확인으로 null 또는 proxy.
+  - direction은 확정 상승/하락이 아니라 관찰 방향.
+  edges:
+  - source_symbol: '000720'
+    source_name: 현대건설
+    source_market: KR
+    source_reason: 1Q26 수주잔고 92.3조원, 에너지/원전/인프라 포트폴리오
+    source_3m_move_pct: null
+    target_symbol: '034020'
+    target_name: 두산에너빌리티
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 현대건설의 원전·SMR·에너지 인프라 수주 기대가 전력기자재/원전 밸류체인으로 후행 반응 관찰 가능
+    evidence:
+    - title: 현대건설 1Q26 실적/수주잔고
+      url: ''
+    trading_note: 1일~1개월 스윙 관점에서 원전·에너지 인프라 수주 뉴스 이후 두산에너빌리티의 후행 반응 관찰
+  - source_symbol: '000720'
+    source_name: 현대건설
+    source_market: KR
+    source_reason: 1Q26 수주잔고 92.3조원, 에너지/원전/인프라 포트폴리오
+    source_3m_move_pct: null
+    target_symbol: '300720'
+    target_name: 한일시멘트
+    target_market: KR
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 대형 건설·인프라 파이프라인 확대 시 시멘트 수요 기대가 후행 반영될 수 있음. 직접 공급관계는 미확인
+    evidence:
+    - title: 현대건설 1Q26 실적/수주잔고
+      url: ''
+    trading_note: 인프라/주택 착공 기대가 실제 시멘트 업종 거래대금으로 확산되는지 관찰
+  - source_symbol: '000720'
+    source_name: 현대건설
+    source_market: KR
+    source_reason: 1Q26 수주잔고 92.3조원, 에너지/원전/인프라 포트폴리오
+    source_3m_move_pct: null
+    target_symbol: '294870'
+    target_name: HDC현대산업개발
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 해외/에너지 인프라 건설주로 자금이 이동할 때 국내 주택 집중 기업은 상대적 수요 전환 리스크 관찰
+    evidence:
+    - title: 현대건설 1Q26 실적/수주잔고
+      url: ''
+    trading_note: 현대건설 급등 후 주택 개발주가 동반 상승하지 못하는지 상대강도 관찰
+  - source_symbol: '000720'
+    source_name: 현대건설
+    source_market: KR
+    source_reason: 1Q26 수주잔고 92.3조원, 에너지/원전/인프라 포트폴리오
+    source_3m_move_pct: null
+    target_symbol: '006360'
+    target_name: GS건설
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 주택 매출 둔화 노출도가 큰 건설사는 현대건설식 원전/에너지 수주 모멘텀 대비 상대적 후행 약세 관찰
+    evidence:
+    - title: GS건설 1Q26 주택 매출 둔화
+      url: ''
+    trading_note: 대형 수주형 건설주와 주택형 건설주의 상대강도 스프레드 관찰
+  - source_symbol: '000720'
+    source_name: 현대건설
+    source_market: KR
+    source_reason: 1Q26 수주잔고 92.3조원, 에너지/원전/인프라 포트폴리오
+    source_3m_move_pct: null
+    target_symbol: 028050
+    target_name: 삼성E&A
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 대형 EPC·플랜트·에너지 인프라 피어로 수주잔고/해외 플랜트 심리가 동반 반응할 수 있음
+    evidence:
+    - title: 현대건설/삼성E&A 1Q26 실적
+      url: ''
+    trading_note: 현대건설 수주/실적 뉴스 다음 세션 삼성E&A 거래대금과 상대강도 관찰
+  - source_symbol: 028050
+    source_name: 삼성E&A
+    source_market: KR
+    source_reason: 1Q26 OP +19.6%, 신규수주 4.6조원, 중동/플랜트 기대
+    source_3m_move_pct: 44.6
+    target_symbol: '000720'
+    target_name: 현대건설
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 삼성E&A 플랜트 수주 모멘텀은 현대건설 해외 EPC/에너지 인프라 심리로 후행 반응 가능
+    evidence:
+    - title: 삼성E&A 1Q26 실적/수주
+      url: ''
+    trading_note: 삼성E&A 급등 다음 세션 현대건설이 동반 거래대금 증가를 보이는지 관찰
+  - source_symbol: 028050
+    source_name: 삼성E&A
+    source_market: KR
+    source_reason: 1Q26 OP +19.6%, 신규수주 4.6조원, 중동/플랜트 기대
+    source_3m_move_pct: 44.6
+    target_symbol: '375500'
+    target_name: DL이앤씨
+    target_market: KR
+    relation_type: BACKLOG_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 플랜트·에너지 EPC 수주 기대가 DL이앤씨 원가율 개선/SMR·플랜트 수주 기대와 연결될 수 있음
+    evidence:
+    - title: 삼성E&A/DL이앤씨 1Q26 실적
+      url: ''
+    trading_note: 플랜트 수주 뉴스 후 DL이앤씨의 수주잔고·마진 개선 테마 후행 반응 관찰
+  - source_symbol: 028050
+    source_name: 삼성E&A
+    source_market: KR
+    source_reason: 1Q26 OP +19.6%, 신규수주 4.6조원, 중동/플랜트 기대
+    source_3m_move_pct: 44.6
+    target_symbol: '006360'
+    target_name: GS건설
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 중동/플랜트형 수주 모멘텀이 커질 때 주택 매출 둔화 건설사에는 상대적 자금 이탈 리스크
+    evidence:
+    - title: 삼성E&A 급등/GS건설 1Q26
+      url: ''
+    trading_note: 삼성E&A 강세 후 GS건설의 상대약세 지속 여부 관찰
+  - source_symbol: 028050
+    source_name: 삼성E&A
+    source_market: KR
+    source_reason: 1Q26 OP +19.6%, 신규수주 4.6조원, 중동/플랜트 기대
+    source_3m_move_pct: 44.6
+    target_symbol: '294870'
+    target_name: HDC현대산업개발
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 해외 플랜트 수주 모멘텀 대비 국내 주택·미분양 리스크 기업은 상대 약세 후보
+    evidence:
+    - title: 삼성E&A 급등
+      url: ''
+    trading_note: 플랜트/EPC 강세장에서 주택 개발주가 후행하는지 상대강도 관찰
+  - source_symbol: 028050
+    source_name: 삼성E&A
+    source_market: KR
+    source_reason: 1Q26 OP +19.6%, 신규수주 4.6조원, 중동/플랜트 기대
+    source_3m_move_pct: 44.6
+    target_symbol: 083650
+    target_name: 비에이치아이
+    target_market: KR
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 플랜트·발전 기자재 테마의 후행 반응 가능성. 직접 공급망 확인 부족
+    evidence:
+    - title: 삼성E&A 1Q26 수주
+      url: ''
+    trading_note: EPC 수주 뉴스 이후 발전/플랜트 기자재주 거래대금 확산 여부 관찰
+  - source_symbol: '375500'
+    source_name: DL이앤씨
+    source_market: KR
+    source_reason: 1Q26 OP 급증, 원가율 개선, 신규수주 증가, SMR/플랜트 기대
+    source_3m_move_pct: null
+    target_symbol: '000720'
+    target_name: 현대건설
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 대형 건설/EPC 피어로 실적·수주 개선 뉴스가 상호 후행 관찰 가능
+    evidence:
+    - title: DL이앤씨 1Q26 실적
+      url: ''
+    trading_note: DL이앤씨 실적/수주 개선 후 현대건설 피어 모멘텀 관찰
+  - source_symbol: '375500'
+    source_name: DL이앤씨
+    source_market: KR
+    source_reason: 1Q26 OP 급증, 원가율 개선, 신규수주 증가, SMR/플랜트 기대
+    source_3m_move_pct: null
+    target_symbol: '034020'
+    target_name: 두산에너빌리티
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: DL이앤씨 SMR/원전 인프라 기대가 원전 기자재 밸류체인 심리로 확산 가능. 직접성은 제한적
+    evidence:
+    - title: DL이앤씨 SMR 관련 뉴스
+      url: ''
+    trading_note: SMR/원전 키워드가 건설사에서 기자재주로 확산되는지 3~5일 관찰
+  - source_symbol: '375500'
+    source_name: DL이앤씨
+    source_market: KR
+    source_reason: 1Q26 OP 급증, 원가율 개선, 신규수주 증가, SMR/플랜트 기대
+    source_3m_move_pct: null
+    target_symbol: '006360'
+    target_name: GS건설
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 원가율 개선·SMR/플랜트 수주형 건설사로 선호가 이동할 경우 주택 둔화 피어는 상대 부담
+    evidence:
+    - title: DL이앤씨/GS건설 1Q26
+      url: ''
+    trading_note: 원가율 개선 건설주와 주택 둔화 건설주 사이의 상대강도 관찰
+  - source_symbol: '375500'
+    source_name: DL이앤씨
+    source_market: KR
+    source_reason: 1Q26 OP 급증, 원가율 개선, 신규수주 증가, SMR/플랜트 기대
+    source_3m_move_pct: null
+    target_symbol: '294870'
+    target_name: HDC현대산업개발
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 국내 주택 비중 기업은 플랜트/원전 수주형 건설주 대비 수요 전환 리스크 관찰
+    evidence:
+    - title: DL이앤씨 1Q26 실적
+      url: ''
+    trading_note: DL이앤씨 강세 후 HDC현산의 상대 약세 지속 여부 관찰
+  - source_symbol: '375500'
+    source_name: DL이앤씨
+    source_market: KR
+    source_reason: 1Q26 OP 급증, 원가율 개선, 신규수주 증가, SMR/플랜트 기대
+    source_3m_move_pct: null
+    target_symbol: 028050
+    target_name: 삼성E&A
+    target_market: KR
+    relation_type: COMPETITOR
+    direction: UP_LEADS_UP
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: EPC·플랜트 피어. DL이앤씨의 수주/원가율 개선은 삼성E&A 피어 모멘텀으로 연결 가능
+    evidence:
+    - title: DL이앤씨/삼성E&A 1Q26
+      url: ''
+    trading_note: DL이앤씨 수주/마진 뉴스 후 삼성E&A 피어 모멘텀 관찰
+  - source_symbol: '047040'
+    source_name: 대우건설
+    source_market: KR
+    source_reason: 1Q26 신규수주 +21%, 잔고 51.9조, 원전/LNG/데이터센터 전략, 급등 경고 이력
+    source_3m_move_pct: null
+    target_symbol: '000720'
+    target_name: 현대건설
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 대우건설의 원전/LNG/데이터센터 수주 기대가 대형 건설주 피어로 후행 반응 가능
+    evidence:
+    - title: 대우건설 1Q26 실적/수주
+      url: ''
+    trading_note: 대우건설 급등 후 현대건설 피어 확산 여부 관찰
+  - source_symbol: '047040'
+    source_name: 대우건설
+    source_market: KR
+    source_reason: 1Q26 신규수주 +21%, 잔고 51.9조, 원전/LNG/데이터센터 전략, 급등 경고 이력
+    source_3m_move_pct: null
+    target_symbol: '034020'
+    target_name: 두산에너빌리티
+    target_market: KR
+    relation_type: POLICY_BENEFIT
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 대우건설의 원전 프로젝트 후보군 언급은 원전 기자재/주기기 밸류체인 심리에 연결될 수 있음
+    evidence:
+    - title: 대우건설 원전/LNG 전략
+      url: ''
+    trading_note: 대우건설 원전 키워드 이후 두산에너빌리티 후행 거래대금 관찰
+  - source_symbol: '047040'
+    source_name: 대우건설
+    source_market: KR
+    source_reason: 1Q26 신규수주 +21%, 잔고 51.9조, 원전/LNG/데이터센터 전략, 급등 경고 이력
+    source_3m_move_pct: null
+    target_symbol: '006360'
+    target_name: GS건설
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 대우건설식 원전/LNG/데이터센터 수주 기대가 강할 때 주택 둔화 피어는 상대 약세 후보
+    evidence:
+    - title: 대우건설 투자경고/수주잔고
+      url: ''
+    trading_note: 대우건설 강세 후 주택형 건설 피어의 상대 약세 여부 관찰
+  - source_symbol: '047040'
+    source_name: 대우건설
+    source_market: KR
+    source_reason: 1Q26 신규수주 +21%, 잔고 51.9조, 원전/LNG/데이터센터 전략, 급등 경고 이력
+    source_3m_move_pct: null
+    target_symbol: '294870'
+    target_name: HDC현대산업개발
+    target_market: KR
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: LOW
+    rationale: 급등 자금이 수주잔고/원전 테마로 이동할 때 주택 개발주는 수요 전환 리스크 관찰
+    evidence:
+    - title: 대우건설 투자경고
+      url: ''
+    trading_note: 대우건설 급등 후 HDC현산의 후행 약세 또는 미반응 관찰
+  - source_symbol: '047040'
+    source_name: 대우건설
+    source_market: KR
+    source_reason: 1Q26 신규수주 +21%, 잔고 51.9조, 원전/LNG/데이터센터 전략, 급등 경고 이력
+    source_3m_move_pct: null
+    target_symbol: '375500'
+    target_name: DL이앤씨
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 대형 EPC/건설 피어. 원전·LNG·데이터센터 기대가 DL이앤씨 플랜트/SMR 기대와 연결
+    evidence:
+    - title: 대우건설/DL이앤씨 실적
+      url: ''
+    trading_note: 대우건설 수주 모멘텀 이후 DL이앤씨 피어 후행 반응 관찰
+  - source_symbol: 038500
+    source_name: 삼표시멘트
+    source_market: KR
+    source_reason: 1Q26 OP +375.5%, 5월 급등, 시멘트 실적 반등
+    source_3m_move_pct: 25.0
+    target_symbol: '300720'
+    target_name: 한일시멘트
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 시멘트 업종 실적 반등 뉴스는 동종 시멘트 피어에 같은 날/익일 후행 반응 가능
+    evidence:
+    - title: 삼표시멘트 1Q26 실적
+      url: ''
+    trading_note: 삼표시멘트 급등 당일 한일시멘트 거래대금 확산 여부 관찰
+  - source_symbol: 038500
+    source_name: 삼표시멘트
+    source_market: KR
+    source_reason: 1Q26 OP +375.5%, 5월 급등, 시멘트 실적 반등
+    source_3m_move_pct: 25.0
+    target_symbol: 004980
+    target_name: 성신양회
+    target_market: KR
+    relation_type: COMMODITY_SENSITIVE
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 시멘트 가격/수익성 개선 기대가 동종 업체로 확산될 수 있음
+    evidence:
+    - title: 삼표시멘트 1Q26 실적
+      url: ''
+    trading_note: 시멘트주 동시 회전매가 나오는지 관찰
+  - source_symbol: 038500
+    source_name: 삼표시멘트
+    source_market: KR
+    source_reason: 1Q26 OP +375.5%, 5월 급등, 시멘트 실적 반등
+    source_3m_move_pct: 25.0
+    target_symbol: '006360'
+    target_name: GS건설
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 시멘트·건설자재 가격 상승은 건설사 원가율에 비용 압박 리스크로 작용 가능
+    evidence:
+    - title: 한국 건설 원가/자재비 상승
+      url: ''
+    trading_note: 시멘트주 강세 후 건설사의 원가 부담 프레임이 부각되는지 관찰
+  - source_symbol: 038500
+    source_name: 삼표시멘트
+    source_market: KR
+    source_reason: 1Q26 OP +375.5%, 5월 급등, 시멘트 실적 반등
+    source_3m_move_pct: 25.0
+    target_symbol: '294870'
+    target_name: HDC현대산업개발
+    target_market: KR
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 주택 개발사는 시멘트/자재비 상승 시 분양가·마진 부담이 커질 수 있음
+    evidence:
+    - title: 한국 건설 원가/자재비 상승
+      url: ''
+    trading_note: 시멘트 강세 후 주택 개발주 비용 압박 뉴스와 주가 반응 관찰
+  - source_symbol: 038500
+    source_name: 삼표시멘트
+    source_market: KR
+    source_reason: 1Q26 OP +375.5%, 5월 급등, 시멘트 실적 반등
+    source_3m_move_pct: 25.0
+    target_symbol: '183190'
+    target_name: 아세아시멘트
+    target_market: KR
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 시멘트 피어 후행 관찰 후보. 개별 실적 확인은 부족
+    evidence:
+    - title: 삼표시멘트 1Q26 실적
+      url: ''
+    trading_note: 삼표시멘트 실적 급등 뉴스 후 아세아시멘트 동반 수급 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 매출 +22%, AI 데이터센터 전력/건설 수요, 기록적 백로그
+    source_3m_move_pct: 16.0
+    target_symbol: CMI
+    target_name: Cummins
+    target_market: US
+    relation_type: SUPPLIER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: CAT 전력·건설장비 수요 증가는 엔진/발전기·파워트레인 피어로 수혜 가능성 관찰
+    evidence:
+    - title: CAT Q1 2026 results; Reuters AI power demand
+      url: ''
+    trading_note: CAT 강세 후 전력/엔진 피어 CMI의 후행 반응 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 매출 +22%, AI 데이터센터 전력/건설 수요, 기록적 백로그
+    source_3m_move_pct: 16.0
+    target_symbol: ETN
+    target_name: Eaton
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AI 데이터센터 전력 인프라 수요가 전력장비 밸류체인으로 후행 확산 가능
+    evidence:
+    - title: CAT AI power demand
+      url: ''
+    trading_note: CAT의 데이터센터 전력 수요 언급 후 ETN 후행 반응 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 매출 +22%, AI 데이터센터 전력/건설 수요, 기록적 백로그
+    source_3m_move_pct: 16.0
+    target_symbol: DE
+    target_name: Deere
+    target_market: US
+    relation_type: COMPETITOR
+    direction: UP_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: CAT의 인프라/건설장비 강세는 농기계 사이클 노출 DE와 상대 성과 차이를 만들 수 있음
+    evidence:
+    - title: CAT Q1 demand; DE peer comparison
+      url: ''
+    trading_note: CAT 강세와 DE 상대 약세 스프레드 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 매출 +22%, AI 데이터센터 전력/건설 수요, 기록적 백로그
+    source_3m_move_pct: 16.0
+    target_symbol: FLR
+    target_name: Fluor
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 장비·인력·자재 수요가 강하면 EPC 업체에는 비용 압박 리스크가 후행될 수 있음
+    evidence:
+    - title: CAT demand; FLR Q1 miss
+      url: ''
+    trading_note: CAT 수요 강세가 EPC 비용 부담 프레임으로 번지는지 관찰
+  - source_symbol: CAT
+    source_name: Caterpillar
+    source_market: US
+    source_reason: Q1 매출 +22%, AI 데이터센터 전력/건설 수요, 기록적 백로그
+    source_3m_move_pct: 16.0
+    target_symbol: URI
+    target_name: United Rentals
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 건설장비 수요 강세는 렌털 장비 가동률·렌털 수요 기대와 연결 가능
+    evidence:
+    - title: CAT/URI Q1 demand
+      url: ''
+    trading_note: CAT 강세 다음 세션 URI 장비 렌털 수요 기대 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 실적/가이던스 호조, 비주거·인프라·데이터센터 렌털 수요
+    source_3m_move_pct: 11.3
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: next_session
+    confidence: MEDIUM
+    rationale: 렌털 수요 강세는 OEM 장비 수요 기대에 후행 반응 가능
+    evidence:
+    - title: URI Q1 results; Barron's URI surge
+      url: ''
+    trading_note: URI 실적 모멘텀 후 CAT 장비 수요 기대 반응 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 실적/가이던스 호조, 비주거·인프라·데이터센터 렌털 수요
+    source_3m_move_pct: 11.3
+    target_symbol: HRI
+    target_name: Herc Holdings
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: MEDIUM
+    rationale: 장비 렌털 피어로 URI 실적 모멘텀에 동반 반응 가능
+    evidence:
+    - title: URI Q1 results
+      url: ''
+    trading_note: URI 급등 당일 HRI 동반 거래대금 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 실적/가이던스 호조, 비주거·인프라·데이터센터 렌털 수요
+    source_3m_move_pct: 11.3
+    target_symbol: FLR
+    target_name: Fluor
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 렌털 장비 수요 강세는 EPC/건설사 비용 압박 또는 일정 부담으로 해석될 수 있음
+    evidence:
+    - title: URI demand; FLR Q1 miss
+      url: ''
+    trading_note: URI 강세 이후 EPC 비용 부담 프레임 확산 여부 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 실적/가이던스 호조, 비주거·인프라·데이터센터 렌털 수요
+    source_3m_move_pct: 11.3
+    target_symbol: J
+    target_name: Jacobs
+    target_market: US
+    relation_type: INPUT_COST_VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 프로젝트 현장 장비·인력 비용 강세는 엔지니어링/시공사 마진 리스크 관찰 포인트
+    evidence:
+    - title: URI Q1 demand
+      url: ''
+    trading_note: 인프라 현장 비용 부담 뉴스와 J의 상대강도 관찰
+  - source_symbol: URI
+    source_name: United Rentals
+    source_market: US
+    source_reason: Q1 실적/가이던스 호조, 비주거·인프라·데이터센터 렌털 수요
+    source_3m_move_pct: 11.3
+    target_symbol: HEES
+    target_name: H&E Equipment Services
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: LOW
+    rationale: 렌털 피어 후행 반응 후보. 개별 이벤트는 별도 확인 필요
+    evidence:
+    - title: URI Q1 results
+      url: ''
+    trading_note: URI 강세 후 렌털 피어 동반 반응 여부 관찰
+  - source_symbol: EQIX
+    source_name: Equinix
+    source_market: US
+    source_reason: AI 데이터센터 수요, 2026 전망 상향, 기록적 bookings/backlog
+    source_3m_move_pct: 11.5
+    target_symbol: DLR
+    target_name: Digital Realty
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: UP_LEADS_UP
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 데이터센터 REIT 직접 피어. EQIX bookings/backlog 호조는 DLR backlog/AI lease sentiment로 연결
+    evidence:
+    - title: EQIX Q1 outlook; DLR Q1 backlog
+      url: ''
+    trading_note: EQIX 급등 당일 또는 다음 세션 DLR의 피어 모멘텀 관찰
+  - source_symbol: EQIX
+    source_name: Equinix
+    source_market: US
+    source_reason: AI 데이터센터 수요, 2026 전망 상향, 기록적 bookings/backlog
+    source_3m_move_pct: 11.5
+    target_symbol: VRT
+    target_name: Vertiv
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: 데이터센터 증설은 전력·냉각 인프라 공급업체로 수혜 가능성 관찰
+    evidence:
+    - title: EQIX AI data center demand
+      url: ''
+    trading_note: EQIX 전망 상향 이후 VRT 데이터센터 인프라 수급 관찰
+  - source_symbol: EQIX
+    source_name: Equinix
+    source_market: US
+    source_reason: AI 데이터센터 수요, 2026 전망 상향, 기록적 bookings/backlog
+    source_3m_move_pct: 11.5
+    target_symbol: ETN
+    target_name: Eaton
+    target_market: US
+    relation_type: AI_CAPEX_SPILLOVER
+    direction: UP_LEADS_UP
+    expected_lag: 3d
+    confidence: MEDIUM
+    rationale: AI 데이터센터 전력설비 capex 확대 기대가 전력장비 피어에 후행 가능
+    evidence:
+    - title: EQIX AI data center demand
+      url: ''
+    trading_note: EQIX/DLR 데이터센터 REIT 강세 이후 ETN 전력장비 후행 반응 관찰
+  - source_symbol: EQIX
+    source_name: Equinix
+    source_market: US
+    source_reason: AI 데이터센터 수요, 2026 전망 상향, 기록적 bookings/backlog
+    source_3m_move_pct: 11.5
+    target_symbol: VNO
+    target_name: Vornado Realty Trust
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 데이터센터 REIT로 부동산 자금 선호가 이동할 경우 전통 오피스 REIT는 상대 수요 전환 리스크
+    evidence:
+    - title: EQIX AI REIT demand
+      url: ''
+    trading_note: 데이터센터 REIT 강세장에서 오피스 REIT 상대약세 여부 관찰
+  - source_symbol: EQIX
+    source_name: Equinix
+    source_market: US
+    source_reason: AI 데이터센터 수요, 2026 전망 상향, 기록적 bookings/backlog
+    source_3m_move_pct: 11.5
+    target_symbol: SLG
+    target_name: SL Green Realty
+    target_market: US
+    relation_type: VICTIM
+    direction: UP_LEADS_DOWN
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 데이터센터 임대수요 대비 오피스 임대수요는 별도 사이클이라 상대 약세 후보
+    evidence:
+    - title: EQIX AI REIT demand
+      url: ''
+    trading_note: EQIX/DLR 강세 후 SLG 오피스 REIT 상대강도 관찰
+  - source_symbol: VMC
+    source_name: Vulcan Materials
+    source_market: US
+    source_reason: 실적 실망, 주거 건설 약세·모기지 금리·비용 부담, 고점 대비 하락
+    source_3m_move_pct: -13.4
+    target_symbol: DHI
+    target_name: D.R. Horton
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 골재/자재 가격 약세가 원가 부담 완화로 해석될 경우 주택건설사에는 비용 완화 관찰 가능. 다만 수요 약세 신호일 수도 있음
+    evidence:
+    - title: VMC Q4 miss; residential weakness
+      url: ''
+    trading_note: VMC 하락이 자재비 완화로 해석되는지, 아니면 주택 수요 둔화로 해석되는지 DHI 반응 관찰
+  - source_symbol: VMC
+    source_name: Vulcan Materials
+    source_market: US
+    source_reason: 실적 실망, 주거 건설 약세·모기지 금리·비용 부담, 고점 대비 하락
+    source_3m_move_pct: -13.4
+    target_symbol: LEN
+    target_name: Lennar
+    target_market: US
+    relation_type: INPUT_COST_BENEFIT
+    direction: DOWN_LEADS_UP
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 자재 가격 약세가 건설원가 완화로 해석될 수 있으나 주택 수요 둔화 신호와 충돌 가능
+    evidence:
+    - title: VMC Q4 miss; residential weakness
+      url: ''
+    trading_note: VMC 하락 후 LEN의 비용 완화/수요 둔화 해석 중 어느 쪽이 우세한지 관찰
+  - source_symbol: VMC
+    source_name: Vulcan Materials
+    source_market: US
+    source_reason: 실적 실망, 주거 건설 약세·모기지 금리·비용 부담, 고점 대비 하락
+    source_3m_move_pct: -13.4
+    target_symbol: MLM
+    target_name: Martin Marietta
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: same_day
+    confidence: HIGH
+    rationale: 골재/건설소재 직접 피어로 VMC 약세가 MLM에 동반 부담 가능
+    evidence:
+    - title: VMC/MLM MarketWatch price
+      url: ''
+    trading_note: VMC 실적/가격 약세 당일 MLM 동조화 관찰
+  - source_symbol: VMC
+    source_name: Vulcan Materials
+    source_market: US
+    source_reason: 실적 실망, 주거 건설 약세·모기지 금리·비용 부담, 고점 대비 하락
+    source_3m_move_pct: -13.4
+    target_symbol: EXP
+    target_name: Eagle Materials
+    target_market: US
+    relation_type: COMMODITY_SENSITIVE
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 시멘트/건설소재 피어로 소재 수요·가격 둔화 시 후행 약세 후보
+    evidence:
+    - title: VMC Q4 miss
+      url: ''
+    trading_note: VMC 하락 다음 세션 EXP 건설소재 피어 반응 관찰
+  - source_symbol: VMC
+    source_name: Vulcan Materials
+    source_market: US
+    source_reason: 실적 실망, 주거 건설 약세·모기지 금리·비용 부담, 고점 대비 하락
+    source_3m_move_pct: -13.4
+    target_symbol: CRH
+    target_name: CRH
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: 북미 건설소재 피어로 골재/시멘트 수요 둔화 뉴스에 동반 반응 가능
+    evidence:
+    - title: VMC Q4 miss
+      url: ''
+    trading_note: VMC 약세 후 CRH 북미 건설소재 피어 동조화 관찰
+  - source_symbol: FLR
+    source_name: Fluor
+    source_market: US
+    source_reason: Q1 miss, 신규수주 -54%, 비용성 차지·가이던스 하향, event drop
+    source_3m_move_pct: -3.0
+    target_symbol: PWR
+    target_name: Quanta Services
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: FLR의 프로젝트 실행/비용 이슈가 경쟁 인프라 시공사로 상대 수요 전환을 만들 가능성
+    evidence:
+    - title: FLR Q1 miss
+      url: ''
+    trading_note: FLR 급락 후 PWR로 인프라 시공 자금 대체가 나타나는지 관찰
+  - source_symbol: FLR
+    source_name: Fluor
+    source_market: US
+    source_reason: Q1 miss, 신규수주 -54%, 비용성 차지·가이던스 하향, event drop
+    source_3m_move_pct: -3.0
+    target_symbol: EME
+    target_name: EMCOR Group
+    target_market: US
+    relation_type: COMPETITOR
+    direction: DOWN_LEADS_UP
+    expected_lag: 3d
+    confidence: LOW
+    rationale: 데이터센터/전기·기계 시공 노출 경쟁사로 자금 대체 관찰 후보
+    evidence:
+    - title: FLR Q1 miss
+      url: ''
+    trading_note: FLR 실행 리스크 후 EME 상대강도 개선 여부 관찰
+  - source_symbol: FLR
+    source_name: Fluor
+    source_market: US
+    source_reason: Q1 miss, 신규수주 -54%, 비용성 차지·가이던스 하향, event drop
+    source_3m_move_pct: -3.0
+    target_symbol: CAT
+    target_name: Caterpillar
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: EPC 신규수주 둔화가 실제 프로젝트 착공/장비 수요 둔화 신호로 해석될 경우 장비주에 부담
+    evidence:
+    - title: FLR Q1 miss/new awards
+      url: ''
+    trading_note: FLR 신규수주 둔화가 CAT 장비 수요 우려로 번지는지 관찰
+  - source_symbol: FLR
+    source_name: Fluor
+    source_market: US
+    source_reason: Q1 miss, 신규수주 -54%, 비용성 차지·가이던스 하향, event drop
+    source_3m_move_pct: -3.0
+    target_symbol: URI
+    target_name: United Rentals
+    target_market: US
+    relation_type: DEMAND_SPILLOVER
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 5d
+    confidence: LOW
+    rationale: 프로젝트 지연/수주 둔화가 렌털 장비 수요 약화로 해석될 수 있음
+    evidence:
+    - title: FLR Q1 miss/new awards
+      url: ''
+    trading_note: FLR 프로젝트/수주 둔화 뉴스 후 URI 렌털 수요 우려 반응 관찰
+  - source_symbol: FLR
+    source_name: Fluor
+    source_market: US
+    source_reason: Q1 miss, 신규수주 -54%, 비용성 차지·가이던스 하향, event drop
+    source_3m_move_pct: -3.0
+    target_symbol: J
+    target_name: Jacobs
+    target_market: US
+    relation_type: PEER_MOMENTUM
+    direction: DOWN_LEADS_DOWN
+    expected_lag: 1d
+    confidence: MEDIUM
+    rationale: EPC/엔지니어링 피어로 비용 차지·수주 둔화 뉴스에 동반 sentiment 부담 가능
+    evidence:
+    - title: FLR Q1 miss
+      url: ''
+    trading_note: FLR 급락 다음 세션 J의 EPC/엔지니어링 피어 동조화 관찰
